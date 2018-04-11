@@ -2,7 +2,7 @@
   'use strict';
 
   const gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    //sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
     notify = require('gulp-notify'),
@@ -12,7 +12,9 @@
     uglifycss = require('gulp-uglifycss'),
     pug = require('gulp-pug'),
     rename = require('gulp-rename'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    postcss = require('gulp-postcss'),
+    sugarss = require('sugarss');
 
   //write html by pug
   gulp.task('views', function buildHTML() {
@@ -27,13 +29,35 @@
   });
 
   //write style
-  gulp.task('sass', function() {
+  gulp.task('postcss', function() {
+    const processors = [
+      require('postcss-import'),
+      require('postcss-alias'),
+      require('postcss-short-spacing'),
+      require('postcss-pseudo-content-insert'),
+      require('postcss-position'),
+      require('lost'),
+      require('postcss-nested-ancestors'),
+      require('postcss-nested'),
+      require('postcss-inline-media'),
+      require('postcss-simple-vars'),
+      require('postcss-responsive-type'),
+      require('postcss-extend'),
+      require('postcss-mixins'),
+      require('postcss-inline-svg'),
+      require('autoprefixer'),
+      require('postcss-unique-selectors'),
+      require('css-mqpacker')
+    ];
     return gulp
-      .src('app/styles/sass/main.scss')
+      .src('app/styles/main.sss')
       .pipe(sourcemaps.init())
-      .pipe(sass().on('error', notify.onError()))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('dest/styles'));
+      .pipe(
+        postcss(processors, { parser: sugarss }).on('error', notify.onError())
+      )
+      .pipe(sourcemaps.write('.'))
+      .pipe(rename({ extname: '.css' }))
+      .pipe(gulp.dest('dest/styles/'));
   });
   gulp.task('css', function() {
     return gulp.src('app/styles/css/*.*').pipe(gulp.dest('dest/styles/'));
@@ -51,12 +75,14 @@
 
   //lib
   gulp.task('libs-css', function() {
-    return gulp
-      .src(['app/libs/libs.scss'])
-      .pipe(sass().on('error', notify.onError()))
-      .pipe(uglifycss())
-      .pipe(rename('libs.min.css'))
-      .pipe(gulp.dest('dest/styles/'));
+    return (
+      gulp
+        .src(['app/libs/libs.scss'])
+        //.pipe(sass().on('error', notify.onError()))
+        .pipe(uglifycss())
+        .pipe(rename('libs.min.css'))
+        .pipe(gulp.dest('dest/styles/'))
+    );
   });
   gulp.task('libs-js', function() {
     return gulp
@@ -79,7 +105,7 @@
     gulp.series(
       'clean',
       gulp.parallel(
-        'sass',
+        'postcss',
         'views',
         'css',
         'libs-css',
@@ -103,7 +129,7 @@
   //watching by all files in dest
   gulp.task('watch', function() {
     gulp.watch('app/styles/css/**/*.*', gulp.series('css'));
-    gulp.watch('app/styles/sass/**/*.*', gulp.series('sass'));
+    gulp.watch('app/styles/**/*.*', gulp.series('postcss'));
     gulp.watch('app/scripts/**/*.*', gulp.series('scripts'));
     gulp.watch('app/assets/**/*.*', gulp.series('assets'));
     gulp.watch('app/assets/views/**/*.*', gulp.series('views'));
