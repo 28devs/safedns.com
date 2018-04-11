@@ -33,6 +33,7 @@
     const processors = [
       require('postcss-import'),
       require('postcss-alias'),
+      require('postcss-size'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-pseudo-content-insert'),
