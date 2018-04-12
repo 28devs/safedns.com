@@ -1,10 +1,17 @@
 .footer
-  padding: 3vw 0 0 0
+  padding-top: 4.5vw
   background: #292929 @md #292929 resolve(footer-bg.png) right top no-repeat
 
+  .container
+    box: horisontal space-between
+
   &__col
+    display: none @sm block
     width: 33.33333% @lg 16.6666667%
     margin-bottom: 3vw
+
+    &:last-child
+      width: 33.33333% @lg 10.65%
 
   &__title
     margin-bottom: 1vw
@@ -13,11 +20,77 @@
   &__link
     color: #BDBDBD
     display: block
-    margin-bottom: 3px
+    margin-bottom: 9px
+    font-size: 14px
+
+  &__mobile
+    display: block @sm none
+    box: horisontal space-around
+    width: 100%
+
+    a
+      font-size: 14px
+      color: #828282
 
   &__copy
     background: #202020
     color: #828282
+    margin-top: 39px
+    padding: 18px 0 @md 32px 0 @lg 42px 0
+    font-size: 14px
     
     .container
-      box: horisontal space-between center
+      box: horisontal center center @sm horisontal space-between center
+
+    nav
+      display: none @md block
+
+      a
+        margin-right: 26px
+        color: #828282
+
+        &:last-child
+          margin: 0
+
+    ^&__ips
+      display: none @lg block
+      color: #828282
+      font-weight: 700
+      font-size: 16px @xl 24px 
+
+      span:first-child
+        margin-right: 10px
+
+
+  &__social
+    box: horisontal
+
+    a
+      size: 31px
+      display: block
+      border-radius: 50%
+      opacity: .2
+      filter: grayscale(1) brightness(4)
+      margin-right: 10px
+
+      &:last-child
+        margin: 0
+    
+      &:hover
+        opacity: 1
+        filter: grayscale(0) brightness(1)
+
+    &_youtube
+      background: svg-load('icons/social-youtube.svg')
+    
+    &_google
+      background: svg-load('icons/social-google.svg')
+    
+    &_linkedin
+      background: svg-load('icons/social-linkedin.svg')
+
+    &_twitter
+      background: svg-load('icons/social-twitter.svg')
+
+    &_facebook
+      background: svg-load('icons/social-facebook.svg')

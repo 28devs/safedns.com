@@ -33,7 +33,6 @@
     const processors = [
       require('postcss-import'),
       require('postcss-alias'),
-      require('postcss-flexbox'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-assets')({
@@ -48,6 +47,7 @@
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
       require('postcss-inline-media'),
+      require('postcss-flexbox'),
       require('postcss-simple-vars'),
       require('postcss-responsive-type'),
       require('postcss-extend'),
