@@ -1,0 +1,21 @@
+footer.footer
+  .container
+      each n in nav
+        .footer__col
+          h4.footer__title= n.title
+
+          each child in n.childs
+            a.footer__link(href='#!')= child.title
+
+  .footer__copy
+    .container
+      p SafeDNS, Inc. © 2012-2018
+
+      nav
+        a(href='#!') Privacy
+        a(href='#!') Term of police
+        a(href='#!') Legal
+
+      .footer__ips
+        span 195.46.39.39
+        span 195.46.39.40
