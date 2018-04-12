@@ -46,7 +46,9 @@
       require('postcss-responsive-type'),
       require('postcss-extend'),
       require('postcss-mixins'),
-      require('postcss-inline-svg'),
+      require('postcss-inline-svg')({
+        path: 'app/assets/img/'
+      }),
       require('autoprefixer'),
       require('postcss-unique-selectors'),
       require('css-mqpacker')
