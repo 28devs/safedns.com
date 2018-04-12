@@ -3,6 +3,9 @@ body
   text: 16px 1.5
   color: $text-primary
 
+*, ::after, ::before
+  box-sizing: border-box
+
 .typography-present
   padding: 3vw 7vw
 
@@ -12,6 +15,9 @@ h1
   line-height: 1.3
   font-weight: 700 @sm 300
   margin: 20px 0 @sm 2.2vw 0 @xl 28px 0
+
+h1.display-1
+  text: 61px/1.5
 
 h2
   font-size: responsive 20px 36px
@@ -49,7 +55,7 @@ p, a
   color: $text-secondary
     
 .text-tips
-  font-size: 12px @md 13px
+  font-size: 12px @md 14px
   line-height: 1.2
   color: $text-secondary-light
   margin: 5px 0 @sm 1.5vw 0 @xl 8px 0
