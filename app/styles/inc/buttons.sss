@@ -8,7 +8,7 @@ body
   box-sizing: border-box 
   text: bold center capitalize #fff 18px normal
   cursor: pointer
-  transition: ease .3s
+  transition: ease .2s
   &:active
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1)
 
@@ -25,7 +25,7 @@ body
   &_outline
     border: 1px solid #fff
     font-weight: 400
-    padding: 14px 40px
+    padding: 14px 31px 14px 35px
     &:hover
       background-color: $primary
       border-color: $primary
@@ -38,6 +38,7 @@ body
     &:hover
       color: #828282
       background-color: #ebebeb
+
     &:active
       box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1)
 
@@ -53,8 +54,18 @@ body
 
 .icon
   display: inline-block
-  background-color: #000
 
   &_play
     background: svg-load('icons/button-play.svg')
-    size: 17px 22px
+    size: 13px 18px
+    margin: 0 0 -3px 9px
+  
+  &_back
+    background: svg-load('icons/back-arrow.svg', path {
+        fill: #ff0
+    } ) 
+    size: 16px 16px
+    margin: 0 9px -3px 0
+    .btn:hover &
+      background: svg-load('icons/back-arrow.svg', fill: #000000)
+ 
