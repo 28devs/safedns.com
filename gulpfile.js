@@ -86,7 +86,7 @@
   gulp.task('libs-css', function() {
     return (
       gulp
-        .src(['app/libs/libs.scss'])
+        .src(['app/libs/**/*.css'])
         //.pipe(sass().on('error', notify.onError()))
         .pipe(uglifycss())
         .pipe(rename('libs.min.css'))
