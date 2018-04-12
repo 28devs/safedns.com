@@ -34,13 +34,15 @@
       require('postcss-import'),
       require('postcss-alias'),
       require('postcss-flexbox'),
-      require('postcss-size'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-assets')({
-        loadPaths: ['app/assets/img/']
+        loadPaths: ['img/', 'img/**/*.*'],
+        basePath: 'dest/',
+        relative: 'styles/'
       }),
       require('postcss-position'),
+      require('postcss-size'),
       require('lost'),
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
