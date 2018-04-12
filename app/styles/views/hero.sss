@@ -1,20 +1,24 @@
 .hero
   background: 
     linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%),
-    url('../img/hero-bg.jpg') center / cover
+    resolve(hero-bg.jpg) center / cover
   height: 100vh
-  box: horisontal middle center
+  box: vertical middle center
 
   &__content
     text-align: center
     color: #fff
+    margin-top: auto
 
     ^&__logo
       background: resolve(logo-big-white.png)
       size: size(logo-big-white.png)
+      display: block @sm none
+      margin: 7vw auto 5vw
 
     hgroup
       display: none @sm block
+      margin-top: 5vw
 
       h1
         margin-bottom: 5px
@@ -23,3 +27,89 @@
         font-weight: 400  
         margin: 0 0 2vw
         padding: 0 20vw
+
+    .btn
+      margin-top: 30px
+      padding: 12px 31px 12px 35px
+      font-size: 18px
+
+  &__down
+    color: #000 @sm #fff
+    text-align: center
+    width: 100%
+    margin-top: auto
+    padding: 20px @sm 0 0 38px 0
+    margin-bottom: 0 @sm 3vw
+    text-align: left @sm center
+    background: #fff @sm svg-load('icons/down-arrow.svg', stroke: #fff) center bottom no-repeat
+
+    &__scroll
+      display: none @sm block
+
+    &__choose
+      display: block @sm none
+      text: 18px 1.3 700
+      background: svg-load('icons/down-arrow.svg', stroke: #000, stroke-width: 2px) right bottom no-repeat
+
+.hero-blocks
+  box: horisontal wrap
+
+  &__item
+    box: vertical top left
+    padding: 28px 20px 22px @sm 3vw 4vw
+    color: #fff
+
+    h2
+      font-size: responsive 24px 36px
+      font-range: $sm-px $lg-px
+      margin-bottom: 0
+
+    ul
+      padding: 0
+      list-style: none
+      margin: 0 0 1vw
+
+      li
+        display: none @sm block
+
+        &:before
+          content: ''
+          size
+
+        &:first-child
+          display: block @sm none
+
+
+    &:nth-child(1), &:nth-child(2), &:nth-child(3)
+      width: 100% @sm 50% @lg 33.3333%
+
+    &:nth-child(4)
+      width: 100% @sm 50%
+
+    &:nth-child(5)
+      width: 100% @sm 100% @lg 50%
+
+    &:nth-child(1)
+      background: linear-gradient(120.3deg, #35AEF2 13.68%, rgba(53, 174, 242, 0.6) 82.35%), resolve(hero-blocks-bg-1.jpg) center / cover
+
+    &:nth-child(2)
+      background: linear-gradient(122.88deg, #F2994A 18.26%, rgba(242, 153, 74, 0.7) 80.21%), resolve(hero-blocks-bg-2.jpg) center / cover
+
+    &:nth-child(3)
+      background: linear-gradient(117.68deg, #27AE60 23.19%, rgba(39, 174, 96, 0.7) 80.83%), resolve(hero-blocks-bg-3.jpg) center / cover
+
+    &:nth-child(4)
+      background: linear-gradient(112.9deg, #9B51E0 13.49%, rgba(155, 81, 224, 0.6) 83.32%), resolve(hero-blocks-bg-4.jpg) center / cover
+
+    &:nth-child(5)
+      background: linear-gradient(116.32deg, #4F4F4F 32.24%, rgba(79, 79, 79, 0.8) 85.03%), resolve(hero-blocks-bg-5.jpg) center / cover
+
+    .btn
+      display: none @sm block
+      margin-top: auto
+      padding: 6px 39px 7px 45px
+
+      &:hover
+        background: #fff
+        color: #333
+        border-color: #fff

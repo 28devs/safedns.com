@@ -45,6 +45,9 @@ h5
   line-height: 1.5
   margin: 12px 0 @sm 1.2vw 0 @xl 18px 0
 
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child
+  margin-top: 0
+
 .title-promo
   font-weight: 700
 
@@ -53,11 +56,19 @@ h5
   font-range: $sm-px $lg-px
   font-weight: 700
 
-p, a, li
+p
   font-size: 14px @md 16px
   line-height: 1.5
   font-weight: 300
   margin: 12px 0 @sm 1.8vw 0 @xl 21px 0
+
+ul
+  margin: 12px 0 @sm 1.8vw 0 @xl 21px 0
+
+li
+  font-size: 14px @md 16px
+  line-height: 1.5
+  margin: 8px 0 @sm 1vw 0 @xl 10px 0
 
 .text-accent, b, strong
   font-weight: 700
