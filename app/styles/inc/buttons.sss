@@ -4,10 +4,51 @@ body
 .btn
   display: inline-block
   border-radius: 64px
-  height: 54px
   padding: 15px 40px
   box-sizing: border-box 
-  text: center capitalize #fff 18px
+  text: bold center capitalize #fff 18px normal
+  cursor: pointer
+  transition: ease .3s
+  &:active
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1)
 
   &_primary
     background-color: $primary
+    &:hover
+      background-color: #3381ff
+
+  &_secondary
+    background-color: $secondary
+    &:hover
+      background-color: #ff5e5e
+
+  &_outline
+    border: 1px solid #fff
+    font-weight: 400
+    padding: 14px 40px
+    &:hover
+      background-color: $primary
+      border-color: $primary
+
+  &_back
+    text: 400 * initial #bdbdbd 16px
+    border-radius: 42px
+    padding: 10px 33px
+    background-color: #f2f2f2
+    &:hover
+      color: #828282
+      background-color: #ebebeb
+    &:active
+      box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1)
+
+  &_detail
+    text: 400 * initial #fff 16px
+    border-radius: 42px
+    padding: 10px 33px
+    background-color: rgba(255, 255, 255, .2)
+    &:hover
+      background-color: rgba(255, 255, 255, .4)
+    &:active
+      box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1)
+
+ 
