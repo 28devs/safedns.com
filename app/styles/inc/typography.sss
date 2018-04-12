@@ -16,8 +16,10 @@ h1
   font-weight: 700 @sm 300
   margin: 20px 0 @sm 2.2vw 0 @xl 28px 0
 
-h1.display-1
-  text: 61px/1.5
+h1.title-hero
+  font-size: responsive 38px 64px
+  font-range: $sm-px $lg-px
+  font-weight: 700
 
 h2
   font-size: responsive 20px 36px
@@ -38,11 +40,15 @@ h4, h5
   line-height: 1.6
   margin: 14px 0 @sm 1.6vw 0 @xl 22px 0
 
-h1, h2, h3, h4, h5 
-  &.title-promo
-    font-weight: 700
+.title-promo
+  font-weight: 700
 
-p, a
+.title-hero
+  font-size: responsive 34px 64px
+  font-range: $sm-px $lg-px
+  font-weight: 700
+
+p, a, li
   font-size: 14px @md 16px
   line-height: 1.5
   font-weight: 300

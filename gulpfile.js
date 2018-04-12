@@ -33,6 +33,7 @@
     const processors = [
       require('postcss-import'),
       require('postcss-alias'),
+      require('postcss-flexbox'),
       require('postcss-size'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
@@ -49,7 +50,7 @@
       require('postcss-inline-svg')({
         path: 'app/assets/img/'
       }),
-      require('autoprefixer')
+      require('autoprefixer'),
       require('postcss-unique-selectors'),
       require('css-mqpacker')({
         sort: true
