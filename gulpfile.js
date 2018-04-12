@@ -37,9 +37,10 @@
       require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-assets')({
-        loadPaths: ['img/', 'img/**/*.*'],
+        loadPaths: ['img/', 'img/about'],
         basePath: 'dest/',
-        relative: 'styles/'
+        relative: 'styles/',
+        cache: true
       }),
       require('postcss-position'),
       require('postcss-size'),
@@ -105,7 +106,7 @@
   gulp.task('assets', function() {
     return gulp
       .src('app/assets/**', {
-        since: gulp.lastRun('assets')
+        // since: gulp.lastRun('assets')
       })
       .pipe(gulp.dest('dest'));
   });

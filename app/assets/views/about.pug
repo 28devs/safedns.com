@@ -27,3 +27,18 @@ include inc/header.pug
         li 
           b Cloud Service.  
           | SafeDNS is a cloud service, which means that you do not have to buy any hardware or install additional software.
+      
+    .awards
+      .award
+        p.award-title SafeDNS Awards 
+
+      #awards-slider.award__slider
+        each val in awardsSlider
+          .awards__item-wrap
+            .awards__item(class="awards__item-" +val.item style="background: url('img/about/" +val.href+ "')")
+          
+
+
+
+
+include inc/foot.pug
