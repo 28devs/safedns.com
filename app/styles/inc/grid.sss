@@ -1,7 +1,10 @@
+@lost flexbox flex
+@lost gutter 30px
+
+
 .container
   lost-center: $container-sm-px
   padding: 0 10px @md 0 3vw @xl 0 25px
-  background: #bebebe
 
 @media $md 
   .container
@@ -14,3 +17,14 @@
 @media $xl
   .container
     lost-center: $container-xl-px
+
+
+.col-12
+  lost-column: 1/1
+
+@media $md 
+  .col-md-6
+    lost-column: 1/2
+
+  .col-md-4
+    lost-column: 1/3
