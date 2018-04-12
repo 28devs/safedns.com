@@ -36,7 +36,7 @@
       require('postcss-size'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
-      require('postcss-pseudo-content-insert'),
+      //require('postcss-pseudo-content-insert'),
       require('postcss-position'),
       require('lost'),
       require('postcss-nested-ancestors'),
@@ -49,7 +49,7 @@
       require('postcss-inline-svg')({
         path: 'app/assets/img/'
       }),
-      require('autoprefixer'),
+      require('autoprefixer')
       require('postcss-unique-selectors'),
       require('css-mqpacker')({
         sort: true
