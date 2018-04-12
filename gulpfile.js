@@ -37,7 +37,7 @@
       require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-assets')({
-        loadPaths: ['img/', 'img/about'],
+        loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
         relative: 'styles/',
         cache: true
