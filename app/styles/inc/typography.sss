@@ -3,22 +3,46 @@ body
   text: 16px 1.5
 
 .typography-present
-  padding: 3rem 5rem
+  padding: 3vw 7vw
 
 h1
-  font-size: responsive 48px 30px
-  font-range: $md-px $lg-px
-  line-height: responsive 62px 39px
-  line-height-range: $md-px $lg-px
+  font-size: responsive 30px 48px
+  font-range: $sm-px $lg-px
+  line-height: responsive 39px 62px
+  line-height-range: $sm-px $lg-px
+  font-weight: 700 @sm 300
+  margin: 20px 0 @sm 2.2vw 0 @xl 28px 0
 
 h2
-  text: 36px 47px
+  font-size: responsive 20px 36px
+  font-range: $sm-px $lg-px
+  line-height: responsive 26px 47px
+  line-height-range: $sm-px $lg-px
+  font-weight: 300
+  margin: 18px 0 @sm 2vw 0 @xl 26px 0
 
 h3
-  text: 24px 31px
+  font-size: responsive 16px 24px
+  font-range: $sm-px $lg-px
+  line-height: responsive 21px 31px
+  line-height-range: $sm-px $lg-px
+  font-weight: 700
+  margin: 16px 0 @sm 1.8vw 0 @xl 24px 0
 
-h4
-  text: 18px 26px
+h4, h5
+  font-size: 15px @md 16px
+  line-height: 26px
+  margin: 14px 0 @sm 1.6vw 0 @xl 22px 0
 
-h5
-  text: 16px 22px
+h1, h2, h3, h4, h5 
+  &.title-promo
+    font-weight: 700
+
+p
+  font-size: 14px @md 16px
+  line-height: 21px
+  font-weight: 300
+  margin: 12px 0 @sm 1.8vw 0 @xl 21px 0
+
+  &.text-accent
+    font-weight: 700
