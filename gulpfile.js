@@ -51,7 +51,9 @@
       }),
       require('autoprefixer'),
       require('postcss-unique-selectors'),
-      require('css-mqpacker')
+      require('css-mqpacker')({
+        sort: true
+      })
     ];
     return gulp
       .src('app/styles/main.sss')
