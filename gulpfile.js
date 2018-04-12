@@ -33,10 +33,13 @@
     const processors = [
       require('postcss-import'),
       require('postcss-alias'),
+      require('postcss-flexbox'),
       require('postcss-size'),
       require('postcss-short-text'),
       require('postcss-short-spacing'),
-      //require('postcss-pseudo-content-insert'),
+      require('postcss-assets')({
+        loadPaths: ['app/assets/img/']
+      }),
       require('postcss-position'),
       require('lost'),
       require('postcss-nested-ancestors'),

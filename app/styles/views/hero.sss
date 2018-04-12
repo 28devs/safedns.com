@@ -3,23 +3,19 @@
     linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%),
     url('../img/hero-bg.jpg') center / cover
   height: 100vh
-
-  .container
-    height: 100%
-    align-items: center
+  box: horisontal middle center
 
   &__content
     text-align: center
     color: #fff
 
     hgroup
-      *
-        margin-bottom: 10px
+      display: none @sm block
 
       h1
-        font-size: responsive 30px 64px
-        font-range: $sm-px $lg-px
-        font-weight: 700
+        margin-bottom: 5px
 
-      h5
+      h4
         font-weight: 400  
+        margin: 0 0 2vw
+        padding: 0 20vw
