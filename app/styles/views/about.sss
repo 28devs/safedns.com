@@ -56,4 +56,24 @@
     &-4
       background: resolve('award-4.jpg')
       size: size('award-4.jpg')
-       
+
+.stats
+  width: 100%
+
+  h2
+    text-align: center
+  
+  &__items-wrap
+    box: horizontal
+
+  &__item
+    box: horizontal center middle
+    width: 100% @md 33.33333% 
+
+  &__number
+    font-size: 72px
+    line-height: normal
+    font-weight: 700
+
+  &__wrap-text
+    box: vertical space-around

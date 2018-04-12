@@ -4,7 +4,7 @@ include inc/header.pug
 .page-container
   .container
 
-    .col-12.col-md-6
+    section.col-12.col-md-6
 
       h2 What we do?
       p 
@@ -13,7 +13,7 @@ include inc/header.pug
       p We are creating the next generation of safer and affordable web filtering products. In July, 2016, to further improve our users' online protection SafeDNS launched an innovative system for detecting botnets and malicious internet resources (malware) which is based on continuous machine learning and user behavior analysis. 
 
 
-    .col-12.col-md-6
+    section.col-12.col-md-6
 
       h2 Activities
       
@@ -40,6 +40,21 @@ include inc/header.pug
               .awards__item(class="awards__item-" +val.item style="background: url('img/about/" +val.href+ "')")
                 
         .awards__slider-next 
+      
+    hr
+
+    section.stats
+      h2 SafeDNS in numbers
+
+      .stats__items-wrap
+        each val in aboutStats
+          .stats__item
+            p.stats__number= val.number
+            .stats__wrap-text
+              p= val.title
+              p= val.desc
+
+
 
           
 
