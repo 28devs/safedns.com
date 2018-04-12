@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5
   &.title-promo
     font-weight: 700
 
-p, a
+p, a, li
   font-size: 14px @md 16px
   line-height: 1.5
   font-weight: 300
@@ -63,4 +63,23 @@ p, a
 a
   text-decoration: none
   color: $text-link
+
+ul.list
+  list-style-type: none
+
+  &_round
+    margin: 0
+    padding: 0
+    li
+      position: relative
+      display: block
+
+      &:before
+        content: ''
+        position: absolute 8px 0 0 -20px
+        display: inline-block
+        size: 8px
+        border-radius: 50%
+        background: linear-gradient(135deg, #EB5757 -31.25%, #2F80ED 181.25%)
+        
   
