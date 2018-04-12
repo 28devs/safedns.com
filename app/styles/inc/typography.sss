@@ -74,4 +74,23 @@ p, a, li
 a
   text-decoration: none
   color: $text-link
+
+ul.list
+  list-style-type: none
+
+  &_round
+    margin: 0
+    padding: 0
+    li
+      position: relative
+      display: block
+
+      &:before
+        content: ''
+        position: absolute 8px 0 0 -20px
+        display: inline-block
+        size: 8px
+        border-radius: 50%
+        background: linear-gradient(135deg, #EB5757 -31.25%, #2F80ED 181.25%)
+        
   
