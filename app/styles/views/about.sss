@@ -1,19 +1,49 @@
 .awards
   width: 100%
-  
+  box: horizontal space-between
+
   .award 
     background: resolve('cube.png')
-    background-size: cover
-    size: size('cube.png')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    width: 100% @md auto
+    height: height('cube.png')
+    text-align: center
+    box: middle center
+  
+  &__slider-wrap
+    width: 100% @md 65%
+    box: horizontal middle space-around
 
-    &__title
-      text 36px
-    
-  &__item-wrap
+  &__slider
+    box: horizontal middle space-around
+    width: 75%
+    margin: 0 auto
+
+    &-prev, &-next
+      size: size('slider-arrow.svg')
+      background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
+      cursor: pointer
+      transition: ease .2s
+      &:hover
+        background: svg-load('icons/slider-arrow.svg', stroke: #828282)
+      
+    &-next
+      transform: rotate(180deg)
+
 
   &__item
     background-repeat: no-repeat
     background-position: center
+    position: relative
+
+    &:after
+      position: absolute auto -30px -70px -30px
+      content: ''
+      height: 60px
+      background: resolve('shadow.png') no-repeat center / contain
+      
     &-1
       background: resolve('award-1.jpg')
       size: size('award-1.jpg')

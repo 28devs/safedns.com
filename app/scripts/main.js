@@ -2,13 +2,12 @@
   //
   // init vanilla slyder
   //
-  var slider = tns({
-    container: '#awards-slider',
-    items: 4,
-    mouseDrag: true,
-    controls: false,
-    nav: false
-  });
+  // var slider = tns({
+  //   container: '#awards-slider',
+  //   items: 4,
+  //   mouseDrag: true,
+  //   controls: false,
+  //   nav: false
+  // });
 
-console.log(slider)
 // });

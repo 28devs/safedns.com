@@ -19,7 +19,7 @@ include inc/header.pug
       
       ul.list.list_round
         li 
-          b Content-filtering.
+          b Content-filtering. 
           | Block all dangerous websites, such as pornography, violence, alcohol &amp; smoking and other categories which you choose.
         li 
           b Malware Protection.
@@ -28,15 +28,21 @@ include inc/header.pug
           b Cloud Service.  
           | SafeDNS is a cloud service, which means that you do not have to buy any hardware or install additional software.
       
-    .awards
+    .awards.block-outter
       .award
-        p.award-title SafeDNS Awards 
+        p.award__title.h2 SafeDNS Awards 
 
-      #awards-slider.award__slider
-        each val in awardsSlider
-          .awards__item-wrap
-            .awards__item(class="awards__item-" +val.item style="background: url('img/about/" +val.href+ "')")
+      .awards__slider-wrap
+        .awards__slider-prev
+        #awards-slider.awards__slider
+          each val in awardsSlider
+            .awards__item-wrap
+              .awards__item(class="awards__item-" +val.item style="background: url('img/about/" +val.href+ "')")
+                
+        .awards__slider-next 
+
           
+
 
 
 
