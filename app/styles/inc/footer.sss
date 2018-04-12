@@ -1,5 +1,5 @@
 .footer
-  padding-top: 4.5vw
+  padding-top: 30px @sm 4.5vw
   background: #292929 @md #292929 resolve(footer-bg.png) right top no-repeat
 
   .container
@@ -35,12 +35,13 @@
   &__copy
     background: #202020
     color: #828282
-    margin-top: 39px
-    padding: 18px 0 @md 32px 0 @lg 42px 0
+    margin-top: 116px @sm 39px
+    padding: 24px 0 @md 32px 0 @lg 42px 0
     font-size: 14px
+    position: relative
     
     .container
-      box: horisontal center center @sm horisontal space-between center
+      box: horisontal middle center @sm horisontal space-between center
 
     nav
       display: none @md block
@@ -64,14 +65,17 @@
 
   &__social
     box: horisontal
+    position: absolute @sm static
+    top: -85px
 
     a
-      size: 31px
+      size: 48px @sm 31px
       display: block
       border-radius: 50%
-      opacity: .2
-      filter: grayscale(1) brightness(4)
+      opacity: 1 @sm .2
+      filter: grayscale(0) brightness(1) @sm grayscale(1) brightness(4)
       margin-right: 10px
+      background-size: cover
 
       &:last-child
         margin: 0
