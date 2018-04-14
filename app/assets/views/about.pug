@@ -54,7 +54,7 @@ include inc/header.pug
               p.stats__text-title= val.title
               p.stats__desc= val.desc
 
-  section.info-about
+  section.info-about.block-outter
 
     .info-about__location
       .container
@@ -65,17 +65,29 @@ include inc/header.pug
           p.info-about__location-text Our Headquarters are located conveniently in the SOMA district in SF, close to the scenic Embarcadero and Baseball stadium. It's also right next to a MUNI stop and a few blocks away from the Caltrain. We offer commuter benefits to our employees, and have plenty of indoor bike storage.
 
     .info-about__links
-      a.info-about__press
+      a(href='#!').info-about__press
         .info-about__press-wrap
           .h2 Press About Us 
             p.h3 32 mentions in the press
 
           
-      a.info-about__job
-        .info-about__press-wrap
+      a(href='#!').info-about__job
+        .info-about__job-wrap
           .h2 Job In SafeDNS
             p.h3 6 open vacanties
 
+  section.partners
+    .container
+      h2 Partners among router manufacturers
 
+      .partners__items-wrap
+        .partners__item
+          img(src="img/partners/partners-1.png", alt="")
+        .partners__item
+          img(src="img/partners/partners-2.png", alt="")
+        .partners__item
+          img(src="img/partners/partners-3.png", alt="")
+        .partners__item
+          img(src="img/partners/partners-4.png", alt="")
 
 include inc/foot.pug
