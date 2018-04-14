@@ -46,7 +46,9 @@ const submenus = document.querySelectorAll('.sticky-nav__nav-childs');
 const submenusAligment = function() {
   submenus.forEach(function(elem) {
     elem.style.left =
-      -Math.abs((elem.offsetWidth - elem.parentNode.offsetWidth) / 2) + 'px';
+      -Math.round(
+        Math.abs((elem.offsetWidth - elem.parentNode.offsetWidth) / 2)
+      ) + 'px';
   });
 };
 submenusAligment();
