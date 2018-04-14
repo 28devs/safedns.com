@@ -1,13 +1,53 @@
 // document.addEventListener("DOMContentLoaded", function() {
-  //
-  // init vanilla slyder
-  //
-  // var slider = tns({
-  //   container: '#awards-slider',
-  //   items: 4,
-  //   mouseDrag: true,
-  //   controls: false,
-  //   nav: false
-  // });
+//
+// init vanilla slyder
+//
+// var slider = tns({
+//   container: '#awards-slider',
+//   items: 4,
+//   mouseDrag: true,
+//   controls: false,
+//   nav: false
+// });
 
 // });
+
+//
+// Hide cookie block than press 'I agree'
+//
+
+const heroCookieBlock = document.querySelector('.hero__cookie');
+const heroCookieBtn = document.querySelector('.hero__cookie .btn');
+
+heroCookieBtn.addEventListener('click', function() {
+  heroCookieBlock.classList.add('hero__cookie_hide');
+});
+
+setTimeout(function() {
+  heroCookieBlock.classList.remove('hero__cookie_hide');
+}, 2000);
+
+const heroBlocks = document.querySelector('.hero-blocks');
+const heroDownBtn = document.querySelector('.hero__down');
+
+heroDownBtn.addEventListener('click', function() {
+  heroBlocks.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth'
+  });
+});
+
+//
+// Center alignment for submenus
+//
+
+const submenus = document.querySelectorAll('.sticky-nav__nav-childs');
+
+const submenusAligment = function() {
+  submenus.forEach(function(elem) {
+    elem.style.left =
+      -Math.abs((elem.offsetWidth - elem.parentNode.offsetWidth) / 2) + 'px';
+  });
+};
+submenusAligment();
+window.onresize = submenusAligment;

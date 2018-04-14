@@ -106,7 +106,7 @@
   gulp.task('assets', function() {
     return gulp
       .src('app/assets/**', {
-        // since: gulp.lastRun('assets')
+        since: gulp.lastRun('assets')
       })
       .pipe(gulp.dest('dest'));
   });

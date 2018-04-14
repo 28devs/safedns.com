@@ -1,0 +1,95 @@
+.sticky-nav
+  position: fixed 0 0 auto 0
+  padding: 26px 0 30px
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+  z-index: 999
+  
+  ul
+    list-style: none
+
+  .container
+    box: horisontal space-between center
+    flex-wrap: nowrap
+
+  &__logo
+    background: resolve(logo-white.png)
+    size: size(logo-white.png)
+    min-width: width(logo-white.png)
+    transform: translateY(2px)
+
+  &__nav
+    box: horisontal space-between
+    width: 100%
+    padding: 0
+    margin: 0 20px 0 20px @xl 0 20px 0 101px
+
+    &-wrap
+      margin: 0 33px 0 0
+      position: relative
+
+      &:hover
+        ^^&-childs
+          visibility: visible
+
+      &:last-child
+        margin: 0 0 0 auto
+        
+      ^&-link
+        color: #fff
+        padding: 0 24px 0 0
+        position: relative
+
+        &:after
+          content: ''
+          position: absolute 0 0 0 auto
+          width: 20px
+          background: resolve(icons/nav-arrow-down.svg) center no-repeat
+
+    &-childs
+      position: absolute 63px auto auto auto
+      visibility: hidden
+      padding: 20px 30px
+      margin: 0
+      background: #fff
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
+      box: horisontal
+
+      &:before
+        content: ''
+        size: 0
+        border-style: solid
+        border-width: 0 12px 12px
+        border-color: transparent transparent #fff
+        position: absolute -12px 0 auto 0
+        margin: auto
+
+      &:after
+        content: ''
+        size: 100% 44px
+        position: absolute 0 0 auto
+        transform: translateY(-100%)
+        border-radius: 100% 100% 0 0
+
+      &-wrap
+        
+        ^&-title
+          text: 14px #BDBDBD bold
+          margin-bottom: 20px
+        
+        ^&-link
+          color: #fff
+
+    &-child
+      margin: 0
+      padding: 0
+
+      &-link
+        white-space: nowrap
+        color: #2B2B2B
+
+        &:hover
+          color: #2F80ED
+
+  .btn
+    padding: 8px 46px 9px
+    font-size: 16px

@@ -3,10 +3,12 @@
   border-radius: 64px
   padding: 9px 42px @md 13px 40px
   box-sizing: border-box 
-  text: bold center capitalize #fff normal 
+  text: bold center #fff normal 
   font-size: 16px @md 18px
   cursor: pointer
   transition: ease .2s
+  white-space: nowrap
+
   &:active
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1)
 
@@ -49,6 +51,16 @@
       background-color: rgba(255, 255, 255, .4)
     &:active
       box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1)
+
+  &_white
+    background: rgba(255, 255, 255, 0.9)
+    color: #000
+    font-size: 16px !important
+    font-weight: 400
+    padding: 10px 55px !important
+
+    &:hover
+      background: #fff
 
 .icon
   display: inline-block

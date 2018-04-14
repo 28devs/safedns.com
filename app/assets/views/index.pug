@@ -1,4 +1,5 @@
 include inc/head.pug
+include inc/nav.pug
 
 section.hero
   .hero__content
@@ -14,6 +15,15 @@ section.hero
   .hero__down
     .hero__down__scroll Scroll down
     .hero__down__choose Choose your category
+
+  .hero__cookie.hero__cookie_hide
+    .container
+      p 
+        | <b>We use cookies</b> to improve your browsing experience. Parts of the website may not work as expected without them. By closing or ignoring this message, you are consenting to our 
+        a(href='#!') use of cookies
+        |.
+
+      a.btn.btn_white(href='#!') I agree
 
 section.hero-blocks
   .hero-blocks__item
@@ -58,3 +68,4 @@ section.hero-blocks
     a.btn.btn_outline(href='#!') More >
 
 include inc/footer.pug
+include inc/foot.pug

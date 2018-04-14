@@ -18,10 +18,10 @@
 
     hgroup
       display: none @sm block
-      margin-top: 5vw
+      margin-top: 6vw
 
       h1
-        margin-bottom: 5px
+        margin-bottom: 0.3vw
 
       h4
         font-weight: 400  
@@ -36,12 +36,13 @@
   &__down
     color: #000 @sm #fff
     text-align: center
-    width: 100%
+    width: 100% @sm auto
     margin-top: auto
     padding: 20px @sm 0 0 38px 0
-    margin-bottom: 0 @sm 3vw
+    margin-bottom: 0 @sm 1.5vw
     text-align: left @sm center
     background: #fff @sm svg-load('icons/down-arrow.svg', stroke: #fff) center bottom no-repeat
+    cursor: pointer
 
     &__scroll
       display: none @sm block
@@ -51,30 +52,68 @@
       text: 18px 1.3 700
       background: svg-load('icons/down-arrow.svg', stroke: #000, stroke-width: 2px) right bottom no-repeat
 
+  &__cookie
+    background: rgba(0, 0, 0, 0.95) @sm rgba(0, 0, 0, 0.8)
+    position: absolute auto 0 0 0
+    color: #E0E0E0
+    padding: 15px 10px @sm 2vw 0 @xl 25px 0
+    text-align: center @sm left
+    transition: .2s ease
+    transform-origin: bottom
+
+    &_hide
+      opacity: 0
+      transform: scaleY(0)
+    
+    .container
+      box: horisontal space-between center
+      flex-wrap: wrap @sm nowrap
+
+      b
+        color: #ececec
+
+      p
+        margin: 0
+        padding: 0 0 15px @sm 0 3vw 0 0
+
+      .btn
+        margin: 0 auto
+
 .hero-blocks
   box: horisontal wrap
 
   &__item
     box: vertical top left
-    padding: 28px 20px 22px @sm 3vw 4vw
+    padding: 28px 20px 13px @sm 3vw 4vw
     color: #fff
+    cursor: pointer @sm default
 
     h2
       font-size: responsive 24px 36px
       font-range: $sm-px $lg-px
-      margin-bottom: 0
+      margin-bottom: 2px @sm 2vw @lg 14px
 
     ul
       padding: 0
       list-style: none
-      margin: 0 0 1vw
+      margin: 0
+      margin-bottom: 10px @md 20px
 
       li
         display: none @sm block
+        font-size: 14px @md 16px @lg 18px
+        position: relative
+        padding-left: 0 @sm 20px
 
         &:before
           content: ''
-          size
+          size: 9px 2px
+          background: #fff
+          display: none @sm block
+          margin-right: 9px
+          position: absolute
+          left: 0
+          top: 9px @md 11px @lg 13px
 
         &:first-child
           display: block @sm none
