@@ -60,20 +60,44 @@
 .stats
   width: 100%
 
-  h2
+  &__title 
     text-align: center
+    margin-bottom: 30px @md 4vw @lg 90px
   
   &__items-wrap
     box: horizontal
 
   &__item
-    box: horizontal center middle
+    box: horizontal center top
     width: 100% @md 33.33333% 
 
   &__number
     font-size: 72px
-    line-height: normal
+    margin: 0
+    line-height: .9
     font-weight: 700
+    background: linear-gradient(101.56deg, #2F80ED, #EB5757)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
   &__wrap-text
-    box: vertical space-around
+    box: vertical top
+    margin-left: 22px
+
+  &__text-title
+    margin: 0
+    margin-bottom: 3px
+    text: bold 24px normal
+
+  &__desc
+    font-size: 16px
+    margin: 0
+    
+.info-about
+
+  &__location
+    padding: 20px @md 3vw @lg 60px 0
+    background: url('../img/about/map.png') right top no-repeat, 
+                linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
+                url('../img/about/location-bg.jpg') center / cover
+    color: #fff

@@ -43,22 +43,34 @@ include inc/header.pug
       
     hr
 
-    section.stats
-      h2 SafeDNS in numbers
+    section.stats.block-outter
+      h2.stats__title SafeDNS in numbers
 
       .stats__items-wrap
         each val in aboutStats
           .stats__item
             p.stats__number= val.number
             .stats__wrap-text
-              p= val.title
-              p= val.desc
+              p.stats__text-title= val.title
+              p.stats__desc= val.desc
 
+  section.info-about
 
+    .info-about__location
+      .container
+        p.h2 Location
+        p.h3 SafeDNS has locations in 
+          b San Francisco
+        p Our Headquarters are located conveniently in the SOMA district in SF, close to the scenic Embarcadero and Baseball stadium. It's also right next to a MUNI stop and a few blocks away from the Caltrain. We offer commuter benefits to our employees, and have plenty of indoor bike storage.
 
-          
+    a.info-about__press
+      .container
+        p.h2 Press About Us
+        p.h3 32 mentions in the press
 
-
+    a.info-about__job
+      p.h2 Job In SafeDNS
+      p.h3 6 open vacanties
 
 
 
