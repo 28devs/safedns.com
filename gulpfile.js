@@ -33,7 +33,6 @@
     const processors = [
       require('postcss-import'),
       require('postcss-alias'),
-      require('postcss-short-text'),
       require('postcss-short-spacing'),
       require('postcss-assets')({
         loadPaths: ['img/', 'img/about', 'img/icons'],
@@ -45,6 +44,7 @@
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
       require('postcss-inline-media'),
+      require('postcss-short-text'),
       require('postcss-size'),
       require('postcss-position'),
       require('postcss-flexbox'),
@@ -55,7 +55,7 @@
       require('postcss-inline-svg')({
         path: 'app/assets/img/'
       }),
-      require('autoprefixer'),
+      //require('autoprefixer'),
       require('postcss-unique-selectors'),
       require('css-mqpacker')({
         sort: true
@@ -67,8 +67,8 @@
       .pipe(
         postcss(processors, { parser: sugarss }).on('error', notify.onError())
       )
-      .pipe(sourcemaps.write('.'))
       .pipe(rename({ extname: '.css' }))
+      .pipe(sourcemaps.write('/'))
       .pipe(gulp.dest('dest/styles/'));
   });
   gulp.task('css', function() {

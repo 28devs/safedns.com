@@ -1,8 +1,17 @@
 .sticky-nav
-  position: fixed 0 0 auto 0
+  position: absolute 0 0 auto 0
   padding: 26px 0 30px
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.3)
   z-index: 999
+  visibility: hidden
+
+  &:after
+    content: ''
+    background: #fff
+    position: absolute 0 0 0 0
+    z-index: 1
+    transform: scaleY(0)
+    transform-origin: top
   
   ul
     list-style: none
@@ -10,22 +19,42 @@
   .container
     box: horisontal space-between center
     flex-wrap: nowrap
+    z-index: 2
+    position: relative
+
+  &__menu
+    background: svg-load(icons/nav-menu.svg, fill='#fff')
+    size: size(icons/nav-menu.svg)
+    display: block @lg none
 
   &__logo
-    background: resolve(logo-white.png)
-    size: size(logo-white.png)
-    min-width: width(logo-white.png)
-    transform: translateY(2px)
+    background: url(../img/logo-nav.png)
+    size: 184px 40px
+    min-width: 184px
+    transform: translateY(2px) translateX(28px) @lg translateY(2px)
+    display: none @sm block 
 
   &__nav
     box: horisontal space-between
+    flex-direction: column @lg row 
     width: 100%
     padding: 0
-    margin: 0 20px 0 20px @xl 0 20px 0 101px
+    margin: 0 @lg 0 1.5vw 0 3vw @xl 0 20px 0 101px
+    position: absolute 0 0 auto 0 @lg static
+    background: #fff @lg transparent
+
+    &-close
+      display: block @lg none
+
+      ^&-link
+        &:after
+          background: svg-load(icons/nav-close.svg) no-repeat center !important
+
 
     &-wrap
-      margin: 0 33px 0 0
+      margin: 0 @lg 0 1.5vw 0 0 @xl 0 33px 0 0
       position: relative
+      border-bottom: 1px #E0E0E0 solid @lg 0
 
       &:hover
         ^^&-childs
@@ -34,10 +63,11 @@
           opacity: 1
 
       &:last-child
-        margin: 0 0 0 auto
+        margin: 0 @lg 0 0 0 auto
 
         ^^&-link
           font-weight: 400
+          font-size: 14px @lg 16px
 
         ^^&-childs
           padding: 17px 36px 14px 58px
@@ -46,15 +76,19 @@
           margin-bottom: 7px
         
       ^&-link
-        text: 16px #fff bold
-        padding: 0 24px 0 0
+        text: 18px #000 400 @lg 16px #fff 700
+        padding: 14px 21px 14px 20px @lg 0 21px 0 0 @xl 0 24px 0 0
         position: relative
+        transition: $sticky-nav-transition
+        display: block @lg inline
 
         &:after
           content: ''
           position: absolute 0 0 0 auto
-          width: 20px
-          background: resolve(icons/nav-arrow-down.svg) center no-repeat
+          width: 50px @lg 20px
+          background: svg-load(icons/nav-arrow-down.svg, stroke='#000') center no-repeat @lg svg-load(icons/nav-arrow-down.svg, stroke='#fff') center no-repeat
+          transition: $sticky-nav-transition
+          background-size: 16px @lg auto
 
     &-childs
       position: absolute 63px auto auto auto
@@ -62,11 +96,12 @@
       padding: 17px 49px 14px 41px
       margin: 0
       background: #fff
-      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
+      // box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
+      filter: drop-shadow(0px 9px 10px rgba(0, 0, 0, 0.25))
       box: horisontal
       transform: translateY(-5px)
       transform-origin: top
-      transition: .15s ease
+      transition: $sticky-nav-transition-childs
       opacity: 0
 
       &:before
@@ -177,5 +212,42 @@
             background-position: -200px 0
 
   .btn
-    padding: 8px 46px 9px
+    padding: 6px 26px 8px @lg 8px 46px 9px
     font-size: 16px
+
+  &_load-state
+    visibility: visible
+    transition1: $sticky-nav-transition
+
+    &:after
+      transition: $sticky-nav-transition-childs
+
+  &_scroll-state
+    position: fixed
+    box-shadow: inset 0 -1px rgba(255, 255, 255, .3), 0px 4px 10px rgba(0, 0, 0, 0.1)
+    padding: 15px 0
+
+    &:after
+      transform: scaleY(1)
+
+    ^&__logo
+      background-position: 0 40px
+      transform: translateY(1px)
+
+    ^&__nav
+      &-link
+        color: #333
+
+        &:after
+          background: svg-load(icons/nav-arrow-down.svg, stroke='#333') center no-repeat
+
+      &-childs
+        top: 47px
+
+        &:after
+          height: 26px
+
+    .btn
+      color: #333
+      border-color: #333
+      padding: 6px 46px 8px

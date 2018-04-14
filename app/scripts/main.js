@@ -51,13 +51,33 @@ if (heroDownBtn) {
 
 const submenus = document.querySelectorAll('.sticky-nav__nav-childs');
 
-const submenusAligment = function() {
-  submenus.forEach(function(elem) {
-    elem.style.left =
-      -Math.round(
-        Math.abs((elem.offsetWidth - elem.parentNode.offsetWidth) / 2)
-      ) + 'px';
-  });
-};
-submenusAligment();
-window.onresize = submenusAligment;
+if (submenus) {
+  const submenusAligment = function() {
+    submenus.forEach(function(elem) {
+      elem.style.left =
+        -Math.round(
+          Math.abs((elem.offsetWidth - elem.parentNode.offsetWidth) / 2)
+        ) + 'px';
+    });
+  };
+  submenusAligment();
+  window.onresize = submenusAligment;
+}
+
+//
+// Minify header when page scroll
+//
+
+const stickyNav = document.querySelector('.sticky-nav');
+
+if (stickyNav) {
+  stickyNav.classList.add('sticky-nav_load-state');
+
+  const headerScroll = function() {
+    this.scrollY < 8
+      ? stickyNav.classList.remove('sticky-nav_scroll-state')
+      : stickyNav.classList.add('sticky-nav_scroll-state');
+  };
+  headerScroll();
+  window.onscroll = headerScroll;
+}
