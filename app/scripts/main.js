@@ -19,23 +19,31 @@
 const heroCookieBlock = document.querySelector('.hero__cookie');
 const heroCookieBtn = document.querySelector('.hero__cookie .btn');
 
-heroCookieBtn.addEventListener('click', function() {
-  heroCookieBlock.classList.add('hero__cookie_hide');
-});
+if (heroCookieBtn) {
+  heroCookieBtn.addEventListener('click', function() {
+    heroCookieBlock.classList.add('hero__cookie_hide');
+  });
 
-setTimeout(function() {
-  heroCookieBlock.classList.remove('hero__cookie_hide');
-}, 2000);
+  setTimeout(function() {
+    heroCookieBlock.classList.remove('hero__cookie_hide');
+  }, 2000);
+}
+
+//
+// Scroll home page than press down button
+//
 
 const heroBlocks = document.querySelector('.hero-blocks');
 const heroDownBtn = document.querySelector('.hero__down');
 
-heroDownBtn.addEventListener('click', function() {
-  heroBlocks.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth'
+if (heroDownBtn) {
+  heroDownBtn.addEventListener('click', function() {
+    heroBlocks.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth'
+    });
   });
-});
+}
 
 //
 // Center alignment for submenus
