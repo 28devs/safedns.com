@@ -26,12 +26,11 @@
     &-wrap
       margin: 0 33px 0 0
       position: relative
-      perspective: 828px
 
       &:hover
         ^^&-childs
           visibility: visible
-          transform: rotateX(0)
+          transform: translateY(0)
           opacity: 1
 
       &:last-child
@@ -39,6 +38,12 @@
 
         ^^&-link
           font-weight: 400
+
+        ^^&-childs
+          padding: 17px 36px 14px 58px
+
+        ^^&-child-wrap
+          margin-bottom: 7px
         
       ^&-link
         text: 16px #fff bold
@@ -59,11 +64,10 @@
       background: #fff
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
       box: horisontal
-      transform: rotateX(-15deg)
+      transform: translateY(-5px)
       transform-origin: top
       transition: .15s ease
       opacity: 0
-
 
       &:before
         content: ''
@@ -83,6 +87,7 @@
 
       &-wrap
         position: relative
+        margin: 0
 
         &:nth-child(2)
           margin-left: 108px
@@ -96,7 +101,7 @@
         
         ^&-title
           text: 14px #BDBDBD bold
-          margin-bottom: 18px
+          margin: 10px 0 18px
         
         ^&-link
           color: #fff
@@ -107,6 +112,7 @@
 
       &-wrap
         margin: 6px 0
+        position: relative
 
       &-link
         white-space: nowrap
@@ -114,6 +120,61 @@
 
         &:hover
           color: #2F80ED
+
+    &-flag
+
+      ^&-link, ^&-child-link
+        &:before
+          size: 20px
+          border-radius: 50%
+          content: ''
+          position: absolute 0 auto 0 -25px
+          background-image: url(../img/flags.png)
+
+      ^&-child-link:before
+        top: 3px
+        left: -28px
+
+      &-en > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -180px 0
+      &-ar > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -100px 0
+      &-de > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -120px 0
+      &-it > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -160px 0
+      &-pt > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -20px 0
+      &-br > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -40px 0
+      &-es > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -60px 0
+      &-sw > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -80px 0
+      &-tr > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -140px 0
+      &-pk > 
+        ^^&-link, ^^&-child-link
+          &:before
+            background-position: -200px 0
 
   .btn
     padding: 8px 46px 9px
