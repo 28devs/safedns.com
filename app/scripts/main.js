@@ -16,6 +16,15 @@
 // Hide cookie block than press 'I agree'
 //
 
+//
+// Hide cookie block than press 'I agree'
+//
+
+const containerBlock = document.querySelector('.container');
+const containerBlockMargin = containerBlock.style;
+
+console.log(containerBlockMargin)
+
 const heroCookieBlock = document.querySelector('.hero__cookie');
 const heroCookieBtn = document.querySelector('.hero__cookie .btn');
 
