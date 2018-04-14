@@ -15,15 +15,28 @@
 //
 // Hide cookie block than press 'I agree'
 //
+const infoAboutPadding = function() {
+  console.log(document.documentElement.clientWidth)
+  let containerBlock = document.querySelector('.container');
+
+  let elemLeft = document.querySelector('.info-about__press-wrap');
+  let elemRight = document.querySelector('.info-about__job-wrap');
+
+  let margin = containerBlock.offsetLeft
+  let padding = window.getComputedStyle(containerBlock, null).getPropertyValue('padding-left')
+  console.log(margin)
+  console.log(padding)
+  elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
+  elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', infoAboutPadding)
+window.addEventListener('resize', infoAboutPadding)
 
 //
 // Hide cookie block than press 'I agree'
 //
 
-const containerBlock = document.querySelector('.container');
-const containerBlockMargin = containerBlock.style;
-
-console.log(containerBlockMargin)
 
 const heroCookieBlock = document.querySelector('.hero__cookie');
 const heroCookieBtn = document.querySelector('.hero__cookie .btn');

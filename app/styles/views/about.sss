@@ -94,6 +94,8 @@
     margin: 0
     
 .info-about
+  .h2
+    margin: 0
   
   &__location
     width: 100%
@@ -102,6 +104,7 @@
                 linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
                 url('../img/about/location-bg.jpg') center / cover
     text: 400 #fff
+    border-bottom: 2px solid #fff
 
     .h2,.h3
       font-weight: 400
@@ -126,14 +129,40 @@
         size: 48px
         transform: rotate(180deg)
         background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat left 15px center / 13px
+  
 
   &__press
     background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%),
                 url('../img/about/press-bg.jpg') center / cover
     text: 400 #fff
-  
+    border-right: 2px solid #fff
+
+    &-wrap
+      padding-right: 10px @md 2vw @lg 84px 
+
   &__job
     background: linear-gradient(100.32deg, rgba(47, 128, 237, 0.8) -119.89%, rgba(235, 87, 87, 0.8) 104.24%),
                 url('../img/about/job-bg.jpg') center / cover
     text: 400 #fff
-    
+
+    &-wrap
+      padding-left: 10px @md 2vw @lg 84px 
+
+.partners
+  h2
+    width: 100%
+    text-align: center
+    margin-bottom: 30px @md 5vw @lg 60px 
+
+  &__items-wrap
+    width: 100%
+    box: center middle @md horizontal top space-between
+    flex-wrap: wrap 
+
+  &__item
+    width: 100% @sm 50% @xl 33.33333% 
+    box: horizontal center middle
+    margin-bottom: 30px
+      
+    img
+      
