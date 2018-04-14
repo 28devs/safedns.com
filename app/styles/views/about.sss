@@ -94,10 +94,46 @@
     margin: 0
     
 .info-about
-
+  
   &__location
+    width: 100%
     padding: 20px @md 3vw @lg 60px 0
     background: url('../img/about/map.png') right top no-repeat, 
                 linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
                 url('../img/about/location-bg.jpg') center / cover
-    color: #fff
+    text: 400 #fff
+
+    .h2,.h3
+      font-weight: 400
+    
+    &-text-wrap
+      max-width: 100% @lg 40vw @xl 45vw
+  
+  &__links
+    box: horizontal
+
+  &__press, &__job
+    width: 50%
+    padding: 20px @md 3vw @lg 60px 0
+
+    &-wrap
+      box: gorizontal center space-between
+
+      &:after
+        content: ''
+        display: block
+        border-radius: 50%
+        size: 48px
+        transform: rotate(180deg)
+        background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat left 15px center / 13px
+
+  &__press
+    background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%),
+                url('../img/about/press-bg.jpg') center / cover
+    text: 400 #fff
+  
+  &__job
+    background: linear-gradient(100.32deg, rgba(47, 128, 237, 0.8) -119.89%, rgba(235, 87, 87, 0.8) 104.24%),
+                url('../img/about/job-bg.jpg') center / cover
+    text: 400 #fff
+    
