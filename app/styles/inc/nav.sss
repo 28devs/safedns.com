@@ -26,16 +26,22 @@
     &-wrap
       margin: 0 33px 0 0
       position: relative
+      perspective: 828px
 
       &:hover
         ^^&-childs
           visibility: visible
+          transform: rotateX(0)
+          opacity: 1
 
       &:last-child
         margin: 0 0 0 auto
+
+        ^^&-link
+          font-weight: 400
         
       ^&-link
-        color: #fff
+        text: 16px #fff bold
         padding: 0 24px 0 0
         position: relative
 
@@ -48,11 +54,16 @@
     &-childs
       position: absolute 63px auto auto auto
       visibility: hidden
-      padding: 20px 30px
+      padding: 17px 49px 14px 41px
       margin: 0
       background: #fff
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
       box: horisontal
+      transform: rotateX(-15deg)
+      transform-origin: top
+      transition: .15s ease
+      opacity: 0
+
 
       &:before
         content: ''
@@ -71,10 +82,21 @@
         border-radius: 100% 100% 0 0
 
       &-wrap
+        position: relative
+
+        &:nth-child(2)
+          margin-left: 108px
+
+          &:before
+            content: ''
+            position: absolute 47px auto 15px -52px
+            size: 1px auto
+            background: #E3E3E3
+
         
         ^&-title
           text: 14px #BDBDBD bold
-          margin-bottom: 20px
+          margin-bottom: 18px
         
         ^&-link
           color: #fff
@@ -82,6 +104,9 @@
     &-child
       margin: 0
       padding: 0
+
+      &-wrap
+        margin: 6px 0
 
       &-link
         white-space: nowrap
