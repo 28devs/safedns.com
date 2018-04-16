@@ -13,30 +13,31 @@
 // });
 
 //
-// Hide cookie block than press 'I agree'
+// Container simulation for About page
 //
-const infoAboutPadding = function() {
-  console.log(document.documentElement.clientWidth)
-  let containerBlock = document.querySelector('.container');
 
-  let elemLeft = document.querySelector('.info-about__press-wrap');
-  let elemRight = document.querySelector('.info-about__job-wrap');
+const elemLeft = document.querySelector('.info-about__press-wrap');
+const elemRight = document.querySelector('.info-about__job-wrap');
 
-  let margin = containerBlock.offsetLeft
-  let padding = window.getComputedStyle(containerBlock, null).getPropertyValue('padding-left')
-  console.log(margin)
-  console.log(padding)
-  elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
-  elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
+if (elemLeft) {
+  const infoAboutPadding = function() {
+    let containerBlock = document.querySelector('.container');
+    let margin = containerBlock.offsetLeft;
+    let padding = window
+      .getComputedStyle(containerBlock, null)
+      .getPropertyValue('padding-left');
+
+    elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
+    elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
+  };
+
+  document.addEventListener('DOMContentLoaded', infoAboutPadding);
+  window.addEventListener('resize', infoAboutPadding);
 }
 
-document.addEventListener('DOMContentLoaded', infoAboutPadding)
-window.addEventListener('resize', infoAboutPadding)
-
 //
 // Hide cookie block than press 'I agree'
 //
-
 
 const heroCookieBlock = document.querySelector('.hero__cookie');
 const heroCookieBtn = document.querySelector('.hero__cookie .btn');
@@ -102,4 +103,56 @@ if (stickyNav) {
   };
   headerScroll();
   window.onscroll = headerScroll;
+}
+
+//
+// Accordion for mobile menu
+//
+
+const stickyNavMobileAccordionMenu = document.querySelectorAll(
+  '.sticky-nav__nav-wrap:not(.sticky-nav__nav-close) .sticky-nav__nav-link'
+);
+
+if (stickyNavMobileAccordionMenu) {
+  stickyNavMobileAccordionMenu.forEach(function(elem) {
+    elem.addEventListener('click', function() {
+      this.classList.toggle('sticky-nav__nav-link_active');
+
+      let panel = this.nextElementSibling;
+
+      panel.style.maxHeight
+        ? (panel.style.maxHeight = null)
+        : (panel.style.maxHeight = panel.scrollHeight + 'px');
+    });
+  });
+}
+
+//
+// Open mobile menu button
+//
+
+const stickyNavMobileOpenBtn = document.querySelector('.sticky-nav__menu');
+
+if (stickyNavMobileOpenBtn) {
+  stickyNavMobileOpenBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document
+      .querySelector('.sticky-nav__nav')
+      .classList.add('sticky-nav__nav_open');
+  });
+}
+
+//
+// Close menu button in mobile menu
+//
+
+const stickyNavMobileCloseBtn = document.querySelector(
+  '.sticky-nav__nav-close'
+);
+
+if (stickyNavMobileCloseBtn) {
+  stickyNavMobileCloseBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.parentNode.classList.remove('sticky-nav__nav_open');
+  });
 }

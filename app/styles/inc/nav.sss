@@ -1,17 +1,18 @@
 .sticky-nav
-  position: absolute 0 0 auto 0
-  padding: 26px 0 30px
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.3)
+  position: fixed 0 0 auto 0
+  padding: 26px 7px 30px @sm 26px 0 30px
+  box-shadow: none @sm inset 0 -1px rgba(255, 255, 255, 0.3)
   z-index: 999
   visibility: hidden
 
-  &:after
-    content: ''
-    background: #fff
-    position: absolute 0 0 0 0
-    z-index: 1
-    transform: scaleY(0)
-    transform-origin: top
+  // &:after
+  //   content: ''
+  //   background: #fff
+  //   position: absolute 0 0 0 0
+  //   z-index: 1
+  //   transform: scaleY(0)
+  //   transform-origin: top
+  //   transition: $sticky-nav-transition
   
   ul
     list-style: none
@@ -40,13 +41,21 @@
     width: 100%
     padding: 0
     margin: 0 @lg 0 1.5vw 0 3vw @xl 0 20px 0 101px
-    position: absolute 0 0 auto 0 @lg static
+    position: absolute -26px 0 auto 0 @lg static
     background: #fff @lg transparent
+    max-height: 100vh
+    overflow: auto @lg visible
+    transform: translateY(-1000%) @lg none
+
+    &_open
+      transform: translateY(0)
 
     &-close
       display: block @lg none
-
+    
       ^&-link
+        text: 24px #BDBDBD !important
+
         &:after
           background: svg-load(icons/nav-close.svg) no-repeat center !important
 
@@ -68,9 +77,10 @@
         ^^&-link
           font-weight: 400
           font-size: 14px @lg 16px
+          padding: 17px * @lg 14px *
 
         ^^&-childs
-          padding: 17px 36px 14px 58px
+          padding: 0 36px 0 53px @lg 17px 36px 14px 58px
 
         ^^&-child-wrap
           margin-bottom: 7px
@@ -84,25 +94,34 @@
 
         &:after
           content: ''
-          position: absolute 0 0 0 auto
+          position: absolute 0 0 4px auto @lg absolute 0 0 0 auto
           width: 50px @lg 20px
-          background: svg-load(icons/nav-arrow-down.svg, stroke='#000') center no-repeat @lg svg-load(icons/nav-arrow-down.svg, stroke='#fff') center no-repeat
+          background: svg-load(icons/nav-arrow-down.svg, stroke='#fff') center no-repeat
           transition: $sticky-nav-transition
           background-size: 16px @lg auto
 
+        &-lang
+          float: left
+          margin-right: 40px
+          display: block @lg none
+
     &-childs
-      position: absolute 63px auto auto auto
-      visibility: hidden
-      padding: 17px 49px 14px 41px
+      position: static @lg absolute 63px auto auto auto
+      visibility: visible @lg hidden
+      padding: 0 21px 0 20px @lg 17px 49px 14px 41px
       margin: 0
       background: #fff
       // box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25)
-      filter: drop-shadow(0px 9px 10px rgba(0, 0, 0, 0.25))
+      filter: none @lg drop-shadow(0px 9px 10px rgba(0, 0, 0, 0.25))
       box: horisontal
-      transform: translateY(-5px)
+      transform: none @lg translateY(-5px)
       transform-origin: top
       transition: $sticky-nav-transition-childs
-      opacity: 0
+      opacity: 1 @lg 0
+      overflow: hidden @lg visible
+      z-index: -1
+      max-height: 0 @lg none
+      flex-direction: column @lg row
 
       &:before
         content: ''
@@ -112,6 +131,7 @@
         border-color: transparent transparent #fff
         position: absolute -12px 0 auto 0
         margin: auto
+        display: none @lg block
 
       &:after
         content: ''
@@ -119,31 +139,36 @@
         position: absolute 0 0 auto
         transform: translateY(-100%)
         border-radius: 100% 100% 0 0
+        display: none @lg block
 
       &-wrap
         position: relative
-        margin: 0
+        margin: -4px 0 0 0 @lg 0
 
         &:nth-child(2)
-          margin-left: 108px
+          margin-left: 0 @lg 108px
 
           &:before
             content: ''
             position: absolute 47px auto 15px -52px
             size: 1px auto
             background: #E3E3E3
+            display: none @lg block
+
+          ^^&-title
+            margin-top: -5px @md 10px 
 
         
         ^&-title
           text: 14px #BDBDBD bold
-          margin: 10px 0 18px
+          margin: 0px 0 8px @lg 10px 0 18px
         
         ^&-link
           color: #fff
 
     &-child
       margin: 0
-      padding: 0
+      padding: 0 0 16px 0 @lg 0
 
       &-wrap
         margin: 6px 0
@@ -152,6 +177,7 @@
       &-link
         white-space: nowrap
         color: #2B2B2B
+        font-size: 14px @lg 16px
 
         &:hover
           color: #2F80ED
@@ -163,12 +189,14 @@
           size: 20px
           border-radius: 50%
           content: ''
-          position: absolute 0 auto 0 -25px
+          position: absolute 0 auto 2px auto @lg absolute 0 auto 0 -25px
           background-image: url(../img/flags.png)
+          transform: translateX(-24px) @lg none
+          margin: auto
 
       ^&-child-link:before
         top: 3px
-        left: -28px
+        left: -9px @lg -28px
 
       &-en > 
         ^^&-link, ^^&-child-link
@@ -212,7 +240,7 @@
             background-position: -200px 0
 
   .btn
-    padding: 6px 26px 8px @lg 8px 46px 9px
+    padding: 0 @sm 6px 26px 8px @lg 8px 46px 9px
     font-size: 16px
 
   &_load-state
@@ -225,21 +253,29 @@
   &_scroll-state
     position: fixed
     box-shadow: inset 0 -1px rgba(255, 255, 255, .3), 0px 4px 10px rgba(0, 0, 0, 0.1)
-    padding: 15px 0
+    padding: 15px * !important
+    background: #fff
 
     &:after
       transform: scaleY(1)
 
+    ^&__menu
+      background: svg-load(icons/nav-menu.svg, fill='#333')
+
     ^&__logo
       background-position: 0 40px
-      transform: translateY(1px)
+      transform: translate(28px, 1px) @lg translateY(1px)
 
     ^&__nav
-      &-link
-        color: #333
+      top: -15px
 
-        &:after
-          background: svg-load(icons/nav-arrow-down.svg, stroke='#333') center no-repeat
+      &-wrap
+
+        ^^^&__nav-link
+          color: #333
+
+          &:after
+            background: svg-load(icons/nav-arrow-down.svg, stroke='#333') center no-repeat
 
       &-childs
         top: 47px
@@ -250,4 +286,18 @@
     .btn
       color: #333
       border-color: #333
-      padding: 6px 46px 8px
+      // padding: 6px 46px 8px
+
+  &_open
+    display: block
+
+@media $lg-down
+  .sticky-nav__nav-wrap:not(:first-child) .sticky-nav__nav-link:after
+    background: svg-load(icons/nav-arrow-down.svg, stroke='#000') center no-repeat / 16px !important
+
+@media $sm-down
+  .sticky-nav .btn
+    &, &:hover, &:active
+      border-color: transparent !important
+      background: transparent !important
+    

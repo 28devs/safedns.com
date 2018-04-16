@@ -31,9 +31,11 @@
   //write style
   gulp.task('postcss', function() {
     const processors = [
+      // require('stylelint')({
+      //   extends: 'stylelint-config-sugarss-recommended'
+      // }),
       require('postcss-import'),
       require('postcss-alias'),
-      require('postcss-short-spacing'),
       require('postcss-assets')({
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
@@ -44,6 +46,7 @@
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
       require('postcss-inline-media'),
+      require('postcss-short-spacing'),
       require('postcss-short-text'),
       require('postcss-size'),
       require('postcss-position'),

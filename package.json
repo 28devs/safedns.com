@@ -47,6 +47,8 @@
     "postcss-simple-vars": "^4.1.0",
     "postcss-size": "^2.0.0",
     "postcss-unique-selectors": "^2.0.2",
+    "stylelint": "^9.2.0",
+    "stylelint-config-sugarss-recommended": "^1.1.0",
     "sugarss": "^1.0.1"
   },
   "scripts": {
