@@ -40,7 +40,7 @@
     flex-direction: column @lg row 
     width: 100%
     padding: 0
-    margin: 0 @lg 0 1.5vw 0 3vw @xl 0 20px 0 101px
+    margin: 0 @lg 0 1.5vw 0 3vw @xl 0 20px 0 72px
     position: absolute -26px 0 auto 0 @lg static
     background: #fff @lg transparent
     max-height: 100vh
@@ -240,7 +240,7 @@
             background-position: -200px 0
 
   .btn
-    padding: 0 @sm 6px 26px 8px @lg 8px 46px 9px
+    padding: 0 @sm 6px 26px 8px @xl 8px 46px 9px
     font-size: 16px
 
   &_load-state
@@ -309,13 +309,13 @@
   .sticky-nav
 
     &__logo
-      transform: translate(-14px, 0)
+      transform: translate(-14px, 0) @lg translateY(2px)
 
     &__nav
       margin: 0 @lg 0 3vw 0 1.5vw @xl 0 71px 0 20px
 
       &-wrap
-        margin: 0 @lg 0 0 0 1.5vw @xl 0 0 0 33px
+        margin: 0 @lg 0 0 0 0.4vw @xl 0 0 0 28px
 
         &:last-child
           margin: 0 @lg 0 auto 0 0
@@ -325,7 +325,8 @@
 
             &:before
               transform: translateX(0)
-              right: 20px
+              right: 20px @lg 0
+              left: auto
 
           .sticky-nav__nav-childs
             padding: 0 53px 0 36px @lg 17px 58px 14px 36px

@@ -110,7 +110,6 @@
           size: 9px 2px
           background: #fff
           display: none @sm block
-          margin-right: 9px
           position: absolute
           left: 0
           top: 9px @md 11px @lg 13px
@@ -151,7 +150,7 @@
       &:hover
         background: #fff !important
         color: #333 !important
-        border-color: #fff
+        border-color: #fff !important
 
 @media $lg-down $landscape
   .hero
@@ -164,7 +163,7 @@
     &__down
       display: none
 
-@media $sm-down
+@media $sm
   .hero-blocks
     box: horisontal wrap
 
@@ -181,3 +180,15 @@
   .hero__cookie-text
     padding: 0 0 15px @sm 0 0 0 3vw
     text-align: right
+
+  .hero-blocks__item ul 
+    li
+      padding-right: 0 @sm 20px
+      padding-left: 0
+
+      &:before
+        right: 0
+
+  .hero__down__choose
+    text-align: right
+    background-position-x: left
