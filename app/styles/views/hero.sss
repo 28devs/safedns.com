@@ -1,7 +1,7 @@
 .hero
   background: 
     linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%),
-    resolve(hero-bg.jpg) center / cover
+    resolve(hero-bg.jpg) center / cover, #242235
   height: 100vh
   box: vertical middle center
 
@@ -14,7 +14,7 @@
       background: resolve(logo-big-white.png)
       size: size(logo-big-white.png)
       display: block @sm none
-      margin: 7vw auto 5vw
+      margin: 1vw auto 5vw
 
     hgroup
       display: none @sm block
@@ -81,15 +81,6 @@
 
 .hero-blocks
   box: horisontal wrap
-
-  + .footer
-    padding-top: 0
-
-    > .container
-      display: none
-
-    .footer__copy
-      margin-top: 0
 
   &__item
     box: vertical top left
@@ -158,6 +149,27 @@
       padding: 6px 39px 7px 45px
 
       &:hover
-        background: #fff
-        color: #333
+        background: #fff !important
+        color: #333 !important
         border-color: #fff
+
+@media $lg-down $landscape
+  .hero
+    .btn
+      margin: 10px 0 42px 0
+
+    &__down
+      display: none
+
+@media $sm-down
+  .hero-blocks
+    box: horisontal wrap
+
+    + .footer
+      padding-top: 0
+
+      > .container
+        display: none
+
+      .footer__copy
+        margin-top: 0
