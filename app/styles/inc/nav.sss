@@ -32,7 +32,7 @@
     background: url(../img/logo-nav.png)
     size: 184px 40px
     min-width: 184px
-    transform: translateY(2px) translateX(28px) @lg translateY(2px)
+    transform: translate(28px, 0) @lg translateY(2px)
     display: none @sm block 
 
   &__nav
@@ -143,7 +143,7 @@
 
       &-wrap
         position: relative
-        margin: -4px 0 0 0 @lg 0
+        margin: -4px 0 0 0 !important @lg 0
 
         &:nth-child(2)
           margin-left: 0 @lg 108px
@@ -264,7 +264,7 @@
 
     ^&__logo
       background-position: 0 40px
-      transform: translate(28px, 1px) @lg translateY(1px)
+      transform: translate(28px, 0) @lg translateY(0)
 
     ^&__nav
       top: -15px
@@ -306,7 +306,7 @@
   .sticky-nav
 
     &__logo
-      transform: translateY(2px) translateX(-14px)
+      transform: translate(-14px, 0)
 
     &__nav
       margin: 0 @lg 0 3vw 0 1.5vw @xl 0 71px 0 20px
@@ -347,3 +347,6 @@
             left: auto
             right: -52px
           
+    &_scroll-state
+      .__logo
+        transform: translate(-14px, 0)
