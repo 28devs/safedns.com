@@ -35,11 +35,8 @@ window.onload = function() {
 };
 
 //
-<<<<<<< HEAD
 // Do indentation as the container 
-=======
 // Container simulation for About page
->>>>>>> f91f8ed4d1154f6255d731488eb5fd66e06711d3
 //
 
 const elemLeft = document.querySelector('.info-about__press-wrap');
