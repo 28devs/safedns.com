@@ -1,5 +1,4 @@
 window.onload = function() {
-
   // init vanilla slider
 
   const menuSlider = $('#awards-slider').lightSlider({
@@ -25,31 +24,22 @@ window.onload = function() {
     // ]
   });
 
-  const prevSlide = $('#prev').on('click', function () {
+  const prevSlide = $('#prev').on('click', function() {
     menuSlider.goToPrevSlide();
   });
-  const nextSlide = $('#next').on('click', function () {
+  const nextSlide = $('#next').on('click', function() {
     menuSlider.goToNextSlide();
   });
-
 };
 
 //
-// Do indentation as the container 
+// Do indentation as the container
 // Container simulation for About page
 //
 
 const elemLeft = document.querySelector('.info-about__press-wrap');
 const elemRight = document.querySelector('.info-about__job-wrap');
 
-<<<<<<< HEAD
-  let margin = containerBlock.offsetLeft
-  let padding = window.getComputedStyle(containerBlock, null).getPropertyValue('padding-left')
-
-  elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
-  elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
-}
-=======
 if (elemLeft) {
   const infoAboutPadding = function() {
     let containerBlock = document.querySelector('.container');
@@ -57,7 +47,6 @@ if (elemLeft) {
     let padding = window
       .getComputedStyle(containerBlock, null)
       .getPropertyValue('padding-left');
->>>>>>> f91f8ed4d1154f6255d731488eb5fd66e06711d3
 
     elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
     elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
