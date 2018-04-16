@@ -59,6 +59,9 @@
         path: 'app/assets/img/'
       }),
       //require('autoprefixer'),
+      require('postcss-pxtorem')({
+        selectorBlackList: ['h1', 'h2', 'h3', 'h4', 'h5', '.btn']
+      }),
       require('postcss-unique-selectors'),
       require('css-mqpacker')({
         sort: true

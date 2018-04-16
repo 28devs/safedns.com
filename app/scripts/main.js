@@ -13,19 +13,6 @@
 // });
 
 //
-// Rtl direction
-//
-
-function KeyPress(e) {
-  var evtobj = window.event ? event : e;
-  if (evtobj.keyCode == 90 && evtobj.ctrlKey) {
-    document.body.classList.toggle('direction-rtl');
-  }
-}
-
-document.onkeydown = KeyPress;
-
-//
 // Container simulation for About page
 //
 
@@ -86,9 +73,10 @@ if (heroDownBtn) {
 //
 
 const submenus = document.querySelectorAll('.sticky-nav__nav-childs');
+var submenusAligment;
 
 if (submenus) {
-  const submenusAligment = function() {
+  submenusAligment = function() {
     submenus.forEach(function(elem) {
       elem.style.left =
         -Math.round(
@@ -169,3 +157,16 @@ if (stickyNavMobileCloseBtn) {
     this.parentNode.classList.remove('sticky-nav__nav_open');
   });
 }
+
+//
+// Rtl direction
+//
+
+function rtlDirection(e) {
+  var evtobj = window.event ? event : e;
+  if (evtobj.keyCode == 90) {
+    document.documentElement.classList.toggle('rtl');
+    submenusAligment();
+  }
+}
+document.onkeydown = rtlDirection;

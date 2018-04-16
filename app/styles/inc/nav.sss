@@ -77,7 +77,7 @@
         ^^&-link
           font-weight: 400
           font-size: 14px @lg 16px
-          padding: 17px * @lg 14px *
+          padding: 17px * @lg 0 20px 0 25px
 
         ^^&-childs
           padding: 0 36px 0 53px @lg 17px 36px 14px 58px
@@ -189,7 +189,7 @@
           size: 20px
           border-radius: 50%
           content: ''
-          position: absolute 0 auto 2px auto @lg absolute 0 auto 0 -25px
+          position: absolute 0 auto 2px auto @lg absolute 0 auto 0 0
           background-image: url(../img/flags.png)
           transform: translateX(-24px) @lg none
           margin: auto
@@ -301,3 +301,49 @@
       border-color: transparent !important
       background: transparent !important
     
+
+.rtl
+  .sticky-nav
+
+    &__logo
+      transform: translateY(2px) translateX(-14px)
+
+    &__nav
+      margin: 0 @lg 0 3vw 0 1.5vw @xl 0 71px 0 20px
+
+      &-wrap
+        margin: 0 @lg 0 0 0 1.5vw @xl 0 0 0 33px
+
+        &:last-child
+          margin: 0 @lg 0 auto 0 0
+
+          .sticky-nav__nav-link
+            padding-right: 25px
+
+            &:before
+              right: 0
+              left: auto
+
+          .sticky-nav__nav-childs
+            padding: 0 53px 0 36px @lg 17px 58px 14px 36px
+
+          .sticky-nav__nav-child-link:before
+            right: -9px @lg -28px
+            left: auto
+
+      &-link
+        padding: 14px 21px 14px 20px @lg 0 0 0 21px @xl 0 0 0 24px
+
+        &:after
+          position: absolute 0 auto 4px 0 @lg absolute 0 auto 0 0
+
+      &-childs
+
+        &-wrap:nth-child(2)
+          margin-right: 108px
+          margin-left: 0
+
+          &:before
+            left: auto
+            right: -52px
+          
