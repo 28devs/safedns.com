@@ -1,25 +1,30 @@
 .awards
-  width: 100%
-  box: horizontal space-between
+  // width: 100%
+  // box: horizontal space-between
 
   .award 
-    background: resolve('cube.png')
-    background-size: contain
-    background-repeat: no-repeat
-    background-position: center
-    width: 100% @md auto
-    height: height('cube.png')
-    text-align: center
-    box: middle center
+    // background: resolve('cube.png')
+    // background-size: contain
+    // background-repeat: no-repeat
+    // background-position: center
+    // width: 100% @md auto
+    // height: height('cube.png')
+    // text-align: center
+    // box: middle center
+    // position: relative
   
   &__slider-wrap
-    width: 100% @md 65%
-    box: horizontal middle space-around
+    width:  65%
+    // box: horizontal middle space-around
+    // position: relative
+    // display: block
+    // position: relative
+    // width: 600px !important
 
   &__slider
-    box: horizontal middle space-around
-    width: 75%
-    margin: 0 auto
+    // box: horizontal middle space-around
+    // width: 75%
+    // margin: 0 auto
 
     &-prev, &-next
       size: size('slider-arrow.svg')
@@ -34,28 +39,28 @@
 
 
   &__item
-    background-repeat: no-repeat
-    background-position: center
-    position: relative
+    // background-repeat: no-repeat
+    // background-position: center
+    // position: relative
 
-    &:after
-      position: absolute auto -30px -70px -30px
-      content: ''
-      height: 60px
-      background: resolve('shadow.png') no-repeat center / contain
+    // &:after
+    //   position: absolute auto -30px -70px -30px
+    //   content: ''
+    //   height: 60px
+    //   background: resolve('shadow.png') no-repeat center / contain
       
-    &-1
-      background: resolve('award-1.jpg')
-      size: size('award-1.jpg')
-    &-2
-      background: resolve('award-2.jpg')
-      size: size('award-2.jpg')
-    &-3
-      background: resolve('award-3.jpg')
-      size: size('award-3.jpg')
-    &-4
-      background: resolve('award-4.jpg')
-      size: size('award-4.jpg')
+    // &-1
+    //   background: resolve('award-1.jpg')
+    //   size: size('award-1.jpg')
+    // &-2
+    //   background: resolve('award-2.jpg')
+    //   size: size('award-2.jpg')
+    // &-3
+    //   background: resolve('award-3.jpg')
+    //   size: size('award-3.jpg')
+    // &-4
+    //   background: resolve('award-4.jpg')
+    //   size: size('award-4.jpg')
 
 .stats
   width: 100%
@@ -99,8 +104,10 @@
   
   &__location
     width: 100%
-    padding: 20px @md 3vw @lg 60px 0
-    background: url('../img/about/map.png') right top no-repeat, 
+    padding: 20px 0 @md 3vw 0 @lg 60px 0
+    background: linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
+                url('../img/about/location-bg.jpg') center / cover @lg
+                url('../img/about/map.png') right top no-repeat, 
                 linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
                 url('../img/about/location-bg.jpg') center / cover
     text: 400 #fff
@@ -117,7 +124,7 @@
 
   &__press, &__job
     width: 50%
-    padding: 20px @md 3vw @lg 60px 0
+    padding: 20px 0 @md 3vw 0 @lg 60px 0
 
     &-wrap
       box: gorizontal center space-between
@@ -126,10 +133,11 @@
         content: ''
         display: block
         border-radius: 50%
-        size: 48px
+        size: 35px @md 48px
         transform: rotate(180deg)
         background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat left 15px center / 13px
-  
+        background-position-x: 11px @md 15px
+        background-size: 10px @md 13px
 
   &__press
     background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%),
@@ -148,21 +156,29 @@
     &-wrap
       padding-left: 10px @md 2vw @lg 84px 
 
-.partners
-  h2
-    width: 100%
-    text-align: center
-    margin-bottom: 30px @md 5vw @lg 60px 
-
-  &__items-wrap
-    width: 100%
-    box: center middle @md horizontal top space-between
-    flex-wrap: wrap 
+//block logos
+.logos
+  width: 100%
+  box: center middle @md horizontal top center
+  flex-wrap: wrap @xl nowrap
 
   &__item
-    width: 100% @sm 50% @xl 33.33333% 
+    width: 100% @sm 25% @lg 25% 
     box: horizontal center middle
-    margin-bottom: 30px
-      
+    margin-bottom: 30px @md 4vw @lg 60px
+
     img
-      
+      max-height: 77px
+      max-width: 160px @sm 80% @lg 200px
+
+  &_more
+    flex-wrap: wrap @xl wrap
+
+    ^&__item
+      width: 50% @sm 25% @lg 25%
+
+      img
+        max-width: 160px @sm 80% @lg 200px
+
+      &:last-of-type
+        display: none @sm flex

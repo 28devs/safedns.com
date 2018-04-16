@@ -1,4 +1,5 @@
 include inc/head.pug
+//- include inc/nav.pug
 include inc/header.pug
 
 .page-container
@@ -7,6 +8,7 @@ include inc/header.pug
     section.col-12.col-md-6
 
       h2 What we do?
+
       p 
         b SafeDNS 
         |  is founded by a team of IT and security experts for developing high quality web filtering solutions for a wide range of markets and consumers.
@@ -33,18 +35,19 @@ include inc/header.pug
         p.award__title.h2 SafeDNS Awards 
 
       .awards__slider-wrap
-        .awards__slider-prev
-        #awards-slider.awards__slider
-          each val in awardsSlider
-            .awards__item-wrap
-              .awards__item(class="awards__item-" +val.item style="background: url('img/about/" +val.href+ "')")
-                
-        .awards__slider-next 
+        div
+          .awards__slider-prev#prev
+          ul#awards-slider.awards__slider
+            each val in awardsSlider
+              //- .awards__item-wrap
+              li.awards__item(class="awards__item-")
+                img(src="img/about/" +val.href)
+          .awards__slider-next#next 
       
     hr
 
     section.stats.block-outter
-      h2.stats__title SafeDNS in numbers
+      h2.section-title SafeDNS in numbers
 
       .stats__items-wrap
         each val in aboutStats
@@ -76,18 +79,45 @@ include inc/header.pug
           .h2 Job In SafeDNS
             p.h3 6 open vacanties
 
-  section.partners
+  section.partners.block-outter
     .container
-      h2 Partners among router manufacturers
+      h2.section-title Partners among router manufacturers
 
-      .partners__items-wrap
-        .partners__item
+      .logos
+        .logos__item
           img(src="img/partners/partners-1.png", alt="")
-        .partners__item
+        .logos__item
           img(src="img/partners/partners-2.png", alt="")
-        .partners__item
+        .logos__item
           img(src="img/partners/partners-3.png", alt="")
-        .partners__item
+        .logos__item
           img(src="img/partners/partners-4.png", alt="")
 
+  hr
+
+  section.customers.block-outter
+    .container
+      h2.section-title Our customers
+
+      .logos.logos_more
+        .logos__item
+          img(src="img/customers/customers-1.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-2.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-3.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-4.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-5.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-6.png", alt="")
+        .logos__item
+          img(src="img/customers/customers-7.png", alt="")
+
+
+
+
+
 include inc/foot.pug
+include inc/footer.pug

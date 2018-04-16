@@ -146,7 +146,7 @@
     gulp.watch('app/assets/**/*.*', gulp.series('assets'));
     gulp.watch('app/assets/views/**/*.*', gulp.series('views'));
     gulp.watch('app/libs/**/*.js', gulp.series('libs-js'));
-    gulp.watch('app/libs/libs.scss', gulp.series('libs-css'));
+    gulp.watch('app/libs/**/*.css', gulp.series('libs-css'));
   });
 
   gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));

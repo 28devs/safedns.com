@@ -1,19 +1,41 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//
-// init vanilla slyder
-//
-// var slider = tns({
-//   container: '#awards-slider',
-//   items: 4,
-//   mouseDrag: true,
-//   controls: false,
-//   nav: false
-// });
+window.onload = function() {
 
-// });
+  // init vanilla slider
+
+  const menuSlider = $('#awards-slider').lightSlider({
+    item: 4,
+    loop: true,
+    controls: false,
+    pager: false,
+    autoWidth: true
+    // responsive: [{
+    //     breakpoint: 1220,
+    //     settings: {
+    //       item: 4,
+    //       slideMove: 4
+    //     }
+    //   },
+    //   {
+    //     breakpoint: 668,
+    //     settings: {
+    //       item: 3,
+    //       slideMove: 3
+    //     }
+    //   }
+    // ]
+  });
+
+  const prevSlide = $('#prev').on('click', function () {
+    menuSlider.goToPrevSlide();
+  });
+  const nextSlide = $('#next').on('click', function () {
+    menuSlider.goToNextSlide();
+  });
+
+};
 
 //
-// Hide cookie block than press 'I agree'
+// Do indentation as the container 
 //
 const infoAboutPadding = function() {
   console.log(document.documentElement.clientWidth)
@@ -24,8 +46,7 @@ const infoAboutPadding = function() {
 
   let margin = containerBlock.offsetLeft
   let padding = window.getComputedStyle(containerBlock, null).getPropertyValue('padding-left')
-  console.log(margin)
-  console.log(padding)
+
   elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
   elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
 }
