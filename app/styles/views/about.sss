@@ -1,66 +1,47 @@
 .awards
-  // width: 100%
-  // box: horizontal space-between
+  width: 100%
+  box: horizontal space-between
 
   .award 
-    // background: resolve('cube.png')
-    // background-size: contain
-    // background-repeat: no-repeat
-    // background-position: center
-    // width: 100% @md auto
-    // height: height('cube.png')
-    // text-align: center
-    // box: middle center
-    // position: relative
+    background: resolve('cube.png')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    width: 100% @md auto
+    height: height('cube.png')
+    text-align: center
+    box: middle center
+    position: relative
   
-  &__slider-wrap
+  &__slider-controll
     width: 65%
-    // box: horizontal middle space-around
-    // position: relative
-    // display: block
-    // position: relative
-    // width: 600px !important
+    box: horizontal middle space-around
 
-  &__slider
-    // box: horizontal middle space-around
-    // width: 75%
-    // margin: 0 auto
+    ^&__slider
+      &-prev, &-next
+        size: size('slider-arrow.svg')
+        background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
+        cursor: pointer
+        transition: ease .2s
+        &:hover
+          background: svg-load('icons/slider-arrow.svg', stroke: #828282)
+        
+      &-next
+        transform: rotate(180deg)
 
-    &-prev, &-next
-      size: size('slider-arrow.svg')
-      background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
-      cursor: pointer
-      transition: ease .2s
-      &:hover
-        background: svg-load('icons/slider-arrow.svg', stroke: #828282)
-      
-    &-next
-      transform: rotate(180deg)
+  &__slider-wrap
+    width: 80%
+    margin: 0 auto
+    display: block
 
+  &__item-wrap
+    text-align: center
 
   &__item
-    // background-repeat: no-repeat
-    // background-position: center
-    // position: relative
 
-    // &:after
-    //   position: absolute auto -30px -70px -30px
-    //   content: ''
-    //   height: 60px
-    //   background: resolve('shadow.png') no-repeat center / contain
-      
-    // &-1
-    //   background: resolve('award-1.jpg')
-    //   size: size('award-1.jpg')
-    // &-2
-    //   background: resolve('award-2.jpg')
-    //   size: size('award-2.jpg')
-    // &-3
-    //   background: resolve('award-3.jpg')
-    //   size: size('award-3.jpg')
-    // &-4
-    //   background: resolve('award-4.jpg')
-    //   size: size('award-4.jpg')
+    img
+      max-width: 100%
+      max-height: 100%
 
 .stats
   width: 100%

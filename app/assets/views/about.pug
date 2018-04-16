@@ -34,15 +34,15 @@ include inc/header.pug
       .award
         p.award__title.h2 SafeDNS Awards 
 
-      .awards__slider-wrap
-        div
-          .awards__slider-prev#prev
-          ul#awards-slider.awards__slider
-            each val in awardsSlider
-              //- .awards__item-wrap
-              li.awards__item(class="awards__item-")
-                img(src="img/about/" +val.href)
-          .awards__slider-next#next 
+      .awards__slider-controll
+          #prev.awards__slider-prev
+          .awards__slider-wrap
+            ul#awards-slider.awards__slider
+              each val in awardsSlider
+                li.awards__item-wrap
+                  .awards__item(class="awards__item-")
+                    img(src="img/about/" +val.href)
+          #next.awards__slider-next 
       
     hr
 

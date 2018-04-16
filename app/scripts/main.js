@@ -6,7 +6,6 @@ window.onload = function() {
     loop: true,
     controls: false,
     pager: false,
-    autoWidth: true
     // responsive: [{
     //     breakpoint: 1220,
     //     settings: {
@@ -26,7 +25,9 @@ window.onload = function() {
 
   const prevSlide = $('#prev').on('click', function() {
     menuSlider.goToPrevSlide();
+    console.log(123)
   });
+
   const nextSlide = $('#next').on('click', function() {
     menuSlider.goToNextSlide();
   });
