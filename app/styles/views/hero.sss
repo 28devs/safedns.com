@@ -82,15 +82,6 @@
 .hero-blocks
   box: horisontal wrap
 
-  + .footer
-    padding-top: 0
-
-    > .container
-      display: none
-
-    .footer__copy
-      margin-top: 0
-
   &__item
     box: vertical top left
     padding: 28px 20px 13px @sm 3vw 4vw
@@ -158,6 +149,27 @@
       padding: 6px 39px 7px 45px
 
       &:hover
-        background: #fff
-        color: #333
+        background: #fff !important
+        color: #333 !important
         border-color: #fff
+
+@media $lg-down $landscape
+  .hero
+    .btn
+      margin: 10px 0 42px 0
+
+    &__down
+      display: none
+
+@media $sm
+  .hero-blocks
+    box: horisontal wrap
+
+    + .footer
+      padding-top: 0
+
+      > .container
+        display: none
+
+      .footer__copy
+        margin-top: 0

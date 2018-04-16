@@ -13,6 +13,19 @@
 // });
 
 //
+// Rtl direction
+//
+
+function KeyPress(e) {
+  var evtobj = window.event ? event : e;
+  if (evtobj.keyCode == 90 && evtobj.ctrlKey) {
+    document.body.classList.toggle('direction-rtl');
+  }
+}
+
+document.onkeydown = KeyPress;
+
+//
 // Container simulation for About page
 //
 
@@ -56,7 +69,7 @@ if (heroCookieBtn) {
 // Scroll home page than press down button
 //
 
-const heroBlocks = document.querySelector('.hero-blocks');
+const heroBlocks = document.querySelector('.hero__down');
 const heroDownBtn = document.querySelector('.hero__down');
 
 if (heroDownBtn) {
