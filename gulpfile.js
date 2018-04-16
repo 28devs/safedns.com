@@ -39,10 +39,9 @@
       require('postcss-assets')({
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
-        relative: 'styles/',
-        cache: true
+        relative: 'styles/'
+        // cache: true
       }),
-      require('lost'),
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
       require('postcss-inline-media'),

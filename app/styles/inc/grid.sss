@@ -13,25 +13,27 @@
     margin-top: 0
 
 .container
-  lost-center: $container-sm-px
+  max-width: $container-sm-px
+  margin-left: auto
+  margin-right: auto
   padding: 0 10px @md 0 3vw @xl 0 25px
   box-sizing: content-box
 
 .row
-  lost-flex-container: row
+  display: flex
   width: 100%
 
 @media $md 
   .container
-    lost-center: $container-md-px
+    max-width: $container-md-px
 
 @media $lg
   .container
-    lost-center: $container-lg-px
+    max-width: $container-lg-px
 
 @media $xl
   .container
-    lost-center: $container-xl-px
+    max-width: $container-xl-px
 
 
 .col-12
