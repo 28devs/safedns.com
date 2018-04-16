@@ -25,7 +25,9 @@
   &_outline
     border: 1px solid #fff
     font-weight: 400
-    padding: 8px 32px 8px 36px @md 12px 31px 12px 35px
+    // padding: 8px 32px 8px 36px @md 12px 31px 12px 35px
+    padding: 8px 32px @md 12px 31px
+
     &:hover
       background-color: $primary !important
       border-color: $primary !important
@@ -36,6 +38,7 @@
     border-radius: 42px
     padding: 9px 33px
     background-color: #f2f2f2
+
     &:hover
       color: #828282
       background-color: #ebebeb
@@ -48,8 +51,10 @@
     border-radius: 42px
     padding: 9px 33px
     background-color: rgba(255, 255, 255, .2)
+
     &:hover
       background-color: rgba(255, 255, 255, .4)
+      
     &:active
       box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1)
 
@@ -81,4 +86,8 @@
   
     .btn:hover &
       background: svg-load('icons/back-arrow.svg', fill: #828282)
- 
+
+.rtl
+  .icon
+    transform: scaleX(-1)
+    transform-origin: left

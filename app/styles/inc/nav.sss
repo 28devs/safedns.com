@@ -303,6 +303,9 @@
     
 
 .rtl
+  .sticky-nav__nav-child-link:before
+    transform: translateX(24px)
+
   .sticky-nav
 
     &__logo
@@ -318,11 +321,11 @@
           margin: 0 @lg 0 auto 0 0
 
           .sticky-nav__nav-link
-            padding-right: 25px
+            padding-right: 50px @lg 25px
 
             &:before
-              right: 0
-              left: auto
+              transform: translateX(0)
+              right: 20px
 
           .sticky-nav__nav-childs
             padding: 0 53px 0 36px @lg 17px 58px 14px 36px
@@ -336,6 +339,9 @@
 
         &:after
           position: absolute 0 auto 4px 0 @lg absolute 0 auto 0 0
+
+        &-lang
+          display: none
 
       &-childs
 
