@@ -1,23 +1,22 @@
 .awards
   width: 100%
   box: horizontal space-between
+  flex-wrap: wrap @sm no-wrap
 
   .award 
-    background: resolve('cube.png')
-    background-size: contain
-    background-repeat: no-repeat
-    background-position: center
+    background: resolve('cube.png') center no-repeat / contain
     width: 100% @md auto
-    height: height('cube.png')
+    height: 58px @md 90px @lg 153px @lg height('cube.png')
     text-align: center
     box: middle center
     position: relative
+    margin: 0 auto
 
     &__title
       margin: 0
   
   &__slider-control
-    width: 70%
+    width: 100% @lg 62% @xl 70%
     box: horizontal middle space-around
     visibility: hidden
     max-height: 213px
@@ -30,7 +29,8 @@
       height: 100% !important
 
       &-prev, &-next
-        size: size('slider-arrow.svg')
+        height: height('slider-arrow.svg')
+        width: 12px @sm 18px @lg width('slider-arrow.svg')
         background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
         cursor: pointer
         transition: ease .2s
@@ -42,18 +42,18 @@
 
   &__slider-wrap
     width: 80%
-    margin: 0 auto
+    margin: 0 @lg 0 0 0 40px
     display: block
 
   &__item-wrap
     text-align: center
 
   &__item
-    padding: 0 16px
+    padding: 0
 
     img
       max-width: 100%
-      max-height: 100%
+      max-height: 90px @lg 100%
 
 .stats
   width: 100%

@@ -3,28 +3,45 @@ window.onload = function() {
 
   const awardsSlider = $('#awards-slider').lightSlider({
     item: 4,
+    slideMove: 3,
     loop: false,
     controls: false,
     pager: false,
     autoWidth: true,
+    adaptiveHeight: true,
+    slideMargin: 50,
     onSliderLoad: function() {
       $('.awards__slider-control').addClass('awards__slider-control_load');
-    }
-    // responsive: [{
-    //     breakpoint: 1220,
-    //     settings: {
-    //       item: 4,
-    //       slideMove: 4
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 668,
-    //     settings: {
-    //       item: 3,
-    //       slideMove: 3
-    //     }
-    //   }
-    // ]
+    },
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          item: 4,
+          slideMove: 3,
+          autoWidth: false,
+          slideMargin: 40
+        }
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          item: 3,
+          slideMove: 2,
+          autoWidth: false,
+          slideMargin: 30
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          item: 2,
+          slideMove: 2,
+          autoWidth: false,
+          slideMargin: 20
+        }
+      }
+    ]
   });
 
   const prevSlide = $('#prev').on('click', function() {
