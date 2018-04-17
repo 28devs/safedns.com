@@ -3,6 +3,9 @@
 
 .block-outer
   margin: 50px 0 @md 6vw 0 @lg 65px 0
+
+  &:last-child
+    margin-bottom: 0
   
 .container
   max-width: $container-sm-px
@@ -54,11 +57,13 @@
   .col-lg-9
     width: 75%
 
-@media &sm
-  .col-12:first-child, .col-md-6, .col-md-4
+@media $md
+  .col-12:first-child, [class^='col-md-']
     :first-child
       margin-top: 0
 
   .col-12, .col-md-6, .col-md-4
     :last-child
       margin-bottom: 0
+
+      
