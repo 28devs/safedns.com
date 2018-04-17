@@ -1,6 +1,15 @@
 mixin header(data)
-  header.header
+  header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
     .container
       .row
-        .col-12
-          h1= data.title
+        .col-6
+          h1.header__title !{data.title}
+          if data.desc 
+            p.header__desc !{data.desc} 
+        
+        if data.button
+          .col-6
+            .header__control-elem
+              .btn.btn_outline 
+                | Watch video
+                i.icon.icon_play
