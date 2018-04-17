@@ -104,7 +104,7 @@ li
   margin: 5px 0 @sm 1.5vw 0 @xl 8px 0
 
   h2 + &
-    margin-top: -17px
+    margin-top: -15px @sm -10px @lg -17px
     margin-bottom: 30px
 
 a
@@ -144,14 +144,14 @@ ul.list
         background: linear-gradient(135deg, #EB5757 -31.25%, #2F80ED 181.25%)
 
   &_large
-    padding-left: 28px @sm 40px
+    padding-left: 28px @sm 34px @lg 40px
 
     li
       margin-bottom: 28px @sm 33px @lg 40px
 
       &:before
         size: 12px @md 16px
-        left: -28px @sm -40px
+        left: -28px @sm -34px @lg -40px
         top: 5px @md 6px @lg 8px
         
 
@@ -163,3 +163,10 @@ h3 + ul.list_large
   text-align: center
   margin-bottom: 30px @md 5vw @lg 70px 
 
+.main-content
+  > h2, > h3
+    text-align: center @sm left
+    font-weight: 400
+
+  h2 + .text-tips
+    text-align: center @sm left
