@@ -1,8 +1,11 @@
 .page-container
-  padding: 25px 0 @sm 5vw 0 @lg 80px 0
+  padding: 25px 0 40px @sm 5vw 0 6vw @lg 45px 0 65px
 
 .block-outer
   margin: 50px 0 @md 6vw 0 @lg 65px 0
+
+  &:last-child
+    margin-bottom: 0
   
 .container
   max-width: $container-sm-px
@@ -38,19 +41,29 @@
 @media $md 
   .col-md-8
     width: 66.66666%
+
   .col-md-6
     width: 50%
-    padding: 0 10px @md 0 3vw @xl 0 26px
+    // padding: 0 10px @md 0 3vw @xl 0 26px
   
   .col-md-4
     width: 33.33334%
-    padding: 0 10px @md 0 3vw @xl 0 26px
+    // padding: 0 10px @md 0 3vw @xl 0 26px
 
-@media &sm
-  .col-12:first-child, .col-md-6, .col-md-4
+@media $lg
+  .col-lg-3
+    width: 25%
+
+  .col-lg-9
+    width: 75%
+
+@media $md
+  .col-12:first-child, [class^='col-md-']
     :first-child
       margin-top: 0
 
   .col-12, .col-md-6, .col-md-4
     :last-child
       margin-bottom: 0
+
+      
