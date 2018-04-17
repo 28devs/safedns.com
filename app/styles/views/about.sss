@@ -12,12 +12,23 @@
     text-align: center
     box: middle center
     position: relative
+
+    &__title
+      margin: 0
   
-  &__slider-controll
-    width: 65%
+  &__slider-control
+    width: 70%
     box: horizontal middle space-around
+    visibility: hidden
+    max-height: 213px
+    overflow: hidden
+
+    &_load
+      visibility: visible
 
     ^&__slider
+      height: 100% !important
+
       &-prev, &-next
         size: size('slider-arrow.svg')
         background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
@@ -38,6 +49,7 @@
     text-align: center
 
   &__item
+    padding: 0 16px
 
     img
       max-width: 100%
