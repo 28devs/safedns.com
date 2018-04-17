@@ -1,8 +1,10 @@
 .header
-  padding: 145px 0 50px
+  padding: 80px 0 40px @sm 20vw 0 8vw @md 14vw 0 5vw @lg 145px 0 50px
   position: relative
   background-position: center
   background-size: cover
+  text-align: center @md left 
+  background-color: #242235
 
   .container 
     z-index: 5
@@ -11,15 +13,28 @@
   &:after 
     position: absolute 0 0 0 0
     content: ''
-    background: linear-gradient(108.77deg, rgba(47, 128, 237, 0.3) -7.62%, rgba(235, 87, 87, 0.3) 104.67%)
+    background: linear-gradient(105.02deg, rgba(47, 128, 237, 0.3) -7.01%, rgba(235, 87, 87, 0.3) 104.35%), rgba(0, 0, 0, 0.5)
     z-index: 1
 
-  &__title, &__desc
+  &__title, &__desc, &__breadcrumbs
     color: #fff
     margin: 0
-  
+
+  &__breadcrumbs
+    color: rgba(255, 255, 255, 0.5)
+    font-size: 16px @sm 21px @xl 24px 
+
+    &:after
+      content: ''
+      background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0) center / contain
+      size: 10px
+      margin-left: 8px
+      display: inline-block
+      background-repeat: no-repeat
+      transform: rotate(180deg)
+
   &__control-elem
-    box: horizontal middle right
+    box: horizontal middle center @sm bottom center 
     height: 100%
   
   &_large

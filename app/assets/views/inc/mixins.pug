@@ -2,13 +2,15 @@ mixin header(data)
   header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
     .container
       .row
-        .col-6
+        .col-12.col-md-8
+          if data.crumbs
+            a.header__breadcrumbs(href="#!") !{data.crumbs}
           h1.header__title !{data.title}
           if data.desc 
             p.header__desc !{data.desc} 
         
         if data.button
-          .col-6
+          .col-12.col-md-4
             .header__control-elem
               .btn.btn_outline 
                 | Watch video
