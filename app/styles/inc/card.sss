@@ -25,12 +25,12 @@
     padding: 17px @xl 22px 32px 
 
   &__media
-    margin-bottom: 10px @md 3vw @xl 26px
     
     ^&__content
-      box: vertical center top @sm horizontal space-between top
+      box: vertical center top @sm horizontal space-between top @md vertical center top @lg horizontal space-between top
       // flex-direction: column @sm row
       padding: 17px @xl 32px
+      text-align: center @sm left @md center @lg left
 
       .text-tips + p
         margin: 10px 0 18px @sm 1.9vw 0 2.1vw @xl 15px 0 22px
@@ -41,4 +41,8 @@
       background-size: cover
       background-position: center
       border-radius: 4px
-      margin-right: 24px
+      margin-right: 0 @sm 24px @md 0 @lg 24px
+      margin-bottom: 18px
+
+    .btn
+      padding: * 20px @sm * 25px @xl * 40px
