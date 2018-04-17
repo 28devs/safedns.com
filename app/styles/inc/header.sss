@@ -34,9 +34,13 @@
       transform: rotate(180deg)
 
   &__control-elem
-    box: horizontal middle center @sm bottom center 
+    box: horizontal middle center @md bottom center 
     height: 100%
+    margin-top: 10px @md 0
   
   &_large
     padding: 185px * 115px
 
+[dir=rtl]
+  .header__breadcrumbs:after
+    transform: rotate(0deg)
