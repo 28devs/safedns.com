@@ -2,9 +2,17 @@
   border: 1px solid #E0E0E0
   border-radius: 4px
 
+  h3:first-child
+    margin-top: 0
+
   &__fixed
     max-width: 230px
     margin: 0 auto 20px
+
+    .btn
+      display: block
+      text-align: center
+      padding: * 20px !important
 
   &__img
     img
@@ -16,7 +24,21 @@
   &__content
     padding: 17px @xl 22px 32px 
 
-    .btn
-      display: block
-      text-align: center
-      padding: * 20px !important
+  &__media
+    margin-bottom: 10px @md 3vw @xl 26px
+    
+    ^&__content
+      box: vertical center top @sm horizontal space-between top
+      // flex-direction: column @sm row
+      padding: 17px @xl 32px
+
+      .text-tips + p
+        margin: 10px 0 18px @sm 1.9vw 0 2.1vw @xl 15px 0 22px
+
+    &-img
+      size: 96px
+      min-width: 96px
+      background-size: cover
+      background-position: center
+      border-radius: 4px
+      margin-right: 24px
