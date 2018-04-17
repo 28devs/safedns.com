@@ -1,11 +1,15 @@
 window.onload = function() {
   // init vanilla slider
 
-  const menuSlider = $('#awards-slider').lightSlider({
+  const awardsSlider = $('#awards-slider').lightSlider({
     item: 4,
-    loop: true,
+    loop: false,
     controls: false,
-    pager: false
+    pager: false,
+    autoWidth: true,
+    onSliderLoad: function() {
+      $('.awards__slider-control').addClass('awards__slider-control_load');
+    }
     // responsive: [{
     //     breakpoint: 1220,
     //     settings: {
@@ -24,12 +28,11 @@ window.onload = function() {
   });
 
   const prevSlide = $('#prev').on('click', function() {
-    menuSlider.goToPrevSlide();
-    console.log(123);
+    awardsSlider.goToPrevSlide();
   });
 
   const nextSlide = $('#next').on('click', function() {
-    menuSlider.goToNextSlide();
+    awardsSlider.goToNextSlide();
   });
 };
 
