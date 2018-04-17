@@ -61,12 +61,17 @@
   &_white
     background: rgba(255, 255, 255, 0.9)
     color: #000
-    font-size: 16px !important
     font-weight: 400
-    padding: 10px 55px !important
 
     &:hover
       background: #fff
+
+  &_small
+    padding: 10px 55px !important
+    font-size: 16px !important
+
+    ^&_back
+      margin-top: -3px
 
 .icon
   display: inline-block
@@ -82,7 +87,7 @@
   &_back
     background: svg-load('icons/back-arrow.svg', fill: #BDBDBD)
     size: 16px 16px
-    margin: 0 9px -3px 0
+    margin: 0 9px -2px 0
   
     .btn:hover &
       background: svg-load('icons/back-arrow.svg', fill: #828282)

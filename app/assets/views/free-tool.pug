@@ -6,9 +6,12 @@ include inc/nav.pug
   .container
     .row
       aside.col-12.col-md-4.col-lg-3
-        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, et quis vel, enim itaque corporis ducimus eaque placeat ullam impedit explicabo excepturi aperiam molestias iure nobis consectetur commodi nesciunt facere dolore quasi libero. Totam eveniet necessitatibus recusandae non fuga enim velit voluptas eum rerum. Beatae enim blanditiis hic mollitia, numquam deleniti dicta alias culpa totam sit, iure fuga eos. Incidunt, nulla inventore? Adipisci, explicabo. Sit est tempora odit maxime ut saepe corporis culpa tenetur odio vel enim, quas voluptatum dignissimos dolorum nulla recusandae velit molestiae illo consequuntur, adipisci eaque. Temporibus id vero amet consequuntur ut voluptatibus quia at harum quos.
+        .card
+          .card__img 
+          .card__content
+            .btn.btn_primary Download
 
-      main.col-12.col-md-8.col-lg-9
+      main.main-content.col-12.col-md-8.col-lg-9
         h2 TelegramBot
         p.text-tips Lust update - 14 april 2018
         
@@ -31,7 +34,8 @@ include inc/nav.pug
             h3 Example 2-colomn list
             p Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
 
-        .btn See another tools
+        .article-bottom-link
+          .btn.btn_small.btn_back <i class="icon icon_back"></i> See another tools
 
 
 include inc/footer.pug
