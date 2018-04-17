@@ -2,6 +2,35 @@ include inc/head.pug
 include inc/nav.pug
 +header(headerPress)
 
+.page-container
+
+  .pub-reviews.block-outer
+    .container
+      h2.section-title Publications reviews
+      .row
+        each val in pubReviews
+          .col-12.col-md-6
+            a
+              article
+                h1.pub-reviews__title
+                time.pub-reviews__date
+                p.pub-reviews__text
+
+      .more-article
+        a.btn.btn_more View more
+
+
+  .press-about.block-outer
+    .container
+      h2.section-title Press about us 
+      .row
+        each val in pressAbout
+          .col-12.col-md-4
+            a
+              article
+                h1.pub-reviews__title
+                time.pub-reviews__date
+                p.pub-reviews__text
 
 
 include inc/foot.pug
