@@ -1,6 +1,6 @@
 .hero
   background: 
-    linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%), resolve(hero-bg.jpg) center / cover, #242235
+    linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%), resolve('hero/hero-bg.jpg') center / cover, #242235
   height: 100vh
   box: vertical middle center
 
@@ -13,8 +13,8 @@
     margin-top: auto
 
     ^&__logo
-      background: resolve(logo-big-white.png)
-      size: size(logo-big-white.png)
+      background: resolve('logo-big-white.png')
+      size: size('logo-big-white.png')
       display: block @sm none
       margin: 1vw auto 5vw
 
@@ -130,19 +130,19 @@
       width: 100% @sm 100% @lg 50%
 
     &:nth-child(1)
-      background: linear-gradient(120.3deg, #35AEF2 13.68%, rgba(53, 174, 242, 0.6) 82.35%), resolve(hero-blocks-bg-1.jpg) center / cover
+      background: linear-gradient(120.3deg, #35AEF2 13.68%, rgba(53, 174, 242, 0.6) 82.35%), resolve('hero/hero-blocks-bg-1.jpg') center / cover
 
     &:nth-child(2)
-      background: linear-gradient(122.88deg, #F2994A 18.26%, rgba(242, 153, 74, 0.7) 80.21%), resolve(hero-blocks-bg-2.jpg) center / cover
+      background: linear-gradient(122.88deg, #F2994A 18.26%, rgba(242, 153, 74, 0.7) 80.21%), resolve('hero/hero-blocks-bg-2.jpg') center / cover
 
     &:nth-child(3)
-      background: linear-gradient(117.68deg, #27AE60 23.19%, rgba(39, 174, 96, 0.7) 80.83%), resolve(hero-blocks-bg-3.jpg) center / cover
+      background: linear-gradient(117.68deg, #27AE60 23.19%, rgba(39, 174, 96, 0.7) 80.83%), resolve('hero/hero-blocks-bg-3.jpg') center / cover
 
     &:nth-child(4)
-      background: linear-gradient(112.9deg, #9B51E0 13.49%, rgba(155, 81, 224, 0.6) 83.32%), resolve(hero-blocks-bg-4.jpg) center / cover
+      background: linear-gradient(112.9deg, #9B51E0 13.49%, rgba(155, 81, 224, 0.6) 83.32%), resolve('hero/hero-blocks-bg-4.jpg') center / cover
 
     &:nth-child(5)
-      background: linear-gradient(116.32deg, #4F4F4F 32.24%, rgba(79, 79, 79, 0.8) 85.03%), resolve(hero-blocks-bg-1.jpg) center / cover
+      background: linear-gradient(116.32deg, #4F4F4F 32.24%, rgba(79, 79, 79, 0.8) 85.03%), resolve('hero/hero-blocks-bg-1.jpg') center / cover
 
     .btn
       display: none @sm block
