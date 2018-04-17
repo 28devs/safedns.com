@@ -70,6 +70,8 @@ if (elemLeft) {
       .getPropertyValue('padding-left');
 
     elemLeft.style.paddingLeft = margin + parseInt(padding) + 'px';
+    elemLeft.style.paddingRight = margin + parseInt(padding) + 'px';
+    elemRight.style.paddingLeft = margin + parseInt(padding) + 'px';
     elemRight.style.paddingRight = margin + parseInt(padding) + 'px';
   };
 
