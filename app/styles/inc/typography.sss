@@ -29,7 +29,7 @@ h1, .h1
   font-weight: 700 @sm 400
   margin: 20px 0 @sm 2.2vw 0 @xl 28px 0
 
-h1.title-hero
+h1.title-hero, .h1.title-hero
   font-size: responsive 38px 64px
   font-range: $sm-px $lg-px
   font-weight: 700
@@ -45,8 +45,11 @@ h3, .h3
   font-size: responsive 16px 24px
   font-range: $sm-px $lg-px
   line-height: 1.3
+  font-weight: 400
+  margin: 16px 0 @sm 1.8vw 0 @xl 20px 0
+
+h3.title-hero, .h3.title-hero
   font-weight: 700
-  margin: 16px 0 @sm 1.8vw 0 @xl 24px 0
 
 h4, .h4
   font-size: 16px @md 18px
@@ -65,7 +68,7 @@ p
 
   &:last-child
     margin-bottom: 0
-
+  
 .title-promo
   font-weight: 700
 
@@ -100,6 +103,10 @@ li
   color: $text-secondary-light
   margin: 5px 0 @sm 1.5vw 0 @xl 8px 0
 
+  h2 + &
+    margin-top: -17px
+    margin-bottom: 30px
+
 a
   text-decoration: none
   color: $text-link
@@ -109,6 +116,10 @@ hr
   background-color: #E0E0E0
   height: 1px
   border: 0
+  margin: 1vw 0
+
+  &.hidden
+    visibility: hidden
 
 ul.list
   list-style-type: none
@@ -121,6 +132,9 @@ ul.list
       position: relative
       display: block
 
+      h3
+        visibility: visible
+        
       &:before
         content: ''
         position: absolute 8px 0 0 -20px
@@ -128,7 +142,22 @@ ul.list
         size: 8px
         border-radius: 50%
         background: linear-gradient(135deg, #EB5757 -31.25%, #2F80ED 181.25%)
+
+  &_large
+    padding-left: 28px @sm 40px
+
+    li
+      margin-bottom: 28px @sm 33px @lg 40px
+
+      &:before
+        size: 12px @md 16px
+        left: -28px @sm -40px
+        top: 5px @md 6px @lg 8px
         
+
+h3 + ul.list_large
+  margin-top: 3vw
+
 .section-title
   width: 100%
   text-align: center
