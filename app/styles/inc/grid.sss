@@ -38,6 +38,7 @@
   width: 50%
   padding: 0 10px @md 0 3vw @xl 0 26px
 
+
 @media $md 
   .col-md-8
     width: 66.66666%
@@ -59,11 +60,16 @@
 
 @media $md
   .col-12:first-child, .col-md-8, .col-md-6, .col-md-4
-    :first-child
+    > :first-child
       margin-top: 0
 
   .col-12, .col-md-6, .col-md-4
-    :last-child
+    > :last-child
       margin-bottom: 0
 
-      
+.half-gutters
+  margin: 0 -5px @md 0 -1.5vw @xl 0 -13px
+
+  > [class*='col-']
+    padding: 0 5px @md 0 1.5vw @xl 0 13px
+    margin-bottom: 10px @md 3vw @xl 26px

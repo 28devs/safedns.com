@@ -1,0 +1,24 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerFreeTools)
+
+.page-container
+  .container
+    .row.half-gutters
+      each freeTool in freeTools
+        aside.col-12.col-md-6
+          .card.card__media
+            .card__content
+              .card__media-img(style='background-image: url(' + freeTool.img + ')')
+
+              .card__desc
+                h3=freeTool.title
+                p.text-tips Lust update - 14 april 2018
+
+                p Небольшое описание тулса. Что это, зачем и почему. Буквально 2-3 строчки не больше.
+
+                .btn.btn_primary.btn_small Download
+                .btn.btn_back.btn_small Details
+
+include inc/footer.pug
+include inc/foot.pug
