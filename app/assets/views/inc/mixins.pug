@@ -1,6 +1,6 @@
 mixin header(data)
-  header.header
+  header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")
     .container
       .row
         .col-12
-          h1= data.title
+          h1.header__title= data.title
