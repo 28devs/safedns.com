@@ -58,8 +58,18 @@
         path: 'app/assets/img/'
       }),
       //require('autoprefixer'),
+      require('postcss-rtl'),
       require('postcss-pxtorem')({
-        selectorBlackList: ['h1', 'h2', 'h3', 'h4', 'h5', '.btn']
+        selectorBlackList: [
+          'h1',
+          'h2',
+          'h3',
+          'h4',
+          'h5',
+          '.btn',
+          '.sticky-nav__nav-link',
+          '.hero-blocks__item li'
+        ]
       }),
       require('postcss-unique-selectors'),
       require('css-mqpacker')({

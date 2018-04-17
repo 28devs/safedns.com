@@ -1,6 +1,6 @@
-.sticky-nav
+.sticky-nav 
   position: fixed 0 0 auto 0
-  padding: 26px 7px 30px @sm 26px 0 30px
+  padding: 16px 7px 17px @sm 26px 0 30px
   box-shadow: none @sm inset 0 -1px rgba(255, 255, 255, 0.3)
   z-index: 999
   visibility: hidden
@@ -32,8 +32,8 @@
     background: url(../img/logo-nav.png)
     size: 184px 40px
     min-width: 184px
-    transform: translate(28px, 0) @lg translateY(2px)
-    display: none @sm block 
+    transform: scale(0.65) translate(5px, 0) @sm translate(28px, 0) @lg translateY(2px)
+    // display: none @sm block 
 
   &__nav
     box: horisontal space-between
@@ -41,11 +41,12 @@
     width: 100%
     padding: 0
     margin: 0 @lg 0 1.5vw 0 3vw @xl 0 20px 0 72px
-    position: absolute -26px 0 auto 0 @lg static
+    position: absolute -16px 0 auto 0 @lg static
     background: #fff @lg transparent
     max-height: 100vh
     overflow: auto @lg visible
     transform: translateY(-1000%) @lg none
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) @lg none
 
     &_open
       transform: translateY(0)
@@ -252,8 +253,9 @@
 
   &_scroll-state
     position: fixed
-    box-shadow: inset 0 -1px rgba(255, 255, 255, .3), 0px 4px 10px rgba(0, 0, 0, 0.1)
-    padding: 15px * !important
+    box-shadow: inset 0 -1px rgba(255, 255, 255, .3), 0px 4px 10px rgba(0, 0, 0, 0.1) !important
+    padding-top: 4px @sm 14px
+    padding-bottom: 4px @sm 14px
     background: #fff
 
     &:after
@@ -264,10 +266,10 @@
 
     ^&__logo
       background-position: 0 40px
-      transform: translate(28px, 0) @lg translateY(0)
+      transform: scale(0.65) translate(5px, 0) @sm translate(28px, 0) @lg translateY(0)
 
     ^&__nav
-      top: -15px
+      top: -3px
 
       &-wrap
 
@@ -301,59 +303,3 @@
       border-color: transparent !important
       background: transparent !important
     
-
-.rtl
-  .sticky-nav__nav-child-link:before
-    transform: translateX(24px)
-
-  .sticky-nav
-
-    &__logo
-      transform: translate(-14px, 0) @lg translateY(2px)
-
-    &__nav
-      margin: 0 @lg 0 3vw 0 1.5vw @xl 0 71px 0 20px
-
-      &-wrap
-        margin: 0 @lg 0 0 0 0.4vw @xl 0 0 0 28px
-
-        &:last-child
-          margin: 0 @lg 0 auto 0 0
-
-          .sticky-nav__nav-link
-            padding-right: 50px @lg 25px
-
-            &:before
-              transform: translateX(0)
-              right: 20px @lg 0
-              left: auto
-
-          .sticky-nav__nav-childs
-            padding: 0 53px 0 36px @lg 17px 58px 14px 36px
-
-          .sticky-nav__nav-child-link:before
-            right: -9px @lg -28px
-            left: auto
-
-      &-link
-        padding: 14px 21px 14px 20px @lg 0 0 0 21px @xl 0 0 0 24px
-
-        &:after
-          position: absolute 0 auto 4px 0 @lg absolute 0 auto 0 0
-
-        &-lang
-          display: none
-
-      &-childs
-
-        &-wrap:nth-child(2)
-          margin-right: 108px
-          margin-left: 0
-
-          &:before
-            left: auto
-            right: -52px
-          
-    &_scroll-state
-      .__logo
-        transform: translate(-14px, 0)
