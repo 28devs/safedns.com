@@ -1,9 +1,11 @@
 .hero
   background: 
-    linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%),
-    resolve(hero-bg.jpg) center / cover, #242235
+    linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%), resolve(hero-bg.jpg) center / cover, #242235
   height: 100vh
   box: vertical middle center
+
+  + .sticky-nav .sticky-nav__logo
+    display: none @sm block
 
   &__content
     text-align: center
@@ -175,20 +177,3 @@
 
       .footer__copy
         margin-top: 0
-
-.rtl
-  .hero__cookie-text
-    padding: 0 0 15px @sm 0 0 0 3vw
-    text-align: right
-
-  .hero-blocks__item ul 
-    li
-      padding-right: 0 @sm 20px
-      padding-left: 0
-
-      &:before
-        right: 0
-
-  .hero__down__choose
-    text-align: right
-    background-position-x: left

@@ -5,7 +5,7 @@ window.onload = function() {
     item: 4,
     loop: true,
     controls: false,
-    pager: false,
+    pager: false
     // responsive: [{
     //     breakpoint: 1220,
     //     settings: {
@@ -25,7 +25,7 @@ window.onload = function() {
 
   const prevSlide = $('#prev').on('click', function() {
     menuSlider.goToPrevSlide();
-    console.log(123)
+    console.log(123);
   });
 
   const nextSlide = $('#next').on('click', function() {
@@ -184,11 +184,14 @@ if (stickyNavMobileCloseBtn) {
 // Rtl direction
 //
 
+const root = document.documentElement;
+
 function rtlDirection(e) {
   var evtobj = window.event ? event : e;
   if (evtobj.keyCode == 90) {
-    document.documentElement.classList.toggle('rtl');
-    submenusAligment();
+    root.getAttribute('dir') === 'rtl'
+      ? root.setAttribute('dir', 'ltr')
+      : root.setAttribute('dir', 'rtl');
   }
 }
 document.onkeydown = rtlDirection;
