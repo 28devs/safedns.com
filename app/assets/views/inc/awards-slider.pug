@@ -1,0 +1,13 @@
+.awards.block-outer
+  .award
+    p.award__title.h2 SafeDNS Awards 
+
+  .awards__slider-control
+      #prev.awards__slider-prev
+      .awards__slider-wrap
+        ul#awards-slider.awards__slider
+          each val in awardsSlider
+            li.awards__item-wrap
+              .awards__item
+                img(src="img/about/" +val.href)
+      #next.awards__slider-next 

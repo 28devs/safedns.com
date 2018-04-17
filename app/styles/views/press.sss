@@ -1,3 +1,49 @@
 .pub-reviews
-  a:not('.btn')
+  a:not(.btn)
     color: inherit
+    display: block
+    padding: 28px 30px
+    height: 100%
+
+    &:hover, &:active, &.active
+      background-color: #f2f2f2
+
+  &__title
+    font-weight: 700
+    margin: 0 0 8px 0
+  
+  &__text
+    margin: 10px 0 0 0
+
+.article-bottom-link
+  max-width: 100%
+  text-align: center
+  margin-top: 33px @md 3.5vw @xl 58px
+
+.press-about
+  background: linear-gradient(111.8deg, rgba(47, 128, 237, 0.8) -31.32%, rgba(235, 87, 87, 0.8) 138.52%), url('../img/press/press-about-bg.jpg') center / cover
+  padding: 40px 0 60px @md 3.5vw 0 4vw @xl 56px 0 65px
+  .section-title
+    color: #fff
+
+  a:not(.btn)
+    color: #fff
+    display: block
+    padding: 28px 30px
+    border: 1px solid transparent
+    height: 100%
+
+    &:hover, &:active, &.active
+      border-color: #fff
+
+.press-kit
+  background: linear-gradient(270deg, #EB5757 -26.35%, #2F80ED 121.32%)
+  padding: 30px 0 @md 23px 0
+
+  &__wrap
+    box: vartical middle center @sm horizontal space-around middle
+
+  &__img
+    background: resolve('press/press-kit.png')
+    size: size('press/press-kit.png')
+    margin-bottom: -30px

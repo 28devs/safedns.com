@@ -10,14 +10,14 @@ include inc/nav.pug
       .row
         each val in pubReviews
           .col-12.col-md-6
-            a(href='#!')
+            a(href='#!' class= val.active)
               article
                 h3.pub-reviews__title= val.title
                 time.pub-reviews__date.text-tips= val.date
                 p.pub-reviews__text= val.text
 
       .article-bottom-link
-        a.btn.btn_small View more
+        a.btn.btn_small.btn_back View more
 
 
   .press-about.block-outer
@@ -26,13 +26,25 @@ include inc/nav.pug
       .row
         each val in pressAbout
           .col-12.col-md-4
-            a(href='#!')
+            a(href='#!' class= val.active)
               article
                 h3.pub-reviews__title= val.title
                 time.pub-reviews__date.text-tips= val.date
                 p.pub-reviews__text= val.text
 
       .article-bottom-link
-        a.btn.btn_small View more
+        a.btn.btn_small.btn_detail View more
+  .container
+    include inc/awards-slider.pug
 
+  .press-kit.block-outer
+    .container
+      .press-kit__wrap
+        a.btn.btn_outline(href='#!' download)
+          i.icon.icon_download
+          | Download the Press Kit
+        
+        p.press-kit__desc PDF files, 8 Mb totaly
+
+        .press-kit__img
 include inc/foot.pug
