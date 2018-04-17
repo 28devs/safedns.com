@@ -1,27 +1,28 @@
 .awards
   width: 100%
   box: horizontal space-between
+  flex-wrap: wrap @sm no-wrap
 
   .award 
-    background: resolve('cube.png')
-    background-size: contain
-    background-repeat: no-repeat
-    background-position: center
+    background: resolve('cube.png') center no-repeat / contain
     width: 100% @md auto
-    height: height('cube.png')
+    height: 58px @md 90px @lg 153px @lg height('cube.png')
     text-align: center
     box: middle center
     position: relative
+    margin: 0 auto
 
     &__title
       margin: 0
   
+  /* rtl:ignore */
   &__slider-control
-    width: 70%
+    width: 100% @lg 62% @xl 70%
     box: horizontal middle space-around
     visibility: hidden
     max-height: 213px
     overflow: hidden
+    direction: ltr !important
 
     &_load
       visibility: visible
@@ -30,7 +31,8 @@
       height: 100% !important
 
       &-prev, &-next
-        size: size('slider-arrow.svg')
+        height: height('slider-arrow.svg')
+        width: 12px @sm 18px @lg width('slider-arrow.svg')
         background: svg-load('icons/slider-arrow.svg', stroke: #E0E0E0)
         cursor: pointer
         transition: ease .2s
@@ -42,18 +44,18 @@
 
   &__slider-wrap
     width: 80%
-    margin: 0 auto
+    margin: 0 @lg 0 0 0 40px
     display: block
 
   &__item-wrap
     text-align: center
 
   &__item
-    padding: 0 16px
+    padding: 0
 
     img
       max-width: 100%
-      max-height: 100%
+      max-height: 90px @lg 100%
 
 .stats
   width: 100%
@@ -64,10 +66,18 @@
   
   &__items-wrap
     box: horizontal
+    flex-wrap: wrap @sm nowrap
 
   &__item
     box: horizontal center top
-    width: 100% @md 33.33333% 
+    flex-wrap: nowrap @sm wrap @lg nowrap
+    width: 100% @md 33.33333%
+    border-right: 0 @lg 1px #E0E0E0 solid
+    margin-bottom: 25px @sm 0
+
+    &:last-child
+      border-right: 0
+      margin-bottom: 0
 
   &__number
     font-size: 72px
@@ -77,10 +87,13 @@
     background-image: linear-gradient(101.56deg, #2F80ED, #EB5757)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
+    margin: 0 @sm 0 auto 13px @lg 0
 
   &__wrap-text
     box: vertical top
-    margin-left: 22px
+    margin-left: 18px @sm 0 @lg 22px
+    text-align: left @sm center @lg left
+    width: auto @sm 100% @lg auto
 
   &__text-title
     margin: 0
@@ -94,30 +107,27 @@
 .info-about
   .h2
     margin: 0
-  
+
+  .h2,.h3
+    font-weight: 400
+
   &__location
     width: 100%
-    padding: 20px 0 @md 3vw 0 @lg 60px 0
-    background: linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
-                url('../img/about/location-bg.jpg') center / cover @lg
-                url('../img/about/map.png') right top no-repeat, 
-                linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%),
-                url('../img/about/location-bg.jpg') center / cover
+    padding: 30px 0 @md 6vw 0 @lg 80px 0 90px
+    background: linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%), url('../img/about/location-bg.jpg') center / cover @lg url('../img/about/map.png') right top no-repeat, linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%), url('../img/about/location-bg.jpg') center / cover
     text: 400 #fff
     border-bottom: 2px solid #fff
-
-    .h2,.h3
-      font-weight: 400
     
     &-text-wrap
       max-width: 100% @lg 40vw @xl 45vw
   
   &__links
     box: horizontal
+    flex-wrap: wrap
 
   &__press, &__job
-    width: 50%
-    padding: 20px 0 @md 3vw 0 @lg 60px 0
+    width: 100% @md 50%
+    padding: 20px 0 @md 3vw 0 @lg 50px 0
 
     &-wrap
       box: gorizontal center space-between
@@ -128,26 +138,28 @@
         border-radius: 50%
         size: 35px @md 48px
         transform: rotate(180deg)
-        background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat left 15px center / 13px
+        background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat center / 13px
         background-position-x: 11px @md 15px
         background-size: 10px @md 13px
 
   &__press
-    background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%),
-                url('../img/about/press-bg.jpg') center / cover
+    background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%), url('../img/about/press-bg.jpg') center / cover
     text: 400 #fff
-    border-right: 2px solid #fff
+    border-right: 0 @md 2px solid #fff
+    border-bottom: 2px solid #fff @md 0
 
     &-wrap
-      padding-right: 10px @md 2vw @lg 84px 
+      padding-right: auto @md 4vw !important @lg 84px !important
+
+      .h3
+        margin-bottom: 0
 
   &__job
-    background: linear-gradient(100.32deg, rgba(47, 128, 237, 0.8) -119.89%, rgba(235, 87, 87, 0.8) 104.24%),
-                url('../img/about/job-bg.jpg') center / cover
+    background: linear-gradient(100.32deg, rgba(47, 128, 237, 0.8) -119.89%, rgba(235, 87, 87, 0.8) 104.24%), url('../img/about/job-bg.jpg') center / cover
     text: 400 #fff
 
     &-wrap
-      padding-left: 10px @md 2vw @lg 84px 
+      padding-left: auto @md 4vw !important @lg 80px !important
 
 //block logos
 .logos
@@ -171,7 +183,12 @@
       width: 50% @sm 25% @lg 25%
 
       img
-        max-width: 160px @sm 80% @lg 200px
+        max-width: 80% @lg 200px
 
       &:last-of-type
         display: none @sm flex
+
+
+[dir=rtl]
+  .info-about__job-wrap:after, .info-about__press-wrap:after
+    transform: rotate(0deg)

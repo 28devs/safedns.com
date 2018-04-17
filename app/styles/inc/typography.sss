@@ -59,8 +59,12 @@ h5, .h5
   margin: 12px 0 @sm 1.2vw 0 @xl 18px 0
 
 // h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child,
-p:first-child
-  margin-top: 0
+p
+  &:first-child
+    margin-top: 0
+
+  &:last-child
+    margin-bottom: 0
 
 .title-promo
   font-weight: 700

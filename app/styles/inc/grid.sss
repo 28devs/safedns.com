@@ -2,7 +2,7 @@
   padding: 25px 0 @sm 5vw 0 @lg 80px 0
 
 .block-outer
-  margin: 18px 0 @sm 3.5vw 0 @lg 65px 0
+  margin: 50px 0 @md 6vw 0 @lg 65px 0
   
 .container
   max-width: $container-sm-px
@@ -47,6 +47,10 @@
     padding: 0 10px @md 0 3vw @xl 0 26px
 
 @media &sm
-.col-12:first-child, .col-md-6, .col-md-4
-  :first-child
-    margin-top: 0
+  .col-12:first-child, .col-md-6, .col-md-4
+    :first-child
+      margin-top: 0
+
+  .col-12, .col-md-6, .col-md-4
+    :last-child
+      margin-bottom: 0
