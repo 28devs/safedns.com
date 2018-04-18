@@ -4,7 +4,7 @@
     display: block
     padding: 20px @md 28px 30px
     height: 100%
-    background-color: #f2f2f2 @md transparent
+    background-color: #f2f2f2 @lg transparent
 
     &:hover, &:active, &.active
       background-color: #f2f2f2
@@ -39,12 +39,13 @@
   a:not(.btn)
     color: #fff
     display: block
-    padding: 28px 30px
+    padding: 20px 20px 24px @lg 28px 30px
     border: 1px solid transparent
     height: 100%
+    background-color: rgba(255, 255, 255, 0.1) @lg transparent 
 
     &:hover, &:active, &.active
-      border-color: #fff
+      border-color: transparent @lg #fff
 
 .press-kit
   background: linear-gradient(270deg, #EB5757 -26.35%, #2F80ED 121.32%)
@@ -56,7 +57,7 @@
     max-width: 910px
 
   &__wrap
-    box: vartical middle center @sm horizontal middle left
+    box: vertical middle center @lg horizontal middle left
     position: relative
 
   &__desc
@@ -70,3 +71,4 @@
     position: absolute
     right: 0
     bottom: -23px
+    display: none @lg block

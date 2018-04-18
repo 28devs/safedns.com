@@ -3,38 +3,41 @@ include inc/nav.pug
 +header(headerAbout)(class="header_large")
 
 .page-container
-  .container
-    .row
-      section.col-12.col-md-6
+  section.block-outer
+    .container
+      .row
+        section.col-12.col-md-6
 
-        h2 What we do?
+          h2 What we do?
 
-        p 
-          b SafeDNS 
-          |  is founded by a team of IT and security experts for developing high quality web filtering solutions for a wide range of markets and consumers.
-        p We are creating the next generation of safer and affordable web filtering products. In July, 2016, to further improve our users' online protection SafeDNS launched an innovative system for detecting botnets and malicious internet resources (malware) which is based on continuous machine learning and user behavior analysis. 
+          p 
+            b SafeDNS 
+            |  is founded by a team of IT and security experts for developing high quality web filtering solutions for a wide range of markets and consumers.
+          p We are creating the next generation of safer and affordable web filtering products. In July, 2016, to further improve our users' online protection SafeDNS launched an innovative system for detecting botnets and malicious internet resources (malware) which is based on continuous machine learning and user behavior analysis. 
 
 
-      section.col-12.col-md-6
+        section.col-12.col-md-6
 
-        h2 Activities
-        
-        ul.list.list_round
-          li 
-            b Content-filtering. 
-            | Block all dangerous websites, such as pornography, violence, alcohol &amp; smoking and other categories which you choose.
-          li 
-            b Malware Protection.
-            |  Those users protected by SafeDNS are walled against cybercriminals trying to steal important data.
-          li 
-            b Cloud Service.  
-            | SafeDNS is a cloud service, which means that you do not have to buy any hardware or install additional software.
+          h2 Activities
+          
+          ul.list.list_round
+            li 
+              b Content-filtering. 
+              | Block all dangerous websites, such as pornography, violence, alcohol &amp; smoking and other categories which you choose.
+            li 
+              b Malware Protection.
+              |  Those users protected by SafeDNS are walled against cybercriminals trying to steal important data.
+            li 
+              b Cloud Service.  
+              | SafeDNS is a cloud service, which means that you do not have to buy any hardware or install additional software.
     
     include inc/awards-slider.pug     
     
+  .container
     hr
 
-    section.stats.block-outer
+  section.stats.block-outer
+    .container
       h2.section-title SafeDNS in numbers
 
       .stats__items-wrap
