@@ -9,21 +9,44 @@ include inc/nav.pug
         section.block-outer
           h2.section-title Business clients
 
-            .reviews-slider.glide
-              .glide__track(data-glide-el='track')
-                ul.glide__slides
-                  li.glide__slide 1
-                  li.glide__slide 2
-                  li.glide__slide 3
+            
+            .reviews-slider
+              .glide
+                .glide__track(data-glide-el='track')
+                  ul.glide__slides
+                    each i in [0,1,2,3,4,5]
+                      li.glide__slide
+                        h2= reviewsSlider.text
 
-                div(data-glide-el='controls')
-                  button(data-glide-dir='<') start
-                  button(data-glide-dir='>') end
+                .glide__bullets(data-glide-el='controls[nav]')
 
-                div(data-glide-el='controls[nav]')
-                  button(data-glide-dir='=0')
-                  button(data-glide-dir='=1')
-                  button(data-glide-dir='=2')
+
+            .reviews-slider.glide__space-for-arrows
+              .glide
+                .glide__track(data-glide-el='track')
+                  ul.glide__slides
+                    li.glide__slide
+                      img(src='img/about/award-1.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-2.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-3.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-4.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-2.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-4.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-1.jpg')
+                    li.glide__slide
+                      img(src='img/about/award-3.jpg')
+
+                .glide__arrows(data-glide-el='controls')
+                  button.glide__arrow.glide__arrow--prev(data-glide-dir='<')
+                  button.glide__arrow.glide__arrow--next(data-glide-dir='>')
+
+                .glide__bullets(data-glide-el='controls[nav]')
 
 
 

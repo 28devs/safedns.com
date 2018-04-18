@@ -222,6 +222,24 @@ document.onkeydown = rtlDirection;
 // Reviews slider
 //
 
-const reviewsSlider = new Glide('.reviews-slider', {
-  perView: 3
+const sliderDotBlocks = document.querySelectorAll(
+  '[data-glide-el="controls[nav]"]'
+);
+
+if (sliderDotBlocks) {
+  sliderDotBlocks.forEach(function(dotBlock) {
+    let sliderSlides = dotBlock.parentNode.querySelector('.glide__slides');
+
+    for (let i = 0; i < sliderSlides.children.length; i++) {
+      let sliderDot = document.createElement('div');
+      sliderDot.classList.add('glide__bullet');
+      sliderDot.setAttribute('data-glide-dir', '=' + i);
+
+      dotBlock.appendChild(sliderDot);
+    }
+  });
+}
+
+const reviewsSlider = new Glide('.reviews-slider .glide', {
+  perView: 1
 }).mount();
