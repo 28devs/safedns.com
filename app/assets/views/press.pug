@@ -6,10 +6,13 @@ include inc/nav.pug
 
   .pub-reviews.block-outer
     .container
-      h2.section-title Publications reviews
       .row
+        .col-12
+          h2.section-title Publications reviews
+          
+      .row.half-gutters
         each val in pubReviews
-          .col-12.col-md-6
+          .col-12.col-lg-6
             a(href='#!' class= val.active)
               article
                 h3.pub-reviews__title= val.title
@@ -23,28 +26,30 @@ include inc/nav.pug
   .press-about.block-outer
     .container
       h2.section-title Press about us 
-      .row
+      .row.half-gutters
         each val in pressAbout
-          .col-12.col-md-4
-            a(href='#!' class= val.active)
+          .col-12.col-md-6.col-lg-4
+            a(href='#!' class= val.active).press-about__item
               article
-                h3.pub-reviews__title= val.title
-                time.pub-reviews__date.text-tips= val.date
-                p.pub-reviews__text= val.text
+                h3.press-about__title= val.title
+                time.press-about__date.text-tips= val.date
+                p.press-about__text= val.text
 
       .article-bottom-link
         a.btn.btn_small.btn_detail View more
   .container
     include inc/awards-slider.pug
 
-  .press-kit.block-outer
-    .container
-      .press-kit__wrap
-        a.btn.btn_outline(href='#!' download)
-          i.icon.icon_download
-          | Download the Press Kit
-        
-        p.press-kit__desc PDF files, 8 Mb totaly
+.press-kit.block-outer
+  .container
+    .press-kit__wrap
+      a.btn.btn_outline(href='#!' download)
+        i.icon.icon_download
+        | Download the Press Kit
+      
+      p.press-kit__desc PDF files, 8 Mb totaly
 
-        .press-kit__img
+      .press-kit__img
+
 include inc/foot.pug
+include inc/footer.pug

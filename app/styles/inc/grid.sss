@@ -54,18 +54,26 @@
 @media $lg
   .col-lg-3
     width: 25%
+  
+  .col-lg-4
+    width: 33.33334%
+  
+  .col-lg-6
+    width: 50%
 
   .col-lg-9
     width: 75%
 
 @media $md
-  .col-12:first-child, .col-md-8, .col-md-6, .col-md-4
-    > :first-child
-      margin-top: 0
+  .row
+    .col-12:first-child, .col-md-8, .col-md-6, .col-md-4
+      > :first-child
+        margin-top: 0
 
-  .col-12, .col-md-6, .col-md-4
-    > :last-child
-      margin-bottom: 0
+  .row
+    .col-12, .col-md-6, .col-md-4
+      > :last-child:not(:first-child)
+        margin-bottom: 0
 
 .half-gutters
   margin: 0 -5px @md 0 -1.5vw @xl 0 -13px
