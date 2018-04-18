@@ -22,7 +22,7 @@
       .src('app/assets/views/*.pug')
       .pipe(
         pug({
-          pretty: true
+          //pretty: true
         })
       )
       .pipe(gulp.dest('dest/'));
@@ -86,9 +86,10 @@
       .pipe(sourcemaps.write('/'))
       .pipe(gulp.dest('dest/styles/'));
   });
-  gulp.task('css', function() {
-    return gulp.src('app/styles/css/*.*').pipe(gulp.dest('dest/styles/'));
-  });
+
+  // gulp.task('css', function() {
+  //   return gulp.src('app/styles/css/*.*').pipe(gulp.dest('dest/styles/'));
+  // });
 
   // write js
   gulp.task('scripts', function() {
@@ -104,10 +105,10 @@
   gulp.task('libs-css', function() {
     return (
       gulp
-        .src(['app/libs/**/*.css'])
+        .src('app/libs/**/*.css')
         //.pipe(sass().on('error', notify.onError()))
         .pipe(uglifycss())
-        .pipe(rename('libs.min.css'))
+        .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('dest/styles/'))
     );
   });
@@ -132,12 +133,12 @@
     gulp.series(
       'clean',
       gulp.parallel(
+        'assets',
         'postcss',
         'views',
-        'css',
+        //'css',
         'libs-css',
         'libs-js',
-        'assets',
         'scripts'
       )
     )
@@ -155,7 +156,7 @@
 
   //watching by all files in dest
   gulp.task('watch', function() {
-    gulp.watch('app/styles/css/**/*.*', gulp.series('css'));
+    //gulp.watch('app/styles/css/**/*.*', gulp.series('css'));
     gulp.watch('app/styles/**/*.*', gulp.series('postcss'));
     gulp.watch('app/scripts/**/*.*', gulp.series('scripts'));
     gulp.watch('app/assets/**/*.*', gulp.series('assets'));
