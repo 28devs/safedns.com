@@ -1,0 +1,31 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerReviews)
+
+.page-container
+  .container
+    .row
+      .col-12
+        section.block-outer
+          h2.section-title Business clients
+
+            .reviews-slider.glide
+              .glide__track(data-glide-el='track')
+                ul.glide__slides
+                  li.glide__slide 1
+                  li.glide__slide 2
+                  li.glide__slide 3
+
+                div(data-glide-el='controls')
+                  button(data-glide-dir='<') start
+                  button(data-glide-dir='>') end
+
+                div(data-glide-el='controls[nav]')
+                  button(data-glide-dir='=0')
+                  button(data-glide-dir='=1')
+                  button(data-glide-dir='=2')
+
+
+
+include inc/footer.pug
+include inc/foot.pug

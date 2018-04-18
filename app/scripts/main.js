@@ -203,7 +203,7 @@ if (stickyNavMobileCloseBtn) {
 }
 
 //
-// Rtl direction
+// DEV - Rtl direction
 //
 
 const root = document.documentElement;
@@ -217,3 +217,11 @@ function rtlDirection(e) {
   }
 }
 document.onkeydown = rtlDirection;
+
+//
+// Reviews slider
+//
+
+const reviewsSlider = new Glide('.reviews-slider', {
+  perView: 3
+}).mount();
