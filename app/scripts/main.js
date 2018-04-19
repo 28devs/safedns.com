@@ -219,7 +219,7 @@ function rtlDirection(e) {
 document.onkeydown = rtlDirection;
 
 //
-// Reviews slider
+// Dots generate for sliders
 //
 
 const sliderDotBlocks = document.querySelectorAll(
@@ -240,6 +240,30 @@ if (sliderDotBlocks) {
   });
 }
 
-const reviewsSlider = new Glide('.reviews-slider .glide', {
-  perView: 1
-}).mount();
+//
+// Reviews slider
+//
+
+const reviewsSlider = document.querySelector('.reviews-slider .glide');
+
+reviewsSlider &&
+  new Glide(reviewsSlider, {
+    perView: 1
+  }).mount();
+
+//
+// Awards slider
+//
+
+const awardsSlider = document.querySelector('.awards-slider .glide');
+
+awardsSlider &&
+  new Glide(awardsSlider, {
+    perView: 4,
+    type: 'carousel',
+    breakpoints: {
+      576: { perView: 2 },
+      1200: { perView: 3 },
+      1300: { perView: 4 }
+    }
+  }).mount();

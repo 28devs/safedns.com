@@ -1,0 +1,80 @@
+.img-shadow
+  &:after
+    content: ''
+    display: block
+    background: resolve('about/shadow.png') center no-repeat / contain
+    height: height('about/shadow.png')
+    width: 100%
+    margin-top: 8px
+
+.glide
+
+  &__space-for-arrows
+    margin: 0 20px @sm 0 30px @lg 0 50px
+
+  &__slides
+    z-index: 2
+    margin: 0 *
+
+    ^&__slide
+      // background: red
+      box: middle center wrap
+      height: auto
+      margin: 0 *
+
+  &__arrows
+    position: absolute 0 -20px 0 -20px @sm absolute 0 -30px 0 -30px @lg absolute 0 -50px 0 -50px 
+    box: space-between center
+    z-index: 1
+
+    ^&__arrow
+      height: height('slider-arrow.svg')
+      width: 12px @sm 18px @lg width('slider-arrow.svg')
+      background: svg-load('icons/slider-arrow.svg', stroke: #828282)
+      cursor: pointer
+      transition: ease .2s
+      opacity: .4
+      border: 0
+      outline: 0
+
+      &:hover
+        opacity: 1
+
+      &--next
+        transform: scale(-1)
+
+  &__bullets
+    box: middle center
+    min-height: 24px
+    z-index: 2
+    position: absolute auto 0 -34px 0
+    
+    ^&__bullet
+      size: 16px
+      background: #E0E0E0
+      border-radius: 50%
+      transition: .2s ease
+      cursor: pointer
+      margin: 0 5px
+      opacity: 1
+
+      &:hover
+        opacity: .9
+
+      &--active
+        background: #2F80ED
+        size: 24px
+
+.reviews-slider
+  margin: 0 0 50px @md -20px 0 110px
+
+.awards-slider
+  .glide
+    &__slides
+      align-items: stretch
+
+    &__slide
+      align-items: flex-end !important
+
+      img
+        max-width: 100% @sm 120px

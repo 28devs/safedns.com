@@ -9,45 +9,51 @@ include inc/nav.pug
         section.block-outer
           h2.section-title Business clients
 
-            
-            .reviews-slider
-              .glide
-                .glide__track(data-glide-el='track')
-                  ul.glide__slides
-                    each i in [0,1,2,3,4,5]
-                      li.glide__slide
-                        h2= reviewsSlider.text
+          .reviews-slider
+            .glide
+              .glide__track(data-glide-el='track')
+                ul.glide__slides
+                  each i in [0,1,2,3,4,5]
+                    li.glide__slide
+                      .review-large
+                        .review-large__text
+                          p= reviewsSlider[0].text
+                        
+                        .review-large__desc
+                          .review-large__logo
+                            img(src='img/reviews/logo-1.png')
 
-                .glide__bullets(data-glide-el='controls[nav]')
+                          .review-large__person
+                            .review-large__avatar(style='background-image: url(' + reviewsSlider[0].img + ')')
+                            
+                            .review-large__info
+                              .review-large__name= reviewsSlider[0].name
+                              .review-large__old= reviewsSlider[0].old
+
+              .glide__bullets(data-glide-el='controls[nav]')
 
 
-            .reviews-slider.glide__space-for-arrows
-              .glide
-                .glide__track(data-glide-el='track')
-                  ul.glide__slides
-                    li.glide__slide
-                      img(src='img/about/award-1.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-2.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-3.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-4.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-2.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-4.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-1.jpg')
-                    li.glide__slide
-                      img(src='img/about/award-3.jpg')
+    hr
 
-                .glide__arrows(data-glide-el='controls')
-                  button.glide__arrow.glide__arrow--prev(data-glide-dir='<')
-                  button.glide__arrow.glide__arrow--next(data-glide-dir='>')
+  .container
+    .row
+      .col-12
+        section.block-outer
+          h2.section-title Home clients
 
-                .glide__bullets(data-glide-el='controls[nav]')
-
+    .row.half-gutters
+      .col-12.col-md-6.col-lg-4
+        .review
+          .review__text
+            p= reviewsSlider[0].text
+          
+          .review__desc
+            .review__person
+              .review__avatar(style='background-image: url(' + reviewsSlider[0].img + ')')
+              
+              .review__info
+                .review__name= reviewsSlider[0].name
+                .review__old= reviewsSlider[0].old
 
 
 include inc/footer.pug

@@ -1,6 +1,6 @@
 .awards
   width: 100%
-  box: horizontal space-between
+  box: horizontal middle space-between
   flex-wrap: wrap @sm no-wrap
 
   .award 
@@ -11,6 +11,7 @@
     box: middle center
     position: relative
     margin: 0 auto
+    margin-bottom: 30px @lg 0
 
     &__title
       margin: 0
@@ -18,17 +19,17 @@
   /* rtl:ignore */
   &__slider-control
     width: 100% @lg 62% @xl 70%
-    box: horizontal middle space-around
-    visibility: hidden
-    max-height: 213px
-    overflow: hidden
-    direction: ltr !important
+    // box: horizontal middle space-around
+    // visibility: hidden
+    // max-height: 213px
+    // overflow: hidden
+    // direction: ltr !important
 
     &_load
       visibility: visible
 
     ^&__slider
-      height: 100% !important
+      // height: 100% !important
 
       &-prev, &-next
         height: height('slider-arrow.svg')

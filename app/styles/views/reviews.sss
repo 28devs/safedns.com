@@ -1,61 +1,51 @@
-.glide
+.review-large
+  &__text
+    padding: 20px 0 @md 30px 16% 0
+    text-align: center @md left
 
-  &__space-for-arrows
-    margin: 0 20px @sm 0 30px @lg 0 50px
+    p
+      font-size: 16px @sm 18px
+      position: relative
 
-  &__slides
-    z-index: 2
-    margin: 0 *
+      &:before
+        content: '“'
+        position: absolute -26px auto auto 0 @md absolute -30px auto auto -70px
+        text: 4rem 1 #E0E0E0 @md 144px 1 #E0E0E0
 
-    ^&__slide
-      background: red
-      height: 100px
-      box: middle center
-      margin: 0 *
-
-  &__arrows
-    position: absolute 0 -20px 0 -20px @sm absolute 0 -30px 0 -30px @lg absolute 0 -50px 0 -50px 
-    box: space-between center
-    z-index: 1
-
-    ^&__arrow
-      height: height('slider-arrow.svg')
-      width: 12px @sm 18px @lg width('slider-arrow.svg')
-      background: svg-load('icons/slider-arrow.svg', stroke: #828282)
-      cursor: pointer
-      transition: ease .2s
-      opacity: .4
-      border: 0
-      outline: 0
-
-      &:hover
-        opacity: 1
-
-      &--next
-        transform: scale(-1)
-
-  &__bullets
-    box: middle center
-    min-height: 24px
-    z-index: 2
-    position: absolute auto 0 -34px 0
-    
-    ^&__bullet
-      size: 16px
-      background: #E0E0E0
-      border-radius: 50%
-      transition: .2s ease
-      cursor: pointer
-      margin: 0 5px
-      opacity: 1
-
-      &:hover
-        opacity: .9
-
-      &--active
-        background: #2F80ED
-        size: 24px
+      &:after
+        content: '”'
+        position: absolute auto 0 -26px auto @md absolute auto -70px -30px auto
+        height: 30px @sm  49px
+        text: 4rem 1 #E0E0E0 @md 144px 1 #E0E0E0
 
 
-.reviews-slider
-  
+  &__desc
+    box: space-around @sm middle 
+    flex-wrap: wrap @sm nowrap
+    margin: 45px 0 65px
+
+  &__logo
+    margin: 0 20px 20px 20px @sm 0 50px 0 0
+    padding-right: 0 @sm 50px
+    border-right: 0 @sm 1px #e0e0e0 solid
+
+  &__avatar
+    background-size: contain
+    border-radius: 50%
+
+  &__info
+    text-align: left
+
+  &__person
+    box: left middle  
+
+    ^&__avatar
+      size: 48px
+      min-width: 48px
+      margin-right: 10px
+
+  &__name
+    text: 700 #4F4F4F
+
+  &__old
+    text: #828282
