@@ -1,0 +1,23 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerInstructions)
+
+.page-container
+  section.instructions.block-outer
+    .container
+      h3.section-title.text-secondary-light.text-accent 95% of problems solved by reading our instructions
+      .row.half-gutters
+        each val in instructionsList
+          .col-12.col-sm-6.col-lg-4
+            div(class= val.active).instructions__item
+              article
+                p.instructions__title.text-secondary.text-accent= val.title
+                ul.instructions__list
+                  each val1 in val.list
+                    li
+                      a(href='#!') !{val1}
+
+  include inc/call-action.pug
+
+include inc/footer.pug
+include inc/foot.pug

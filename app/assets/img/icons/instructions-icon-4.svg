@@ -1,0 +1,16 @@
+<svg width="25" height="25" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Vector">
+<path d="M 5.33451e-08 21.379L 10.0869 22.8399L 10.0869 13.1895L 5.33451e-08 13.1895L 5.33451e-08 21.379ZM 5.33451e-08 11.811L 10.0869 11.811L 10.0869 2.15961L 5.33451e-08 3.62054L 5.33451e-08 11.811ZM 11.4654 23.0397L 25 25L 25 13.1895L 11.4654 13.1895L 11.4654 23.0397ZM 11.4654 1.95926L 11.4654 11.811L 25 11.811L 25 -1.18327e-07L 11.4654 1.95926Z" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(41.6667 34.375 -34.375 41.6667 9.375 -25)">
+<stop stop-color="#2F80ED"/>
+<stop offset="1" stop-color="#EB5757"/>
+</linearGradient>
+
+</defs>
+</svg>
+

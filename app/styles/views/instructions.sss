@@ -1,0 +1,63 @@
+.instructions
+  margin-bottom: -55px !important
+
+  article
+    padding-left: 50px
+
+  &__title
+    margin-bottom: 14px
+
+  &__list
+    padding: 0
+    list-style: none
+    margin-top: 0
+
+    li 
+      margin: 7px 0
+
+    a
+      color: $text-secondary
+
+      &:hover, &:active
+        color: $primary
+  &__item
+    position: relative
+    margin-bottom: 65px
+
+    &:after
+      content: ''
+      display: block
+      size: 36px
+      position: absolute -5px 0 0 0px
+  
+  .row > .col-12:nth-of-type(1) .instructions__item:after
+    background: svg-load('icons/instructions-icon-1.svg') center no-repeat
+  .row > .col-12:nth-of-type(2) .instructions__item:after
+    background: svg-load('icons/instructions-icon-2.svg') center no-repeat
+  .row > .col-12:nth-of-type(3) .instructions__item:after
+    background: svg-load('icons/instructions-icon-3.svg') center no-repeat
+  .row > .col-12:nth-of-type(4) .instructions__item:after
+    background: svg-load('icons/instructions-icon-4.svg') center no-repeat
+  .row > .col-12:nth-of-type(5) .instructions__item:after
+    background: svg-load('icons/instructions-icon-5.svg') center no-repeat
+  .row > .col-12:nth-of-type(6) .instructions__item:after
+    background: svg-load('icons/instructions-icon-6.svg') center no-repeat
+  .row > .col-12:nth-of-type(7) .instructions__item:after
+    background: svg-load('icons/instructions-icon-7.svg') center no-repeat
+  .row > .col-12:nth-of-type(8) .instructions__item:after
+    background: svg-load('icons/instructions-icon-8.svg') center no-repeat
+  .row > .col-12:nth-of-type(9) .instructions__item:after
+    background: svg-load('icons/instructions-icon-9.svg') center no-repeat
+
+.call-action
+  background: linear-gradient(105.02deg, rgba(47, 128, 237, 0.3) -6.18%, rgba(235, 87, 87, 0.3) 105.74%), url('../img/call-action-bg.jpg') center / cover
+  padding: 52px 0 @md 5vw 0 @lg 60px 0
+  box: vertical center middle
+  color: #fff
+
+  h2
+    margin-bottom: 30px @md 40px
+
+  &__text
+    margin-top: 23px @md 30px
+    opacity: .5
