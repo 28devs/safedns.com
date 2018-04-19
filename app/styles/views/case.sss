@@ -1,0 +1,52 @@
+.circle-icon
+  width: 100%
+  padding-bottom: 100%
+  background: linear-gradient(145.3deg, #EB5757 -4.44%, #2F80ED 117.29%)
+  border-radius: 50%
+  margin: 20px * 30px !important
+  box: center middle
+  position: relative
+
+  &__protect
+    position: absolute 0 0 0 0
+    margin: auto
+    text: 18px #fff bold
+    text-align: center
+
+    &:before
+      content: ''
+      background: svg-load('icons/shield.svg') center no-repeat / contain
+      size: size('icons/shield.svg')
+      display: block
+      margin: 32px auto 11px
+
+  &_progress
+    background: url('../img/icons/progress.png') center / 100%
+
+    &-circle
+      // stroke-dashoffset 360 - 170
+      position: absolute -1px
+      display: block
+      border-radius: 50%
+      overflow: hidden
+      box-shadow: inset 0 0 0 1px white
+      transform: rotate(90deg) scale(-1, 1)
+
+      svg
+        size: 100%
+
+    ^&__text
+      position: absolute 28px
+      margin: auto
+      text: 18px #fff bold
+      text-align: center
+      background: #fff
+      border-radius: 50%
+      box: vertical center middle
+      text-align: center
+
+      &-large
+        text: 48px #333 bold
+
+      &-text
+        text: 14px #000 bold

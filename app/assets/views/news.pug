@@ -1,0 +1,21 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerNews)
+
+.page-container
+  .container
+    .row.half-gutters
+      each post in news
+        .col-12.col-md-6.col-lg-4
+          a.card.card_light-gray(href='#!')
+            .card__img(style='background-image: url(' + post.img + ')')
+            .card__content
+              h4= post.title
+              p= post.text
+              p.text-tips= post.date
+
+    .text-center
+      .btn.btn_small.btn_back View more
+
+include inc/footer.pug
+include inc/foot.pug
