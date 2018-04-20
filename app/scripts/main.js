@@ -1,58 +1,3 @@
-window.onload = function() {
-  // init vanilla slider
-
-  const awardsSlider = $('#awards-slider').lightSlider({
-    item: 4,
-    slideMove: 3,
-    loop: false,
-    controls: false,
-    pager: false,
-    autoWidth: true,
-    adaptiveHeight: true,
-    slideMargin: 50,
-    onSliderLoad: function() {
-      $('.awards__slider-control').addClass('awards__slider-control_load');
-    },
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          item: 4,
-          slideMove: 3,
-          autoWidth: false,
-          slideMargin: 40
-        }
-      },
-      {
-        breakpoint: 750,
-        settings: {
-          item: 3,
-          slideMove: 2,
-          autoWidth: false,
-          slideMargin: 30
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          item: 2,
-          slideMove: 2,
-          autoWidth: false,
-          slideMargin: 20
-        }
-      }
-    ]
-  });
-
-  const prevSlide = $('#prev').on('click', function() {
-    awardsSlider.goToPrevSlide();
-  });
-
-  const nextSlide = $('#next').on('click', function() {
-    awardsSlider.goToNextSlide();
-  });
-};
-
 //
 // Init gumshoe plugin for create brillyant guidebook
 //
@@ -322,3 +267,17 @@ awardsSlider &&
       1300: { perView: 4 }
     }
   }).mount();
+
+//
+// Progress value
+//
+
+const progressBlocks = document.querySelectorAll('[data-progress]');
+
+progressBlocks &&
+  progressBlocks.forEach(function(progressBlock) {
+    let percent = progressBlock.getAttribute('data-progress');
+
+    progressBlock.querySelector('svg').style.strokeDashoffset =
+      percent * 1.9 + 170;
+  });

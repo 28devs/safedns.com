@@ -36,24 +36,28 @@ include inc/nav.pug
     hr
 
   .container
-    .row
-      .col-12
-        section.block-outer
-          h2.section-title Home clients
+    .block-outer
+      .row
+        .col-12
+            h2.section-title Home clients
 
-    .row.half-gutters
-      .col-12.col-md-6.col-lg-4
-        .review
-          .review__text
-            p= reviewsSlider[0].text
-          
-          .review__desc
-            .review__person
-              .review__avatar(style='background-image: url(' + reviewsSlider[0].img + ')')
+      .row.full-gutters
+        each review in reviews 
+          .col-12.col-md-6.col-lg-4.shadow-hover
+            .review
+              .review__text
+                p= review.text
               
-              .review__info
-                .review__name= reviewsSlider[0].name
-                .review__old= reviewsSlider[0].old
+              .review__desc
+                .review__person
+                  .review__avatar(style='background-image: url(' + review.img + ')')
+                  
+                  .review__info
+                    .review__name= review.name
+                    .review__old= review.old
+
+      .text-center
+        .btn.btn_small.btn_back View more
 
 
 include inc/footer.pug

@@ -7,7 +7,9 @@
     width: 100%
     margin-top: 8px
 
+/* rtl:ignore */
 .glide
+  direction: ltr
 
   &__space-for-arrows
     margin: 0 20px @sm 0 30px @lg 0 50px
@@ -62,11 +64,11 @@
         opacity: .9
 
       &--active
-        background: #2F80ED
+        background: $primary
         size: 24px
 
 .reviews-slider
-  margin: 0 0 50px @md -20px 0 110px
+  margin: 0 0 100px @md -20px 0 80px @lg -20px 0 110px
 
 .awards-slider
   .glide
@@ -78,3 +80,7 @@
 
       img
         max-width: 100% @sm 120px
+
+[dir='rtl']
+  .review-large__person, .review-large__desc
+    flex-direction: row-reverse

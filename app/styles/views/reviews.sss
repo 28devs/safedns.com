@@ -1,4 +1,4 @@
-.review-large
+.review-large, .review
   &__text
     padding: 20px 0 @md 30px 16% 0
     text-align: center @md left
@@ -22,10 +22,10 @@
   &__desc
     box: space-around @sm middle 
     flex-wrap: wrap @sm nowrap
-    margin: 45px 0 65px
+    margin: 15px 0 30px @sm 45px 0 65px
 
   &__logo
-    margin: 0 20px 20px 20px @sm 0 50px 0 0
+    margin: 20px @sm 0 50px 0 0
     padding-right: 0 @sm 50px
     border-right: 0 @sm 1px #e0e0e0 solid
 
@@ -37,15 +37,72 @@
     text-align: left
 
   &__person
-    box: left middle  
+    box: center middle  
 
     ^&__avatar
       size: 48px
       min-width: 48px
-      margin-right: 10px
+      margin-right: 18px
 
   &__name
     text: 700 #4F4F4F
+    line-height: 20px
 
   &__old
     text: #828282
+    line-height: 20px
+
+.shadow-hover
+  padding: 20px * !important
+  transition: .2s ease
+
+  &:hover
+    box-shadow: none @md 0px 10px 15px rgba(0, 0, 0, 0.1)
+
+@media $sm-down
+  .shadow-hover
+    padding: 20px * !important
+    margin-bottom: 15px !important
+
+.review
+  height: 100%
+  box: vertical space-between
+  position: relative
+  padding: 0 @md 10px
+
+  &__text
+    padding: 0 !important
+
+    p
+      text: 16px italic !important
+      position: static
+      text-align: left
+
+      &:before
+        position: static !important
+        font-size: 72PX !important
+        height: 19px !important
+        text-align: left
+        width: 32px
+        font-style: normal
+        line-height: 67PX !important
+        overflow: hidden !important
+        display: inline-block
+        color: #2F80ED !important
+
+      &:after
+        color: #F2F2F2 !important
+        right: 30px !important
+        bottom: auto  !important
+        top: -30px !important
+        font-size: 350PX !important
+        z-index: -1
+        font-style: normal
+
+  &__desc
+    justify-content: flex-start !important 
+    margin: 20px 0 0
+
+  &__avatar
+    size: 36px !important
+    min-width: 36px !important

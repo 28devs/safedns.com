@@ -1,0 +1,80 @@
+.circle
+  &-container
+    box: space-between wrap
+
+  &-wrap
+    width: 80% @sm 47% @md 47% @lg 32% @xl 30% 
+    margin: 0 auto @sm 0
+
+    &:last-child
+      margin: 0 auto @sm -50px auto 0 @lg 0
+
+  
+.circle-icon
+  width: 100%
+  padding-bottom: 100%
+  background: linear-gradient(145.3deg, #EB5757 -4.44%, #2F80ED 117.29%)
+  border-radius: 50%
+  margin: 0 0 20px  @sm 20px * 30px !important
+  box: center middle
+  position: relative
+
+  &_full-bg
+    ^&__text
+      background: transparent !important
+
+      &-text
+        text: 18px #fff bold
+
+  &__text
+    position: absolute 28px
+    margin: auto
+    text: 18px #fff bold
+    text-align: center
+    background: #fff
+    border-radius: 50%
+    box: vertical center middle
+    text-align: center
+
+    &-large
+      text: 48px 1.3 #333 bold
+      font-size: 34px @sm 34px @md 34px @lg 34px @xl 48px
+
+    &-text
+      text: 14px 1.1 #000 bold
+      font-size: 14px @sm 14px @md 14px @lg 14px @xl 14px
+
+  &_progress
+    background: url('../img/icons/progress.png') center / 100%
+
+    &-circle
+      // stroke-dashoffset 360 - 170
+      position: absolute -1px
+      display: block
+      border-radius: 50%
+      overflow: hidden
+      box-shadow: inset 0 0 0 1px white
+      transform: rotate(90deg) scale(-1, 1)
+
+      svg
+        size: 100%
+
+
+.cases-item
+  text-align: center
+  box: vertical bottom center 
+  height: 100%
+
+  img
+    margin-bottom: 20px @md 30px
+
+  &__desc
+    display: block
+
+    .text-center
+      margin-top: 30px
+
+.cases-bottom-link
+  margin: 0 !important
+  padding: 0px 0 40px @sm 20px 0 70px
+
