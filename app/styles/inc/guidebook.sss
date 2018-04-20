@@ -1,0 +1,38 @@
+.guidebook
+  list-style: none
+  position: relative
+  padding: 0
+  padding-left: 27px
+  padding-top: 0
+  margin-top: 0
+
+  &:before
+    content: ''
+    width: 1px
+    position: absolute 14px 0 14px *
+    background-color: #e0e0e0
+
+  &__item
+    position: relative
+    margin-top: 0
+    margin-bottom: 15px
+
+    &:before
+      content: ''
+      position: absolute 8px * * -29.7px
+      size: 7px
+      background-color: #e0e0e0
+      border-radius: 50%
+      transition: .2s ease
+
+    &:hover, &.active
+      &:before
+        background-color: $primary
+        size: 11px
+        left: -31.7px
+
+    ^&__elem
+      color: $text-primary-contrast
+
+    &:hover ^&__elem , &:active ^&__elem, &.active ^&__elem
+      font-weight: 700

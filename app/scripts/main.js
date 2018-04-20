@@ -54,6 +54,61 @@ window.onload = function() {
 };
 
 //
+// Init gumshoe plugin for create brillyant guidebook
+//
+
+gumshoe.init();
+
+//
+// Init init smoth scroll 
+//
+
+var scroll = new SmoothScroll('[href*="#"]');
+
+//
+// fix menu for guide book
+//
+
+const element = document.querySelector('[data-gumshoe-header]');
+
+if(element) {
+  console.log(123)
+  const getPosition = function() {
+    var xPosition = 0;
+    var yPosition = 0;
+
+    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+
+    if(yPosition <= this.scrollY) {
+      element.style.position = 'fixed';
+      element.style.left = xPosition+'px';
+      element.style.top = yPosition+'px';
+    } else {
+      element.style.position = 'initial';
+    }
+    console.log(yPosition)
+    console.log(this.scrollY)
+    // var box = elem.getBoundingClientRect();
+    // var box = elem.offsetLeft;
+    // var box = elem.scrollLeft;
+    // var box = elem.clientLeft;
+    // console.log(box)
+  }
+
+
+
+  getPosition();
+  window.addEventListener('scroll', function(e) {
+    getPosition();
+    clientScroll = this.scrollY;
+
+
+  });
+}
+
+
+//
 // Do indentation as the container
 // Container simulation for About page
 //
