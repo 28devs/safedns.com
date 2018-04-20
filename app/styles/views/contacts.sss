@@ -1,0 +1,48 @@
+.link-tel
+  text: 30px #000 @md 36px
+  display: block @sm inline-block
+
+  .text-secondary
+    display: none @sm inline-block
+
+.link-mailto
+  text: 24px #000
+  margin-bottom: 20px @sm 0
+  display: block
+
+.mb-0
+  margin-bottom: 0
+
+.contact-list
+  padding-left: 0 @sm 28px
+  text-align: center @sm left
+  list-style: none
+
+  &__item
+    margin-bottom: 50px
+
+    .text-icon
+      margin-bottom: 20px @sm 20px @lg 15px
+
+
+.text-icon
+  &:before
+    content: ''
+    display: inline-block
+    margin: 0 12px -2px -28px
+    
+  &_phone
+    &:before
+      background: url('../img/icons/contacts-phone.svg')
+      size: size('icons/contacts-phone.svg')
+
+  &_mail
+    &:before
+      background: url('../img/icons/contacts-mail.svg')
+      size: size('icons/contacts-mail.svg')
+      margin-bottom: 0
+
+  &_social
+    &:before
+      background: url('../img/icons/contacts-social.svg')
+      size: size('icons/contacts-social.svg')
