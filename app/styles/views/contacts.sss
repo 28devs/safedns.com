@@ -73,9 +73,29 @@
     text: 24px #BDBDBD 700 
     margin-bottom: 24px
 
+  .form
+    position: relative
+
+    .form__success
+      background: #f2f2f2
+      position: absolute 0 0 0 0
+      box: vertical center middle
+      display: none !important
+
+      h2
+        text: 36px #BDBDBD 700 
+        margin: 0 0 5px
+      
+      h3
+        margin: 0 0 40px
+
+    &_success
+      .form__success
+        display: flex !important
+
   textarea
     min-height: 128px @sm 228px
-    margin: 0 0 20px 0 @sm 28px 0 23px @sm 48px 0 43px 
+    margin: 0 0 20px 0 @sm 28px 0 23px @sm 42px 0 38px 
 
   .btn
     padding: * 67px

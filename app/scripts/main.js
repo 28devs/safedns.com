@@ -310,3 +310,15 @@ if (vacanciesAccordion) {
     });
   });
 }
+
+//
+// Contacts page form submit
+//
+const feedbackForm = document.querySelector('.feedback form');
+
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    feedbackForm.classList.add('form_success');
+  });
+}
