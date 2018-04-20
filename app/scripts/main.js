@@ -267,3 +267,17 @@ awardsSlider &&
       1300: { perView: 4 }
     }
   }).mount();
+
+//
+// Progress value
+//
+
+const progressBlocks = document.querySelectorAll('[data-progress]');
+
+progressBlocks &&
+  progressBlocks.forEach(function(progressBlock) {
+    let percent = progressBlock.getAttribute('data-progress');
+
+    progressBlock.querySelector('svg').style.strokeDashoffset =
+      percent * 1.9 + 170;
+  });
