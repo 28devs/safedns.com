@@ -5,7 +5,7 @@
 gumshoe.init();
 
 //
-// Init init smoth scroll 
+// Init init smoth scroll
 //
 
 var scroll = new SmoothScroll('[href*="#"]');
@@ -16,16 +16,16 @@ var scroll = new SmoothScroll('[href*="#"]');
 
 const element = document.querySelector('[data-gumshoe-header]');
 
-if(element) {
+if (element) {
   const getPosition = function() {
     var xPosition = 0;
     var yPosition = 0;
 
     // xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
-    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-    (yPosition <= this.scrollY)
+    yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+    yPosition <= this.scrollY
       ? element.classList.add('fixed')
-      : element.classList.remove('fixed')
+      : element.classList.remove('fixed');
     // if(yPosition <= this.scrollY) {
     //   element.style.position = 'fixed';
     //   element.style.left = xPosition+'';
@@ -33,9 +33,9 @@ if(element) {
     // } else {
     //   element.style.position = 'initial';
     // }
-    console.log(yPosition)
-    console.log(this.scrollY)
-  }
+    console.log(yPosition);
+    console.log(this.scrollY);
+  };
 
   getPosition();
   window.addEventListener('scroll', function(e) {
@@ -43,7 +43,6 @@ if(element) {
     clientScroll = this.scrollY;
   });
 }
-
 
 //
 // Do indentation as the container
@@ -259,7 +258,7 @@ awardsSlider &&
       1300: { perView: 4 }
     }
   }).mount();
-  
+
 //
 // Progress value
 //
@@ -273,3 +272,18 @@ progressBlocks &&
     progressBlock.querySelector('svg').style.strokeDashoffset =
       percent * 1.9 + 170;
   });
+
+//
+// Contacts map
+//
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('contacts-map'), {
+    zoom: 12,
+    center: { lat: 38.86, lng: -77.0423239 }
+  });
+  var marker = new google.maps.Marker({
+    position: { lat: 38.8140638, lng: -77.0423239 },
+    map: map
+  });
+}
