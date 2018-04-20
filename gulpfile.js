@@ -14,7 +14,16 @@
     rename = require('gulp-rename'),
     browserSync = require('browser-sync').create(),
     postcss = require('gulp-postcss'),
-    sugarss = require('sugarss');
+    sugarss = require('sugarss'),
+    watch = require('gulp-watch'),
+    gulpWatchPug = require('gulp-watch-pug');
+
+  // Попробовать позже https://www.npmjs.com/package/gulp-pug-inheritance
+  // jadeInheritance = require('gulp-jade-inheritance'),
+  // changed = require('gulp-changed'),
+  // cached = require('gulp-cached'),
+  // gulpif = require('gulp-if'),
+  // filter = require('gulp-filter');
 
   //write html by pug
   gulp.task('views', function buildHTML() {

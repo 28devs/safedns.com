@@ -28,6 +28,8 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.9",
     "gulp-uglifyes": "^0.1.3",
+    "gulp-watch": "^5.0.0",
+    "gulp-watch-pug": "^1.0.0",
     "normalize.css": "^8.0.0",
     "postcss-alias": "^2.0.0",
     "postcss-assets": "^5.0.0",

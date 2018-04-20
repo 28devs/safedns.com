@@ -1,0 +1,33 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerJobs)
+
+section.page-container.main-content
+  .container
+    .row
+      .col-12.col-lg-6
+        h2 About Job in SafeDNS
+
+        p Excepteur sint occaecat cupidatat non proident, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat?
+
+        p Duis aute irure dolor in reprehenderit in voluptate, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo!
+
+      .col-12.col-lg-6.main-content
+        img.full-width(src='img/jobs/img-1.jpg')
+
+
+section.block-outer.icons-gray-block
+  .container
+    h2.section-title Employee compensation, benefits, and perks
+
+    .row
+      each item in jobsIcons
+        .col-12.col-md-4
+          img(src=item.icon)
+          h4= item.title
+          p= item.text
+          
+
+
+include inc/footer.pug
+include inc/foot.pug
