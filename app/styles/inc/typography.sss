@@ -77,6 +77,12 @@ p
   font-range: $sm-px $lg-px
   font-weight: 700
 
+.title-counter
+  text: 12px 0 #BDBDBD
+  display: inline-block
+  position: relative
+  top: -1.5em
+
 p
   font-size: 14px @md 16px
   line-height: 1.5
@@ -99,6 +105,9 @@ li
 
 .text-secondary-light
   color: $text-secondary-light   
+
+.text-small
+  font-size: 14px
 
 .text-tips
   font-size: 12px @md 14px
@@ -198,4 +207,32 @@ h3 + ul.list_large
   .scroll-link
     position: relative
     // top: -71px
-  
+
+  > img
+    width: 100%
+    max-width: 100%
+
+  .article-bottom-link
+    margin: 30px 0 0 0 @sm 40px 0 0 0 @lg 50px 0 0 0
+    text-align: left
+
+  > img.full-width
+    margin: 0 -20px @sm 20px 0
+    width: calc(100% + 40px) @sm 100%
+    max-width: calc(100% + 40px) @sm 100%
+
+  > img.auto-width
+    width: auto
+
+    + .text-tips
+      margin-bottom: 0
+    
+
+.text-center
+  text-align: center !important
+
+aside
+  > h3
+    color: #E5E5E5
+    text-align: center @md left
+    margin-top: 50px @sm 0 
