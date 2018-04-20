@@ -5,7 +5,7 @@
 gumshoe.init();
 
 //
-// Init init smoth scroll 
+// Init init smoth scroll
 //
 
 var scroll = new SmoothScroll('[href*="#"]');
@@ -15,12 +15,12 @@ var scroll = new SmoothScroll('[href*="#"]');
 //
 
 const element = document.querySelector('[data-gumshoe-header]');
-if(element) {
+if (element) {
   //max width for menu
   const maxWidth = function() {
-    var width = element.clientWidth
+    var width = element.clientWidth;
 
-    element.style.width = width + 'px'
+    element.style.width = width + 'px';
   };
   maxWidth();
   //check resize
@@ -28,8 +28,8 @@ if(element) {
   //get position and get fixed class
   const getPosition = function() {
     var yPosition = 0;
-    
-    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+
+    yPosition += element.offsetTop - element.scrollTop + element.clientTop;
 
     if (200 <= this.scrollY) {
       element.classList.add('guidebook_fixed');
@@ -44,7 +44,6 @@ if(element) {
     clientScroll = this.scrollY;
   });
 }
-
 
 //
 // Do indentation as the container
@@ -260,7 +259,7 @@ awardsSlider &&
       1300: { perView: 4 }
     }
   }).mount();
-  
+
 //
 // Progress value
 //
@@ -274,3 +273,18 @@ progressBlocks &&
     progressBlock.querySelector('svg').style.strokeDashoffset =
       percent * 1.9 + 170;
   });
+
+//
+// Contacts map
+//
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('contacts-map'), {
+    zoom: 12,
+    center: { lat: 38.86, lng: -77.0423239 }
+  });
+  var marker = new google.maps.Marker({
+    position: { lat: 38.8140638, lng: -77.0423239 },
+    map: map
+  });
+}

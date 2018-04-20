@@ -1,3 +1,8 @@
+
+/* rtl:ignore */
+.always-ltr
+  direction: ltr
+
 .link-tel
   text: 30px #000 @md 36px
   display: block @sm inline-block
@@ -24,6 +29,16 @@
     .text-icon
       margin-bottom: 20px @sm 20px @lg 15px
 
+    .social
+      justify-content: center @sm flex-start 
+
+      a
+        size: 43px @sm 50px
+        background-size: 113%
+        background-position: center
+        background-color: white
+        filter: none
+        opacity: 1
 
 .text-icon
   &:before
@@ -46,3 +61,65 @@
     &:before
       background: url('../img/icons/contacts-social.svg')
       size: size('icons/contacts-social.svg')
+
+.feedback
+  padding: 15px 30px 30px @lg 0 0 0 70px @xl 0 0 0 100px
+  border: 1px solid #E0E0E0 @lg 0
+  background: #f2f2f2 @lg transparent
+  border-radius: 0 @sm 4px
+  margin: 0 -20px @sm 0
+
+  h3 
+    text: 24px #BDBDBD 700 
+    margin-bottom: 24px
+
+  textarea
+    min-height: 128px @sm 228px
+    margin: 0 0 20px 0 @sm 28px 0 23px @sm 48px 0 43px 
+
+  .btn
+    padding: * 67px
+    display: block @sm inline-block
+    
+
+.half-gray-bg
+  position: relative
+
+  &:after
+    content: ''
+    background: #f2f2f2
+    position: absolute 0 0 0 auto
+    width: 50%
+    display: none @lg block
+    border-left: 1px solid #E0E0E0
+    z-index: -1
+
+.contacts-map
+  height: 500px
+  position: relative
+  background: #e5e3df
+
+  .container
+    z-index: 2
+    position: relative
+
+    .card
+      position: absolute
+      background: #fff
+      border: 0
+      border-radius: 0
+      transform: translateY(60px)
+
+      &__content
+        padding: 23px 38px 28px 28px @sm 39px 102px 42px 42px
+
+      h3
+        font-size: 16px @sm 24px
+        margin: 10px 0 0 0
+
+  #contacts-map
+    height: 100%
+    z-index: 1
+
+.pb-0
+  padding-bottom: 0
