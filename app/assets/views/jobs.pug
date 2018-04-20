@@ -2,7 +2,7 @@ include inc/head.pug
 include inc/nav.pug
 +header(headerJobs)
 
-section.page-container.main-content
+section.block-outer
   .container
     .row
       .col-12.col-lg-6
@@ -15,19 +15,122 @@ section.page-container.main-content
       .col-12.col-lg-6.main-content
         img.full-width(src='img/jobs/img-1.jpg')
 
-
-section.block-outer.icons-gray-block
-  .container
-    h2.section-title Employee compensation, benefits, and perks
-
-    .row
-      each item in jobsIcons
-        .col-12.col-md-4
-          img(src=item.icon)
-          h4= item.title
-          p= item.text
++iconsGrayBlock(jobsIcons)(class='mb-0')
           
+section.vacancies.page-container
+    .container
+      h2.section-title Open vacancies
 
+      h3 IT specialists 
+        .title-tips 3
+
+      each item in [1,2,3]
+        article.vacancies__item
+          header.vacancies__header
+            .vacancies__title Web Content Analyst-Threat Research
+            .vacancies__info San Diego, California
+            .vacancies__info Full time \ Remote work
+            .vacancies__btn
+
+          .vacancies__content
+            .vacancies__content-wrap
+              .row
+                .col-12.col-lg-7
+                  p The Software Engineer with experience or interest i n machine learning will find a home at Webroot helping to build cutting-edge applications that take the misery out of internet security for consumers and businesses worldwide. This is an opportunity to exercise your creativity producing software that matters to people all over the world. Be an integral part of one of the primary companies in the market using advanced machine learning techniques to solve real-life problems while flexing your prowess on a database of more than 700 million entry points. The software engineer will design, implement and maintain systems that run over large databases. Join a growing company in a flourishing industry that values your contributions and understands the importance of work/life balance. Webroot is the right choice to advance your career.
+
+                  p.text-accent As our software engineer you will:
+
+                  ul
+                    li Maintain Webroot’s Machine Learning systems: 
+                    li Data collection as well as data storage
+                    li Supervising training of Machine Learning Models
+                    li Maintaining and assuring quality of published Models
+
+                  p.text-accent You bring to the table:
+
+                  ul
+                    li BS in Computer Science, MS preferred.
+                    li 2+ years in System Software Development and Software Design is preferred
+                    li Experience in designing and developing services, frameworks and APIs
+                    li Proficient in Relational Database development is required (MySQL, Oracle, etc...)
+                    li Experience in BigData frameworks and tools is a plus (Hadoop, NoSQL …)
+                    li Experience with AWS is ideal
+                    li Knowledge and experience in Linux and Windows
+                    li Strong experience in Python and one of the following languages: C#, C++, Java
+
+                .col-12.col-lg-5
+                  .card
+                    .card__content
+                      p Before submitting a resume, read
+
+                      p.mb-0 the 
+                        a(href='#!') Manual for Programmers 
+                      
+                      p.mt-0 and an 
+                        a(href='#!') Example of Tasks
+
+                    .card__footer
+                      p Send your resume to job@safedns.com
+
+      h3 Marketing
+        .title-tips 2
+
+      each item in [1,2,3]
+        article.vacancies__item
+          header.vacancies__header
+            .vacancies__title Sales Intern
+            .vacancies__info San Diego, California
+            .vacancies__info Full time
+            .vacancies__btn
+
+          .vacancies__content
+            .vacancies__content-wrap
+              .row
+                .col-12.col-lg-7
+                  p The Software Engineer with experience or interest i n machine learning will find a home at Webroot helping to build cutting-edge applications that take the misery out of internet security for consumers and businesses worldwide. This is an opportunity to exercise your creativity producing software that matters to people all over the world. Be an integral part of one of the primary companies in the market using advanced machine learning techniques to solve real-life problems while flexing your prowess on a database of more than 700 million entry points. The software engineer will design, implement and maintain systems that run over large databases. Join a growing company in a flourishing industry that values your contributions and understands the importance of work/life balance. Webroot is the right choice to advance your career.
+
+                  p.text-accent As our software engineer you will:
+
+                  ul
+                    li Maintain Webroot’s Machine Learning systems: 
+                    li Data collection as well as data storage
+                    li Supervising training of Machine Learning Models
+                    li Maintaining and assuring quality of published Models
+
+                  p.text-accent You bring to the table:
+
+                  ul
+                    li BS in Computer Science, MS preferred.
+                    li 2+ years in System Software Development and Software Design is preferred
+                    li Experience in designing and developing services, frameworks and APIs
+                    li Proficient in Relational Database development is required (MySQL, Oracle, etc...)
+                    li Experience in BigData frameworks and tools is a plus (Hadoop, NoSQL …)
+                    li Experience with AWS is ideal
+                    li Knowledge and experience in Linux and Windows
+                    li Strong experience in Python and one of the following languages: C#, C++, Java
+
+                .col-12.col-lg-5
+                  .card
+                    .card__content
+                      p Before submitting a resume, read
+
+                      p.mb-0 the 
+                        a(href='#!') Manual for Programmers 
+                      
+                      p.mt-0 and an 
+                        a(href='#!') Example of Tasks
+
+                    .card__footer
+                      p Send your resume to job@safedns.com
+
+
+
+
+
+
+
+
+        
 
 include inc/footer.pug
 include inc/foot.pug
