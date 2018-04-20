@@ -1,4 +1,6 @@
 .rate
+  margin: 40px 0
+
   &__container
     background: #F2F2F2
     border-radius: 0 @lg 64px
@@ -25,12 +27,15 @@
       cursor: pointer
       transition: .2s ease
 
+      &:first-of-type
+        margin-left: 0
+
       &:hover
         background-color: $primary
         color: #fff
 
 .similar
-  margin: 20px 0 @md 6vw 0 7vw @lg 80px 0 80px
+  margin: 60px 0 @md 6vw 0 7vw @lg 80px 0 80px
   border-top: 1px solid #e0e0e0 
   border-bottom: 1px solid #e0e0e0 
 

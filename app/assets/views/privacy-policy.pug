@@ -1,0 +1,44 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerPrivacy)
+
+.page-container.page-container_smooth-footer
+  .container
+    .row
+      aside.col-12.col-md-4.col-lg-3
+        +guidebook(privacyGuide)
+
+      main.main-content.col-12.col-md-8.col-lg-9
+        .privacy
+          p.privacy__update Latest changes: 12 may 2016
+          a.privacy__link(href='#!') Download Privacy Policy PDF <span class="text-tips">(1.2 mb)</span>
+          hr.hidden
+          a#overview.scroll-lin(href='#!')
+          h3 Overview
+          p We’ve tried to keep it as simple as possible, but if you’re not familiar with terms like cookies, IP addresses and browsers, then read about these key terms first. Your privacy matters to us so please do take the time to get to know our practices – and if you have any questions contact us.
+          hr.hidden
+          a#information.scroll-lin(href='#!')
+          h3 Information we collect 
+          p.text-accent Information you give us
+
+          p We may ask you to provide us with personal information, such as your name, email address, telephone number, credit card details and other contact details.
+
+          p.text-accent Device information
+
+          p We may collect device-specific information (such as your hardware model, operating system version, etc).
+
+          p.text-accent Log information
+
+          p When you use our services, we may automatically collect and store certain information in server logs. This may include: details of how you used our service, such as your search queries, Internet protocol address, browser type, browser language, the date and time of your request and referral URL, etc.
+
+          a#details.scroll-lin(href='#!')
+          p.text-accent Cookies
+
+          p Our website, www.safedns.com, uses cookies. Cookies are small data files stored by the browser on your computer's hard drive, these identify your computer to our server and personalize the website for future use. Your personal information is not provided to us by a cookie. If you have not supplied us with your personal data, you can still browse our site anonymously. Your browser may be set up not to accept cookies, if this is the case you can still use our website, although some of the functionality may be lost.
+
+          p.text-accent IP addresses
+
+          p We use IP addresses to administer our website, track your movements within the site and to analyze trends. The IP addresses do not provide us with your personally identifiable data.
+
+include inc/footer.pug
+include inc/foot.pug
