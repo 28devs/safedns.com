@@ -16,10 +16,12 @@ var scroll = new SmoothScroll('[href*="#"]');
 
 const element = document.querySelector('[data-gumshoe-header]');
 if (element) {
+  const aside = document.querySelector('aside')
+  var cs = getComputedStyle(aside);
   //max width for menu
   const maxWidth = function() {
-    var width = element.clientWidth;
-
+    var width = parseFloat(aside.clientWidth);
+    width -= parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     element.style.width = width + 'px';
   };
   maxWidth();
