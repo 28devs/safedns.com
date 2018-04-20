@@ -17,38 +17,30 @@ var scroll = new SmoothScroll('[href*="#"]');
 const element = document.querySelector('[data-gumshoe-header]');
 
 if(element) {
-  console.log(123)
   const getPosition = function() {
     var xPosition = 0;
     var yPosition = 0;
 
-    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+    // xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
     yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-
-    if(yPosition <= this.scrollY) {
-      element.style.position = 'fixed';
-      element.style.left = xPosition+'px';
-      element.style.top = yPosition+'px';
-    } else {
-      element.style.position = 'initial';
-    }
+    (yPosition <= this.scrollY)
+      ? element.classList.add('fixed')
+      : element.classList.remove('fixed')
+    // if(yPosition <= this.scrollY) {
+    //   element.style.position = 'fixed';
+    //   element.style.left = xPosition+'';
+    //   element.style.top = yPosition+'px';
+    // } else {
+    //   element.style.position = 'initial';
+    // }
     console.log(yPosition)
     console.log(this.scrollY)
-    // var box = elem.getBoundingClientRect();
-    // var box = elem.offsetLeft;
-    // var box = elem.scrollLeft;
-    // var box = elem.clientLeft;
-    // console.log(box)
   }
-
-
 
   getPosition();
   window.addEventListener('scroll', function(e) {
     getPosition();
     clientScroll = this.scrollY;
-
-
   });
 }
 
@@ -267,7 +259,7 @@ awardsSlider &&
       1300: { perView: 4 }
     }
   }).mount();
-
+  
 //
 // Progress value
 //
