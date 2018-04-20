@@ -1,0 +1,48 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerContacts)
+
+.page-container
+  .container
+    .row
+      .col-12.col-lg-6
+        section.block-outer
+          ul.contact-list
+            li.contact-list__item
+              p.text-secondary.text-icon.text-icon_phone Сall by phone
+
+              a.link-tel(href='tel:+18008202530') +1 800.820.2530
+                p.text-secondary (US)
+
+              a.link-tel(href='tel:+15714212990') +1 571.421.2990
+                p.text-secondary (Outside US)
+
+            li.contact-list__item
+              p.text-secondary.text-icon.text-icon_mail Write on e-mail
+
+              p.text-secondary.mb-0 Support and technical questions:
+              a.link-mailto(href='mailto:support@safedns.com') support@safedns.com
+
+              p.text-secondary.mb-0 For pricing inquiries and purchasing questions:
+              a.link-mailto(href='mailto:support@safedns.com') sales@safedns.com
+
+              p.text-secondary.mb-0 For account and payment support:
+              a.link-mailto(href='mailto:support@safedns.com') account@safedns.com
+
+            li.contact-list__item
+              p.text-secondary.text-icon.text-icon_social Follow us in social
+        
+              .social
+                a.social_youtube(href='#!')
+                a.social_google(href='#!')
+                a.social_linkedin(href='#!')
+                a.social_twitter(href='#!')
+                a.social_facebook(href='#!')
+                
+      .col-12.col-lg-6
+        section.block-outer
+          h2.section-title Form
+        
+
+include inc/footer.pug
+include inc/foot.pug

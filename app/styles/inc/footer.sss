@@ -71,44 +71,44 @@
         margin: 5px
 
 
-  &__social
-    box: horisontal
-    position: absolute @sm static
-    top: -85px
+.social
+  box: horisontal
+  position: absolute @sm static
+  top: -85px
 
-    a
-      size: 48px @sm 31px
-      display: block
-      border-radius: 50%
-      opacity: 1 @sm .2
-      filter: grayscale(0) brightness(1) @sm grayscale(1) brightness(4)
-      margin-right: 10px
-      background-size: cover
+  a
+    size: 48px @sm 31px
+    display: block
+    border-radius: 50%
+    opacity: 1 @sm .2
+    filter: grayscale(0) brightness(1) @sm grayscale(1) brightness(4)
+    margin-right: 10px
+    background-size: cover
 
-      &:last-child
-        margin: 0
-    
-      &:hover
-        opacity: 1
-        filter: grayscale(0) brightness(1)
+    &:last-child
+      margin: 0
+  
+    &:hover
+      opacity: 1
+      filter: grayscale(0) brightness(1)
 
-    &_youtube
-      background: svg-load('icons/social-youtube.svg')
-    
-    &_google
-      background: svg-load('icons/social-google.svg')
-    
-    &_linkedin
-      background: svg-load('icons/social-linkedin.svg')
+  &_youtube
+    background: svg-load('icons/social-youtube.svg')
+  
+  &_google
+    background: svg-load('icons/social-google.svg')
+  
+  &_linkedin
+    background: svg-load('icons/social-linkedin.svg')
 
-    &_twitter
-      background: svg-load('icons/social-twitter.svg')
+  &_twitter
+    background: svg-load('icons/social-twitter.svg')
 
-    &_facebook
-      background: svg-load('icons/social-facebook.svg')
+  &_facebook
+    background: svg-load('icons/social-facebook.svg')
 
 @media $sm-down
-  .footer__social a
+  .social a
     background-size: 113%
     background-position: center
     background-color: white
