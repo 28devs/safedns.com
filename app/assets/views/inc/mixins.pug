@@ -15,3 +15,10 @@ mixin header(data)
               .btn.btn_outline 
                 | Watch video
                 i.icon.icon_play
+
+mixin guidebook(data)
+  nav(data-gumshoe-header)
+    ul.guidebook(data-gumshoe)
+      each val in data
+        li.guidebook__item(class= val.active)
+          a.guidebook__elem(data-scroll href="#" + val.id)= val.title
