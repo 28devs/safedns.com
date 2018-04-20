@@ -22,7 +22,7 @@
       .src('app/assets/views/*.pug')
       .pipe(
         pug({
-          //pretty: true
+          pretty: true
         })
       )
       .pipe(gulp.dest('dest/'));

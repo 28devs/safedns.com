@@ -1,0 +1,43 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerCases)
+
+.page-container
+  .container
+    section
+      h2.section-title Business Cases
+        .title-counter 13
+
+      .row.full-gutters
+        each post, index in [1,2,3,4,5,6]
+          .col-12.col-md-6.col-lg-4
+            .cases-item
+              img(src='img/cases/logo-' + (index + 1) + '.jpg')
+              .cases-item__desc
+                p A little description. Что за компания, что хотела и что было сделано. Пара предложений о проблеме и решении что бы можно было понять что там внутри
+
+                .text-center
+                  .btn.btn_small.btn_back View case
+
+      .article-bottom-link.text-center.cases-bottom-link
+        .btn.btn_small.btn_back Show another cases <i class="icon icon_down"></i>
+
+  hr
+
+  .container
+    section.block-outer
+      h2.section-title Techology Integration Cases
+
+      .row.full-gutters
+        each post, index in [1,2,3]
+          .col-12.col-md-6.col-lg-4
+            .cases-item
+              img(src='img/cases/logo-' + (index + 7) + '.jpg')
+              .cases-item_desc
+                p A little description. Что за компания, что хотела и что было сделано. Пара предложений о проблеме и решении что бы можно было понять что там внутри
+
+                .text-center
+                  .btn.btn_small.btn_back View case
+
+include inc/footer.pug
+include inc/foot.pug
