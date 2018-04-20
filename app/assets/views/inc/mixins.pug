@@ -17,8 +17,8 @@ mixin header(data)
                 i.icon.icon_play
 
 mixin guidebook(data)
-  nav(data-gumshoe-header)
-    ul.guidebook(data-gumshoe)
+  nav.guidebook(data-gumshoe-header)
+    ul.guidebook__list(data-gumshoe)
       each val in data
         li.guidebook__item(class= val.active)
           a.guidebook__elem(data-scroll href="#" + val.id)= val.title
