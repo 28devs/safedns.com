@@ -1,14 +1,15 @@
 .rate
   &__container
     background: #F2F2F2
-    border-radius: 0 @sm 64px
+    border-radius: 0 @lg 64px
     width: 100%
     max-width: 600px
-    box: vertical center middle @sm horizontal center space-between 
+    box: vertical center middle @lg horizontal center space-between 
     padding: 16px 35px
 
   &__text 
-    margin: 0
+    font-size: 12px @sm inherit
+    margin-bottom: 12px @lg 0
     color: $text-secondary
 
   &__scale
@@ -21,3 +22,9 @@
       border-radius: 50%
       box: center middle
       margin-left: 8px
+      cursor: pointer
+      transition: .2s ease
+
+      &:hover
+        background-color: $primary
+        color: #fff

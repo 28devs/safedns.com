@@ -22,7 +22,6 @@ if (element) {
   const maxWidth = function() {
     var width = parseFloat(aside.clientWidth);
     width -= parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
-    console.log(width)
     element.style.width = width + 'px';
   };
   maxWidth();
