@@ -11,30 +11,31 @@ gumshoe.init();
 var scroll = new SmoothScroll('[href*="#"]');
 
 //
-// fix menu for guide book
+// fixed menu for guide book
 //
 
 const element = document.querySelector('[data-gumshoe-header]');
-
 if (element) {
+  //max width for menu
+  const maxWidth = function() {
+    var width = element.clientWidth;
+
+    element.style.width = width + 'px';
+  };
+  maxWidth();
+  //check resize
+  window.addEventListener('resize', maxWidth);
+  //get position and get fixed class
   const getPosition = function() {
-    var xPosition = 0;
     var yPosition = 0;
 
-    // xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
     yPosition += element.offsetTop - element.scrollTop + element.clientTop;
-    yPosition <= this.scrollY
-      ? element.classList.add('fixed')
-      : element.classList.remove('fixed');
-    // if(yPosition <= this.scrollY) {
-    //   element.style.position = 'fixed';
-    //   element.style.left = xPosition+'';
-    //   element.style.top = yPosition+'px';
-    // } else {
-    //   element.style.position = 'initial';
-    // }
-    console.log(yPosition);
-    console.log(this.scrollY);
+
+    if (200 <= this.scrollY) {
+      element.classList.add('guidebook_fixed');
+    } else {
+      element.classList.remove('guidebook_fixed');
+    }
   };
 
   getPosition();
