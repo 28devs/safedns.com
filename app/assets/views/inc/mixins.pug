@@ -22,3 +22,17 @@ mixin guidebook(data)
       each val in data
         li.guidebook__item(class= val.active)
           a.guidebook__elem(data-scroll href="#" + val.id)= val.title
+
+
+
+mixin iconsGrayBlock(item)
+  section.block-outer.icons-gray-block.page-container&attributes(attributes)
+    .container
+      h2.section-title Employee compensation, benefits, and perks
+
+      .row
+        each item in jobsIcons
+          .col-12.col-md-6.col-lg-4
+            img(src=item.icon)
+            h3.title-promo= item.title
+            p= item.text

@@ -16,7 +16,7 @@ var scroll = new SmoothScroll('[href*="#"]');
 
 const element = document.querySelector('[data-gumshoe-header]');
 if (element) {
-  const aside = document.querySelector('aside')
+  const aside = document.querySelector('aside');
   var cs = getComputedStyle(aside);
   //max width for menu
   const maxWidth = function() {
@@ -288,5 +288,37 @@ function initMap() {
   var marker = new google.maps.Marker({
     position: { lat: 38.8140638, lng: -77.0423239 },
     map: map
+  });
+}
+
+//
+// Accordion for vacancies
+//
+
+const vacanciesAccordion = document.querySelectorAll('.vacancies__header');
+
+if (vacanciesAccordion) {
+  vacanciesAccordion.forEach(function(elem) {
+    elem.addEventListener('click', function() {
+      this.classList.toggle('vacancies__header_active');
+
+      let panel = this.nextElementSibling;
+
+      panel.style.maxHeight
+        ? (panel.style.maxHeight = null)
+        : (panel.style.maxHeight = panel.scrollHeight + 'px');
+    });
+  });
+}
+
+//
+// Contacts page form submit
+//
+const feedbackForm = document.querySelector('.feedback form');
+
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    feedbackForm.classList.add('form_success');
   });
 }

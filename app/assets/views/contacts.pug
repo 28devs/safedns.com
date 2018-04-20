@@ -44,6 +44,10 @@ include inc/nav.pug
           h3 Feedback Form
 
           form.form
+            .form__success
+              h2 Thenk you!
+              h3 Your message has been sent
+
             .input-group
               input(type='text' placeholder='Youre name*')
 
@@ -56,7 +60,7 @@ include inc/nav.pug
             .input-group
               textarea(type='text' placeholder='Message')
 
-            .btn.btn_secondary.btn_small Send
+            input.btn.btn_secondary.btn_small(type='submit' value='Send')
         
 .contacts-map
   .container
