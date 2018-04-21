@@ -49,7 +49,7 @@
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
         relative: 'styles/'
-        // cache: true
+        cache: true
       }),
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
@@ -66,7 +66,7 @@
       require('postcss-inline-svg')({
         path: 'app/assets/img/'
       }),
-      //require('autoprefixer'),
+      require('autoprefixer'),
       require('postcss-rtl'),
       require('postcss-pxtorem')({
         selectorBlackList: [
