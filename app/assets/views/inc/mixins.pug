@@ -2,19 +2,33 @@ mixin header(data)
   header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
     .container
       .row
-        .col-12.col-md-8
-          if data.crumbs
-            a.header__breadcrumbs(href="#!") !{data.crumbs}
-          h1.header__title !{data.title}
-          if data.desc 
-            p.header__desc !{data.desc} 
-        
-        if data.button
-          .col-12.col-md-4
+        if(!data.search)
+          .col-12.col-md-8
+            if data.crumbs
+              a.header__breadcrumbs(href="#!") !{data.crumbs}
+            h1.header__title !{data.title}
+            if data.desc 
+              p.header__desc !{data.desc} 
+          
+          if data.button
+            .col-12.col-md-4
+              .header__control-elem
+                .btn.btn_outline 
+                  | Watch video
+                  i.icon.icon_play
+        else
+          .col-12.col-md-6.col-lg-4
+            if data.title
+              h1.header__title !{data.title}
+            else
+              .btn.btn_small.btn_back.btn_transparent
+                i.icon.icon_back
+                | Back to the intstructions
+          .col-12.col-md-6.col-lg-8
             .header__control-elem
-              .btn.btn_outline 
-                | Watch video
-                i.icon.icon_play
+              form.search(action="")
+                input.search__field(type='text' required placeholder='Write your problem...')
+                input.search__submit(type='submit' value='')
 
 mixin guidebook(data)
   nav.guidebook(data-gumshoe-header)

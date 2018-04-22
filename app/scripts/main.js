@@ -74,6 +74,27 @@ if (elemLeft) {
 }
 
 //
+// tabs
+//
+const tabsItem = document.querySelectorAll('[data-tabs-link]')
+
+tabsItem.forEach(function(item, id, er) {
+  item.addEventListener('click', function(e) {
+    e.preventDefault()
+    
+    er.forEach(function() {
+      console.log(er)
+    })
+
+  })
+})
+
+// const tabs = function() {
+//   console.log(this)
+// }
+
+
+//
 // Hide cookie block than press 'I agree'
 //
 

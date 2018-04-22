@@ -1,4 +1,6 @@
-.page-container
+.page-container 
+  padding: 25px 0 40px @sm 5vw 0 6vw @lg 45px 0 65px
+
   &_smooth-footer + section
     position: relative
     
@@ -12,7 +14,8 @@
       height: 30px
       display: block
 
-  padding: 25px 0 40px @sm 5vw 0 6vw @lg 45px 0 65px
+  &_gray
+    background-color: #F2F2F2
 
   > :first-child:not(.container)
     margin: 5px 0 40px @md 2vw 0 5vw @lg 15px 0 65px
@@ -70,6 +73,12 @@
     width: 33.33334%
     // padding: 0 10px @md 0 3vw @xl 0 26px
 
+  .col-md-3
+    width: 25%
+    
+  .col-md-9
+    width: 75%
+    
 @media $lg
   .col-lg-3
     width: 25%
@@ -85,6 +94,9 @@
 
   .col-lg-7
     width: 58.33333%
+
+  .col-lg-8
+    width: 66.66666%
 
   .col-lg-9
     width: 75%

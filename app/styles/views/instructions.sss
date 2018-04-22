@@ -62,3 +62,65 @@
   &__text
     margin-top: 23px @md 30px
     opacity: .5
+
+.search
+  position: relative
+  width: 100% 
+  max-width: 100%
+  border-radius: 21px
+
+  &__field
+    width: 100%
+    background-color: #fff 
+    outline: none
+    color: $text-primary-contrast
+    padding-left: 40px
+    line-height: 42px
+    height: 42px
+    border-radius: 21px
+    border: 0
+    transition: .1s ease
+
+    &::placeholder
+      color: $text-primary-contrast
+
+      & + [type='submit']
+        background: #f2f2f2 svg-load('icons/search.svg', fill: $text-primary-contrast) center no-repeat
+
+    &:invalid
+      background-color: rgba(255, 255, 255, 0.15)
+
+      &::placeholder
+        color: $text-secondary-light
+        
+      & + [type='submit']
+        background-color: transparent
+
+    &:hover:not(:valid):not(:focus)
+      background-color: rgba(255, 255, 255, 0.3)
+      
+      &::placeholder
+        color: #fff
+    
+    &:focus
+      background-color: #fff 
+      color: $text-primary-contrast
+      
+      &::placeholder
+        color: $text-primary-contrast
+
+      & + [type='submit']
+        background: #f2f2f2 svg-load('icons/search.svg', fill: $text-primary-contrast) center no-repeat
+
+  &__submit
+    position: absolute 0 0 0 auto
+    width: 76px
+    background: svg-load('icons/search.svg', fill: #fff) center no-repeat
+    border-radius: 21px
+    outline: none
+    transition: .1s ease
+
+.search__field:not(:invalid) + .search__submit:hover 
+  background: #e0e0e0 svg-load('icons/search.svg', fill: $text-primary-contrast) center no-repeat
+  cursor: pointer
+  

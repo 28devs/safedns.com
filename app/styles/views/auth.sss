@@ -1,0 +1,34 @@
+.auth
+  &__header
+    margin-bottom: 30px
+
+  &__header-list
+    list-style: none
+    box: horizontal middle center
+
+  &__header-item
+    position: relative
+    display: inline-block
+    padding: 0 40px
+    
+    &:after
+      content: ''
+      position: absolute
+      right: 0
+      top: 18px
+      bottom: 10px
+      width: 1px
+      background-color: #e0e0e0
+
+    &:last-of-type:after
+      display: none
+
+    ^&__header-title
+      color: $text-secondary-light
+      margin: 0
+
+  &__header-link.active
+    ^&__header-title
+      color: $text-primary-contrast
+      font-weight: 700
+

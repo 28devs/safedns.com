@@ -71,12 +71,25 @@ button, input[type='submit']
       background: #fff
 
   &_small
-    padding: 12px * !important
+    padding: 9px * !important
     font-size: 16px !important
 
     ^&_back
       margin-top: -3px
+  
+  &_transparent
+    background: rgba(255, 255, 255, 0.2)
+    color: #fff
 
+    &:hover, &:active
+      color: $text-primary-contrast
+
+    .icon_back
+      background: svg-load('icons/back-arrow.svg', fill: #fff) center no-repeat !important
+    
+    &:hover, &:active
+      .icon_back
+        background: svg-load('icons/back-arrow.svg', fill: $text-primary-contrast) center no-repeat !important
 .icon
   display: inline-block
   transition: .2s ease
@@ -93,6 +106,9 @@ button, input[type='submit']
     size: 16px 16px
     margin: 0 9px -2px 0
 
+    .btn:hover &
+      background: svg-load('icons/back-arrow.svg', fill: #828282)
+
   &_down
     background: svg-load('icons/nav-arrow-down.svg', stroke: #BDBDBD) center no-repeat
     size: 12px
@@ -105,7 +121,8 @@ button, input[type='submit']
 
     .btn:hover &
       background: svg-load('icons/download-kit.svg', fill: #828282)
-    
+  
+  
 [dir=rtl]
   .icon
     transform: scaleX(-1)
