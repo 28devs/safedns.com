@@ -1,12 +1,30 @@
 include inc/head.pug
-include inc/nav.pug
++nav(class='sticky-nav_always-fixed-state')
 
-.page-container
-  .container
-    .row
-      .col-12
-        section.block-outer
-          h2.section-title Title
+.page-container_gray
+  .form-pages-header
+    h2.section-title <b>What Do</b> | Category
 
+  .form-container
+    form.form(action="#")
+      .input-group
+        input.input(type='text' placeholder='Name*')
+
+      .input-group.input-group_grid
+        .row
+          .col-12.col-sm-6
+            input.input(type='mail' placeholder='Working E-mail*')
+          .col-12.col-sm-6
+            input.input(type='text' placeholder='Working telephone')
+
+      .input-group
+        input.input(type='password' placeholder='Country')
+        
+      .input-group
+        input.input(type='text' placeholder='Company name*')
+
+      .form__footer
+        .input-group
+          a.btn.btn_small.btn_primary Registration
 include inc/footer-simple.pug
 include inc/foot.pug
