@@ -9,7 +9,13 @@
   &_single
     max-width: 650px
     width: 100%
-    padding: 70px 110px
+    padding: 50px 20px @md 55px 110px
+    margin:  auto @sm 10vh auto @md 140px auto
+
+  .form
+    .input-group
+      input, textarea
+        background: #F2F2F2
 
 .form
   .input-group
@@ -23,10 +29,11 @@
       padding: 11px 19px @sm 11px 27px
       display: block
       width: 100%
+      outline: none
 
   .form__footer
     margin-top: 35px
-    
+
 ::placeholder
   font-family: 'PT Sans', arial
   font-size: 14px @md 16px

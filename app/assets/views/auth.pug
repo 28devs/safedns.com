@@ -1,11 +1,12 @@
 include inc/head.pug
-include inc/nav.pug
 
-.page-container.page-container_gray
+.page-container.page-container_gray.page-container_auth
+  include inc/nav.pug
   .container
     .form-container.form-container_single
       section.auth(data-tabs)
         .auth__header
+          .auth__header-logo
           ul.auth__header-list
             li.auth__header-item
               a.auth__header-link.active(href="#login" data-tabs-link)
@@ -25,9 +26,9 @@ include inc/nav.pug
                 .form__footer
                   .input-group
                     a.btn.btn_small.btn_primary Login
-                  a.auth__bottom-link(href="#")
+                  a.auth__footer-link(href="#") Forgot password
 
-            #login.auth-registration.tabs-content
+            #registration.auth-registration.tabs-content
               form.form(action="#")
                 .input-group
                   input.input(type='text' placeholder='Name*')
@@ -39,6 +40,6 @@ include inc/nav.pug
                 .form__footer
                   .input-group
                     a.btn.btn_small.btn_primary Registration
-
-include inc/footer.pug
+  
+  include inc/footer.pug
 include inc/foot.pug

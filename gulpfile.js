@@ -49,7 +49,7 @@
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
         relative: 'styles/'
-        cache: true
+        // cache: true
       }),
       require('postcss-nested-ancestors'),
       require('postcss-nested'),
