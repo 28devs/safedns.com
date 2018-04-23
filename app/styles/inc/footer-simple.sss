@@ -1,34 +1,48 @@
 .footer-simple
   border-top: 1px solid #E0E0E0
-  background: #F7F7F7
+  background: #fff @md #F7F7F7
+  
 
   &__list
-    box: horizontal center middle
+    box: vertical center middle @md horizontal center middle
     list-style: none
-    height: 115px
+    padding: 0
+    height: 95px @md 113px
+
+    & > .footer-simple__item
+      display: inline-block
+      padding: 0 45px
+      margin: 0
+
+      &:first-child
+        position: relative
+        
+        &:after
+          display: none @md block
+          content: ''
+          position: absolute
+          right: 0
+          top: 8px
+          bottom: 3px
+          width: 1px
+          background-color: #e0e0e0
+      
+      
+      &:last-child
+        padding: 0 
+      
+  &__sub-list
+    max-width: 100%
     margin: 0
     padding: 0
 
-  &__item
-    display: block
-    padding: 0 45px
+    ^&__item
+      display: inline-block
+      padding: 0 9px @md 0 45px
 
-    &:first-child
-      position: relative
-      
-      &:after
-        display: block
-        content: ''
-        position: absolute
-        right: 0
-        top: 7px
-        bottom: 3px
-        width: 1px
-        background-color: #e0e0e0
-    
-    &:last-child
-      padding-left: 0
-  
+      &:nth-last-child(1)
+        padding-left: 9px @md 0
+        
   &__link
     color: $text-secondary
     font-size: 14px
