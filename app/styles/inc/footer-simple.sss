@@ -1,0 +1,35 @@
+.footer-simple
+  border-top: 1px solid #E0E0E0
+  background: #F7F7F7
+
+  &__list
+    box: horizontal center middle
+    list-style: none
+    height: 115px
+    margin: 0
+    padding: 0
+
+  &__item
+    display: block
+    padding: 0 45px
+
+    &:first-child
+      position: relative
+      
+      &:after
+        display: block
+        content: ''
+        position: absolute
+        right: 0
+        top: 7px
+        bottom: 3px
+        width: 1px
+        background-color: #e0e0e0
+    
+    &:last-child
+      padding-left: 0
+  
+  &__link
+    color: $text-secondary
+    font-size: 14px
+ 

@@ -49,8 +49,7 @@
       require('postcss-assets')({
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
-        relative: 'styles/',
-        cache: true
+        relative: 'styles/'
       }),
       require('postcss-nested-ancestors'),
       require('postcss-nested'),

@@ -8,7 +8,7 @@ gumshoe.init();
 // Init init smoth scroll
 //
 
-var scroll = new SmoothScroll('[href*="#"]');
+var scroll = new SmoothScroll('nav [href*="#"]');
 
 //
 // fixed menu for guide book
@@ -72,6 +72,28 @@ if (elemLeft) {
   document.addEventListener('DOMContentLoaded', infoAboutPadding);
   window.addEventListener('resize', infoAboutPadding);
 }
+
+//
+// tabs
+//
+const tabsItem = document.querySelectorAll('[data-tabs-link]')
+
+tabsItem.forEach(function(item, id, er) {
+  item.addEventListener('click', function(e) {
+    e.preventDefault()
+
+    er.forEach(function(item) {
+      const idDisactive = item.getAttribute('href').substring(1)
+      const tabContentDisactive = document.getElementById(idDisactive)
+      tabContentDisactive.classList.remove('active') 
+      item.classList.remove('active')
+    })
+    const idActive = this.getAttribute('href').substring(1)
+    const tabContentActive = document.getElementById(idActive)
+    tabContentActive.classList.add('active')
+    this.classList.add('active')
+  })
+})
 
 //
 // Hide cookie block than press 'I agree'

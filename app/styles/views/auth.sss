@@ -1,0 +1,71 @@
+.auth
+
+  &__header
+    margin-bottom: 30px
+
+  &__header-logo
+    display: block @md none
+    background-image: url('../img/logo-big-white.png')
+    width: 188px
+    height: 135px
+    margin: 0 auto 35px
+   
+  &__header-list
+    list-style: none
+    margin-left: 0
+    box: horizontal middle center
+
+  &__header-item
+    position: relative
+    display: inline-block
+    padding: 0 20px @md 0 40px
+    
+    &:after
+      display: none @md block
+      content: ''
+      position: absolute
+      right: 0
+      top: 18px
+      bottom: 10px
+      width: 1px
+      background-color: #e0e0e0
+
+    &:last-of-type:after
+      display: none
+
+    ^&__header-title
+      color: $text-secondary-light
+      margin: 0
+
+  &__header-link.active
+    ^&__header-title
+      color: $text-primary-contrast
+      font-weight: 700
+
+  &__footer-link
+    margin-top: 30px @md -12px
+    display: block
+    color: $text-secondary
+
+
+@media $md-down
+  .page-container
+    nav, footer
+      display: none 
+  
+    &_auth
+      background: linear-gradient(180deg, rgba(47, 128, 237, 0.9) 10.3%, rgba(51, 51, 51, 0.9) 50%), url('../img/auth-mobile-bg.jpg')
+
+      .form-container
+        background: transparent
+
+      .auth__header-link
+        .auth__header-title
+          color: #fff
+          opacity: .3
+
+      .auth__header-link.active
+        .auth__header-title
+          color: #fff
+          font-weight: 700
+          opacity: 1
