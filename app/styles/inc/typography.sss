@@ -141,6 +141,15 @@ hr
   &.hidden
     visibility: hidden
 
+.img-fluid
+  max-width: 100%
+
+@media $sm-down
+  .full-width
+    margin: 20px -20px @sm 20px 0
+    width: calc(100% + 40px) @sm 100%
+    max-width: calc(100% + 40px) @sm 100%
+
 ul.list
   list-style-type: none
 
@@ -243,3 +252,56 @@ aside
     color: #E5E5E5
     text-align: center @md left
     margin-top: 50px @sm 0 
+
+.slide-tip
+  text: 14px #BDBDBD
+  margin-top: 10px
+  box: center middle
+  display: flex @sm none
+
+  &:after, &:before
+    content: ''
+    background: svg-load('icons/long-arrow.svg')
+    size: size('icons/long-arrow.svg')
+    display: block
+    margin: 15px
+
+  &:before
+    transform: rotate(180deg)
+
+.table-responsive
+  overflow: auto
+
+  td, th
+    white-space: nowrap
+  
+.table
+  width: 100%
+
+  td, th
+    padding: 20px 25px
+    text: 18px center
+    font-weight: 400
+    
+  thead
+    th
+      text: 14px #4F4F4F italic 400 
+
+  tbody
+    th
+      text-align: left
+      color: #333
+
+  tr:nth-child(odd)
+    td
+      background: #F2F2F2
+
+      &:nth-child(odd)
+        background: #D8E3F2
+
+  tr:nth-child(even)
+    td
+      background: #E5E5E5
+
+      &:nth-child(odd)
+        background: #B6C7DE

@@ -1,0 +1,16 @@
+<svg width="81" height="96" viewBox="0 0 81 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Vector">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 40.0148 0C 40.0148 0 40.0148 0 0 24C 0 72 40.0148 96 40.0148 96C 40.0148 96 80.0296 72 80.0296 24C 40.0148 0 40.0148 0 40.0148 0Z" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(123.5 140 -116.71 102.955 58.3549 -59.4774)">
+<stop stop-color="#2F80ED"/>
+<stop offset="1" stop-color="#EB5757"/>
+</linearGradient>
+
+</defs>
+</svg>
+

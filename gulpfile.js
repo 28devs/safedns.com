@@ -16,6 +16,7 @@
     postcss = require('gulp-postcss'),
     sugarss = require('sugarss'),
     watch = require('gulp-watch'),
+    cached = require('gulp-cached'),
     gulpWatchPug = require('gulp-watch-pug');
 
   // Попробовать позже https://www.npmjs.com/package/gulp-pug-inheritance
@@ -48,7 +49,7 @@
       require('postcss-assets')({
         loadPaths: ['img/', 'img/about', 'img/icons'],
         basePath: 'dest/',
-        relative: 'styles/'
+        relative: 'styles/',
         cache: true
       }),
       require('postcss-nested-ancestors'),
@@ -121,18 +122,21 @@
         .pipe(gulp.dest('dest/styles/'))
     );
   });
+
   gulp.task('libs-js', function() {
     return gulp
       .src('app/libs/**/*.js')
       .pipe(concat('libs.min.js'))
       .pipe(gulp.dest('dest/scripts/'));
   });
+
   //copy all assets files
   gulp.task('assets', function() {
     return gulp
       .src('app/assets/**', {
         since: gulp.lastRun('assets')
       })
+      .pipe(cached('app/assets'))
       .pipe(gulp.dest('dest'));
   });
 

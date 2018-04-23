@@ -3,7 +3,7 @@
   position: relative
   background-position: center
   background-size: cover
-  text-align: center @md left 
+  text-align: center @xl left 
   background-color: #242235
 
   &_full-width
@@ -38,9 +38,12 @@
       transform: rotate(180deg)
 
   &__control-elem
-    box: horizontal middle center @md bottom center 
+    box: horizontal middle center wrap @xl bottom center 
     height: 100%
-    margin-top: 10px @md 0
+    margin-top: 10px @xl 0
+
+    .btn:last-child:not(:first-child)
+      margin: 7px @sm 10px
   
   &_large
     padding: 80px 0 40px @sm 20vw 0 8vw @md 14vw 0 5vw @lg 185px 0 110px

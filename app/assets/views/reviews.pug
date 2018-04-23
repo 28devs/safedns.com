@@ -17,11 +17,11 @@ include inc/nav.pug
                     li.glide__slide
                       .review-large
                         .review-large__text
-                          p= reviewsSlider[0].text
+                          p.review-large__text-p= reviewsSlider[0].text
                         
                         .review-large__desc
                           .review-large__logo
-                            img(src='img/reviews/logo-1.png')
+                            img.review-large__logo-img(src='img/reviews/logo-1.png')
 
                           .review-large__person
                             .review-large__avatar(style='background-image: url(' + reviewsSlider[0].img + ')')
@@ -46,7 +46,7 @@ include inc/nav.pug
           .col-12.col-md-6.col-lg-4.shadow-hover
             .review
               .review__text
-                p= review.text
+                p.review__text-p= review.text
               
               .review__desc
                 .review__person

@@ -1,0 +1,134 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerSolutionBusiness)(class='header_large')
+
+section.solutions-text-block
+  .container
+    .row
+      .col-12.col-xl-6
+        p.solutions-text-block__text Do you know <strong>how long your employees spend working time</strong> on surfing the net and social networks?
+
+        p.solutions-text-block__text Are you sure that your employees will not be the victims of <a class="solutions-text-block__link" href="#!">phishing attacks</a> when they sow unsafe sites?
+      
+      .col-12.col-xl-6
+        img.solutions-text-block__img(src='img/solutions/img-man.jpg')
+
+
+section.solutions-big-gradient.solutions-big-gradient_business
+  .container
+    h2.solutions-big-gradient__subtitle Protect your company and increase the efficiency of employes 
+    h1.solutions-big-gradient__title Using SafeDNS 
+
+    img.solutions-big-gradient__img(src='img/solutions/macbook.png')
+
+section.solutions-big-features
+  .container
+    h2.section-title Big features
+
+    .row.half-gutters
+      .col-12.col-lg-6
+        .solutions-big-features__item.solutions-big-features__item_large-img
+          img.solutions-big-features__img(src='img/solutions/features-whitelist.png')
+          h3.solutions-big-features__title Whitelist & Blacklist
+          p.solutions-big-features__text In our database there are already 90 million items sorted by 60 categories in the white and black lists
+          p.solutions-big-features__text You can manage access to these categories
+          p.solutions-big-features__text And also add to the manual sites in the lists
+
+      .col-12.col-lg-6
+        .row.half-gutters
+          .col-12
+            .solutions-big-features__item.solutions-big-features__item_big-img
+              img.solutions-big-features__img(src='img/solutions/features-game.png')
+              h3.solutions-big-features__title Banner Block
+              p.solutions-big-features__text Our service blocks most of the unwanted advertising banners and videos that interfere with the comfortable browsing of the Internet
+
+          .col-12
+            .solutions-big-features__item.solutions-big-features__item_single-title
+              h3.solutions-big-features__title We support dynamic IP
+            
+section.solutions-medium-features
+  .container
+    h2.section-title Medium features
+
+    .row.full-gutters
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Example 2-colomn list
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Another title
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Long, very long subtitle, So long long long long and long, wtf so long?
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Last subtitle
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title More features
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title More more
+          p.solutions-medium-features__text Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+.container
+  hr
+
+section.stats.block-outer
+  .container
+    h2.section-title SafeDNS in numbers
+
+    .stats__items-wrap
+      each val in aboutStats
+        .stats__item
+          p.stats__number= val.number
+          .stats__wrap-text
+            p.stats__text-title= val.title
+            p.stats__desc= val.desc
+
+section.gray-block
+  .container
+    .block-outer
+      h2.section-title What our customers are saying...
+
+      .reviews-slider
+        .glide
+          .glide__track(data-glide-el='track')
+            ul.glide__slides
+              each i in [0,1,2,3,4,5]
+                li.glide__slide
+                  .review-large
+                    .review-large__text
+                      p= reviewsSlider[0].text
+                    
+                    .review-large__desc
+                      .review-large__logo
+                        img(src='img/reviews/logo-1.png')
+
+                      .review-large__person
+                        .review-large__avatar(style='background-image: url(' + reviewsSlider[0].img + ')')
+                        
+                        .review-large__info
+                          .review-large__name= reviewsSlider[0].name
+                          .review-large__old= reviewsSlider[0].old
+
+          .glide__bullets(data-glide-el='controls[nav]')
+
+section.action-block
+  .container
+    h2.title-promo Protect your company right now
+    p.text-secondary New clients - 30 days of free service
+    .btn.btn_primary Start Protection
+
+include inc/footer.pug
+include inc/foot.pug

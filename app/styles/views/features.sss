@@ -1,0 +1,66 @@
+.features-text-block
+  &__title
+    margin-top: 0
+
+  .col-lg-6
+    &:nth-last-child(1), &:nth-last-child(2)
+      margin-top: 0 @lg 40px
+
+    &:nth-last-child(2)
+      padding-left: 10px @lg 26px
+      
+    &:nth-last-child(3)
+      padding-right: 10px @lg 26px
+
+    &:first-child
+      margin-bottom: 0 @md 30px @lg 0
+
+    &:nth-last-child(2)
+      order: 1 @md 0
+
+.quote-block
+  margin-bottom: 80px @sm 110px
+
+.icons-gray-block_without-title
+  padding: 60px 0 50px
+
+.download-presentation
+  overflow: hidden
+  padding-top: 0 @sm 40px
+
+  &__desc
+    padding: 34px *
+    padding-bottom: 200px @sm 60px @xl 0
+    text-align: center @lg left
+    max-width: 100% @lg 60% @xl 100%
+
+  &__block
+    padding: 30px @sm 34px 54px 
+    background: #F2F2F2
+    position: relative
+    text-align: center @md left
+
+    &:after
+      background: #F2F2F2
+      content: ''
+      position: absolute 0 0 0 0
+      width: 9000px
+      z-index: -1
+      transform: translateX(-50%) @xl none
+
+  &__text
+    float: none @lg left @xl none
+    margin-right: 0 @lg 10% @xl 0
+
+  &__img
+    position: absolute auto -12% 0 auto
+    right: 0 @xl -12%
+
+@media $md-down
+  .download-presentation__img
+    max-width: 230px
+    left: 0
+    margin: auto
+    top: 0
+    bottom: auto
+    transform: translateY(-100%)

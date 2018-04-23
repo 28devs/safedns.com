@@ -2,7 +2,7 @@ mixin header(data)
   header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
     .container
       .row
-        .col-12.col-md-8
+        .col-12.col-xl-7
           if data.crumbs
             a.header__breadcrumbs(href="#!") !{data.crumbs}
           h1.header__title !{data.title}
@@ -10,11 +10,21 @@ mixin header(data)
             p.header__desc !{data.desc} 
         
         if data.button
-          .col-12.col-md-4
+          .col-12.col-xl-5
             .header__control-elem
               .btn.btn_outline 
                 | Watch video
                 i.icon.icon_play
+
+        if data.button2
+          .col-12.col-xl-5
+            .header__control-elem
+              .btn.btn_outline 
+                | Video
+                i.icon.icon_play
+
+              .btn.btn_primary
+                | Start Protection
 
 mixin guidebook(data)
   nav.guidebook(data-gumshoe-header)
@@ -33,6 +43,6 @@ mixin iconsGrayBlock(item)
       .row
         each item in jobsIcons
           .col-12.col-md-6.col-lg-4
-            img(src=item.icon)
-            h3.title-promo= item.title
-            p= item.text
+            img.icons-gray-block__img(src=item.icon)
+            h3.icons-gray-block__title.title-promo= item.title
+            p.icons-gray-block__text= item.text

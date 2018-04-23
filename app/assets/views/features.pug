@@ -1,0 +1,164 @@
+include inc/head.pug
+include inc/nav.pug
++header(headerFeatures)(class='header_large')
+
+section.features-text-block.block-outer
+  .container
+    h2.section-title Why is this relevant? h2 main title
+
+    .row
+      .col-12.col-lg-6
+        h3.features-text-block__title Subtitle h3 - more and more children are getting out of their mothers right away with the phone in their hands
+
+        p.features-text-block__text Sed ut perspiciatis, quis nostrum exercitationem ullam corporis suscipit laboriosam, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
+      
+      .col-12.col-md-6.col-lg-6
+        img.img-fluid.full-width(src='img/solutions/features-img.jpg')
+
+      .col-12.col-md-6.col-lg-6
+        img.img-fluid.full-width(src='img/solutions/features-img.jpg')
+
+      .col-12.col-lg-6
+        h3.features-text-block__title And another h3
+
+        p.features-text-block__text Sed ut perspiciatis, quis nostrum exercitationem ullam corporis suscipit laboriosam, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
+
+        p.features-text-block__text Lorem ipsum dolor sit amet, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+
+section.quote-block
+  .container
+    .review-large.review-large_italic
+      .review-large__text
+        p.review-large__text-p Emo enim ipsam voluptatem, nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit
+      
+      .review-large__desc
+        .review-large__person
+          .review-large__avatar(style='background-image: url(img/reviews/avatar-3.jpg)')
+          
+          .review-large__info
+            .review-large__name= reviewsSlider[0].name
+            .review-large__old= reviewsSlider[0].old
+
+section.large-slider.block-outer
+  .glide__space-for-arrows
+    .glide
+      .glide__track(data-glide-el='track')
+        ul.glide__slides
+          li.glide__slide
+            img.large-slider__img(src='img/features/slider-1.jpg')
+            p.large-slider__desc Slider Example. Description of this photo.
+          li.glide__slide
+            img.large-slider__img(src='img/features/slider-1.jpg')
+            p.large-slider__desc Slider Example. Description of this photo.
+          li.glide__slide
+            img.large-slider__img(src='img/features/slider-1.jpg')
+            p.large-slider__desc Slider Example. Description of this photo. Slider Example. Description of this photo.
+          li.glide__slide
+            img.large-slider__img(src='img/features/slider-1.jpg')
+            p.large-slider__desc Slider Example. Description of this photo. Slider Example. Description of this photo.
+
+      .large-slider__count
+        .large-slider__count-current 1
+        .large-slider__count-total 
+
+      .glide__arrows(data-glide-el='controls')
+        button.glide__arrow.glide__arrow--prev(data-glide-dir='<')
+        button.glide__arrow.glide__arrow--next(data-glide-dir='>')
+            
+section.solutions-medium-features
+  .container
+    .row.full-gutters
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Example 2-colomn list
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Another title
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Long, very long subtitle, So long long long long and long, wtf so long?
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure.
+
+      .col-12.col-lg-6
+        .solutions-medium-features__item
+          h3.solutions-medium-features__title Last subtitle
+          p.solutions-medium-features__tex Network capacity is 15x bigger than the largest DDoS attack ever recorded. With 15 Tbps of capacity, it can can handle any modern distributed attack, including those targeting DNS infrastructure
+
+section.block-outer.page-container
+  .container
+    h2.section-title Table example
+      .slide-tip Slide
+
+    .table-responsive
+      table.table
+        thead
+          tr
+            th
+            th Fields 2
+            th Fields 3
+            th Fields 4
+
+        tbody
+          tr
+            th Parametr
+            td Value
+            td Another value
+            td Last
+          tr
+            th Parametr 2
+            td.always-ltr 100 500
+            td.always-ltr 16 550 876
+            td.always-ltr 16 550 000
+          tr
+            th Parametr 3
+            td 5 million
+            td 15 million
+            td 0.2 billion
+          tr
+            th Parametr 4
+            td 5 million
+            td 15 million
+            td 0.2 billion
+
+section.block-outer.icons-gray-block.icons-gray-block_without-title
+  .container
+    .row
+      each item in jobsIcons
+        .col-12.col-md-6.col-lg-4
+          img.icons-gray-block__img(src=item.icon)
+          h3.icons-gray-block__title.title-promo= item.title
+          p.icons-gray-block__text= item.text
+
+section.stats.block-outer.page-container.mb-0
+  .container
+    .stats__items-wrap
+      each val in aboutStats
+        .stats__item
+          p.stats__number= val.number
+          .stats__wrap-text
+            p.stats__text-title= val.title
+            p.stats__desc= val.desc
+
+section.download-presentation
+  .container
+    .row
+      .col-12.col-xl-6
+        p.download-presentation__desc Sed ut perspiciatis, quis nostrum exercitationem ullam corporis suscipit laboriosam, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
+
+      .col-12.col-xl-6
+        .download-presentation__block
+          p.download-presentation__text SafeDNS Parent Control<br> PDF-presentation
+          a.btn.btn_secondary.btn_small(href='#!')
+            i.icon.icon_download
+            | Download 
+          img.download-presentation__img(src='img/features/presentation.png')
+          
+
+
+
+include inc/footer.pug
+include inc/foot.pug

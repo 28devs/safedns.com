@@ -1,0 +1,168 @@
+.solutions-text-block
+  overflow: hidden
+
+  .col-12
+    position: relative
+
+  &_img-top
+    .col-12:first-child
+      order: 2 @xl 1
+
+    .col-12:last-child
+      order: 1 @xl 2
+
+    ^&__img
+      max-width: 100% @sm 60% @xl 130%
+      top: 0
+      bottom: auto
+
+  &__text
+    text: 14px @sm 16px @md 20px
+
+    &:first-child
+      padding-top: 32px @sm 50px @xl 105px
+
+    &:last-child
+      padding-bottom: 32px @sm 50px @xl 105px
+
+    ^&__link
+      color: #EB5757
+      border-bottom: 1px #EB5757 solid
+
+  &__img
+    max-width: 100%
+    display: block
+    margin: 0 auto
+    position: static @xl absolute auto auto 0 auto
+    z-index: -1
+
+.solutions-big-gradient
+  color: #fff
+  margin-bottom: 20vw @sm 110px @md 150px @lg 200px @xl 220px
+  padding-top: 28px @sm 7vw @lg 60px
+
+  &_business
+    background: resolve('solutions/business-bg.png') center / cover, linear-gradient(126deg, #EB5757 -1.28%, #2F80ED 102%)
+
+  &_home
+    background: resolve('solutions/home-bg.jpg') center / cover, #9c74a0
+
+  &__title
+    text-align: center
+    font-size: responsive 30px 48px
+    font-range: $sm-px $lg-px
+    font-weight: 700
+    margin: 10px 0 25px @sm 13px 0 7vw @lg 15px 0 65px
+
+  &__subtitle
+    text-align: center
+    font-size: responsive 14px 30px
+    font-range: $sm-px $lg-px
+    font-weight: 700 @sm 400
+    margin: 0
+
+  &__img
+    margin: -15% auto 0
+    max-width: 100%
+    display: block
+    transform: translateY(28%)
+
+.solutions-big-features
+  overflow: hidden
+
+  .col-12:nth-child(even)
+    ^&__item
+      padding: @sm 45px 36% 55px 45px @lg 50px 40% 60px 50px  
+
+      ^^&__img
+        position: absolute
+        left: auto
+        right: auto @sm -5% @md -12% @lg -10%
+
+      &_big-img
+        ^^^&__img
+          right: auto @sm -5% @md -12% @lg -16%
+
+  &__item
+    background: #F2F2F2
+    padding: 40px 20px 30px @sm 45px 45px 55px 36% @lg 50px 50px 60px 40%
+    position: relative
+    height: 100%
+
+    ^&__title
+      margin: 0 0 35px 77px @sm 0 0 20px 0
+      text: 400
+
+    ^&__text
+      text: 1.35 #4F4F4F @md 1.2
+
+    ^&__img
+      position: absolute
+      top: auto @sm 50%
+      left: auto @sm -5% @md -9% @lg -10%
+      transform: translateY(-32%) @sm translateY(-50%)
+      max-width: 60px @sm 39% @lg 40% @xl 44%
+
+    &_big-img
+      ^^&__img
+        left: auto @sm -5% @md -12% @lg -16%
+        max-width: @sm 40% @lg 45% @xl 50%
+
+    &_large-img
+      padding: 40px 20px 30px @sm 45px 45px 55px 35% @lg 45px 45px 55px 40% @xl 50px 50px 60px 47%
+
+      ^^&__img
+        left: auto @sm -5% @md -12% @lg -16%
+        max-width: @sm 40% @lg 45% @xl 61%
+
+    &_single-title
+      padding: 30px 20px !important @sm 45px 45px !important @lg 45px 50px !important
+
+      ^^&__title
+        margin: 0 !important
+
+@media $sm-down
+  .solutions-big-features__img
+    position: static
+    float: left
+    margin-bottom: -30px
+    
+
+.solutions-medium-features
+  margin: 20px 0 @md 5vw 0 @lg 90px 0
+
+  .col-12:nth-last-child(1), .col-12:nth-last-child(2)
+    margin-bottom: 0
+
+  &__item
+    position: relative
+    padding-left: 30px @sm 40px
+
+    &:before
+      content: ''
+      position: absolute 8px 0 0 0
+      top: 5px @sm 8px
+      display: inline-block
+      size: 12px @lg 16px
+      border-radius: 50%
+      background: linear-gradient(135deg, #EB5757 -31.25%, #2F80ED 181.25%)
+
+  &__title
+    margin-top: 0
+
+.gray-block
+  background: #F2F2F2
+  overflow: auto
+
+.action-block
+  text-align: center
+  margin: 50px 0 @sm 70px 0 @lg 100px 0
+
+  .text-secondary
+    margin: -10px 0 35px
+
+  .btn
+    padding: @lg * 65px
+
+.quote-block
+  margin-bottom: 130px

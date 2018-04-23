@@ -3,7 +3,7 @@
     padding: 20px 0 @md 30px 16% 0
     text-align: center @md left
 
-    p
+    &-p
       font-size: 16px @sm 18px
       position: relative
 
@@ -52,6 +52,26 @@
     text: #828282
     line-height: 20px
 
+  &_italic
+    
+    ^&__text
+      padding: * 7%
+
+      &-p
+        text: 16px #828282 italic @sm 20px @lg 24px
+        text-align: center @md left
+
+        &:before, &:after
+          transform: translateX(-20px)
+
+    ^&__desc
+      margin: 10px 0 0 0 @md 40px 0 0 0 @lg 60px 0 0 0
+
+    ^&__avatar
+      size: 50px @md 64px
+      min-width: 50px @md 64px
+
+
 .shadow-hover
   padding: 20px * !important
   transition: .2s ease
@@ -73,7 +93,7 @@
   &__text
     padding: 0 !important
 
-    p
+    &-p
       text: 16px italic !important
       position: static
       text-align: left

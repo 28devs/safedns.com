@@ -1,0 +1,16 @@
+<svg width="96" height="82" viewBox="0 0 96 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Vector">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 76 54.6667L 60 54.6667L 60 47.8333L 36 47.8333L 36 54.6667L 20 54.6667L 20 47.8333L 0 47.8333L 0 82L 96 82L 96 47.8333L 76 47.8333L 76 54.6667ZM 80 13.6667L 68 13.6667C 68 6.15 60.8 0 52 0L 44 0C 35.2 0 28 6.15 28 13.6667L 16 13.6667C 7.2 13.6667 0 19.8167 0 27.3333L 0 41L 20 41L 20 34.1667L 36 34.1667L 36 41L 60 41L 60 34.1667L 76 34.1667L 76 41L 96 41L 96 27.3333C 96 19.8167 88.8 13.6667 80 13.6667ZM 36 13.6667C 36 9.90833 39.6 6.83333 44 6.83333L 52 6.83333C 56.4 6.83333 60 9.90833 60 13.6667L 36 13.6667Z" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(148.145 119.583 -140 87.9405 70 -50.8036)">
+<stop stop-color="#2F80ED"/>
+<stop offset="1" stop-color="#EB5757"/>
+</linearGradient>
+
+</defs>
+</svg>
+

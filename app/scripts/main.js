@@ -263,6 +263,39 @@ awardsSlider &&
   }).mount();
 
 //
+// Large slider
+//
+
+const largeSlider = document.querySelector('.large-slider .glide');
+
+if (largeSlider) {
+  const largeSliderCounterCurrent = document.querySelector(
+    '.large-slider__count-current'
+  );
+  const largeSliderCounterTotal = document.querySelector(
+    '.large-slider__count-total'
+  );
+
+  largeSliderGlide = new Glide(largeSlider, {
+    perView: 1,
+    peek: 140,
+    breakpoints: {
+      988: { peek: 50 },
+      412: { peek: 20 }
+    }
+  });
+
+  largeSliderCounterTotal.innerHTML = document.querySelectorAll(
+    '.large-slider .glide__slide'
+  ).length;
+
+  largeSliderGlide.on(['move.after', 'build.after'], function() {
+    largeSliderCounterCurrent.innerHTML = largeSliderGlide.index + 1;
+  });
+
+  largeSliderGlide.mount();
+}
+//
 // Progress value
 //
 
