@@ -74,26 +74,64 @@ if (elemLeft) {
 }
 
 //
+// select
+//
+
+const select = document.querySelectorAll('.select')
+
+if(select) {
+  select.forEach(function(item) {
+    item.addEventListener('click', function() {
+      const select = this.querySelector('select')
+      const selectVal = select.value;
+      
+      selectVal ? item.classList.add('selected') : item.classList.remove('selected')
+    })
+  });
+}
+
+//
+// radio input
+//
+
+const radio = document.querySelectorAll('[data-input-radio]')
+console.log(radio)
+if(radio) {
+  radio.forEach(function(item, id, er) {
+    item.addEventListener('click', function() {
+      er.forEach(function(item) {
+        item.classList.remove('checked')
+      })
+      console.log(this)
+      this.classList.add('checked')
+    })
+  });
+}
+
+//
 // tabs
 //
+
 const tabsItem = document.querySelectorAll('[data-tabs-link]')
 
-tabsItem.forEach(function(item, id, er) {
-  item.addEventListener('click', function(e) {
-    e.preventDefault()
+if(tabsItem) {
+  tabsItem.forEach(function(item, id, er) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault()
 
-    er.forEach(function(item) {
-      const idDisactive = item.getAttribute('href').substring(1)
-      const tabContentDisactive = document.getElementById(idDisactive)
-      tabContentDisactive.classList.remove('active') 
-      item.classList.remove('active')
+      er.forEach(function(item) {
+        const idDisactive = item.getAttribute('href').substring(1)
+        const tabContentDisactive = document.getElementById(idDisactive)
+        tabContentDisactive.classList.remove('active') 
+        item.classList.remove('active')
+      })
+      const idActive = this.getAttribute('href').substring(1)
+      const tabContentActive = document.getElementById(idActive)
+      tabContentActive.classList.add('active')
+      this.classList.add('active')
     })
-    const idActive = this.getAttribute('href').substring(1)
-    const tabContentActive = document.getElementById(idActive)
-    tabContentActive.classList.add('active')
-    this.classList.add('active')
   })
-})
+}
 
 //
 // Hide cookie block than press 'I agree'

@@ -2,29 +2,76 @@ include inc/head.pug
 +nav(class='sticky-nav_always-fixed-state')
 
 .page-container_gray
-  .form-pages-header
-    h2.section-title <b>What Do</b> | Category
+  .container
+    .form-pages-header
+      h2.section-title <b>What Do</b> | Category
 
-  .form-container
-    form.form(action="#")
-      .input-group
-        input.input(type='text' placeholder='Name*')
-
-      .input-group.input-group_grid
-        .row
-          .col-12.col-sm-6
-            input.input(type='mail' placeholder='Working E-mail*')
-          .col-12.col-sm-6
-            input.input(type='text' placeholder='Working telephone')
-
-      .input-group
-        input.input(type='password' placeholder='Country')
-        
-      .input-group
-        input.input(type='text' placeholder='Company name*')
-
-      .form__footer
+    .form-container
+      form.form(action="#")
         .input-group
-          a.btn.btn_small.btn_primary Registration
+          input.input(type='text' placeholder='Name*')
+
+        .input-group_grid
+          .row
+            .col-12.col-sm-6
+              .input-group
+                input.input(type='mail' placeholder='Working E-mail*')
+            .col-12.col-sm-6
+              .input-group.input-group_invalid
+                input.input(type='text' placeholder='Working telephone')
+                .input-group__error.input-group__error_right Invalid phone
+
+        .input-group
+          .select
+            <select class='select__elem'>
+              <option value="" disabled selected>Country</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            .select__arrow
+                
+        .input-group.input-group_invalid
+          input.input(type='text' placeholder='Company name*')
+          .input-group__error Invalid Company name
+
+        .input-group
+
+          p.input-group__title What need a protect
+
+          .protect-radio
+
+            .protect-radio__item(data-input-radio)
+              label.protect-radio__label
+                .protect-radio__img
+                p.protect-radio__item-title Desktop
+                .protect-radio__radio 
+                input.protect-radio__hide-radio(type='radio' name='protect' value='desktop')
+
+            .protect-radio__item.checked(data-input-radio)
+              label.protect-radio__label
+                .protect-radio__img
+                p.protect-radio__item-title Fi-Wi hotspots
+                .protect-radio__radio      
+                input.protect-radio__hide-radio(type='radio' name='protect' value='Fi-Wi hotspots')
+                
+            .protect-radio__item(data-input-radio)
+              label.protect-radio__label
+                .protect-radio__img
+                p.protect-radio__item-title Servers
+                .protect-radio__radio 
+                input.protect-radio__hide-radio(type='radio' name='protect' value='Servers')
+            
+        .input-group.input-group_invalid
+          textarea(type='text' placeholder='Message')
+          .input-group__error Invalid Company name
+
+        .form__footer
+          .footer-terms
+            p.footer-terms__desc By clicking ‘Registration’, I agree to SafeDNS’s Terms of Service
+              a.footer-terms__link(href='#!') Terms of Services
+          .input-group
+            a.btn.btn_small.btn_primary Registration
+
 include inc/footer-simple.pug
 include inc/foot.pug
