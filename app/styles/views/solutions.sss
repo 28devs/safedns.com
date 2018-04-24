@@ -164,5 +164,28 @@
   .btn
     padding: @lg * 65px
 
+  &_two-btns
+
+    .title-promo
+      text: 30px #333 @md 36px
+      margin: 0 10px 21px @md 0 20px 31px
+
+    .btn
+      width: 100%
+      padding: * 20px @md * 42px
+
+    ^&__btns
+      box: middle left
+
+      ^^&__btn 
+        min-width: 100px @md 250px
+        
+        + ^^^&__btn
+          margin-left: 10px @md 28px
+
+    .text-tips
+      margin-top: 8px
+      color: #828282
+
 .quote-block
   margin-bottom: 130px

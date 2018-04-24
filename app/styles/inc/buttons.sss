@@ -103,11 +103,24 @@ button, input[type='submit']
   
   &_back
     background: svg-load('icons/back-arrow.svg', fill: #BDBDBD)
-    size: 16px 16px
+    size: 16px
     margin: 0 9px -2px 0
 
     .btn:hover &
       background: svg-load('icons/back-arrow.svg', fill: #828282)
+
+  /* rtl:ignore */
+  &_up
+    transform: rotate(90deg) !important 
+
+  &_up
+    background: svg-load('icons/back-arrow.svg', fill: #fff)
+    size: 24px
+    margin: 0 19px -5px 0
+    display: none @sm inline-block
+
+    .btn:hover &
+      background: svg-load('icons/back-arrow.svg', fill: #fff)
 
   &_down
     background: svg-load('icons/nav-arrow-down.svg', stroke: #BDBDBD) center no-repeat

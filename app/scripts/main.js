@@ -8,7 +8,7 @@ gumshoe.init();
 // Init init smoth scroll
 //
 
-var scroll = new SmoothScroll('nav [href*="#"]');
+var scroll = new SmoothScroll('nav [href*="#"], .scroll-to[href*="#"]');
 
 //
 // fixed menu for guide book
@@ -76,24 +76,24 @@ if (elemLeft) {
 //
 // tabs
 //
-const tabsItem = document.querySelectorAll('[data-tabs-link]')
+const tabsItem = document.querySelectorAll('[data-tabs-link]');
 
 tabsItem.forEach(function(item, id, er) {
   item.addEventListener('click', function(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     er.forEach(function(item) {
-      const idDisactive = item.getAttribute('href').substring(1)
-      const tabContentDisactive = document.getElementById(idDisactive)
-      tabContentDisactive.classList.remove('active') 
-      item.classList.remove('active')
-    })
-    const idActive = this.getAttribute('href').substring(1)
-    const tabContentActive = document.getElementById(idActive)
-    tabContentActive.classList.add('active')
-    this.classList.add('active')
-  })
-})
+      const idDisactive = item.getAttribute('href').substring(1);
+      const tabContentDisactive = document.getElementById(idDisactive);
+      tabContentDisactive.classList.remove('active');
+      item.classList.remove('active');
+    });
+    const idActive = this.getAttribute('href').substring(1);
+    const tabContentActive = document.getElementById(idActive);
+    tabContentActive.classList.add('active');
+    this.classList.add('active');
+  });
+});
 
 //
 // Hide cookie block than press 'I agree'
@@ -317,8 +317,50 @@ if (largeSlider) {
 
   largeSliderGlide.mount();
 }
+
 //
-// Progress value
+// Plans slider
+//
+
+const plansSlider = document.querySelector('.card-plan-container .glide');
+
+if (plansSlider) {
+  var plansSliderInit = false;
+
+  const plansSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!plansSliderInit) {
+        plansSliderInit = new Glide(plansSlider, {
+          perView: 1,
+          peek: 50,
+          breakpoints: {
+            576: { peek: 30, perView: 1 }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof plansSliderInit === 'object') {
+        plansSliderInit.destroy();
+        plansSliderInit = false;
+      }
+    }
+  };
+
+  plansSliderFn();
+  window.addEventListener('resize', plansSliderFn);
+}
+
+// plansSlider &&
+//   new Glide(plansSlider, {
+//     perView: 3,
+//     breakpoints: {
+//       576: { peek: 30, perView: 1 }
+//     }
+//   }).mount();
+
+//
+// Circle progress set value
 //
 
 const progressBlocks = document.querySelectorAll('[data-progress]');
@@ -367,13 +409,73 @@ if (vacanciesAccordion) {
 }
 
 //
+// Accordion for everything
+//
+
+const accordions = document.querySelectorAll('[data-accordion]');
+
+if (accordions) {
+  accordions.forEach(function(elem) {
+    elem.addEventListener('click', function() {
+      this.classList.toggle('accordion__header_active');
+
+      let panel = this.nextElementSibling;
+
+      panel.style.maxHeight
+        ? (panel.style.maxHeight = null)
+        : (panel.style.maxHeight = panel.scrollHeight + 'px');
+    });
+  });
+}
+
+//
 // Contacts page form submit
 //
+
 const feedbackForm = document.querySelector('.feedback form');
 
 if (feedbackForm) {
   feedbackForm.addEventListener('submit', function(e) {
     e.preventDefault();
     feedbackForm.classList.add('form_success');
+  });
+}
+
+//
+// Range slider
+//
+
+const rangeSliders = document.querySelectorAll('.range-slider');
+
+if (rangeSliders) {
+  rangeSliders.forEach(function(rangeSlider) {
+    let bindInput = document.querySelector(
+      'input[name=' + rangeSlider.getAttribute('data-bind') + ']'
+    );
+
+    let settings = {
+      start: +rangeSlider.getAttribute('data-value') || 0,
+      step: +rangeSlider.getAttribute('data-step') || 1,
+      tooltips: true,
+      connect: [true, false],
+      range: {
+        min: +rangeSlider.getAttribute('data-min') || 0,
+        max: +rangeSlider.getAttribute('data-max') || 100
+      },
+      format: {
+        to: function(value) {
+          return Math.round(value);
+        },
+        from: function(value) {
+          return Math.round(value);
+        }
+      }
+    };
+
+    noUiSlider.create(rangeSlider, settings);
+
+    rangeSlider.noUiSlider.on('update', function(value) {
+      bindInput.value = value;
+    });
   });
 }

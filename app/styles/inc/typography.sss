@@ -87,6 +87,14 @@ p
   display: inline-block
   opacity: .5
 
+.title-line
+  display: block @sm inline
+  font-weight: 400
+
+  &:before
+    content: '| '
+    display: none @sm inline
+
 p
   font-size: 14px @md 16px
   line-height: 1.5
@@ -253,11 +261,13 @@ aside
     text-align: center @md left
     margin-top: 50px @sm 0 
 
+/* rtl:ignore */
 .slide-tip
   text: 14px #BDBDBD
   margin-top: 10px
   box: center middle
-  display: flex @sm none
+  display: flex @md none
+  direction: ltr
 
   &:after, &:before
     content: ''

@@ -1,0 +1,243 @@
+.card-plan
+  width: 260px
+  min-width: 100% @sm 90% @md 240px @lg 260px
+  text-align: center
+  background: linear-gradient(147.78deg, #2F80ED -10.31%, #EB5757 133.2%)
+  border-radius: 8px
+  color: #fff
+  padding: 32px 0 29px
+  margin: 0 15px
+
+  &-container
+    // display: flex
+    // align-items: flex-start
+    // justify-content: flex-start @md center
+    // overflow: auto
+    margin: 0 auto
+    max-width: 100%
+
+    .glide__slides
+      align-items: flex-start
+
+  .btn
+    color: #A56790
+    background: #fff
+    margin: 20px 33px 10px
+    display: block
+  
+  &__name
+    text: 22px bold
+
+  &__price
+    text: 24px bold
+    margin-top: 10px
+
+    &-small
+      text: 400 16px
+      display: inline-block
+
+  &__desc
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2)
+    border-top: 1px solid rgba(224, 224, 224, 0.2)
+    margin: 20px 0
+    padding: 20px 0
+
+    ^&__text
+      margin: 5px 0
+
+  /* rtl:ignore */
+  &__text-ok
+    box: center top
+    margin: 0 0 28px 28% @sm 0 0 28px 38% @md 0 0 28px 28%
+
+    /* rtl:ignore */
+    &:before
+      content: ''
+      background: svg-load('icons/ok.svg', fill='#fff')
+      size: 24px 18px
+      display: block
+      margin-right: 14px
+
+    &:last-child
+      margin-bottom: 45px
+
+  &__trial
+    margin-bottom: -25px
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+    display: inline-block
+
+  &_gray
+    background: #F2F2F2
+    color: #333
+    padding-bottom: 49px
+    border: 1px solid #E0E0E0
+
+    ^&__text-ok:before
+      content: ''
+      background: svg-load('icons/ok.svg', fill='#828282')
+
+    ^&__desc
+      border-bottom: 1px solid rgba(224, 224, 224, 0.5)
+      border-top: 1px solid rgba(224, 224, 224, 0.5)
+
+    .btn
+      color: #828282
+      background: #E0E0E0
+
+/* rtl:ignore */
+[dir='rtl']
+  .card-plan__text-ok
+    direction: rtl
+    margin: 0 21% 28px 0
+
+  /* rtl:ignore */
+  .card-plan__text-ok:before
+    margin-right: 0
+    margin-left: 14px
+
+@media $md
+  .card-plan-container
+    .glide__slides
+      justify-content: center
+
+    .glide__slide
+      width: @md 266px @lg 290px
+  
+.accordion
+  margin: 0 -20px @sm 0
+
+  &__item
+    margin-bottom: 2px
+
+  &__header
+    cursor: pointer
+    padding: 13px 22px 13px 24px
+    box: middle space-between @sm middle top
+    text: 14px @sm 16px
+    background: #F2F2F2
+    user-select: none
+
+    &:hover:not(&_active)
+      background: #ececec
+
+    &:before
+      content: ''
+      display: none @sm block
+      size: 25px
+      background: svg-load('icons/ok.svg', fill='#2F80ED') center no-repeat / contain
+      margin-right: 20px
+
+    &:after
+      content: ''
+      display: block
+      size: 25px
+      min-width: 25px
+      background: svg-load('icons/nav-arrow-down.svg', stroke='#BDBDBD') center no-repeat / contain
+      margin-left: 10px @sm auto
+      margin-top: -2px
+
+    &_active
+      background: #fff
+      border: 1px solid #E0E0E0
+      border-bottom: 0
+      padding: 12px 21px 12px 23px
+
+      + .accordion__content-wrap
+        border: 1px solid #E0E0E0
+        border-top: 0
+
+      &:after
+        transform: scaleY(-1)
+        margin-top: 5px
+
+  &__content
+    padding: 13px 23px 0 @sm 13px 67px 0
+
+    .col-12:first-child
+      order: 1 @xl 0
+
+    .col-12:last-child
+      padding: 0 * 30px @xl 20px *
+
+    .img-fluid
+      display: block
+      margin: 0 auto
+
+    &-wrap
+      max-height: 0
+      overflow: hidden
+      transition: max-height .15s ease
+
+  &_simple
+    background: transparent
+    margin: 0
+
+    ^&__item
+      background: transparent
+      margin-bottom: 30px @sm 35px
+      
+    ^&__content-wrap
+      border: 0
+
+    ^&__header
+      background: transparent !important
+      text: 16px #fff bold 
+      border: 0
+      border-bottom: 1px rgba(255, 255, 255, .3) solid
+      display: inline
+      padding: 2px 0
+      position: relative
+
+      &_active
+        &:after
+          bottom: 3px !important
+
+      &:before
+        display: none
+
+      &:after
+        background: svg-load('icons/nav-arrow-down.svg', stroke='#fff') center no-repeat / contain
+        size: 14px
+        max-width: 14px
+        position: absolute auto -26px 6px auto
+    
+    ^&__content
+      padding: 17px 0
+      text: #E1E7F0
+
+.faq-block
+  background: linear-gradient(114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), resolve('protection/faq-bg.jpg') center / cover
+
+  .title-promo
+    color: #fff
+
+.range-plan
+  background: linear-gradient(100.7deg, rgba(235, 87, 87, 0.3) 2.94%, rgba(47, 128, 237, 0.3) 103.86%), resolve('protection/business-plan-bg.jpg') center / cover
+  height: 500px
+  text-align: center
+  color: #fff
+
+  &__price
+    text: 32px #fff 700
+    margin: 0 35px
+
+    &-block
+      box: middle center
+
+    &-small
+      text: 24px #fff 400
+      display: inline
+
+    &-old
+      text: 24px
+      opacity: .3
+
+      &:after
+        content: ''
+        
+    &-sale
+      background: #EB5757
+      font-size: 14px @sm 16px
+
+  .text-tips
+    color: #BDBDBD

@@ -1,0 +1,51 @@
+.form-shover
+  width: 30%
+  margin: 10% 35%
+
+  .form-group
+    margin-bottom: 80px
+  
+.noUi
+  &-target
+    background: #E0E0E0
+    box-shadow: none
+    border: 0
+    border-radius: 10px
+
+  &-horizontal
+    height: 10px
+
+    ^&-handle
+      size: 24px
+      background: $primary
+      box-shadow: none
+      border: 0
+      outline: 0
+      border-radius: 24px
+      box: center middle
+
+      &:before
+        display: none
+
+      &:after
+        size: 8px
+        border-radius: 8px
+        background: #fff
+        position: static
+
+    ^&-tooltip
+      bottom: -120%
+      border: 0
+      background: transparent
+      padding: 0
+      text: 16px #4F4F4F 700
+
+
+  &-connects
+    border-radius: 10px
+
+  &-connect
+    background: $primary
+
+
+  

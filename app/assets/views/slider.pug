@@ -1,0 +1,23 @@
+include inc/head.pug
+
+
+.form-shover
+
+  .form-group
+    input(type='hidden' name='slider1')
+    .range-slider(data-bind='slider1' data-min='1' data-max='100' data-step='1' data-value='28')
+
+  .form-group
+    input(type='hidden' name='slider2')
+    .range-slider(data-bind='slider2' data-min='1' data-max='10' data-step='2')
+
+  .form-group
+    input(type='hidden' name='slider3')
+    .range-slider(data-bind='slider3' data-min='30' data-max='60' data-step='0.5' data-value='45')
+
+  .form-group
+    input(type='hidden' name='slider4')
+    .range-slider(data-bind='slider4')
+
+
+include inc/foot.pug
