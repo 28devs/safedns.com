@@ -15,7 +15,7 @@
     &:last-child
       width: 33.33333% @lg 10.65%
 
-    a
+    .footer__link
       &:hover
         color: #E0E0E0
 
@@ -34,7 +34,7 @@
     box: horisontal space-around
     width: 100%
 
-    a
+    .footer__mobile-link
       font-size: 14px
       color: #828282
 
@@ -52,10 +52,10 @@
     .container
       box: horisontal middle center @sm horisontal space-between center
 
-    nav
+    .footer__copy-nav
       display: none @md block
 
-      a
+      &-link
         margin: 13px
         color: #828282
 
@@ -68,7 +68,7 @@
       font-weight: 700
       font-size: 16PX @xl 24PX
 
-      span
+      .footer__ips-item
         margin: 5px
 
   .social
@@ -79,7 +79,7 @@
 .social
   box: horisontal
 
-  a
+  .social__link
     size: 48px @sm 31px
     display: block
     border-radius: 50%
@@ -111,7 +111,7 @@
     background: svg-load('icons/social-facebook.svg')
 
 @media $sm-down
-  .social a
+  .social .social__link
     background-size: 113%
     background-position: center
     background-color: white

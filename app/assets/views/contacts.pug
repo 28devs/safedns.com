@@ -33,20 +33,20 @@ include inc/nav.pug
               p.text-secondary.text-icon.text-icon_social Follow us in social
         
               .social
-                a.social_youtube(href='#!')
-                a.social_google(href='#!')
-                a.social_linkedin(href='#!')
-                a.social_twitter(href='#!')
-                a.social_facebook(href='#!')
+                a.social__link.social_youtube(href='#!')
+                a.social__link.social_google(href='#!')
+                a.social__link.social_linkedin(href='#!')
+                a.social__link.social_twitter(href='#!')
+                a.social__link.social_facebook(href='#!')
 
       .col-12.col-lg-6
         section.feedback
-          h3 Feedback Form
+          h3.feedback__title Feedback Form
 
           form.form
             .form__success
-              h2 Thenk you!
-              h3 Your message has been sent
+              h2.feedback__success-title Thenk you!
+              h3.feedback__success-sub-title Your message has been sent
 
             .input-group
               input(type='text' placeholder='Youre name*')
@@ -58,7 +58,7 @@ include inc/nav.pug
               input(type='text' placeholder='Country \ City')
 
             .input-group
-              textarea(type='text' placeholder='Message')
+              textarea.feedback__textarea(type='text' placeholder='Message')
 
             input.btn.btn_secondary.btn_small(type='submit' value='Send')
         
@@ -67,7 +67,7 @@ include inc/nav.pug
     .card
       .card__content
         p.text-tips Adress:
-        h3 901 North Pitt Street<br> Suite #325<br> Alexandria VA 22314
+        h3.contacts-map__title 901 North Pitt Street<br> Suite #325<br> Alexandria VA 22314
 
   #contacts-map
 

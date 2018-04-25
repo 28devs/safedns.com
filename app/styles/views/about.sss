@@ -53,10 +53,8 @@
 
   &__item
     padding: 0
-
-    img
-      max-width: 100%
-      max-height: 90px @lg 100%
+ 
+   
 
 .stats
   width: 100%
@@ -106,10 +104,10 @@
     margin: 0
     
 .info-about
-  .h2
+  &__item-title
     margin: 0
 
-  .h2,.h3
+  &__item-title, &__item-sub-title
     font-weight: 400
 
   &__location
@@ -126,9 +124,13 @@
     box: horizontal
     flex-wrap: wrap
 
+    ^&__item-title, ^&__item-sub-title
+      cursor: pointer
+
   &__press, &__job
     width: 100% @md 50%
     padding: 20px 0 @md 3vw 0 @lg 50px 0
+    cursor: pointer
 
     &-wrap
       box: gorizontal center space-between
@@ -161,7 +163,7 @@
     &-wrap
       padding-right: auto @md 4vw !important @lg 84px !important
 
-      .h3
+      .info-about__item-sub-title
         margin-bottom: 0
 
   &__job
@@ -182,7 +184,7 @@
     box: horizontal center middle
     margin-bottom: 20px @md 0
 
-    img
+    ^&__img
       max-height: 77px
       max-width: 160px @sm 80% @lg 200px
 
@@ -192,7 +194,7 @@
     ^&__item
       width: 50% @sm 25% @lg 25%
 
-      img
+      ^^&__img
         max-width: 80% @lg 200px
 
       &:last-of-type

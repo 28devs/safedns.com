@@ -12,7 +12,7 @@ include inc/nav.pug
       .row.half-gutters
         each val in pubReviews
           .col-12.col-lg-6
-            a(href='#!' class= val.active)
+            a.pub-reviews__link(href='#!' class= val.active)
               article
                 h3.pub-reviews__title= val.title
                 time.pub-reviews__date.text-tips= val.date
@@ -28,7 +28,7 @@ include inc/nav.pug
       .row.half-gutters
         each val in pressAbout
           .col-12.col-md-6.col-lg-4
-            a(href='#!' class= val.active).press-about__item
+            a.press-about__link(href='#!' class= val.active).press-about__item
               article
                 h3.press-about__title= val.title
                 time.press-about__date.text-tips= val.date

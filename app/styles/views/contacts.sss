@@ -1,8 +1,3 @@
-
-/* rtl:ignore */
-.always-ltr
-  direction: ltr
-
 .link-tel
   text: 30px #000 @md 36px
   display: block @sm inline-block
@@ -14,9 +9,6 @@
   text: 24px #000
   margin-bottom: 20px @sm 0
   display: block
-
-.mb-0
-  margin-bottom: 0 !important
 
 .contact-list
   padding-left: 0 @sm 28px
@@ -32,7 +24,7 @@
     .social
       justify-content: center @sm flex-start 
 
-      a
+      .social__link
         size: 43px @sm 50px
         background-size: 113%
         background-position: center
@@ -69,7 +61,7 @@
   border-radius: 0 @sm 4px
   margin: 0 -20px @sm 0
 
-  h3 
+  &__title
     text: 24px #BDBDBD 700 
     margin-bottom: 24px
 
@@ -82,18 +74,18 @@
       box: vertical center middle
       display: none !important
 
-      h2
+      .feedback__success-title
         text: 36px #BDBDBD 700 
         margin: 0 0 5px
       
-      h3
+      .feedback__success-sub-title
         margin: 0 0 40px
 
     &_success
       .form__success
         display: flex !important
 
-  textarea
+  .feedback__textarea
     min-height: 128px @sm 228px
     margin: 0 0 20px 0 @sm 28px 0 23px @sm 42px 0 38px 
 
@@ -133,13 +125,10 @@
       &__content
         padding: 23px 38px 28px 28px @sm 39px 102px 42px 42px
 
-      h3
+      .contacts-map__title
         font-size: 16px @sm 24px
         margin: 10px 0 0 0
 
   #contacts-map
     height: 100%
     z-index: 1
-
-.pb-0
-  padding-bottom: 0

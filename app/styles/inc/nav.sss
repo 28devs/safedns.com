@@ -16,8 +16,8 @@
   //   transform-origin: top
   //   transition: $sticky-nav-transition
   
-  ul
-    list-style: none
+  // ul
+  //   list-style: none
 
   .container
     box: horisontal space-between center
@@ -38,6 +38,7 @@
     // display: none @sm block 
 
   &__nav
+    list-style: none
     box: horisontal space-between
     flex-direction: column @lg row 
     width: 100%
@@ -113,6 +114,7 @@
           &:after
             transform: rotate(180deg)
     &-childs
+      list-style: none
       position: static @lg absolute 63px auto auto auto
       visibility: visible @lg hidden
       padding: 0 21px 0 20px @lg 17px 49px 14px 41px
@@ -174,6 +176,7 @@
           color: #fff
 
     &-child
+      list-style: none
       margin: 0
       padding: 0 0 16px 0 @lg 0
 

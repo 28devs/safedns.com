@@ -10,12 +10,12 @@ include inc/nav.pug
         each val in instructionsList
           .col-12.col-sm-6.col-lg-4
             div(class= val.active).instructions__item
-              article
+              article.instructions__article
                 p.instructions__title.text-secondary.text-accent= val.title
                 ul.instructions__list
                   each val1 in val.list
-                    li
-                      a(href='#!') !{val1}
+                    li.instructions__list-item
+                      a.instructions__list-link(href='#!') !{val1}
 
 include inc/call-action.pug
 
