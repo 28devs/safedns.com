@@ -1,0 +1,60 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state')
+
+.page-container_gray
+  .container
+    .form-pages-header
+      h2.section-title 
+        <b>Become</b> a partner
+
+    .row
+      .col-12
+        .form-container.form-container_without-padding-mobile
+          form.form(action="#")
+            .input-group
+              input.input(type='text' placeholder='Name*')
+
+            .input-group_grid
+              .row
+                .col-12.col-sm-6
+                  .input-group
+                    input.input(type='mail' placeholder='Working E-mail*')
+                .col-12.col-sm-6
+                  .input-group.input-group
+                    input.input(type='text' placeholder='Working telephone')
+
+            .input-group
+              .select
+                <select class='select__elem'>
+                  <option value="" disabled selected>Country</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                .select__arrow
+                    
+            .input-group.input-group
+              input.input(type='text' placeholder='Company name*')
+            
+            .input-group
+              .select
+                <select class='select__elem'>
+                  <option value="" disabled selected>Partner type</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                .select__arrow
+
+            .input-group.input-group
+              textarea(type='text' placeholder='Additional info')
+
+            .form__footer
+              .footer-terms
+                p.footer-terms__desc By clicking ‘Registration’, I agree to SafeDNS’s Terms of Service
+                  a.footer-terms__link(href='#!') Terms of Services
+              .input-group
+                a.btn.btn_small.btn_primary Get Trial
+            
+include inc/footer-simple.pug
+include inc/foot.pug

@@ -1,0 +1,23 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state')
+
+.page-container_gray
+  .container
+    .form-pages-header
+      h2.section-title.title-gray 
+        b Form Name
+
+    .form-container.form-container
+      form.form(action="#")
+        
+        section.form-successful
+          h3.form-successful__title Сongratulations!
+
+          p Какой-то текст, у каждой формы свой о том что все хорошо отправилось. Ждите звонка или связи с нами и т.д.
+
+        .form__footer
+          p Thank you for trusting our service!
+            
+include inc/footer-simple.pug
+include inc/foot.pug
+
