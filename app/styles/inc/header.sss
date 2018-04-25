@@ -26,7 +26,11 @@
 
   &__breadcrumbs
     color: rgba(255, 255, 255, 0.5)
-    font-size: 16px @sm 21px @xl 24px 
+    font-size: 16px @sm 21px @xl 24px
+    transition: $transition
+
+    &:hover
+      color: rgba(255, 255, 255, 1)
 
     &:after
       content: ''
