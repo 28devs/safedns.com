@@ -18,50 +18,17 @@ include inc/head.pug
         li.steps-nav__item.steps-nav__item_active
           .steps-nav__item-text Finish!
 
-      .steps-nav__mobile Step 1 of 3
+      .steps-nav__mobile Finish!
 
   section.container
     .form-container.form-container_single.payment-options
-      .payment-options__desc
-        p.payment-options__text You going to buy
-        h3.title-promo.title-gray Safe@Business
-        p.payment-options__text Protect 45 devices
-        p.payment-options__text For 1 year
+      section.payment-successful
+        h3.payment-successful__title Сongratulations! Successful purchase!
 
-      .payment-options__select-plan
+        p.payment-successful__text Enter to your dushboard using the link - 
+          a.payment-successful__link(href='#!') safedns.com\dushboard
 
-        form.form.credit-card
-
-          .credit-card__title Visa \ Mastercard
-
-          .credit-card__front
-            .input-group
-              input.input(type='text' placeholder='Card number*')
-
-            .input-group
-              input.input(type='text' placeholder='MM*')
-
-            .input-group
-              input.input(type='text' placeholder='Year*')
-
-            .input-group
-              input.input(type='text' placeholder='Cardholder name*')
-
-          .credit-card__back
-            .input-group
-              input.input(type='text' placeholder='CVC*')
-
-          .credit-card__payments
-            .credit-card__payments-text We accept cards:
-            .credit-card__payments-logo
-
-
-      .payment-options__total
-        p.payment-options__text Total Price: 
-          span.payment-options__total-price 20$
-
-        a.btn.btn_back.btn_small Back
-        a.btn.btn_primary.btn_small Next
+        p.payment-successful__text Thank you for trusting our service!
 
 
 include inc/footer-simple.pug

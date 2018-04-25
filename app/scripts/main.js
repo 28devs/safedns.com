@@ -1,4 +1,10 @@
 //
+// Get direction from html tag
+//
+
+const rootDirection = document.documentElement.getAttribute('dir') || 'ltr';
+
+//
 // Init gumshoe plugin for create brillyant guidebook
 //
 
@@ -497,6 +503,7 @@ if (rangeSliders) {
       step: +rangeSlider.getAttribute('data-step') || 1,
       tooltips: true,
       connect: [true, false],
+      direction: rootDirection,
       range: {
         min: +rangeSlider.getAttribute('data-min') || 0,
         max: +rangeSlider.getAttribute('data-max') || 100
@@ -604,6 +611,7 @@ if (rangeBusinessSlider) {
     step: 1,
     tooltips: true,
     connect: [true, false],
+    direction: rootDirection,
     range: {
       min: 1,
       max: 8
