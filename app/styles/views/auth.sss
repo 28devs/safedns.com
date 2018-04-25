@@ -53,15 +53,16 @@
 
 @media $md-down
   .page-container
-    nav
-      display: none 
 
-    & + footer 
-      display: none 
-      
     &_auth
       background: linear-gradient(180deg, rgba(47, 128, 237, 0.9) 10.3%, rgba(51, 51, 51, 0.9) 50%), url('../img/auth-mobile-bg.jpg')
 
+      nav
+        display: none 
+
+      & + footer 
+        display: none 
+      
       .form-container
         background: transparent
 

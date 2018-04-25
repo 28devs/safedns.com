@@ -22,7 +22,7 @@
   margin-top: 33px @md 3.5vw @xl 58px
 
 .press-about
-  background: linear-gradient(111.8deg, rgba(47, 128, 237, 0.8) -31.32%, rgba(235, 87, 87, 0.8) 138.52%), url('../img/press/press-about-bg.jpg') center / cover
+  background: url('../img/press/press-about-bg.png') no-repeat center top / 100%, linear-gradient(111.8deg, rgba(47, 128, 237) -31.32%, rgba(235, 87, 87) 138.52%)
   padding: 40px 0 60px @md 3.5vw 0 4vw @xl 56px 0 65px
 
   .section-title
@@ -61,7 +61,8 @@
     position: relative
 
   &__desc
-    margin-left: 0 @md 50px
+    display: block @lg none @xl block
+    margin-left: 0 @lg 50px
     opacity: .5
     color: #fff
 
