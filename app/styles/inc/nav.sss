@@ -196,14 +196,14 @@
           size: 20px
           border-radius: 50%
           content: ''
-          position: absolute 0 auto 2px auto @lg absolute 0 auto 0 0
+          position: absolute 0 auto 2px auto @lg absolute 0 auto 0 20px
           background-image: url(../img/flags.png)
           transform: translateX(-24px) @lg none
           margin: auto
 
       ^&-child-link:before
         top: 3px
-        left: -9px @lg -28px
+        left: -9px @lg -9px
 
       &-en > 
         ^^&-link, ^^&-child-link
@@ -319,4 +319,3 @@
     &, &:hover, &:active
       border-color: transparent !important
       background: transparent !important
-    
