@@ -97,7 +97,7 @@ if (select) {
 //
 
 const radio = document.querySelectorAll('[data-input-radio]');
-console.log(radio);
+
 if (radio) {
   radio.forEach(function(item, id, er) {
     item.addEventListener('click', function() {
@@ -515,7 +515,115 @@ if (rangeSliders) {
     noUiSlider.create(rangeSlider, settings);
 
     rangeSlider.noUiSlider.on('update', function(value) {
-      bindInput.value = value;
+      bindInput && (bindInput.value = value);
     });
   });
+}
+
+//
+// Range business plan slider
+//
+
+const rangeBusinessSlider = document.querySelector('.range-slider_plan');
+
+if (rangeBusinessSlider) {
+  const rangeBusinessSliderColorLabes = function(value) {
+    let current = document.querySelector(
+      '.range-slider__label:nth-child(' + value + ')'
+    );
+
+    let blockPrice = document.querySelector('.range-plan__msg-block_price');
+    blockPrice.classList.remove('range-plan__msg-block_price-show');
+
+    // price block - set price from data attr
+    if (current.getAttribute('data-target') === 'price') {
+      blockPrice.querySelector(
+        '.range-plan__price span'
+      ).textContent = current.getAttribute('data-price');
+
+      // if old price exist, set it
+      let oldPrice = current.getAttribute('data-old-price');
+
+      if (oldPrice !== null) {
+        blockPrice.classList.add('range-plan__msg-block_price-show');
+
+        blockPrice.querySelector(
+          '.range-plan__price-old'
+        ).textContent = oldPrice;
+      }
+
+      // if sale percent exist, set it
+      let salePercent = current.getAttribute('data-percent');
+
+      if (salePercent !== null) {
+        blockPrice.querySelector(
+          '.range-plan__price-sale span'
+        ).textContent = salePercent;
+      }
+    }
+
+    // label dots - make all gray
+    document.querySelectorAll('.range-slider__label').forEach(function(elem) {
+      elem.classList.remove('range-slider__label_select');
+    });
+
+    // label dots - make only right colored
+    for (let i = 0; i < value; i++) {
+      document
+        .querySelector('.range-slider__label:nth-child(' + (i + 1) + ')')
+        .classList.add('range-slider__label_select');
+    }
+
+    // label text - make all hidden (by css class, than viewport < 768px)
+    document
+      .querySelectorAll('.range-slider__label-text')
+      .forEach(function(elem) {
+        elem.classList.add('range-slider__label-text_hidden');
+      });
+
+    // label text - make current visible
+    current
+      .querySelector('.range-slider__label-text')
+      .classList.remove('range-slider__label-text_hidden');
+
+    // text block for label - make all hidden
+    document.querySelectorAll('.range-plan__msg-block').forEach(function(elem) {
+      elem.style.display = 'none';
+    });
+
+    // text block for label - make current visible
+    document.querySelector(
+      '.range-plan__msg-block_' + current.getAttribute('data-target')
+    ).style.display =
+      'flex';
+  };
+
+  let startPosition = +rangeBusinessSlider.getAttribute('data-value') || 0;
+
+  let settings = {
+    start: startPosition,
+    step: 1,
+    tooltips: true,
+    connect: [true, false],
+    range: {
+      min: 1,
+      max: 8
+    },
+    format: {
+      to: function(value) {
+        return Math.round(value);
+      },
+      from: function(value) {
+        return Math.round(value);
+      }
+    }
+  };
+
+  noUiSlider.create(rangeBusinessSlider, settings);
+
+  rangeBusinessSlider.noUiSlider.on('update', function(value) {
+    rangeBusinessSliderColorLabes(value[0]);
+  });
+
+  rangeBusinessSliderColorLabes(startPosition);
 }

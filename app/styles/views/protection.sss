@@ -133,7 +133,7 @@
       size: 25px
       min-width: 25px
       background: svg-load('icons/nav-arrow-down.svg', stroke='#BDBDBD') center no-repeat / contain
-      margin-left: 10px @sm auto
+      margin-left: 15px @sm auto
       margin-top: -2px
 
     &_active
@@ -212,32 +212,83 @@
     color: #fff
 
 .range-plan
-  background: linear-gradient(100.7deg, rgba(235, 87, 87, 0.3) 2.94%, rgba(47, 128, 237, 0.3) 103.86%), resolve('protection/business-plan-bg.jpg') center / cover
-  height: 500px
+  background: linear-gradient(100.7deg, rgba(235, 87, 87, 0.3) 2.94%, rgba(47, 128, 237, 0.3) 103.86%), resolve('protection/business-plan-bg.jpg') center / cover #312d47
   text-align: center
   color: #fff
 
+  &__msg
+    &-block
+      height: 134px @sm 154px @md 190px
+      overflow: hidden
+      display: none
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+
+      &_low, &_hight
+        .btn
+          margin-bottom: 22px @md 24px
+
+    &-text
+      text: 18px @sm 20px @md 24px
+      margin: 0 15px @md 20px @lg 40px 20px
+
+  &__slider
+    max-width: 850px
+    width: 80% @md 90%
+    margin: 20px auto 37px @lg -21px auto 55px
+
+  .action-block
+    margin: 0
+
   &__price
-    text: 32px #fff 700
-    margin: 0 35px
+    text: 28px #fff 700 @sm 32px
+    margin: 0 22px @sm 0 40px
 
     &-block
       box: middle center
+      position: relative
 
     &-small
-      text: 24px #fff 400
+      text: 20px #fff 400 @sm 24px 
       display: inline
 
     &-old
-      text: 24px
+      text: 20px @sm 24px 
       opacity: .3
+      position: absolute auto auto auto 0
+      transform: translateX(-100%)
+      display: none
 
       &:after
         content: ''
-        
+        height: 1px
+        background: #fff
+        display: block
+        position: absolute 50% -5px auto -5px
+
     &-sale
       background: #EB5757
       font-size: 14px @sm 16px
+      padding: 1px 7px
+      border-radius: 5px
+      position: absolute auto 0 auto auto
+      transform: translateX(100%)
+      display: none
+
+      &:after
+        content: ''
+        border-style: solid
+        border-width: 9px 8px 9px 0
+        border-color: transparent #EB5757 transparent transparent
+        size: 0
+        display: block
+        position: absolute 0 auto 0 -6px
+        margin: auto
 
   .text-tips
     color: #BDBDBD
+
+.range-plan__msg-block_price-show
+  .range-plan__price-old, .range-plan__price-sale
+    display: block

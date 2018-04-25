@@ -8,27 +8,57 @@ include inc/head.pug
       .title-line Business
 
   section.range-plan.page-container
-    h2 Users need protect
+    h3.title-promo Users need protect
 
-    .range-plan__price-block
-      .range-plan__price-old $ 36
+    .range-plan__slider
+      .range-slider_plan(data-value='3')
+      .range-slider__labels
+        .range-slider__label(data-target='low')
+          .range-slider__label-text 3
+        .range-slider__label(data-target='price' data-price='$ 40')
+          .range-slider__label-text 5
+        .range-slider__label(data-target='price' data-price='$ 39')
+          .range-slider__label-text 10
+        .range-slider__label(data-target='price' data-price='$ 35') 
+          .range-slider__label-text 25
+        .range-slider__label(data-target='price' data-price='$ 32')
+          .range-slider__label-text 50
+        .range-slider__label(data-target='price' data-price='$ 28' data-old-price='$ 32' data-percent='10')
+          .range-slider__label-text 75
+            .range-slider__label-sale sale
+        .range-slider__label(data-target='price' data-price='$ 25' data-old-price='$ 45' data-percent='20') 
+          .range-slider__label-text 100
+            .range-slider__label-sale sale
+        .range-slider__label(data-target='hight') 
+          .range-slider__label-text More+
 
-      .range-plan__price $ 32
-        .range-plan__price-small / month
+    .range-plan__msg-block.range-plan__msg-block_low
+      .range-plan__msg-text We recommend that you look at the tariff for home users
+      a.btn.btn_primary(href='#!') See Tarif Safe@Home
 
-      .range-plan__price-sale 10% off
+    .range-plan__msg-block.range-plan__msg-block_price
+      .range-plan__price-block
+        .range-plan__price-old $ 36
+        .range-plan__price 
+          span
+          .range-plan__price-small / month
+        .range-plan__price-sale 
+          span
+          | % off
+      .action-block.action-block_two-btns
+        .action-block__btns
+          .action-block__btn
+            a.btn.btn_primary(href='#!') 30 days Free Trial
+            p.text-tips no credit card or phone call!
+          .action-block__btn
+            a.btn.btn_secondary(href='#!') Buy Now
 
-    .action-block.action-block_two-btns
-      .action-block__btns
-        .action-block__btn
-          a.btn.btn_primary(href='#!') 30 days Free Trial
-          p.text-tips no credit card or phone call!
-
-        .action-block__btn
-          a.btn.btn_secondary(href='#!') Buy Now
+    .range-plan__msg-block.range-plan__msg-block_hight
+      .range-plan__msg-text We recommend that you look at the tariff for home users
+      a.btn.btn_primary(href='#!') See Tarif Safe@Home
 
 
-.page-container
+.page-container.pt-0
   .container
     section
       h2.section-title.title-promo What you get

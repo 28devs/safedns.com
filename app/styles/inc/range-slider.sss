@@ -4,7 +4,11 @@
 
   .form-group
     margin-bottom: 80px
-  
+
+.form-shover-dark
+  background: #111
+  padding: 100px
+
 .noUi
   &-target
     background: #E0E0E0
@@ -16,6 +20,7 @@
     height: 10px
 
     ^&-handle
+      cursor: pointer
       size: 24px
       background: $primary
       box-shadow: none
@@ -23,6 +28,7 @@
       outline: 0
       border-radius: 24px
       box: center middle
+      top: -7px
 
       &:before
         display: none
@@ -48,4 +54,84 @@
     background: $primary
 
 
-  
+.range-slider_plan
+
+  &:before, &:after
+    content: ''
+    size: 20px 14px @sm 33px 14px
+    background: $primary
+    display: block
+    position: absolute 0 auto 0 0
+    transform: translateX(-100%)
+    border-radius: 10px 0 0 10px
+
+  &:after
+    position: absolute 0 0 0 auto
+    transform: translateX(100%)
+    border-radius: 0 10px 10px 0
+    background: #65637a
+
+  &.noUi-target
+    background: #65637a
+
+  &.noUi-horizontal
+    height: 14px
+
+  .noUi
+
+    &-handle
+      size: 32px
+      top: -9px
+
+      &:after
+        size: 12px
+
+    &-tooltip
+      display: none
+
+.range-slider
+  &__labels
+    box: space-between center
+
+  &__label
+    text: 16px #fff 700
+    width: 0
+    position: relative
+    
+    &_select:before
+      background: $primary !important
+
+    &:nth-child(1), &:nth-child(2)
+      .range-slider__label-text
+        width: 9px
+
+    &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6)
+      .range-slider__label-text
+        width: 18px
+
+    &:nth-child(7)
+      .range-slider__label-text
+        width: 28px
+
+    &:nth-child(8)
+      .range-slider__label-text
+        width: 40px
+
+    &:before
+      content: ''
+      size: 20px
+      background: #65637a
+      position: absolute -17px auto auto -10px
+      border-radius: 20px
+
+    &-text
+      transform: translate(-50%, 15px)
+      
+      &_hidden
+        visibility: hidden @md visible
+
+    &-sale
+      text: 12px #EB5757 700
+      float: right
+      position: absolute -5px -6px auto auto
+      transform: translateX(100%)

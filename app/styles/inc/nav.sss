@@ -297,6 +297,10 @@
   &_open
     display: block
 
+  &_hide-nav
+    .sticky-nav__nav-wrap:not(.sticky-nav__nav-flag), .btn
+      display: none
+
 @media $lg-down
   .sticky-nav__nav-wrap:not(:first-child) .sticky-nav__nav-link:after
     background: svg-load(icons/nav-arrow-down.svg, stroke='#000') center no-repeat / 16px !important
