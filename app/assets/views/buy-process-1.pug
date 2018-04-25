@@ -1,0 +1,63 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state sticky-nav_hide-nav')
+
+.page-container.page-container_gray.buy-process
+  .container
+    h2.section-title.title-gray
+      b Purchase 
+      .title-line.title-line_horisontal Safe@Home
+    
+    .steps-nav__wrap
+      ul.steps-nav
+        li.steps-nav__item.steps-nav__item_active
+          .steps-nav__item-text Login
+        li.steps-nav__item
+          .steps-nav__item-text Payment options
+        li.steps-nav__item 
+          .steps-nav__item-text Pay
+        li.steps-nav__item 
+          .steps-nav__item-text Finish!
+
+      .steps-nav__mobile Step 1 of 3
+
+  section.container
+    .form-container.form-container_single
+      section.auth(data-tabs)
+        .auth__header
+          .auth__header-logo
+          ul.auth__header-list
+            li.auth__header-item
+              a.auth__header-link.active(href="#login" data-tabs-link)
+                .auth__header-title.h2 Login
+            li.auth__header-item
+              a.auth__header-link(href="#registration" data-tabs-link)
+                .auth__header-title.h2 Registration
+        .auth__body
+          .auth__forms
+            #login.auth-login.tabs-content.active
+              form.form(action="#")
+                .input-group
+                  input.input(type='text' placeholder='Name*')
+                .input-group
+                  input.input(type='password' placeholder='Password *')
+                
+                .form__footer
+                  .input-group
+                    a.btn.btn_small.btn_primary Login
+                  a.auth__footer-link(href="#") Forgot password
+
+            #registration.auth-registration.tabs-content
+              form.form(action="#")
+                .input-group
+                  input.input(type='text' placeholder='Name*')
+                .input-group
+                  input.input(type='text' placeholder='E-mail *')
+                .input-group
+                  input.input(type='password' placeholder='Password *')
+                  
+                .form__footer
+                  .input-group
+                    a.btn.btn_small.btn_primary Registration
+
+include inc/footer-simple.pug
+include inc/foot.pug

@@ -298,8 +298,11 @@
     display: block
 
   &_hide-nav
-    .sticky-nav__nav-wrap:not(.sticky-nav__nav-flag), .btn
-      display: none
+    .sticky-nav__nav-wrap:not(.sticky-nav__nav-flag)
+      display: block @lg none
+    
+    .btn
+      display: block @lg none
 
 @media $lg-down
   .sticky-nav__nav-wrap:not(:first-child) .sticky-nav__nav-link:after

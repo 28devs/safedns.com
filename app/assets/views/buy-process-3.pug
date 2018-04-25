@@ -1,0 +1,68 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state sticky-nav_hide-nav')
+
+.page-container.page-container_gray.buy-process
+  .container
+    h2.section-title.title-gray
+      b Purchase 
+      .title-line.title-line_horisontal Safe@Home
+    
+    .steps-nav__wrap
+      ul.steps-nav
+        li.steps-nav__item.steps-nav__item_active
+          .steps-nav__item-text Login
+        li.steps-nav__item.steps-nav__item_active
+          .steps-nav__item-text Payment options
+        li.steps-nav__item.steps-nav__item_active
+          .steps-nav__item-text Pay
+        li.steps-nav__item 
+          .steps-nav__item-text Finish!
+
+      .steps-nav__mobile Step 1 of 3
+
+  section.container
+    .form-container.form-container_single.payment-options
+      .payment-options__desc
+        p.payment-options__text You going to buy
+        h3.title-promo.title-gray Safe@Business
+        p.payment-options__text Protect 45 devices
+        p.payment-options__text For 1 year
+
+      .payment-options__select-plan
+
+        form.form.credit-card
+
+          .credit-card__title Visa \ Mastercard
+
+          .credit-card__front
+            .input-group
+              input.input(type='text' placeholder='Card number*')
+
+            .input-group
+              input.input(type='text' placeholder='MM*')
+
+            .input-group
+              input.input(type='text' placeholder='Year*')
+
+            .input-group
+              input.input(type='text' placeholder='Cardholder name*')
+
+          .credit-card__back
+            .input-group
+              input.input(type='text' placeholder='CVC*')
+
+          .credit-card__payments
+            .credit-card__payments-text We accept cards:
+            .credit-card__payments-logo
+
+
+      .payment-options__total
+        p.payment-options__text Total Price: 
+          span.payment-options__total-price 20$
+
+        a.btn.btn_back.btn_small Back
+        a.btn.btn_primary.btn_small Next
+
+
+include inc/footer-simple.pug
+include inc/foot.pug
