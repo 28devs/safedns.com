@@ -102,6 +102,9 @@
       border: 1px solid #EB5757 !important
       color: #EB5757 !important
 
+    .select__arrow
+      background: svg-load('icons/nav-arrow-down.svg', stroke: #EB5757) no-repeat center center / cover !important
+
     ^&__error
       position: absolute
       left: -10px
@@ -279,6 +282,7 @@
     margin: 0 @md 0 auto
     transition: .1s ease
 
+    /* rtl:ignore */
     &:before
       content: ''
       position: absolute

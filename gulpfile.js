@@ -17,7 +17,8 @@
     sugarss = require('sugarss'),
     watch = require('gulp-watch'),
     cached = require('gulp-cached'),
-    gulpWatchPug = require('gulp-watch-pug');
+    gulpWatchPug = require('gulp-watch-pug'),
+    cssbeautify = require('gulp-cssbeautify');
 
   // Попробовать позже https://www.npmjs.com/package/gulp-pug-inheritance
   // jadeInheritance = require('gulp-jade-inheritance'),
@@ -38,74 +39,108 @@
       .pipe(gulp.dest('dest/'));
   });
 
+  const processors = [
+    // require('stylelint')({
+    //   extends: 'stylelint-config-sugarss-recommended'
+    // }),
+    require('postcss-import'),
+    require('postcss-alias'),
+    require('postcss-assets')({
+      loadPaths: ['img/', 'img/about', 'img/icons'],
+      basePath: 'dest/',
+      relative: 'styles/'
+    }),
+    require('postcss-nested-ancestors'),
+    require('postcss-nested'),
+    require('postcss-inline-media'),
+    require('postcss-short-spacing'),
+    require('postcss-short-text'),
+    require('postcss-size'),
+    require('postcss-position'),
+    require('postcss-flexbox'),
+    require('postcss-simple-vars'),
+    require('postcss-responsive-type'),
+    require('postcss-extend'),
+    require('postcss-mixins'),
+    require('postcss-inline-svg')({
+      path: 'app/assets/img/'
+    }),
+    require('autoprefixer'),
+    require('postcss-rtl')({
+      //onlyDirection: 'rtl',
+      addPrefixToSelector: function(selector, prefix) {
+        if (prefix === '[dir]') {
+          return selector;
+        }
+        return prefix + ' ' + selector;
+      }
+    }),
+    require('postcss-pxtorem')({
+      selectorBlackList: [
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        '.btn',
+        '.sticky-nav__nav-link',
+        '.hero-blocks__item li'
+      ]
+    }),
+    require('postcss-unique-selectors'),
+    require('css-mqpacker')({
+      sort: true
+    }),
+    require('postcss-sorting')
+  ];
+
   //write style
   gulp.task('postcss', function() {
-    const processors = [
-      // require('stylelint')({
-      //   extends: 'stylelint-config-sugarss-recommended'
-      // }),
-      require('postcss-import'),
-      require('postcss-alias'),
-      require('postcss-assets')({
-        loadPaths: ['img/', 'img/about', 'img/icons'],
-        basePath: 'dest/',
-        relative: 'styles/'
-      }),
-      require('postcss-nested-ancestors'),
-      require('postcss-nested'),
-      require('postcss-inline-media'),
-      require('postcss-short-spacing'),
-      require('postcss-short-text'),
-      require('postcss-size'),
-      require('postcss-position'),
-      require('postcss-flexbox'),
-      require('postcss-simple-vars'),
-      require('postcss-responsive-type'),
-      require('postcss-extend'),
-      require('postcss-mixins'),
-      require('postcss-inline-svg')({
-        path: 'app/assets/img/'
-      }),
-      require('autoprefixer'),
-      require('postcss-rtl')({
-        //onlyDirection: 'rtl',
-        addPrefixToSelector: function(selector, prefix) {
-          if (prefix === '[dir]') {
-            return selector;
-          }
-          return prefix + ' ' + selector;
-        }
-      }),
-      require('postcss-pxtorem')({
-        selectorBlackList: [
-          'h1',
-          'h2',
-          'h3',
-          'h4',
-          'h5',
-          '.btn',
-          '.sticky-nav__nav-link',
-          '.hero-blocks__item li'
-        ]
-      }),
-      require('postcss-unique-selectors'),
-      require('css-mqpacker')({
-        sort: true
-      })
-    ];
-    return gulp
-      .src('app/styles/main.sss')
-      .pipe(sourcemaps.init())
-      .pipe(
-        postcss(processors, { parser: sugarss }).on('error', notify.onError())
-      )
-      .pipe(rename({ extname: '.css' }))
-      .pipe(sourcemaps.write('/'))
-      .pipe(gulp.dest('dest/styles/'));
+    return (
+      gulp
+        .src(['app/styles/main.sss'])
+        .pipe(sourcemaps.init())
+        .pipe(
+          postcss(processors, { parser: sugarss }).on('error', notify.onError())
+        )
+        // .pipe(
+        //   cssbeautify({
+        //     indent: '  ',
+        //     autosemicolon: true
+        //   })
+        // )
+        .pipe(rename({ extname: '.css' }))
+        .pipe(sourcemaps.write('/'))
+        .pipe(gulp.dest('dest/styles/'))
+    );
   });
 
-  // gulp.task('css', function() {
-  //   return gulp.src('app/styles/css/*.*').pipe(gulp.dest('dest/styles/'));
+  gulp.task('postcss-many', function() {
+    return (
+      gulp
+        .src([
+          'app/styles/main.sss',
+          'app/styles/views-css/*.sss',
+          'app/styles/inc-css/*.sss'
+        ])
+        //.pipe(sourcemaps.init())
+        .pipe(
+          postcss(processors, { parser: sugarss }).on('error', notify.onError())
+        )
+        .pipe(
+          cssbeautify({
+            indent: '  ',
+            autosemicolon: true
+          })
+        )
+        .pipe(rename({ extname: '.css' }))
+        //.pipe(sourcemaps.write('/'))
+        .pipe(gulp.dest('dest/styles/'))
+    );
+  });
+
+  // gulp.task('many-css', function() {
+  //   return gulp.src('app/styles/*.sss').pipe(gulp.dest('dest/styles/'));
   // });
 
   // write js

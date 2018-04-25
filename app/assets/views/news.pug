@@ -10,9 +10,9 @@ include inc/nav.pug
           a.card.card_light-gray(href='#!')
             .card__img(style='background-image: url(' + post.img + ')')
             .card__content
-              h4= post.title
-              p= post.text
-              p.text-tips= post.date
+              h4.card__title-sub= post.title
+              p.card__text= post.text
+              p.card__text.text-tips= post.date
 
     .text-center
       .btn.btn_small.btn_back View more

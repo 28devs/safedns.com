@@ -3,7 +3,7 @@
   border-radius: 4px
   display: block
 
-  h1:first-child, h2:first-child, h3:first-child, h4:first-child
+  .card__title-sub, .card__title
     margin-top: 0
 
   &__fixed
@@ -16,7 +16,7 @@
       padding: * 20px !important
 
   &__img
-    img
+    .card__img-item
       display: block
       width: calc(100% + 2px)
       margin: -1px
@@ -67,10 +67,10 @@
     &:hover
       background: #E8E8E8
 
-    h4
+    .card__title-sub
       text: 16px 1.3 #333 700 
 
-    p:not(.text-tips)
+    .card__text:not(.text-tips)
       text: 14px #000
 
   &_light-gray
@@ -79,10 +79,10 @@
     &:hover
       background: #F2F2F2
 
-    h4
+    .card__title-sub
       text: 16px @sm 20px
 
-    p:not(.text-tips)
+    .card__text:not(.text-tips)
       text: 14px @sm 16px
 
     ^&__content
