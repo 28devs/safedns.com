@@ -99,7 +99,7 @@
           position: absolute 0 0 4px auto @lg absolute 0 0 0 auto
           width: 50px @lg 20px
           background: svg-load(icons/nav-arrow-down.svg, stroke='#fff') center no-repeat
-          transition: $sticky-nav-transition
+          // transition: $sticky-nav-transition
           background-size: 16px @lg auto
 
         &-lang
@@ -107,6 +107,9 @@
           margin-right: 40px
           display: block @lg none
 
+        &_active
+          &:after
+            transform: rotate(180deg)
     &-childs
       position: static @lg absolute 63px auto auto auto
       visibility: visible @lg hidden
