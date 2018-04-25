@@ -1,7 +1,8 @@
 include inc/head.pug
 
 .page-container.page-container_gray.page-container_auth
-  include inc/nav.pug
+  +nav(class='sticky-nav_always-fixed-state')
+  
   .container
     .form-container.form-container_single
       section.auth(data-tabs)

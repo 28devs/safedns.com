@@ -1,0 +1,43 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state')
+
+.page-container_gray
+  .container
+    .form-pages-header
+      h2.section-title 
+        b Get Trial
+        .title-line Education
+      p.form-pages-header__attention No credit card or phone call required!
+      
+
+    .row
+      .col-12.col-lg-6
+        .trial-desc
+          .trial-desc__img-wrap
+            img.trial-desc__img(src='img/trial-desc.png')
+
+          ul.trial-desc__list
+            li.trial-desc__list-item Threat protection like no other — block malware, C2 callbacks, and phishing
+            li.trial-desc__list-item Worldwide coverage in minutes — no hardware to install or software to maintain
+            li.trial-desc__list-item Straightforward management through a single web-based console
+    
+      .col-12.col-lg-6
+        .form-container
+          form.form(action="#")
+            p.form__title Get started in 30 seconds
+            .input-group
+              input.input(type='text' placeholder='Name*')
+            .input-group
+              input.input(type='text' placeholder='E-mail *')
+            .input-group
+              input.input(type='password' placeholder='Password *')
+
+            .form__footer
+              .footer-terms
+                p.footer-terms__desc By clicking ‘Registration’, I agree to SafeDNS’s Terms of Service
+                  a.footer-terms__link(href='#!') Terms of Services
+              .input-group
+                a.btn.btn_small.btn_primary Registration
+
+include inc/footer-simple.pug
+include inc/foot.pug

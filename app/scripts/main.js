@@ -104,7 +104,6 @@ if (radio) {
       er.forEach(function(item) {
         item.classList.remove('checked');
       });
-      console.log(this);
       this.classList.add('checked');
     });
   });
