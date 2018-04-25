@@ -3,14 +3,36 @@
     linear-gradient(114.73deg, rgba(47, 128, 237, 0.2) 13.99%, rgba(235, 87, 87, 0.2) 90.71%), resolve('hero/hero-bg.jpg') center / cover, #242235
   height: 100vh
   box: vertical middle center
+  overflow: hidden
+  position: relative
 
   + .sticky-nav .sticky-nav__logo
     display: none @sm block
+
+  &__video
+    position: absolute auto 0 0 0
+    width: 100%
+    z-index: 1
+
+  &_video-gradient:after
+    content: ''
+    display: block
+    position: absolute 0 0 0 0
+    z-index: 2
+    background: linear-gradient(114.73deg, rgba(48, 84, 132, 0.68) 13.99%, rgba(177, 77, 77, 0.43) 90.71%)
+    
+  &_video-1
+    background: #0b1d44 !important
+
+  &_video-2
+    background: #4f344c !important
 
   &__content
     text-align: center
     color: #fff
     margin-top: auto
+    position: relative
+    z-index: 3
 
     ^&__logo
       background: resolve('logo-big-white.png')
@@ -18,14 +40,14 @@
       display: block @sm none
       margin: 1vw auto 5vw
 
-    hgroup
+    ^&__title-group
       display: none @sm block
       margin-top: 6vw
 
-      h1
+      ^^&__title
         margin-bottom: 0.3vw
 
-      h4
+      ^^&__title-sub
         font-weight: 400  
         margin: 0 0 2vw
         padding: 0 20vw
@@ -45,6 +67,8 @@
     text-align: left @sm center
     background: #fff @sm svg-load('icons/down-arrow.svg', stroke: #fff) center bottom no-repeat
     cursor: pointer
+    position: relative
+    z-index: 3
 
     &__scroll
       display: none @sm block
@@ -62,6 +86,7 @@
     text-align: center @sm left
     transition: .2s ease
     transform-origin: bottom
+    z-index: 3
 
     &_hide
       opacity: 0
@@ -81,27 +106,30 @@
       .btn
         margin: 0 auto
 
-.hero-blocks
+.main-page-solutions
   box: horisontal wrap
 
   &__item
     box: vertical top left
     padding: 28px 20px 13px @sm 3vw 4vw
     color: #fff
-    cursor: pointer @sm default
+    cursor: pointer
+    position: relative
+    overflow: hidden
 
-    h2
+    ^&__title
       font-size: responsive 24px 36px
       font-range: $sm-px $lg-px
       margin-bottom: 2px @sm 2vw @lg 14px
+      cursor: pointer
 
-    ul
+    ^&__list
       padding: 0
       list-style: none
       margin: 0
       margin-bottom: 10px @md 20px
 
-      li
+      &-item
         display: none @sm block
         font-size: 14px @md 16px @lg 18px
         position: relative
@@ -129,21 +157,31 @@
     &:nth-child(5)
       width: 100% @sm 100% @lg 50%
 
-    &:nth-child(1)
+    &:hover
+      &:after
+        transform: scale(1.05)
+
+    &:after
+      content: ''
+      display: block
+      position: absolute 0 0 0 0
+      z-index: -1
+      transition: .3s
+
+    &:nth-child(1):after
       background: linear-gradient(120.3deg, #35AEF2 13.68%, rgba(53, 174, 242, 0.6) 82.35%), resolve('hero/hero-blocks-bg-1.jpg') center / cover
 
-    &:nth-child(2)
+    &:nth-child(2):after
       background: linear-gradient(122.88deg, #F2994A 18.26%, rgba(242, 153, 74, 0.7) 80.21%), resolve('hero/hero-blocks-bg-2.jpg') center / cover
 
-    &:nth-child(3)
+    &:nth-child(3):after
       background: linear-gradient(117.68deg, #27AE60 23.19%, rgba(39, 174, 96, 0.7) 80.83%), resolve('hero/hero-blocks-bg-3.jpg') center / cover
 
-    &:nth-child(4)
+    &:nth-child(4):after
       background: linear-gradient(112.9deg, #9B51E0 13.49%, rgba(155, 81, 224, 0.6) 83.32%), resolve('hero/hero-blocks-bg-4.jpg') center / cover
 
-    &:nth-child(5)
+    &:nth-child(5):after
       background: linear-gradient(116.32deg, #4F4F4F 32.24%, rgba(79, 79, 79, 0.8) 85.03%), resolve('hero/hero-blocks-bg-1.jpg') center / cover
-
     .btn
       display: none @sm block
       margin-top: auto

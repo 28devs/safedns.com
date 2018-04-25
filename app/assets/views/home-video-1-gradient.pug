@@ -1,6 +1,6 @@
 include inc/head.pug
 
-section.hero
+section.hero.hero_video-1
   .hero__content
     .hero__logo
 
@@ -23,6 +23,9 @@ section.hero
         |.
 
       a.btn.btn_white.btn_small(href='#!') I agree
+
+  video.hero__video(autoplay muted loop)
+    source(src='videos/hero-1.mp4' type='video/mp4')
 
 include inc/nav.pug
 
