@@ -97,14 +97,13 @@ if (select) {
 //
 
 const radio = document.querySelectorAll('[data-input-radio]');
-console.log(radio);
+
 if (radio) {
   radio.forEach(function(item, id, er) {
     item.addEventListener('click', function() {
       er.forEach(function(item) {
         item.classList.remove('checked');
       });
-      console.log(this);
       this.classList.add('checked');
     });
   });
