@@ -3,11 +3,14 @@
   width: 100%
   margin: 0 auto
   background-color: #fff
-  padding: 0 20px 5vw 20px @md 47px 66px
+  padding: 0 20px 5vw @md 47px 35px @xl 47px 66px
   text-align: center
   border: 0 @md 1px solid #E0E0E0
   box-shadow: none @md 0px 4px 10px rgba(0, 0, 0, 0.05)
   border-radius: 4px
+
+  &_without-padding-mobile
+    padding: 0 0 5vw @md 47px 35px @xl 47px 66px
 
   &_single
     max-width: 650px
@@ -33,7 +36,7 @@
   text-align: center
 
   &__attention
-    font-size: 18px
+    font-size: 14px @md 16px @xl 18px
     color: $primary
     display: inline-block
     border-bottom: 1px solid $primary
@@ -67,14 +70,19 @@
   .form__footer
     margin-top: 35px
 
+    &_grid
+      box: horizontal middle space-between
+
 .footer-terms
   &__desc, &__link
+    color: $text-secondary-light
     font-size: 14px
     margin: 0
 
   &__link
     display: inline-block
     margin: 0 0 20px
+    color: $primary
 
 ::placeholder
   font-family: 'PT Sans', arial
@@ -148,7 +156,7 @@
     font-size: 14px @md 16px
     box-sizing: border-box
     border-radius: 4px
-    padding: 12px 17px @sm 9px 25px
+    padding: 12px 19px @sm 12px 27px @md 11px 27px 
     display: block
     width: 100%
     outline: none
@@ -182,6 +190,16 @@
 
     ^&.selected &
       background: svg-load('icons/nav-arrow-down.svg', stroke: $text-primary-contrast) no-repeat center center / cover
+
+  &_transparent
+
+    ^&__elem
+      border-color: transparent
+      padding-left: 0
+
+      option[selected]
+        margin-left: -19px @sm -27px
+        color: $text-primary-contrast
 
 .protect-radio
   box: vertical middle center @md horizontal middle space-between
@@ -269,12 +287,38 @@
     cursor: pointer
 
 .typical-form-range
-  margin: * -20px @md * -66px
-  padding: 28px 20px 75px @md 28px 66px 75px
+  margin: * -20px @md * -35px @xl * -66px
+  padding: 28px 20px 65px @md 28px 35px 75px @xl 28px 66px 75px
   margin-top: 35px
-  margin-bottom: 35px
+  margin-bottom: 0px @md 35px
   border-top: 1px solid #E0E0E0
-  border-bottom: 1px solid #E0E0E0
+  border-bottom: 0 @md 1px solid #E0E0E0
 
   .input-group__title
     margin-bottom: 28px @md 35px
+
+.form-successful
+  &__title
+    margin: 0 0 30px 0
+    // font-weight: 700 @md 400
+
+.image-loader
+  width: 100%
+  border-radius: 4px
+  height: 64px
+  text-align: center
+  background-color: #fff
+  border: 1px solid #E0E0E0
+  cursor: pointer
+  // font-size: 16px
+  &__text
+    line-height: 64px
+    color: $text-secondary-light
+    display: inline-block
+    
+    &:before
+      content: ''
+      background: svg-load('icons/drag.svg') left center no-repeat
+      display: inline-block
+      size: 24px
+      margin: 0 14px -4px 0

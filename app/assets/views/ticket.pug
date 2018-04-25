@@ -1,0 +1,69 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state')
+
+.page-container_gray
+  .container
+    .form-pages-header
+      h2.section-title 
+        <b>Create </b>a support ticket
+
+    .row
+      .col-12
+        .form-container.form-container_without-padding-mobile
+          form.form(action="#")
+            .input-group
+              input.input(type='text' placeholder='Name*')
+
+            .input-group_grid
+              .row
+                .col-12.col-sm-6
+                  .input-group.input-group
+                    input.input(type='text' placeholder='Name*')
+                    
+                .col-12.col-sm-6
+                  .input-group
+                    input.input(type='mail' placeholder='Working E-mail*')
+
+            .input-group.input-group
+              input.input(type='text' placeholder='Problem title')
+            
+            .input-group
+              .select
+                <select class='select__elem'>
+                  <option value="" disabled selected>Partner type</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                .select__arrow
+
+            .input-group
+              textarea(type='text' placeholder='Description')
+
+            .input-group
+              .image-loader 
+                span.image-loader__text drag screenshots here
+
+            //- .form__footer.form-footer_grid
+              
+            //-   .input-group
+            //-     a.btn.btn_small.btn_primary Send
+            
+            .form__footer.form__footer_grid
+              .select.select_transparent
+                <select class='select__elem'>
+                  <option value="1" selected> English</option>
+                  <option value="2">العربيّة</option>
+                  <option value="3">Français</option>
+                  <option value="4">Deutsch</option>
+                  <option value="5">Italiano</option>
+                  <option value="6">Português</option>
+                  <option value="7">Español</option>
+                </select>
+
+                .select__arrow
+
+              a.btn.btn_small.btn_primary.btn_min-width  Send
+
+include inc/footer-simple.pug
+include inc/foot.pug

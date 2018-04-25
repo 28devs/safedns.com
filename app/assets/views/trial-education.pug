@@ -6,7 +6,7 @@ include inc/head.pug
     .form-pages-header
       h2.section-title 
         b Get Trial
-        .title-line Business
+        .title-line Education
       p.form-pages-header__attention No credit card or phone call required!
       
 
@@ -52,37 +52,10 @@ include inc/head.pug
               input.input(type='text' placeholder='Company name*')
 
             .input-group
-
-              p.input-group__title What need a protect
-
-              .protect-radio
-
-                .protect-radio__item(data-input-radio)
-                  label.protect-radio__label
-                    .protect-radio__img
-                    p.protect-radio__item-title Desktop
-                    .protect-radio__radio 
-                    input.protect-radio__hide-radio(type='radio' name='protect' value='desktop')
-
-                .protect-radio__item.checked(data-input-radio)
-                  label.protect-radio__label
-                    .protect-radio__img
-                    p.protect-radio__item-title Fi-Wi hotspots
-                    .protect-radio__radio      
-                    input.protect-radio__hide-radio(type='radio' name='protect' value='Fi-Wi hotspots')
-                    
-                .protect-radio__item(data-input-radio)
-                  label.protect-radio__label
-                    .protect-radio__img
-                    p.protect-radio__item-title Servers
-                    .protect-radio__radio 
-                    input.protect-radio__hide-radio(type='radio' name='protect' value='Servers')
-                
-            .input-group
               .typical-form-range
-                p.input-group__title Wi-Fi hotspot locations
+                p.input-group__title Students \ schoolboys:
                 input(type='hidden' name='slider4')
-                .range-slider(data-bind='slider4' data-value='28')
+                .range-slider(data-bind='slider4' data-min='10' data-max='1000' data-step='10' data-value='330')
 
             .input-group.input-group
               textarea(type='text' placeholder='Additional info')
