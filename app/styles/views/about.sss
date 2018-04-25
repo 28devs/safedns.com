@@ -117,7 +117,7 @@
     padding: 30px 0 @md 6vw 0 @lg 80px 0 90px
     background: linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%), url('../img/about/location-bg.jpg') center / cover @lg url('../img/about/map.png') right top no-repeat, linear-gradient(108.95deg, rgba(47, 128, 237, 0.8) -7.65%, rgba(235, 87, 87, 0.8) 104.68%), url('../img/about/location-bg.jpg') center / cover
     text: 400 #fff
-    border-bottom: 2px solid #fff
+    border-bottom: 1px solid #fff
     
     &-text-wrap
       max-width: 100% @lg 40vw @xl 45vw
@@ -139,15 +139,24 @@
         border-radius: 50%
         size: 35px @md 48px
         transform: rotate(180deg)
-        background: rgba(255, 255, 255, .2) svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5)) no-repeat center / 13px
-        background-position-x: 11px @md 15px
+        background-image: svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .5))
+        background-color: rgba(255, 255, 255, .2) 
+        background-position: 11px center @md 15px center
         background-size: 10px @md 13px
+        background-repeat: no-repeat
+        transition: $transition
 
+    &:hover 
+      ^&-wrap
+        &:after
+          background-image: svg-load('icons/slider-arrow.svg', stroke: rgba(255, 255, 255, .7))
+          background-color: rgba(255, 255, 255, .5)
+          
   &__press
     background: linear-gradient(101.56deg, rgba(47, 128, 237, 0.8) -6.9%, rgba(235, 87, 87, 0.8) 225.75%), url('../img/about/press-bg.jpg') center / cover
     text: 400 #fff
-    border-right: 0 @md 2px solid #fff
-    border-bottom: 2px solid #fff @md 0
+    border-right: 0 @md 1px solid #fff
+    border-bottom: 1px solid #fff @md 0
 
     &-wrap
       padding-right: auto @md 4vw !important @lg 84px !important
