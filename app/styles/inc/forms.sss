@@ -197,12 +197,29 @@
   &_transparent
 
     ^&__elem
-      border-color: transparent
-      padding-left: 0
+      // border-color: transparent
+      padding-left: 10px
+      min-width: 110px
+      color: $text-secondary
+
+      option
+        color: $text-secondary
 
       option[selected]
         margin-left: -19px @sm -27px
-        color: $text-primary-contrast
+        color: $text-secondary
+
+    .select__arrow
+      background: svg-load('icons/nav-arrow-down.svg', stroke: $text-secondary) no-repeat center center / cover
+      margin: -5px 12px 0 -30px
+
+    &.selected
+      ^^&__elem
+        color: $text-secondary
+      
+      .select__arrow
+        background: svg-load('icons/nav-arrow-down.svg', stroke: $text-secondary) no-repeat center center / cover
+
 
 .protect-radio
   box: vertical middle center @md horizontal middle space-between
