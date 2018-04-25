@@ -96,23 +96,21 @@
 
   //write style
   gulp.task('postcss', function() {
-    return (
-      gulp
-        .src(['app/styles/main.sss'])
-        .pipe(sourcemaps.init())
-        .pipe(
-          postcss(processors, { parser: sugarss }).on('error', notify.onError())
-        )
-        // .pipe(
-        //   cssbeautify({
-        //     indent: '  ',
-        //     autosemicolon: true
-        //   })
-        // )
-        .pipe(rename({ extname: '.css' }))
-        .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('dest/styles/'))
-    );
+    return gulp
+      .src(['app/styles/main.sss'])
+      .pipe(sourcemaps.init())
+      .pipe(
+        postcss(processors, { parser: sugarss }).on('error', notify.onError())
+      )
+      .pipe(
+        cssbeautify({
+          indent: '  ',
+          autosemicolon: true
+        })
+      )
+      .pipe(rename({ extname: '.css' }))
+      .pipe(sourcemaps.write('/'))
+      .pipe(gulp.dest('dest/styles/'));
   });
 
   gulp.task('postcss-many', function() {
