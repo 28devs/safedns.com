@@ -67,7 +67,15 @@
         path: 'app/assets/img/'
       }),
       require('autoprefixer'),
-      require('postcss-rtl'),
+      require('postcss-rtl')({
+        //onlyDirection: 'rtl',
+        addPrefixToSelector: function(selector, prefix) {
+          if (prefix === '[dir]') {
+            return selector;
+          }
+          return prefix + ' ' + selector;
+        }
+      }),
       require('postcss-pxtorem')({
         selectorBlackList: [
           'h1',

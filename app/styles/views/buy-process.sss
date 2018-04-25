@@ -26,7 +26,7 @@
   &__mobile
     display: block @md none
     text-align: center
-    margin: 10px 0 35px
+    margin: -20px 0 35px @sm 10px 0 35px
 
   &__item
     width: 100%
@@ -344,3 +344,14 @@
       background: resolve('payments.jpg') center no-repeat
       background-size: 100%
       padding-top: 42px @md 10%
+
+.payment-successful
+  &__title
+    font-size: 20px @sm 24px
+
+  &__text
+    margin: 40px 0 35px @sm 40px 0 90px
+
+  &__link
+    font-size: 20px @sm 16px
+    display: block @sm inline
