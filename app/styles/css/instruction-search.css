@@ -1,0 +1,60 @@
+[dir] .search__title {
+  margin-bottom: 35px;
+}
+
+[dir] .search__sub-title {
+  margin-bottom: 20px;
+}
+
+.search__list {
+  list-style: none;
+}
+
+[dir] .search__list-item {
+  margin-bottom: 35px;
+}
+
+[dir] .search__link-title {
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+[dir] .search__keyword {
+  background-color: #C5D6ED;
+}
+
+@media (min-width: 768px) {
+  [dir] .search__title {
+    margin-bottom: 5vw;
+  }
+
+  [dir] .search__sub-title {
+    margin-bottom: 3.8vw;
+  }
+
+  [dir] .search__list-item {
+    margin-bottom: 5vw;
+  }
+
+  [dir] .search__link-title {
+    margin-bottom: -2vw;
+  }
+}
+
+@media (min-width: 992px) {
+  [dir] .search__title {
+    margin-bottom: 50px;
+  }
+
+  [dir] .search__sub-title {
+    margin-bottom: 32px;
+  }
+
+  [dir] .search__list-item {
+    margin-bottom: 50px;
+  }
+
+  [dir] .search__link-title {
+    margin-bottom: -8px;
+  }
+}
