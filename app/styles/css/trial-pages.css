@@ -3,8 +3,9 @@
   max-width: 100%;
 }
 
-[dir] .trial-desc__img-wrap {
+.trial-desc__img-wrap {
   margin: 0 auto;
+  text-align: center;
 }
 
 .trial-desc__img-wrap .trial-desc__img {
@@ -15,7 +16,7 @@
   list-style-image: url('../img/icons/trial-desc-list-img.svg');
 }
 
-[dir] .trial-desc__list {
+.trial-desc__list {
   margin: 42px 0 0 0;
 }
 
@@ -31,7 +32,7 @@
   color: #333;
 }
 
-[dir] .trial-desc__list-item {
+.trial-desc__list-item {
   margin-bottom: 28px;
 }
 
