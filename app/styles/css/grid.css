@@ -6,45 +6,34 @@
   min-height: 100vh;
 }
 
-[dir] .page-container_gray {
+.page-container_gray {
   background-color: #fff;
   padding: 20px 0;
 }
 
-[dir] .page-container > :first-child:not(.container, [dir] nav) {
+.page-container > :first-child:not(.container, nav) {
   margin: 5px 0 40px;
 }
 
-[dir] .block-outer {
+.block-outer {
   margin: 40px 0;
 }
 
-[dir] .block-outer:last-child {
+.block-outer:last-child {
   margin-bottom: 0;
 }
 
-[dir] .mb-0 {
+.mb-0 {
   margin-bottom: 0 !important;
 }
 
-[dir] .pb-0 {
+.pb-0 {
   padding-bottom: 0;
 }
 
 .container {
   max-width: 540px;
-}
-
-[dir] .container {
   padding: 0 20px;
-}
-
-[dir=ltr] .container {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-[dir=rtl] .container {
   margin-right: auto;
   margin-left: auto;
 }
@@ -52,54 +41,38 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-}
-
-[dir] .row {
   margin: 0 -10px;
 }
 
 .col-12 {
   width: 100%;
-}
-
-[dir] .col-12 {
   padding: 0 10px;
 }
 
 .col-6 {
   width: 50%;
-}
-
-[dir] .col-6 {
   padding: 0 10px;
 }
 
 .col-4 {
   width: 33.33333%;
-}
-
-[dir] .col-4 {
   padding: 0 10px;
 }
 
-[dir] .half-gutters {
+.half-gutters {
   margin: 0 -5px;
 }
 
-[dir] .half-gutters > [class*='col-'] {
+.half-gutters > [class*='col-'] {
   padding: 0 5px;
   margin-bottom: 21px;
 }
 
-[dir] .half-gutters .half-gutters .col-12:last-child {
-  margin-bottom: 0;
-}
-
-[dir] .full-gutters > [class*='col-'] {
+.full-gutters > [class*='col-'] {
   margin-bottom: 35px;
 }
 
-[dir] .pt-0 {
+.pt-0 {
   padding-top: 0 !important;
 }
 
@@ -146,63 +119,63 @@
     width: 75%;
   }
 
-  [dir] .row .col-12:first-child > :first-child,[dir] .row .col-md-4 > :first-child,[dir] .row .col-md-6 > :first-child,[dir] .row .col-md-8 > :first-child {
+  .row .col-12:first-child > :first-child, .row .col-md-4 > :first-child, .row .col-md-6 > :first-child, .row .col-md-8 > :first-child {
     margin-top: 0;
   }
 
-  [dir] .row .col-12 > :last-child:not(:first-child),[dir] .row .col-md-4 > :last-child:not(:first-child),[dir] .row .col-md-6 > :last-child:not(:first-child) {
+  .row .col-12 > :last-child:not(:first-child),.row .col-md-4 > :last-child:not(:first-child),.row .col-md-6 > :last-child:not(:first-child) {
     margin-bottom: 0;
   }
 
-  [dir] .page-container_gray {
+  .page-container_gray {
     background-color: #F7F7F7;
   }
 
-  [dir] .page-container_gray {
+  .page-container_gray {
     padding: 40px 0;
   }
 
-  [dir] .page-container > :first-child:not(.container, [dir] nav) {
+  .page-container > :first-child:not(.container, nav) {
     margin: 2vw 0 5vw;
   }
 
-  [dir] .block-outer {
+  .block-outer {
     margin: 5vw 0;
   }
 
-  [dir] .container {
+  .container {
     padding: 0 3vw;
   }
 
-  [dir] .row {
+  .row {
     margin: 0 -3vw;
   }
 
-  [dir] .col-12 {
+  .col-12 {
     padding: 0 3vw;
   }
 
-  [dir] .col-6 {
+  .col-6 {
     padding: 0 3vw;
   }
 
-  [dir] .col-4 {
+  .col-4 {
     padding: 0 3vw;
   }
 
-  [dir] .half-gutters {
+  .half-gutters {
     margin: 0 -1.5vw;
   }
 
-  [dir] .half-gutters > [class*='col-'] {
+  .half-gutters > [class*='col-'] {
     padding: 0 1.5vw;
   }
 
-  [dir] .half-gutters > [class*='col-'] {
+  .half-gutters > [class*='col-'] {
     margin-bottom: 3vw;
   }
 
-  [dir] .full-gutters > [class*='col-'] {
+  .full-gutters > [class*='col-'] {
     margin-bottom: 6vw;
   }
 }
@@ -244,11 +217,11 @@
     padding: 45px 0 65px;
   }
 
-  [dir] .page-container > :first-child:not(.container, [dir] nav) {
+  .page-container > :first-child:not(.container, nav) {
     margin: 15px 0 65px;
   }
 
-  [dir] .block-outer {
+  .block-outer {
     margin: 65px 0;
   }
 }
@@ -278,39 +251,39 @@
     width: 58.33333%;
   }
 
-  [dir] .container {
+  .container {
     padding: 0 26px;
   }
 
-  [dir] .row {
+  .row {
     margin: 0 -26px;
   }
 
-  [dir] .col-12 {
+  .col-12 {
     padding: 0 26px;
   }
 
-  [dir] .col-6 {
+  .col-6 {
     padding: 0 26px;
   }
 
-  [dir] .col-4 {
+  .col-4 {
     padding: 0 26px;
   }
 
-  [dir] .half-gutters {
+  .half-gutters {
     margin: 0 -13px;
   }
 
-  [dir] .half-gutters > [class*='col-'] {
+  .half-gutters > [class*='col-'] {
     padding: 0 13px;
   }
 
-  [dir] .half-gutters > [class*='col-'] {
+  .half-gutters > [class*='col-'] {
     margin-bottom: 26px;
   }
 
-  [dir] .full-gutters > [class*='col-'] {
+  .full-gutters > [class*='col-'] {
     margin-bottom: 54px;
   }
 }
