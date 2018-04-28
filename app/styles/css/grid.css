@@ -167,6 +167,10 @@
     margin: 0 -1.5vw;
   }
 
+  .half-gutters .half-gutters .col-12:last-child {
+    margin-bottom: 0;
+  }
+
   .half-gutters > [class*='col-'] {
     padding: 0 1.5vw;
   }
