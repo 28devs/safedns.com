@@ -77,7 +77,7 @@ mixin nav()
           a.sticky-nav__nav-link(href='#!') MENU
 
         each parent in headerNav
-          li.sticky-nav__nav-wrap(class=typeof parent.flag === 'undefined' ? '' : 'sticky-nav__nav-flag sticky-nav__nav-flag-' + parent.flag)
+          li.sticky-nav__nav-wrap(class=typeof parent.flag === 'undefined' ? '' : 'sticky-nav__nav-flag sticky-nav__nav-flag_' + parent.flag)
             a.sticky-nav__nav-link(href='#!') !{parent.title}
 
             ul.sticky-nav__nav-childs
@@ -89,9 +89,9 @@ mixin nav()
 
                   ul.sticky-nav__nav-child
                     each subChild in child.childs
-                      li.sticky-nav__nav-child-wrap(class=typeof subChild.flag === 'undefined' ? '' : 'sticky-nav__nav-flag sticky-nav__nav-flag-' + subChild.flag)
+                      li.sticky-nav__nav-child-wrap(class=typeof subChild.flag === 'undefined' ? '' : 'sticky-nav__nav-flag sticky-nav__nav-flag_' + subChild.flag)
                         a.sticky-nav__nav-child-link(href='#!' class=subChild.class)= subChild.title
 
-      a.btn.btn_outline Login
+      a.sticky-nav__btn.btn.btn_outline Login
 
   
