@@ -1,9 +1,6 @@
 .trial-desc__img-wrap {
   width: 100%;
   max-width: 100%;
-}
-
-.trial-desc__img-wrap {
   margin: 0 auto;
   text-align: center;
 }
@@ -14,9 +11,6 @@
 
 .trial-desc__list {
   list-style-image: url('../img/icons/trial-desc-list-img.svg');
-}
-
-.trial-desc__list {
   margin: 42px 0 0 0;
 }
 
@@ -30,9 +24,6 @@
 
 .trial-desc__list-item {
   color: #333;
-}
-
-.trial-desc__list-item {
   margin-bottom: 28px;
 }
 
