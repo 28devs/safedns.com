@@ -13,17 +13,17 @@
   margin: 0 auto 20px;
 }
 
-.card__fixed .btn {
+.btn_card-fixed {
   display: block;
   text-align: center;
 }
 
-[dir=ltr] .card__fixed .btn {
+[dir=ltr] .btn_card-fixed {
   padding-right: 20px !important;
   padding-left: 20px !important;
 }
 
-[dir=rtl] .card__fixed .btn {
+[dir=rtl] .btn_card-fixed {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
