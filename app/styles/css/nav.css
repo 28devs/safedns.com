@@ -751,8 +751,8 @@
     right: -28px;
   }
 
-  .sticky-nav_always-fixed-state .sticky-nav__logo,
-  .sticky-nav_scroll-state .sticky-nav__logo {
+  [dir] .sticky-nav_always-fixed-state .sticky-nav__logo,
+  [dir] .sticky-nav_scroll-state .sticky-nav__logo {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
