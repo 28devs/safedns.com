@@ -1,0 +1,119 @@
+[dir] .footer-simple {
+  border-top: 1px solid #E0E0E0;
+  background: #fff;
+}
+
+.footer-simple__list {
+  list-style: none;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+[dir] .footer-simple__list {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-simple__list > .footer-simple__item {
+  display: inline-block;
+}
+
+[dir] .footer-simple__list > .footer-simple__item {
+  padding: 0 45px;
+  margin: 0;
+}
+
+.footer-simple__list > .footer-simple__item:first-child {
+  position: relative;
+}
+
+.footer-simple__list > .footer-simple__item:first-child:after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 3px;
+  width: 1px;
+}
+
+[dir] .footer-simple__list > .footer-simple__item:first-child:after {
+  background-color: #e0e0e0;
+}
+
+[dir=ltr] .footer-simple__list > .footer-simple__item:first-child:after {
+  right: 0;
+}
+
+[dir=rtl] .footer-simple__list > .footer-simple__item:first-child:after {
+  left: 0;
+}
+
+[dir] .footer-simple__list > .footer-simple__item:last-child {
+  padding: 0;
+}
+
+.footer-simple__sub-list {
+  max-width: 100%;
+}
+
+[dir] .footer-simple__sub-list {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-simple__sub-list .footer-simple__item {
+  display: inline-block;
+}
+
+[dir] .footer-simple__sub-list .footer-simple__item {
+  padding: 0 9px;
+}
+
+[dir=ltr] .footer-simple__sub-list .footer-simple__item:nth-last-child(1) {
+  padding-left: 9px;
+}
+
+[dir=rtl] .footer-simple__sub-list .footer-simple__item:nth-last-child(1) {
+  padding-right: 9px;
+}
+
+.footer-simple__link {
+  color: #828282;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  [dir] .footer-simple {
+    background: #F7F7F7;
+  }
+
+  .footer-simple__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-simple__list {
+    height: 113px;
+  }
+
+  .footer-simple__list > .footer-simple__item:first-child:after {
+    display: block;
+  }
+
+  [dir] .footer-simple__sub-list .footer-simple__item {
+    padding: 0 45px;
+  }
+
+  [dir=ltr] .footer-simple__sub-list .footer-simple__item:nth-last-child(1) {
+    padding-left: 0;
+  }
+
+  [dir=rtl] .footer-simple__sub-list .footer-simple__item:nth-last-child(1) {
+    padding-right: 0;
+  }
+}

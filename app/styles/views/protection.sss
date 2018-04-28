@@ -24,6 +24,11 @@
     background: #fff
     margin: 20px 33px 10px
     display: block
+    opacity: .8
+    transition: .3s ease
+
+    &:hover
+      opacity: 1
   
   &__name
     text: 22px bold
@@ -65,6 +70,9 @@
     margin-bottom: -25px
     border-bottom: 1px solid rgba(255, 255, 255, 0.3)
     display: inline-block
+
+    &:hover
+      border-bottom: 0
 
   &_gray
     background: #F2F2F2
@@ -207,6 +215,7 @@
 
 .faq-block
   background: linear-gradient(114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), resolve('protection/faq-bg.jpg') center / cover
+  overflow: hidden
 
   .title-promo
     color: #fff
@@ -230,19 +239,19 @@
           margin-bottom: 22px @md 24px
 
     &-text
-      text: 18px @sm 20px @md 24px
+      text: 18PX @sm 20PX @md 24px
       margin: 0 15px @md 20px @lg 40px 20px
 
   &__slider
     max-width: 850px
     width: 80% @md 90%
-    margin: 20px auto 37px @lg -21px auto 55px
+    margin: 30px auto 37px @lg 45px auto 55px
 
   .action-block
     margin: 0
 
   &__price
-    text: 28px #fff 700 @sm 32px
+    text: 28PX #fff 700 @sm 32px
     margin: 0 22px @sm 0 40px
 
     &-block

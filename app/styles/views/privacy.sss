@@ -6,6 +6,10 @@
     background-position: left center
     margin: 10px 0
 
+  &__link
+    display: inline-flex
+    align-items: center
+
   &__update
     color: $text-secondary-light
     background-image: svg-load('icons/clock.svg')
@@ -15,6 +19,7 @@
 
     &-item
       transition: $transition
+      margin-right: 5px
       
       &:hover
         text-decoration: underline

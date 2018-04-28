@@ -18,7 +18,10 @@
     watch = require('gulp-watch'),
     cached = require('gulp-cached'),
     gulpWatchPug = require('gulp-watch-pug'),
-    cssbeautify = require('gulp-cssbeautify');
+    cssbeautify = require('gulp-cssbeautify'),
+    stripCssComments = require('gulp-strip-css-comments'),
+    cssDeclarationSorter = require('css-declaration-sorter');
+  //csscomb = require('gulp-csscomb');
 
   // Попробовать позже https://www.npmjs.com/package/gulp-pug-inheritance
   // jadeInheritance = require('gulp-jade-inheritance'),
@@ -70,7 +73,7 @@
       //onlyDirection: 'rtl',
       addPrefixToSelector: function(selector, prefix) {
         if (prefix === '[dir]') {
-          return selector;
+          //return selector;
         }
         return prefix + ' ' + selector;
       }
@@ -91,11 +94,21 @@
     require('css-mqpacker')({
       sort: true
     }),
+    //cssDeclarationSorter({ order: 'smacss' })
     require('postcss-sorting')
   ];
 
-  //write style
   gulp.task('postcss', function() {
+    return gulp
+      .src(['app/styles/css/*.css'], {
+        since: gulp.lastRun('postcss')
+      })
+      .pipe(cached('app/assets/css'))
+      .pipe(gulp.dest('dest/styles/'));
+  });
+
+  //write style
+  gulp.task('postcss-old', function() {
     return gulp
       .src(['app/styles/main.sss'])
       .pipe(sourcemaps.init())
@@ -125,12 +138,14 @@
         .pipe(
           postcss(processors, { parser: sugarss }).on('error', notify.onError())
         )
+        .pipe(stripCssComments())
         .pipe(
           cssbeautify({
             indent: '  ',
             autosemicolon: true
           })
         )
+        //.pipe(csscomb())
         .pipe(rename({ extname: '.css' }))
         //.pipe(sourcemaps.write('/'))
         .pipe(gulp.dest('dest/styles/'))

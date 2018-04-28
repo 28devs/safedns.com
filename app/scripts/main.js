@@ -634,3 +634,17 @@ if (rangeBusinessSlider) {
 
   rangeBusinessSliderColorLabes(startPosition);
 }
+
+//
+// Select icon click
+//
+
+const selectArrows = document.querySelectorAll('.select__arrow');
+
+selectArrows &&
+  selectArrows.forEach(function(selectArrow) {
+    selectArrow.addEventListener('click', function() {
+      selectArrow.parentNode.querySelector('select').click();
+      console.log(selectArrow.parentNode.querySelector('select'));
+    });
+  });

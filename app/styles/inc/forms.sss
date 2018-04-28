@@ -3,7 +3,7 @@
   width: 100%
   margin: 0 auto
   background-color: #fff
-  padding: 0 20px 5vw @md 47px 35px @xl 47px 66px
+  padding: 0 20px 5vw @md 47px 35px
   text-align: center
   border: 0 @md 1px solid #E0E0E0
   box-shadow: none @md 0px 4px 10px rgba(0, 0, 0, 0.05)
@@ -74,7 +74,7 @@
     margin-top: 35px
 
     &_grid
-      box: horizontal middle space-between
+      box: middle wrap @sm middle space-between
 
 .footer-terms
   &__desc, &__link
@@ -102,7 +102,7 @@
       border: 1px solid #EB5757 !important
       color: #EB5757 !important
 
-    .select__arrow
+    .select:after
       background: svg-load('icons/nav-arrow-down.svg', stroke: #EB5757) no-repeat center center / cover !important
 
     ^&__error
@@ -154,7 +154,20 @@
 .select
   box: horizontal middle space-between
   cursor: pointer
+  background: #F2F2F2
+  position: relative
 
+  &:after
+    content: ''
+    background: svg-load('icons/nav-arrow-down.svg', stroke: $text-secondary-light) no-repeat center center / cover
+    size: 16px
+    display: block
+    position: absolute 27% 20px auto auto
+    z-index: 1
+
+  &.selected:after
+    background: svg-load('icons/nav-arrow-down.svg', stroke: $text-primary-contrast) no-repeat center center / cover
+    
   &__elem
     width: 100%
     background: #FFFFFF
@@ -172,6 +185,8 @@
     -moz-appearance: none
     text-indent: 1px
     text-overflow: ''
+    background: transparent !important
+    z-index: 2
 
     ^&.selected &
       color: $text-primary-contrast
@@ -186,22 +201,14 @@
     option[selected]
       color: $text-secondary-light
   
-  &__arrow
-    display: block
-    margin: -5px 20px 0 -36px
-    width: 16px
-    height: 16px
-    background: svg-load('icons/nav-arrow-down.svg', stroke: $text-secondary-light) no-repeat center center / cover
-    cursor: pointer
-
-    ^&.selected &
-      background: svg-load('icons/nav-arrow-down.svg', stroke: $text-primary-contrast) no-repeat center center / cover
-
   &_transparent
+    background: transparent
+    width: 100% @sm auto
+    margin-bottom: 15px @sm 0
 
     ^&__elem
       // border-color: transparent
-      padding-left: 10px
+      padding-right: 37px
       min-width: 110px
       color: $text-secondary
 
@@ -211,10 +218,6 @@
       option[selected]
         margin-left: -19px @sm -27px
         color: $text-secondary
-
-    .select__arrow
-      background: svg-load('icons/nav-arrow-down.svg', stroke: $text-secondary) no-repeat center center / cover
-      margin: -5px 12px 0 -30px
 
     &.selected
       ^^&__elem
