@@ -7,23 +7,20 @@
   justify-content: space-between;
 }
 
-.awards .award {
+.awards__cup {
   width: 100%;
   height: 58px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.awards .award {
   background: url('../img/about/cube.png') center no-repeat / contain;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 30px;
 }
 
-.awards .award__title {
+.awards__cup-title {
   margin: 0;
 }
 
@@ -369,7 +366,7 @@
     flex-wrap: no-wrap;
   }
 
-  .awards__slider-control .awards__slider-next,.awards__slider-control .awards__slider-prev {
+  .awards__slider-next,.awards__slider-prev {
     width: 18px;
   }
 
@@ -423,11 +420,8 @@
 }
 
 @media (min-width: 768px) {
-  .awards .award {
+  .awards__cup {
     width: auto;
-  }
-
-  .awards .award {
     height: 90px;
   }
 
@@ -505,15 +499,9 @@
 }
 
 @media (min-width: 992px) {
-  .awards .award {
+  .awards__cup {
     height: 153px;
-  }
-
-  .awards .award {
     height: 213px;
-  }
-
-  .awards .award {
     margin-bottom: 0;
   }
 
