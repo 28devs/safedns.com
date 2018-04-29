@@ -329,11 +329,11 @@
 }
 
 [dir=ltr] .faq-block {
-  background: linear-gradient(114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), url('../img/protection/faq-bg.jpg') center / cover;
+  background: linear-gradient(114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), url('../img/protection/faq-bg.jpg') no-repeat center top / 2100px;
 }
 
 [dir=rtl] .faq-block {
-  background: linear-gradient(-114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(-114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), url('../img/protection/faq-bg.jpg') center / cover;
+  background: linear-gradient(-114.09deg, rgba(47, 128, 237, 0.3) -8.7%, rgba(235, 87, 87, 0.3) 105.22%), linear-gradient(-114.09deg, rgba(0, 0, 0, 0.5) -8.7%, rgba(0, 0, 0, 0.5) 105.22%), url('../img/protection/faq-bg.jpg') no-repeat center top / 2100px;
 }
 
 .faq-block .title-promo {

@@ -4,14 +4,11 @@
 
 .solutions-text-block__wrap-img {
   position: relative;
+  order: 1;
 }
 
 .solutions-text-block__wrap-text {
   order: 2;
-}
-
-.solutions-text-block__wrap-img {
-  order: 1;
 }
 
 .solutions-text-block__img {
@@ -34,9 +31,6 @@
 
 .solutions-text-block__text .solutions-text-block__link {
   color: #EB5757;
-}
-
-.solutions-text-block__text .solutions-text-block__link {
   border-bottom: 1px #EB5757 solid;
 }
 
@@ -45,17 +39,11 @@
   display: block;
   position: static;
   z-index: -1;
-}
-
-.solutions-text-block__img {
   margin: 0 auto;
 }
 
 .solutions-big-gradient {
   color: #fff;
-}
-
-.solutions-big-gradient {
   margin-bottom: 20vw;
   padding-top: 28px;
 }
@@ -75,9 +63,6 @@
 .solutions-big-gradient__title {
   font-size: calc(1.875rem + 18 * ((100vw - 36rem) / 416));
   font-weight: 700;
-}
-
-.solutions-big-gradient__title {
   text-align: center;
   margin: 10px 0 25px;
 }
@@ -85,9 +70,6 @@
 .solutions-big-gradient__subtitle {
   font-size: calc(0.875rem + 16 * ((100vw - 36rem) / 416));
   font-weight: 700;
-}
-
-.solutions-big-gradient__subtitle {
   text-align: center;
   margin: 0;
 }
@@ -96,9 +78,6 @@
   max-width: 100%;
   display: block;
   -webkit-transform: translateY(28%);
-}
-
-.solutions-big-gradient__img {
   margin: -15% auto 0;
   transform: translateY(28%);
 }
@@ -132,9 +111,6 @@
 .solutions-big-features__item {
   position: relative;
   height: 100%;
-}
-
-.solutions-big-features__item {
   background: #F2F2F2;
   padding: 40px 20px 30px;
 }
@@ -161,9 +137,6 @@
   top: auto;
   -webkit-transform: translateY(-32%);
   max-width: 60px;
-}
-
-.solutions-big-features__item .solutions-big-features__img {
   transform: translateY(-32%);
 }
 
@@ -231,9 +204,6 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-}
-
-.solutions-medium-features__item:before {
   border-radius: 50%;
 }
 
@@ -310,9 +280,6 @@
 
 .action-block_two-btns .text-tips {
   color: #828282;
-}
-
-.action-block_two-btns .text-tips {
   margin-top: 8px;
 }
 
@@ -339,9 +306,6 @@
 
   .solutions-big-gradient {
     margin-bottom: 110px;
-  }
-
-  .solutions-big-gradient {
     padding-top: 7vw;
   }
 
@@ -407,9 +371,6 @@
 
   .solutions-big-features__item .solutions-big-features__img {
     transform: translateY(-50%);
-  }
-
-  .solutions-big-features__item .solutions-big-features__img {
     max-width: 39%;
   }
 
@@ -525,9 +486,6 @@
 
   .action-block_two-btns .title-promo {
     font-size: 2.25rem;
-  }
-
-  .action-block_two-btns .title-promo {
     margin: 0 20px 31px;
   }
 
