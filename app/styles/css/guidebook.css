@@ -31,6 +31,7 @@
   bottom: 14px;
   right: 0;
   left: 0;
+  background-color: #e0e0e0;
 }
 
 .guidebook__item {
@@ -63,7 +64,7 @@
 
 .guidebook__item.active:before,.guidebook__item:hover:before {
   width: 11px;
-  height: 11px
+  height: 11px;
   background-color: #2F80ED;
 }
 
