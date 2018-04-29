@@ -110,6 +110,10 @@ p:last-child {
   margin-bottom: 0;
 }
 
+a.simple-link:hover {
+  text-decoration: underline;
+}
+
 .title-promo {
   font-weight: 700;
 }
