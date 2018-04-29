@@ -9,7 +9,8 @@ include inc/nav.pug
         aside.col-12.col-md-6
           .card.card__media
             .card__content
-              .card__media-img(style='background-image: url(' + freeTool.img + ')')
+              .card__media-img
+                img.card__media-img-item(src=freeTool.img)
 
               .card__desc
                 h3.card__title-main=freeTool.title

@@ -34,7 +34,7 @@
   position: absolute;
   top: auto;
   bottom: 0;
-  width: 100%;
+  min-width: 100%;
   z-index: 1;
   right: 0;
   left: 0;
