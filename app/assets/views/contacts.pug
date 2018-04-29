@@ -43,8 +43,8 @@ include inc/nav.pug
         section.feedback
           h3.feedback__title Feedback Form
 
-          form.form
-            .form__success
+          form.feedback__form.form
+            .feedback__success
               h2.feedback__success-title Thenk you!
               h3.feedback__success-sub-title Your message has been sent
 
@@ -60,12 +60,12 @@ include inc/nav.pug
             .input-group
               textarea.feedback__textarea(type='text' placeholder='Message')
 
-            input.btn.btn_secondary.btn_small(type='submit' value='Send')
+            input.feedback__btn.btn.btn_secondary.btn_small(type='submit' value='Send')
         
 .contacts-map
-  .container
-    .card
-      .card__content
+  .contacts-map__container.container
+    .contacts-map__card.card
+      .contacts-map__card-content.card__content
         p.card__text.text-tips Adress:
         h3.contacts-map__title 901 North Pitt Street<br> Suite #325<br> Alexandria VA 22314
 

@@ -6,13 +6,10 @@
 
 .circle-wrap {
   width: 80%;
-}
-
-[dir] .circle-wrap {
   margin: 0 auto;
 }
 
-[dir] .circle-wrap:last-child {
+.circle-wrap:last-child {
   margin: 0 auto;
 }
 
@@ -22,9 +19,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-[dir] .circle-icon {
   padding-bottom: 100%;
   border-radius: 50%;
   margin: 0 0 20px;
@@ -38,7 +32,7 @@
   background: linear-gradient(-145.3deg, #EB5757 -4.44%, #2F80ED 117.29%);
 }
 
-[dir] .circle-icon_full-bg .circle-icon__text {
+.circle-icon_full-bg .circle-icon__text {
   background: transparent !important;
 }
 
@@ -59,9 +53,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-[dir] .circle-icon__text {
   margin: auto;
   text-align: center;
   background: #fff;
@@ -95,7 +86,7 @@
   font-size: 14px;
 }
 
-[dir] .circle-icon_progress {
+.circle-icon_progress {
   background: url('../img/icons/progress.png') center / 100%;
 }
 
@@ -107,7 +98,7 @@
   overflow: hidden;
 }
 
-[dir] .circle-icon_progress-circle {
+.circle-icon_progress-circle {
   border-radius: 50%;
   box-shadow: inset 0 0 0 1px white;
 }
@@ -137,13 +128,10 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-}
-
-[dir] .cases-item {
   text-align: center;
 }
 
-[dir] .cases-item__img {
+.cases-item__img {
   margin-bottom: 20px;
 }
 
@@ -151,11 +139,11 @@
   display: block;
 }
 
-[dir] .cases-item__desc .text-center {
+.cases-item__desc .text-center {
   margin-top: 30px;
 }
 
-[dir] .cases-bottom-link {
+.cases-bottom-link {
   margin: 0 !important;
   padding: 0px 0 40px;
 }
@@ -163,17 +151,14 @@
 @media (min-width: 576px) {
   .circle-wrap {
     width: 47%;
-  }
-
-  [dir] .circle-wrap {
     margin: 0;
   }
 
-  [dir] .circle-wrap:last-child {
+  .circle-wrap:last-child {
     margin: -50px auto 0;
   }
 
-  [dir] .circle-icon {
+  .circle-icon {
     margin-top: 20px;
     margin-bottom: 30px;
   }
@@ -186,7 +171,7 @@
     font-size: 0.875rem;
   }
 
-  [dir] .cases-bottom-link {
+  .cases-bottom-link {
     padding: 20px 0 70px;
   }
 }
@@ -204,7 +189,7 @@
     font-size: 0.875rem;
   }
 
-  [dir] .cases-item__img {
+  .cases-item__img {
     margin-bottom: 30px;
   }
 }
@@ -214,7 +199,7 @@
     width: 32%;
   }
 
-  [dir] .circle-wrap:last-child {
+  .circle-wrap:last-child {
     margin: 0;
   }
 

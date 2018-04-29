@@ -2,39 +2,30 @@
   color: inherit;
   display: block;
   height: 100%;
-}
-
-[dir] .pub-reviews__link {
   padding: 20px;
   background-color: #f2f2f2;
 }
 
-[dir] .pub-reviews__link.active,[dir] .pub-reviews__link:active,[dir] .pub-reviews__link:hover {
+.pub-reviews__link.active, .pub-reviews__link:active, .pub-reviews__link:hover {
   background-color: #f2f2f2;
 }
 
 .pub-reviews__title {
   font-weight: 700;
-}
-
-[dir] .pub-reviews__title {
   margin: 0 0 8px 0;
 }
 
-[dir] .pub-reviews__text {
+.pub-reviews__text {
   margin: 10px 0 0 0;
 }
 
 .article-bottom-link {
   max-width: 100%;
-}
-
-[dir] .article-bottom-link {
   text-align: center;
   margin-top: 33px;
 }
 
-[dir] .press-about {
+.press-about {
   padding: 40px 0 60px;
 }
 
@@ -50,19 +41,16 @@
   color: #fff;
 }
 
-[dir] .press-about .section-title {
+.press-about .section-title {
   margin-bottom: 24px;
 }
 
 .press-about__title {
   font-weight: 700;
-}
-
-[dir] .press-about__title {
   margin: 0 0 8px 0;
 }
 
-[dir] .press-about__text {
+.press-about__text {
   margin: 10px 0 0 0;
 }
 
@@ -70,19 +58,16 @@
   color: #fff;
   display: block;
   height: 100%;
-}
-
-[dir] .press-about__link {
   padding: 20px 20px 24px;
   border: 1px solid transparent;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-[dir] .press-about__link.active,[dir] .press-about__link:active,[dir] .press-about__link:hover {
+.press-about__link.active,.press-about__link:active,.press-about__link:hover {
   border-color: transparent;
 }
 
-[dir] .press-kit {
+.press-kit {
   padding: 30px 0;
   margin-bottom: 0 !important;
 }
@@ -128,9 +113,6 @@
   position: absolute;
   bottom: -23px;
   display: none;
-}
-
-[dir] .press-kit__img {
   background: url('../img/press/press-kit.png');
 }
 
@@ -143,25 +125,25 @@
 }
 
 @media (min-width: 576px) {
-  [dir] .press-about .section-title {
+  .press-about .section-title {
     margin-bottom: 2vw;
   }
 }
 
 @media (min-width: 768px) {
-  [dir] .pub-reviews__link {
+  .pub-reviews__link {
     padding: 28px 30px;
   }
 
-  [dir] .article-bottom-link {
+  .article-bottom-link {
     margin-top: 3.5vw;
   }
 
-  [dir] .press-about {
+  .press-about {
     padding: 3.5vw 0 4vw;
   }
 
-  [dir] .press-kit {
+  .press-kit {
     padding: 23px 0;
   }
 
@@ -171,23 +153,23 @@
 }
 
 @media (min-width: 992px) {
-  [dir] .pub-reviews__link {
+  .pub-reviews__link {
     background-color: transparent;
   }
 
-  [dir] .press-about .section-title {
+  .press-about .section-title {
     margin-bottom: 50px;
   }
 
-  [dir] .press-about__link {
+  .press-about__link {
     padding: 28px 30px;
   }
 
-  [dir] .press-about__link {
+  .press-about__link {
     background-color: transparent;
   }
 
-  [dir] .press-about__link.active,[dir] .press-about__link:active,[dir] .press-about__link:hover {
+  .press-about__link.active,.press-about__link:active,.press-about__link:hover {
     border-color: #fff;
   }
 
@@ -216,11 +198,11 @@
 }
 
 @media (min-width: 1200px) {
-  [dir] .article-bottom-link {
+  .article-bottom-link {
     margin-top: 58px;
   }
 
-  [dir] .press-about {
+  .press-about {
     padding: 56px 0 65px;
   }
 

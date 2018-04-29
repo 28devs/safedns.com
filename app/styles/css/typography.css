@@ -577,6 +577,9 @@ table tr:nth-child(odd) td {
 
   ul.list_large li {
     margin-bottom: 33px;
+  }
+
+  [dir='ltr'] ul.list_large li:before {
     left: -34px;
   }
 
@@ -705,7 +708,7 @@ table tr:nth-child(odd) td {
     margin-bottom: 14px;
   }
 
-  ul.list_large {
+  [dir='ltr'] ul.list_large {
     padding-left: 40px;
   }
 
@@ -715,6 +718,9 @@ table tr:nth-child(odd) td {
 
   ul.list_large li {
     margin-bottom: 40px;
+  }
+
+  [dir='ltr'] ul.list_large li:before {
     left: -40px;
   }
 

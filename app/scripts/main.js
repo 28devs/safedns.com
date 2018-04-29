@@ -367,7 +367,7 @@ if (largeSlider) {
 // Plans slider
 //
 
-const plansSlider = document.querySelector('.card-plan-container .glide');
+const plansSlider = document.querySelector('.card-plan__container .glide');
 
 if (plansSlider) {
   var plansSliderInit = false;

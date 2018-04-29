@@ -10,9 +10,6 @@
 .guidebook__list {
   list-style: none;
   position: relative;
-}
-
-[dir] .guidebook__list {
   padding: 0;
   padding-top: 0;
   margin-top: 0;
@@ -32,27 +29,12 @@
   position: absolute;
   top: 14px;
   bottom: 14px;
-}
-
-[dir] .guidebook__list:before {
-  background-color: #e0e0e0;
-}
-
-[dir=ltr] .guidebook__list:before {
   right: 0;
   left: 0;
-}
-
-[dir=rtl] .guidebook__list:before {
-  left: 0;
-  right: 0;
 }
 
 .guidebook__item {
   position: relative;
-}
-
-[dir] .guidebook__item {
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -65,9 +47,6 @@
   width: 7px;
   height: 7px;
   transition: .2s ease;
-}
-
-[dir] .guidebook__item:before {
   background-color: #e0e0e0;
   border-radius: 50%;
 }
@@ -84,10 +63,7 @@
 
 .guidebook__item.active:before,.guidebook__item:hover:before {
   width: 11px;
-  height: 11px;
-}
-
-[dir] .guidebook__item.active:before,[dir] .guidebook__item:hover:before {
+  height: 11px
   background-color: #2F80ED;
 }
 
@@ -99,11 +75,13 @@
   right: -32px;
 }
 
-.guidebook__item .guidebook__elem {
+.guidebook__elem {
   color: #333;
 }
 
-.guidebook__item.active .guidebook__elem,.guidebook__item:active .guidebook__elem,.guidebook__item:hover .guidebook__elem {
+.guidebook__item.active .guidebook__elem,
+.guidebook__item:active .guidebook__elem,
+.guidebook__item:hover .guidebook__elem {
   font-weight: 700;
 }
 

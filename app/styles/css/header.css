@@ -50,11 +50,6 @@
 .header__desc,
 .header__title {
   color: #fff;
-}
-
-[dir] .header__breadcrumbs,
-[dir] .header__desc,
-[dir] .header__title {
   margin: 0;
 }
 
@@ -73,9 +68,6 @@
   width: 10px;
   height: 10px;
   display: inline-block;
-}
-
-[dir] .header__breadcrumbs:after {
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='37' viewBox='0 0 20 37' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23E0E0E0'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Vector'%3E %3Cpath d='M 0 0L 24 0L 24 24' stroke-width='2' transform='matrix(-0.707107 0.707107 0.707107 0.707107 19 1.52942)'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
     center / contain;
   background-repeat: no-repeat;
@@ -100,17 +92,14 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-[dir] .header__control-elem {
   margin-top: 10px;
 }
 
-[dir] .header__control-elem .btn:last-child:not(:first-child) {
+.header__control-elem .btn:last-child:not(:first-child) {
   margin: 7px;
 }
 
-[dir] .header_large {
+.header_large {
   padding: 80px 0 40px;
 }
 
@@ -120,7 +109,7 @@
 }
 
 @media (min-width: 576px) {
-  [dir] .header {
+  .header {
     padding: 20vw 0 8vw;
   }
 
@@ -128,31 +117,31 @@
     font-size: 1.3125rem;
   }
 
-  [dir] .header__control-elem .btn:last-child:not(:first-child) {
+  .header__control-elem .btn:last-child:not(:first-child) {
     margin: 10px;
   }
 
-  [dir] .header_large {
+  .header_large {
     padding: 20vw 0 8vw;
   }
 }
 
 @media (min-width: 768px) {
-  [dir] .header {
+  .header {
     padding: 14vw 0 5vw;
   }
 
-  [dir] .header_large {
+  .header_large {
     padding: 14vw 0 5vw;
   }
 }
 
 @media (min-width: 992px) {
-  [dir] .header {
+  .header {
     padding: 145px 0 50px;
   }
 
-  [dir] .header_large {
+  .header_large {
     padding: 185px 0 110px;
   }
 }
@@ -176,7 +165,7 @@
     align-items: center;
   }
 
-  [dir] .header__control-elem {
+  .header__control-elem {
     margin-top: 0;
   }
 }
