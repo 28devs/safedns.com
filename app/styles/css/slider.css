@@ -118,6 +118,12 @@
   max-width: 100%;
 }
 
+.large-slider {
+  max-width: 1380px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .large-slider__img {
   display: block;
   width: 100%;
