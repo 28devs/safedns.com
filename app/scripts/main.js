@@ -307,10 +307,25 @@ if (sliderDotBlocks) {
 
 const reviewsSlider = document.querySelector('.reviews-slider .glide');
 
-reviewsSlider &&
-  new Glide(reviewsSlider, {
+if (reviewsSlider) {
+  const reviewsSliderG = new Glide(reviewsSlider, {
     perView: 1
-  }).mount();
+  });
+
+  reviewsSliderG.on('move', function(elem) {
+    let bullets = document.querySelectorAll('.glide__bullet');
+    bullets.forEach(function(elem) {
+      elem.classList.remove('glide__bullet--active');
+    });
+
+    let activeBullet = document.querySelector(
+      '.glide__bullet[data-glide-dir="=' + reviewsSliderG.index + '"]'
+    );
+    activeBullet.classList.add('glide__bullet--active');
+  });
+
+  reviewsSliderG.mount();
+}
 
 //
 // Awards slider
@@ -465,7 +480,7 @@ if (accordions) {
       elem.classList.toggle('accordion__header_active');
 
       let panel = elem.nextElementSibling;
-    
+
       panel.style.maxHeight
         ? (panel.style.maxHeight = null)
         : (panel.style.maxHeight = panel.scrollHeight + 'px');
@@ -478,11 +493,13 @@ if (accordions) {
 //
 
 const accordionsOne = document.querySelectorAll('[data-accordion-one]');
-const accordionsOneActive = document.querySelector('[data-accordion-one][data-accordion-active]');
+const accordionsOneActive = document.querySelector(
+  '[data-accordion-one][data-accordion-active]'
+);
 
 if (accordionsOneActive) {
-  const accord = function (elem) {
-    console.log(elem)
+  const accord = function(elem) {
+    console.log(elem);
     elem.classList.toggle('accordion__header_active');
 
     let panel = elem.nextElementSibling;
@@ -490,7 +507,7 @@ if (accordionsOneActive) {
     panel.style.maxHeight
       ? (panel.style.maxHeight = null)
       : (panel.style.maxHeight = panel.scrollHeight + 'px');
-  }
+  };
 
   accord(accordionsOneActive);
   accordionsOne.forEach(function(elem, key, array) {
@@ -500,7 +517,7 @@ if (accordionsOneActive) {
 
         let panel = elem.nextElementSibling;
         panel.style.maxHeight = null;
-      })
+      });
 
       accord(this);
     });
