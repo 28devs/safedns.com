@@ -807,4 +807,9 @@
     border-color: transparent !important;
     background: transparent !important;
   }
+
+  .sticky-nav_always-fixed-state .sticky-nav__btn,
+  .sticky-nav_scroll-state .sticky-nav__btn {
+    color: #333 !important;
+  }
 }
