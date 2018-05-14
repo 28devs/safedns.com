@@ -331,6 +331,12 @@
   background: #f2f2f2;
 }
 
+.payment-radio__item:not(.checked):hover .payment-radio__label:before {
+  background: #fff
+    url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Ellipse'%3E %3Ccircle cx='5' cy='5' r='5' opacity='0.3' fill='%232F80ED'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
+    center no-repeat / 10px;
+}
+
 .payment-radio__item.checked {
   background: #2f80ed;
   box-shadow: 0px 0px 15px rgba(47, 128, 237, 0.3);
