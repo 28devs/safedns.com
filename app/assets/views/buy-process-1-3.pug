@@ -1,0 +1,167 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state sticky-nav_hide-nav')
+
+.page-container.page-container_gray.buy-process
+  .container
+    h2.section-title.title-gray
+      b Purchase 
+      .title-line.title-line_horisontal Safe@Home
+    
+    .steps-nav__wrap
+      ul.steps-nav
+        li.steps-nav__item.steps-nav__item_active
+          .steps-nav__item-text Login
+        li.steps-nav__item
+          .steps-nav__item-text Payment options
+        li.steps-nav__item 
+          .steps-nav__item-text Pay
+        li.steps-nav__item 
+          .steps-nav__item-text Finish!
+
+      .steps-nav__mobile 
+        | Step 
+        .steps-nav__mobile-current 1 
+        | of 3
+
+  #buy-process-1.container.process-content.active
+    .form-container.form-container_single
+      section.auth(data-tabs)
+        .auth__header
+          .auth__header-logo
+          ul.auth__header-list
+            li.auth__header-item
+              a.auth__header-link.active(href="#login" data-tabs-link)
+                .auth__header-title.h2 Login
+            li.auth__header-item
+              a.auth__header-link(href="#registration" data-tabs-link)
+                .auth__header-title.h2 Registration
+        .auth__body
+          .auth__forms
+            #login.auth-login.tabs-content.active
+              form.form(action="#")
+                .input-group
+                  input.input(type='text' placeholder='Name *')
+                .input-group
+                  input.input(type='password' placeholder='Password *')
+                
+                .form__footer
+                  .input-group
+                    a.btn.btn_small.btn_primary(href='#' data-process-step='2') Login
+                  a.auth__footer-link(href="#") Forgot password
+
+            #registration.auth-registration.tabs-content
+              form.form(action="#")
+                .input-group
+                  input.input(type='text' placeholder='Name *')
+                .input-group
+                  input.input(type='text' placeholder='E-mail *')
+                .input-group
+                  input.input(type='password' placeholder='Password *')
+                  
+                .form__footer
+                  .input-group
+                    a.btn.btn_small.btn_primary Registration
+
+
+  #buy-process-2.container.process-content
+    .form-container.form-container_single.payment-options
+      .payment-options__desc
+        p.payment-options__text You going to buy
+        h3.title-promo.title-gray Safe@Business
+        p.payment-options__text Protect 45 devices
+
+      .payment-options__select-plan
+        p.payment-options__text Billing plan
+
+        .input-group
+          .payment-radio
+            .payment-radio__item(data-input-radio)
+              label.payment-radio__label
+                input.payment-radio__input(type='radio' name='payment' value='1')
+                .payment-radio__text 
+                  .payment-radio__text-name Mountly subscribe
+                .payment-radio__price
+                  .payment-radio__price-value 35$
+                    .payment-radio__price-small / mo
+
+            .payment-radio__item.checked(data-input-radio)
+              label.payment-radio__label
+                input.payment-radio__input(type='radio' name='payment' value='2')
+                .payment-radio__text 
+                  .payment-radio__text-name 1 year
+                .payment-radio__price
+                  .payment-radio__price-value 20$
+
+            .payment-radio__item(data-input-radio)
+              label.payment-radio__label
+                input.payment-radio__input(type='radio' name='payment' value='3')
+                .payment-radio__text 
+                  .payment-radio__text-name 2 year
+                    .payment-radio__text-sale 10% off
+                .payment-radio__price
+                  .payment-radio__price-old 40$
+                  .payment-radio__price-value 35$
+
+            .payment-radio__item(data-input-radio)
+              label.payment-radio__label
+                input.payment-radio__input(type='radio' name='payment' value='4')
+                .payment-radio__text 
+                  .payment-radio__text-name 3 year
+                    .payment-radio__text-sale 20% off
+                .payment-radio__price
+                  .payment-radio__price-old 60$
+                  .payment-radio__price-value 55$
+
+
+      .payment-options__total
+        p.payment-options__text Total Price: 
+          span.payment-options__total-price 20$
+
+        a.btn.btn_back.btn_small(href='#!' data-process-step='1') Back
+        a.btn.btn_primary.btn_small(href='#!' data-process-step='3') Next
+
+  #buy-process-3.container.process-content
+    .form-container.form-container_single.payment-options
+      .payment-options__desc
+        p.payment-options__text You going to buy
+        h3.title-promo.title-gray Safe@Business
+        p.payment-options__text Protect 45 devices
+        p.payment-options__text For 1 year
+
+      .payment-options__select-plan
+
+        form.form.credit-card(action='buy-process-4.html')
+
+          .credit-card__title Visa \ Mastercard
+
+          .credit-card__front
+            .input-group
+              input.input(type='text' placeholder='Card number*')
+
+            .input-group
+              input.input(type='text' placeholder='MM*')
+
+            .input-group
+              input.input(type='text' placeholder='Year*')
+
+            .input-group
+              input.input(type='text' placeholder='Cardholder name*')
+
+          .credit-card__back
+            .input-group
+              input.input(type='text' placeholder='CVC*')
+
+          .credit-card__payments
+            .credit-card__payments-text We accept cards:
+            .credit-card__payments-logo
+
+
+      .payment-options__total
+        p.payment-options__text Total Price: 
+          span.payment-options__total-price 20$
+
+        a.btn.btn_back.btn_small(href='#!' data-process-step='2') Back
+        a.btn.btn_primary.btn_small Next
+
+include inc/footer-simple.pug
+include inc/foot.pug

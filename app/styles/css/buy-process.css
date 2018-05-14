@@ -834,3 +834,10 @@
     margin: 57px auto 38px;
   }
 }
+
+.process-content {
+  display: none;
+}
+.process-content.active {
+  display: block;
+}
