@@ -49,8 +49,8 @@
 .glide__arrow {
   height: 37px;
   width: 12px;
-  transition: ease .2s;
-  opacity: .4;
+  transition: ease 0.2s;
+  opacity: 0.4;
   outline: 0;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='37' viewBox='0 0 20 37' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23828282'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Vector'%3E %3Cpath d='M 0 0L 24 0L 24 24' stroke-width='2' transform='matrix(-0.707107 0.707107 0.707107 0.707107 19 1.52942)'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
   background-color: transparent;
@@ -83,22 +83,22 @@
 .glide__bullet {
   width: 16px;
   height: 16px;
-  transition: .2s ease;
+  transition: 0.2s ease;
   opacity: 1;
-  background: #E0E0E0;
+  background: #e0e0e0;
   border-radius: 50%;
   cursor: pointer;
   margin: 0 5px;
 }
 
 .glide__bullet:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .glide__bullet--active {
   width: 24px;
   height: 24px;
-  background: #2F80ED;
+  background: #2f80ed;
 }
 
 .reviews-slider {
@@ -111,6 +111,7 @@
 
 .awards-slider .glide__slide {
   align-items: flex-end !important;
+  margin-top: 50px;
 }
 
 .awards-slider .glide__slide-img {
@@ -148,7 +149,8 @@
   right: 0;
 }
 
-.large-slider__count-current,.large-slider__count-total {
+.large-slider__count-current,
+.large-slider__count-total {
   font-size: 0.75rem;
   margin-top: -12px;
 }
@@ -194,7 +196,8 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-[dir='rtl'] .review-large__desc,[dir='rtl'] .review-large__person {
+[dir='rtl'] .review-large__desc,
+[dir='rtl'] .review-large__person {
   flex-direction: row-reverse;
 }
 
@@ -229,7 +232,8 @@
     clip: rect(0 86px 50px 0);
   }
 
-  .large-slider__count-current,.large-slider__count-total {
+  .large-slider__count-current,
+  .large-slider__count-total {
     font-size: 0.875rem;
   }
 }
@@ -269,7 +273,8 @@
     bottom: 0;
   }
 
-  .large-slider__count-current,.large-slider__count-total {
+  .large-slider__count-current,
+  .large-slider__count-total {
     font-size: 1rem;
   }
 
