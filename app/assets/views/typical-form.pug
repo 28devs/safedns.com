@@ -7,8 +7,8 @@ include inc/head.pug
 
   .form-container
     form.form(action="#")
-      .input-group
-        input.input(type='text' placeholder='Name*')
+      .input-group.input-group_valid
+        input.input(type='text' placeholder='Name*' value='John')
 
       .input-group_grid
         .row
@@ -31,7 +31,9 @@ include inc/head.pug
               
       .input-group.input-group_invalid
         input.input(type='text' placeholder='Company name*')
-        .input-group__error Invalid Company name
+        ul.input-group__error
+          li.input-group__error-item * Invalid Company name
+          li.input-group__error-item * Invalid Company name
 
       .input-group
 
