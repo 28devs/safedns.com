@@ -116,7 +116,7 @@ if (radio) {
 }
 
 //
-// tabs
+// Tabs
 //
 
 const tabsItem = document.querySelectorAll('[data-tabs-link]');
@@ -132,7 +132,11 @@ if (tabsItem) {
         tabContentDisactive.classList.remove('active');
         item.classList.remove('active');
       });
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 91c5d7c1b59697a6151ef4696d85696ecae28bc7
       const idActive = this.getAttribute('href').substring(1);
       const tabContentActive = document.getElementById(idActive);
       tabContentActive.classList.add('active');
@@ -412,14 +416,6 @@ if (plansSlider) {
   window.addEventListener('resize', plansSliderFn);
 }
 
-// plansSlider &&
-//   new Glide(plansSlider, {
-//     perView: 3,
-//     breakpoints: {
-//       576: { peek: 30, perView: 1 }
-//     }
-//   }).mount();
-
 //
 // Circle progress set value
 //
@@ -693,7 +689,7 @@ if (rangeBusinessSlider) {
 
 const selectArrows = document.querySelectorAll('.select__arrow');
 
-selectArrows &&
+selectArrows.length &&
   selectArrows.forEach(function(selectArrow) {
     selectArrow.addEventListener('click', function() {
       selectArrow.parentNode.querySelector('select').click();
@@ -724,4 +720,38 @@ if (viewMoreParent) {
     viewMoreContainer1.appendChild(copyNews)
     viewMoreContainer1.appendChild(copyNews1)
   })
+}
+// Buy process tabs
+//
+
+const buyProcessBtns = document.querySelectorAll('[data-process-step]');
+
+if (buyProcessBtns.length) {
+  const buyProcessSteps = document.querySelectorAll('.steps-nav__item');
+
+  buyProcessBtns.forEach(function(buyProcessBtn) {
+    buyProcessBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let nextStep = this.getAttribute('data-process-step');
+
+      document.querySelectorAll('.process-content').forEach(function(elem) {
+        elem.classList.remove('active');
+      });
+
+      document
+        .querySelector('#buy-process-' + nextStep)
+        .classList.add('active');
+
+      buyProcessSteps.forEach(function(buyProcessStep, index) {
+        let currentStep = index + 1;
+
+        if (currentStep <= nextStep) {
+          buyProcessStep.classList.add('steps-nav__item_active');
+        } else {
+          buyProcessStep.classList.remove('steps-nav__item_active');
+        }
+      });
+    });
+  });
 }

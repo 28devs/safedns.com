@@ -148,7 +148,7 @@
 }
 
 .hero__cookie {
-  position: absolute;
+  position: fixed;
   top: auto;
   bottom: 0;
   color: #e0e0e0;
@@ -161,6 +161,7 @@
   transform-origin: bottom;
   right: 0;
   left: 0;
+  z-index: 99;
 }
 
 .hero__cookie_hide {
@@ -383,20 +384,20 @@
 }
 
 @media (min-width: 576px) {
-  .hero-blocks {
+  .main-page-solutions {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .hero-blocks + .footer {
+  .main-page-solutions + .footer {
     padding-top: 0;
   }
 
-  .hero-blocks + .footer > .container {
+  .main-page-solutions + .footer > .container {
     display: none;
   }
 
-  .hero-blocks + .footer .footer__copy {
+  .main-page-solutions + .footer .footer__copy {
     margin-top: 0;
   }
 
