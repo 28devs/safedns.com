@@ -462,13 +462,47 @@ const accordions = document.querySelectorAll('[data-accordion]');
 if (accordions) {
   accordions.forEach(function(elem) {
     elem.addEventListener('click', function() {
-      this.classList.toggle('accordion__header_active');
+      elem.classList.toggle('accordion__header_active');
 
-      let panel = this.nextElementSibling;
-
+      let panel = elem.nextElementSibling;
+    
       panel.style.maxHeight
         ? (panel.style.maxHeight = null)
         : (panel.style.maxHeight = panel.scrollHeight + 'px');
+    });
+  });
+}
+
+//
+// Accordion with one actiove element
+//
+
+const accordionsOne = document.querySelectorAll('[data-accordion-one]');
+const accordionsOneActive = document.querySelector('[data-accordion-one][data-accordion-active]');
+
+if (accordionsOneActive) {
+  const accord = function (elem) {
+    console.log(elem)
+    elem.classList.toggle('accordion__header_active');
+
+    let panel = elem.nextElementSibling;
+
+    panel.style.maxHeight
+      ? (panel.style.maxHeight = null)
+      : (panel.style.maxHeight = panel.scrollHeight + 'px');
+  }
+
+  accord(accordionsOneActive);
+  accordionsOne.forEach(function(elem, key, array) {
+    elem.addEventListener('click', function() {
+      array.forEach(function(elem) {
+        elem.classList.remove('accordion__header_active');
+
+        let panel = elem.nextElementSibling;
+        panel.style.maxHeight = null;
+      })
+
+      accord(this);
     });
   });
 }
