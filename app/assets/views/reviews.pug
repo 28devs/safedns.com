@@ -56,8 +56,24 @@ include inc/nav.pug
                     .review__name= review.name
                     .review__old= review.old
 
+      .load-more-block
+        .row.full-gutters
+          each review in reviews 
+            .col-12.col-md-6.col-lg-4.shadow-hover
+              .review
+                .review__text
+                  p.review__text-p= review.text
+                
+                .review__desc
+                  .review__person
+                    .review__avatar(style='background-image: url(' + review.img + ')')
+                    
+                    .review__info
+                      .review__name= review.name
+                      .review__old= review.old
+
       .text-center
-        .btn.btn_small.btn_back View more
+        .btn.btn_small.btn_back(data-more-btn) View more
 
 
 include inc/footer.pug

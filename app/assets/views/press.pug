@@ -9,18 +9,25 @@ include inc/nav.pug
 
       h2.section-title Publications reviews
 
-      .row.half-gutters(data-more-parent)
+      .row.half-gutters
         each val in pubReviews
-          .col-12.col-lg-6(data-more-content)
+          .col-12.col-lg-6
             a.pub-reviews__link(href='#!')
               article
                 h3.pub-reviews__title= val.title
                 time.pub-reviews__date.text-tips= val.date
                 p.pub-reviews__text= val.text
       
-      .pub-reviews__load-more(data-more-container)
+      .load-more-block
         .row.half-gutters
-
+          each val in pubReviews
+            .col-12.col-lg-6
+              a.pub-reviews__link(href='#!')
+                article
+                  h3.pub-reviews__title= val.title
+                  time.pub-reviews__date.text-tips= val.date
+                  p.pub-reviews__text= val.text
+                
       .article-bottom-link
         a.btn.btn_small.btn_back(data-more-btn) View more
 
@@ -30,15 +37,39 @@ include inc/nav.pug
       h2.section-title Press about us 
       .row.half-gutters(data-more-parent)
         each val in pressAbout
-          .col-12.col-md-6.col-lg-4(data-more-content)
+          .col-12.col-md-6.col-lg-4
             a.press-about__link.press-about__item(href='#!')
               article
                 h3.press-about__title= val.title
                 time.press-about__date.text-tips= val.date
                 p.press-about__text= val.text
+      
+      .load-more-block
+        .row.half-gutters
+          .col-12.col-md-6.col-lg-4
+            a.press-about__link.press-about__item(href='#!')
+              article
+                h3.press-about__title PC World
+                time.press-about__date.text-tips 12 december 2018
+                p.press-about__text SafeDNS scored higher than Kasperksy on porn blocks with a near-perfect rate of 99.8%
+
+          .col-12.col-md-6.col-lg-4
+            a.press-about__link.press-about__item(href='#!')
+              article
+                h3.press-about__title PC World
+                time.press-about__date.text-tips 12 december 2018
+                p.press-about__text SafeDNS scored higher than Kasperksy on porn blocks with a near-perfect rate of 99.8%
+
+          .col-12.col-md-6.col-lg-4
+            a.press-about__link.press-about__item(href='#!')
+              article
+                h3.press-about__title PC World
+                time.press-about__date.text-tips 12 december 2018
+                p.press-about__text SafeDNS scored higher than Kasperksy on porn blocks with a near-perfect rate of 99.8%
 
       .article-bottom-link
         a.btn.btn_small.btn_detail(data-more-btn) View more
+
   .container
     include inc/awards-slider.pug
 

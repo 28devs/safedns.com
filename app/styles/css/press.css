@@ -1,6 +1,8 @@
-.pub-reviews__load-more {
+.load-more-block {
   max-height: 0;
   transition: max-height ease .3s;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .pub-reviews__link {

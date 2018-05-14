@@ -132,11 +132,6 @@ if (tabsItem) {
         tabContentDisactive.classList.remove('active');
         item.classList.remove('active');
       });
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> 91c5d7c1b59697a6151ef4696d85696ecae28bc7
       const idActive = this.getAttribute('href').substring(1);
       const tabContentActive = document.getElementById(idActive);
       tabContentActive.classList.add('active');
@@ -701,26 +696,20 @@ selectArrows.length &&
 // View more
 //
 
-const viewMoreParent = document.querySelector('[data-more-parent]'),
-      viewMoreBtn = document.querySelector('[data-more-btn]'),
-      viewMoreContainer = document.querySelector('[data-more-container]'),
-      viewMoreContainer1 = document.querySelector('[data-more-container] .row'),
-      viewMoreContent = document.querySelector('[data-more-content]');
+const viewMoreBtn = document.querySelectorAll('[data-more-btn]');
 
-if (viewMoreParent) {
-  viewMoreBtn.addEventListener('click', function() {
-    const copyNews = viewMoreContent.cloneNode(true);
-    const copyNews1 = viewMoreContent.cloneNode(true);
-    console.log(viewMoreContainer.scrollHeight)
-
-    viewMoreContainer.style.maxHeight
-      ? (viewMoreContainer.style.maxHeight = null)
-      : (viewMoreContainer.style.maxHeight = viewMoreContainer.scrollHeight + 'px');
-
-    viewMoreContainer1.appendChild(copyNews)
-    viewMoreContainer1.appendChild(copyNews1)
+if (viewMoreBtn.length) {
+  viewMoreBtn.forEach(function(elem){
+    elem.addEventListener('click', function() {
+      console.log(this)
+      console.log(this.parentNode.previousElementSibling)
+      var viewMoreContainer = this.parentNode.previousElementSibling;
+      viewMoreContainer.style.maxHeight = viewMoreContainer.scrollHeight + 'px';
+    })
   })
 }
+
+//
 // Buy process tabs
 //
 

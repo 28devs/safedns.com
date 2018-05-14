@@ -14,8 +14,34 @@ include inc/nav.pug
               p.card__text= post.text
               p.card__text.text-tips= post.date
 
+    .load-more-block
+      .row.half-gutters
+        .col-12.col-md-6.col-lg-4
+          a.card.card_light-gray(href='#!')
+            .card__img(style='background-image: url(img/news/news-3.jpg')
+            .card__content
+              h4.card__title-sub SafeDNS Becomes Friendly WiFi Approved Provider to Help Keep Children Safe Online
+              p.card__text SafeDNS joins Friendly WiFi initiative and is recognized as Friendly WiFi Approved Provider that safeguards kids and young people on the web.
+              p.card__text.text-tips 12 december 2018
+              
+        .col-12.col-md-6.col-lg-4
+          a.card.card_light-gray(href='#!')
+            .card__img(style='background-image: url(img/news/news-2.jpg')
+            .card__content
+              h4.card__title-sub Ilon Mask liked SafeDNS!
+              p.card__text Сам Илон Маск одобрил наш сервис и лайкнул наш пост в твиттере! А так же он написал комментарий что будет рад использовать наш фильтр для контроля ИИ
+              p.card__text.text-tips 12 december 2018
+
+        .col-12.col-md-6.col-lg-4
+          a.card.card_light-gray(href='#!')
+            .card__img(style='background-image: url(img/news/news-1.jpg')
+            .card__content
+              h4.card__title-sub SafeDNS Joins Internet Watch Foundation to Make the Web Cleaner and Safer
+              p.card__text SafeDNS web filtering service is awarded Approved Parental Control Product by AV-Comparatives, a world leading test lab of online safety and antivirus solutions.
+              p.card__text.text-tips 12 december 2018
+
     .text-center
-      .btn.btn_small.btn_back View more
+      .btn.btn_small.btn_back(data-more-btn) View more
 
 include inc/footer.pug
 include inc/foot.pug
