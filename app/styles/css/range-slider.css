@@ -72,7 +72,7 @@
   content: '';
   width: 20px;
   height: 14px;
-  display: block;
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;

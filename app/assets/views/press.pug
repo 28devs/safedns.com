@@ -9,33 +9,36 @@ include inc/nav.pug
 
       h2.section-title Publications reviews
 
-      .row.half-gutters
+      .row.half-gutters(data-more-parent)
         each val in pubReviews
-          .col-12.col-lg-6
-            a.pub-reviews__link(href='#!' class= val.active)
+          .col-12.col-lg-6(data-more-content)
+            a.pub-reviews__link(href='#!')
               article
                 h3.pub-reviews__title= val.title
                 time.pub-reviews__date.text-tips= val.date
                 p.pub-reviews__text= val.text
+      
+      .pub-reviews__load-more(data-more-container)
+        .row.half-gutters
 
       .article-bottom-link
-        a.btn.btn_small.btn_back View more
+        a.btn.btn_small.btn_back(data-more-btn) View more
 
 
   section.press-about.block-outer
     .container
       h2.section-title Press about us 
-      .row.half-gutters
+      .row.half-gutters(data-more-parent)
         each val in pressAbout
-          .col-12.col-md-6.col-lg-4
-            a.press-about__link(href='#!' class= val.active).press-about__item
+          .col-12.col-md-6.col-lg-4(data-more-content)
+            a.press-about__link.press-about__item(href='#!')
               article
                 h3.press-about__title= val.title
                 time.press-about__date.text-tips= val.date
                 p.press-about__text= val.text
 
       .article-bottom-link
-        a.btn.btn_small.btn_detail View more
+        a.btn.btn_small.btn_detail(data-more-btn) View more
   .container
     include inc/awards-slider.pug
 

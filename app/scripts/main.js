@@ -132,6 +132,7 @@ if (tabsItem) {
         tabContentDisactive.classList.remove('active');
         item.classList.remove('active');
       });
+      
       const idActive = this.getAttribute('href').substring(1);
       const tabContentActive = document.getElementById(idActive);
       tabContentActive.classList.add('active');
@@ -311,8 +312,8 @@ if (reviewsSlider) {
   const reviewsSliderG = new Glide(reviewsSlider, {
     perView: 1
   });
-
-  reviewsSliderG.on('move', function(elem) {
+  
+  reviewsSliderG.on('move', function() {
     let bullets = document.querySelectorAll('.glide__bullet');
     bullets.forEach(function(elem) {
       elem.classList.remove('glide__bullet--active');
@@ -699,3 +700,28 @@ selectArrows &&
       console.log(selectArrow.parentNode.querySelector('select'));
     });
   });
+
+//
+// View more
+//
+
+const viewMoreParent = document.querySelector('[data-more-parent]'),
+      viewMoreBtn = document.querySelector('[data-more-btn]'),
+      viewMoreContainer = document.querySelector('[data-more-container]'),
+      viewMoreContainer1 = document.querySelector('[data-more-container] .row'),
+      viewMoreContent = document.querySelector('[data-more-content]');
+
+if (viewMoreParent) {
+  viewMoreBtn.addEventListener('click', function() {
+    const copyNews = viewMoreContent.cloneNode(true);
+    const copyNews1 = viewMoreContent.cloneNode(true);
+    console.log(viewMoreContainer.scrollHeight)
+
+    viewMoreContainer.style.maxHeight
+      ? (viewMoreContainer.style.maxHeight = null)
+      : (viewMoreContainer.style.maxHeight = viewMoreContainer.scrollHeight + 'px');
+
+    viewMoreContainer1.appendChild(copyNews)
+    viewMoreContainer1.appendChild(copyNews1)
+  })
+}

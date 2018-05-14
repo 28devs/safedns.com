@@ -1,3 +1,8 @@
+.pub-reviews__load-more {
+  max-height: 0;
+  transition: max-height ease .3s;
+}
+
 .pub-reviews__link {
   color: inherit;
   display: block;
