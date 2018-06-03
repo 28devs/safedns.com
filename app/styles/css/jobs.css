@@ -1,5 +1,5 @@
 .icons-gray-block {
-  background: #F2F2F2;
+  background: #f2f2f2;
   text-align: center;
 }
 
@@ -21,7 +21,8 @@
 
 .vacancies {
   color: #fff;
-  background: #020202 url('../img/jobs/vacancies-bg.jpg') no-repeat center top / 100%;
+  background: #020202 url('../img/jobs/vacancies-bg.jpg') no-repeat center top /
+    100%;
 }
 
 .vacancies__item {
@@ -56,11 +57,11 @@
   font-weight: 700;
 }
 
-[dir=ltr] .vacancies__title {
+[dir='ltr'] .vacancies__title {
   border-right: 0;
 }
 
-[dir=rtl] .vacancies__title {
+[dir='rtl'] .vacancies__title {
   border-left: 0;
 }
 
@@ -68,11 +69,11 @@
   width: 100%;
 }
 
-[dir=ltr] .vacancies__info {
+[dir='ltr'] .vacancies__info {
   border-right: 0;
 }
 
-[dir=rtl] .vacancies__info {
+[dir='rtl'] .vacancies__info {
   border-left: 0;
 }
 
@@ -88,32 +89,41 @@
   width: 20px;
   height: 14px;
   content: '';
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23fff'%3E %3Cpath d='M 6 6L 6 0L 0 0' transform='matrix(-0.714497 0.699638 -0.699638 -0.714498 9.48486 4.28711)' fill='transparent'/%3E %3C/svg%3E") center bottom no-repeat / cover;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23fff'%3E %3Cpath d='M 6 6L 6 0L 0 0' transform='matrix(-0.714497 0.699638 -0.699638 -0.714498 9.48486 4.28711)' fill='transparent'/%3E %3C/svg%3E")
+    center bottom no-repeat / cover;
   margin-top: -7px;
 }
 
-[dir=ltr] .vacancies__btn:after {
+[dir='ltr'] .vacancies__btn:after {
   left: auto;
   right: 20px;
 }
 
-[dir=rtl] .vacancies__btn:after {
+[dir='rtl'] .vacancies__btn:after {
   right: auto;
   left: 20px;
 }
 
 .vacancies__content {
   max-height: 0;
-  transition: .3s ease;
+  transition: 0.3s ease;
   overflow: hidden;
 }
 
-[dir=ltr] .vacancies__content {
-  background: linear-gradient(180deg, rgba(40, 113, 212, 0.9) 0%, rgba(235, 87, 87, 0.9) 162.45%);
+[dir='ltr'] .vacancies__content {
+  background: linear-gradient(
+    180deg,
+    rgba(40, 113, 212, 0.9) 0%,
+    rgba(235, 87, 87, 0.9) 100%
+  );
 }
 
-[dir=rtl] .vacancies__content {
-  background: linear-gradient(-180deg, rgba(40, 113, 212, 0.9) 0%, rgba(235, 87, 87, 0.9) 162.45%);
+[dir='rtl'] .vacancies__content {
+  background: linear-gradient(
+    -180deg,
+    rgba(40, 113, 212, 0.9) 0%,
+    rgba(235, 87, 87, 0.9) 100%
+  );
 }
 
 .vacancies__content-wrap {
@@ -124,11 +134,11 @@
   margin: 0 0 40px 0;
 }
 
-[dir=ltr] .vacancies__list {
+[dir='ltr'] .vacancies__list {
   padding-left: 17px;
 }
 
-[dir=rtl] .vacancies__list {
+[dir='rtl'] .vacancies__list {
   padding-right: 17px;
 }
 
@@ -140,14 +150,18 @@
   margin: 40px 0 10px 0;
 }
 
-.vacancies .card {
+.vacancies__card {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5) !important;
   margin-top: 0;
 }
 
-.vacancies .card__footer {
+.vacancies__card .card__footer {
   border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.vacancies__card-btn {
+  width: 100%;
 }
 
 .vacancies__content-link {
@@ -171,7 +185,7 @@
 }
 
 @media (min-width: 768px) {
-  .vacancies .card {
+  .vacancies__card {
     margin-top: 30px;
   }
 }
@@ -185,11 +199,11 @@
     width: 40%;
   }
 
-  [dir=ltr] .vacancies__title {
+  [dir='ltr'] .vacancies__title {
     border-right: 2px rgba(255, 255, 255, 0.28) solid;
   }
 
-  [dir=rtl] .vacancies__title {
+  [dir='rtl'] .vacancies__title {
     border-left: 2px rgba(255, 255, 255, 0.28) solid;
   }
 
@@ -197,19 +211,19 @@
     width: 25%;
   }
 
-  [dir=ltr] .vacancies__info {
+  [dir='ltr'] .vacancies__info {
     border-right: 2px rgba(255, 255, 255, 0.28) solid;
   }
 
-  [dir=rtl] .vacancies__info {
+  [dir='rtl'] .vacancies__info {
     border-left: 2px rgba(255, 255, 255, 0.28) solid;
   }
 
-  [dir=ltr] .vacancies__btn:after {
+  [dir='ltr'] .vacancies__btn:after {
     right: 30px;
   }
 
-  [dir=rtl] .vacancies__btn:after {
+  [dir='rtl'] .vacancies__btn:after {
     left: 30px;
   }
 
@@ -217,7 +231,7 @@
     padding: 43px 58px;
   }
 
-  .vacancies .card {
+  .vacancies__card {
     margin-top: 0;
   }
 }
