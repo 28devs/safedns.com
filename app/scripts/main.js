@@ -491,7 +491,6 @@ const accordionsOneActive = document.querySelector(
 
 if (accordionsOneActive) {
   const accord = function(elem) {
-    console.log(elem);
     elem.classList.toggle('accordion__header_active');
 
     let panel = elem.nextElementSibling;
