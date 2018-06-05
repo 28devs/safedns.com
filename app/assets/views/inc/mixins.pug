@@ -65,7 +65,7 @@ mixin iconsGrayBlock(item)
             h3.icons-gray-block__title.title-promo= item.title
             p.icons-gray-block__text= item.text
 
-mixin nav()
+mixin nav(dashboard)
   nav.sticky-nav&attributes(attributes)
     .container.sticky-nav__container
       a.sticky-nav__menu(href='#!')
@@ -92,6 +92,66 @@ mixin nav()
                       li.sticky-nav__nav-child-wrap(class=typeof subChild.flag === 'undefined' ? '' : 'sticky-nav__nav-flag sticky-nav__nav-flag_' + subChild.flag)
                         a.sticky-nav__nav-child-link(href='#!' class=subChild.class)= subChild.title
 
-      a.sticky-nav__btn.btn.btn_outline Login
+      if dashboard !== true
+        a.sticky-nav__btn.btn.btn_outline Login
+      else
+        .sticky-nav__dashboard-wrap
+          a.sticky-nav__btn-dashboard.btn.btn_dashboard(href='#!')
+            i.icon.icon_dashboard
+            | Dashboard
+            .sticky-nav__btn-dashboard-notice 2
+
+          .sticky-nav__alert.sticky-nav__alert_hide
+            .sticky-nav__alert-content
+              | Protection will end after 12 days Please, upgrade your plan!
+            .sticky-nav__alert-footer
+               a.btn.btn_outline.sticky-nav__alert-btn(href='#!') Upgrade
+               a.btn.sticky-nav__alert-btn-light(href='#!') Not, now
 
   
+mixin main-page-solutions()
+  section.main-page-solutions
+    .row.no-gutters
+      .col-12.col-lg-6
+        a.main-page-solutions__item.main-page-solutions__item_business(href='#!')
+          h2.main-page-solutions__title For <b>Business</b>
+          ul.main-page-solutions__list
+            li.main-page-solutions__list-item Protect your company 
+            li.main-page-solutions__list-item Maximize employees' productivity
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >
+
+      .col-12.col-lg-6.main-page-solutions__double
+        a.main-page-solutions__item.main-page-solutions__item_education(href='#!')
+          h2.main-page-solutions__title For <b>Education</b> 
+          ul.main-page-solutions__list
+            li.main-page-solutions__list-item Reliable protection for all educational institutions from K-12 schools to higher 
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >
+
+        a.main-page-solutions__item.main-page-solutions__item_home(href='#!')
+          h2.main-page-solutions__title For <b>Home</b> 
+          .main-page-solutions__list
+            li.main-page-solutions__list-item Protect your family from threats and dangers on the Internet
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >
+
+    .row.no-gutters
+      .col-12.col-lg-4
+        a.main-page-solutions__item.main-page-solutions__item_telecom(href='#!')
+          h2.main-page-solutions__title For <b>Providers and telecom</b> 
+          ul.main-page-solutions__list
+            li.main-page-solutions__list-item Protect your infrastructure and users
+            li.main-page-solutions__list-item Launch your own branded protection for your customers (parent control)
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >
+
+      .col-12.col-lg-4
+        a.main-page-solutions__item.main-page-solutions__item_state(href='#!')
+          h2.main-page-solutions__title For <b>State Wide Filtering</b> 
+          ul.main-page-solutions__list
+            li.main-page-solutions__list-item Use our database of categorized websites in your own software and systems
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >
+
+      .col-12.col-lg-4
+        a.main-page-solutions__item.main-page-solutions__item_resellers(href='#!')
+          h2.main-page-solutions__title For <b>MSP and Resellers</b> 
+          ul.main-page-solutions__list
+            li.main-page-solutions__list-item Use our database of categorized websites in your own software and systems and little more text
+          .main-page-solutions__btn.btn.btn_outline(href='#!') More >

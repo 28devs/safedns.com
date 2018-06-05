@@ -158,6 +158,23 @@ if (heroCookieBtn) {
 }
 
 //
+// Hide and show alert block
+//
+
+const alertBlock = document.querySelector('.sticky-nav__alert');
+const alertBlockBtn = document.querySelector('.sticky-nav__alert-btn-light');
+
+if (alertBlock) {
+  alertBlockBtn.addEventListener('click', function() {
+    alertBlock.classList.add('sticky-nav__alert_hide');
+  });
+
+  setTimeout(function() {
+    alertBlock.classList.remove('sticky-nav__alert_hide');
+  }, 1000);
+}
+
+//
 // Scroll home page than press down button
 //
 
@@ -311,7 +328,7 @@ if (reviewsSlider) {
   const reviewsSliderG = new Glide(reviewsSlider, {
     perView: 1
   });
-  
+
   reviewsSliderG.on('move', function() {
     let bullets = document.querySelectorAll('.glide__bullet');
     bullets.forEach(function(elem) {
@@ -698,14 +715,14 @@ selectArrows.length &&
 const viewMoreBtn = document.querySelectorAll('[data-more-btn]');
 
 if (viewMoreBtn.length) {
-  viewMoreBtn.forEach(function(elem){
+  viewMoreBtn.forEach(function(elem) {
     elem.addEventListener('click', function() {
-      console.log(this)
-      console.log(this.parentNode.previousElementSibling)
+      console.log(this);
+      console.log(this.parentNode.previousElementSibling);
       var viewMoreContainer = this.parentNode.previousElementSibling;
       viewMoreContainer.style.maxHeight = viewMoreContainer.scrollHeight + 'px';
-    })
-  })
+    });
+  });
 }
 
 //
