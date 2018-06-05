@@ -70,6 +70,7 @@
 .auth__header-link.active .auth__header-title {
   color: #333;
   font-weight: 700;
+  cursor: default;
 }
 
 .auth__footer-link {
@@ -103,7 +104,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   [dir='ltr'] .page-container_auth {
     background: linear-gradient(
         180deg,
@@ -132,6 +133,10 @@
 
   .page-container_auth .form-container {
     background: transparent;
+  }
+
+  .auth__header-list {
+    display: none;
   }
 
   .page-container_auth .auth__header-link .auth__header-title {

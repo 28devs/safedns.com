@@ -10,17 +10,15 @@ include inc/head.pug
           .auth__header-logo
           ul.auth__header-list
             li.auth__header-item
-              a.auth__header-link.active(href="#login" data-tabs-link)
+              .auth__header-link.active
                 .auth__header-title.h2 Login
-            li.auth__header-item
-              a.auth__header-link(href="#registration" data-tabs-link)
-                .auth__header-title.h2 Registration
+
         .auth__body
           .auth__forms
             #login.auth-login.tabs-content.active
               form.form(action="#")
                 .input-group
-                  input.input(type='text' placeholder='Name*')
+                  input.input(type='text' placeholder='e-mail*')
                 .input-group
                   input.input(type='password' placeholder='Password *')
                 
