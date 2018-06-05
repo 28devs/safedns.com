@@ -220,6 +220,15 @@ a {
   cursor: pointer !important;
 }
 
+.link_underline {
+  text-decoration: underline;
+  transition: .3s ease;
+}
+
+.link_underline:hover {
+  text-decoration: none;
+}
+
 hr {
   width: 100%;
   height: 1px;
@@ -342,25 +351,26 @@ h3 + ul.list_large {
   text-align: center;
 }
 
-.main-content .iframeWrap {
+.iframeWrap {
   position: relative;
   height: 0;
+  /* padding-bottom: 53.53%; */
   padding-bottom: 56.25%;
-  padding-top: 25px;
+  /* padding-top: 25px; */
 }
 
-.main-content .iframeWrap iframe {
+.iframeWrap iframe {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
 }
 
-[dir='ltr'] .main-content .iframeWrap iframe {
+[dir='ltr'] .iframeWrap iframe {
   left: 0;
 }
 
-[dir='rtl'] .main-content .iframeWrap iframe {
+[dir='rtl'] .iframeWrap iframe {
   right: 0;
 }
 
