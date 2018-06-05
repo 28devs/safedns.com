@@ -743,3 +743,47 @@ if (buyProcessBtns.length) {
     });
   });
 }
+//
+// videoToggle
+//
+
+function toggleVideo(state) {
+  // if state == 'hide', hide. Else: show video
+  var div = document.getElementById("popupVid");
+  var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+  div.style.display = state == 'hide' ? 'none' : '';
+  func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+  iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+}
+
+//
+//modal
+//
+
+const modalOpen = document.querySelectorAll('[data-modal]');
+
+function modal(e) {
+  let modalId = this.getAttribute('data-modal')
+  let modalElem = document.getElementById(modalId);
+  let modalClose = modalElem.querySelector('.modal__close');
+  toggleVideo()
+  modalElem.classList.add("modal_open");
+
+  modalClose.addEventListener('click', function(e) {
+    modalElem.classList.remove("modal_open");
+    toggleVideo('hide')
+  });
+
+  modalElem.addEventListener('click', function(e) {
+    if(e.target == modalElem) {
+      modalElem.classList.remove("modal_open");
+      toggleVideo('hide')
+    }
+  });
+}
+
+if(modalOpen.length) {
+  modalOpen.forEach(node => {
+    node.addEventListener('click', modal);
+  });
+}
