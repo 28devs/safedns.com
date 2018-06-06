@@ -222,7 +222,7 @@ a {
 
 .link_underline {
   text-decoration: underline;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .link_underline:hover {
@@ -422,23 +422,32 @@ aside > h3 {
 }
 
 .slide-tip {
-  font-size: 0.875rem;
+  font-size: 14px;
+  font-weight: 700;
   color: #bdbdbd;
   margin-top: 10px;
-  display: flex;
   direction: ltr;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.slide-tip__icon {
+  width: 16px;
+  height: 18px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.448 6.412a3.087 3.087 0 0 0-2.4-1.162h-.267a2.992 2.992 0 0 0-1.638-.75V2.625C9.143 1.163 7.962 0 6.476 0 4.99 0 3.81 1.163 3.81 2.625v6.45C3.39 9 3.162 9 3.048 9 1.295 9 0 10.275 0 12c0 .825.686 1.5 1.524 1.5h.99l2.172 1.725.762 1.838.38.937H13.296l.343-1.05 2.21-6.675c.038-.075.152-.525.152-.9 0-1.5-1.105-2.737-2.552-2.963zm.952 3.413L12.19 16.5H6.857l-.914-2.213L3.048 12H1.524c0-.75.457-1.5 1.524-1.5.533 0 1.638.3 2.285.525v-8.4c0-.637.496-1.125 1.143-1.125.648 0 1.143.488 1.143 1.125v3.9c.267-.3.686-.525 1.143-.525.648 0 1.219.412 1.447 1.013a1.58 1.58 0 0 1 .839-.263 1.54 1.54 0 0 1 1.485 1.2 1.39 1.39 0 0 1 .42-.075c.838 0 1.523.675 1.523 1.5 0 .15-.038.3-.076.45z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+  margin: 0 1px;
+}
+
 .slide-tip:after,
 .slide-tip:before {
   content: '';
-  width: 44px;
-  height: 9px;
+  width: 22px;
+  height: 11px;
   display: block;
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='44' height='9' viewBox='0 0 44 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Vector'%3E %3Cpath d='M 42.5 4L 42.8536 4.35355L 43.2071 4L 42.8536 3.64645L 42.5 4ZM 0 4.5L 42.5 4.5L 42.5 3.5L 0 3.5L 0 4.5ZM 42.8536 3.64645L 38.8536 -0.353553L 38.1464 0.353553L 42.1464 4.35355L 42.8536 3.64645ZM 42.1464 3.64645L 38.1464 7.64645L 38.8536 8.35355L 42.8536 4.35355L 42.1464 3.64645Z' transform='translate(0 0.5)' fill='%23BDBDBD'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAANCAYAAACzbK7QAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBtZPBDcMgDEUNVJw7AqsgxBwZod2gsEFX6BQcANENukongDoVkSo1yQXnHzCWpf+EsQEGFUJQKaXLVp3DgEopZyllYYzdc843coDW+o3h0VO3BmFAIDR2GBZzZ4zxpIA9CIsxOiCSEGJqralfCENyg4NUa9UnPDwQiXM+YVA99dbaJ+UfzP13izm253unmqJVcxLAnvkwYN5knJpXn5w/cxIhROErrlv1D0YcTm9F11x0AAAAAElFTkSuQmCC')
+    no-repeat center;
   margin: 15px;
 }
 
