@@ -9,6 +9,9 @@ mixin header(data)
 
             h1.header__title !{data.title}
 
+            if data.date
+              p.header__date !{data.date}
+
             if data.desc 
               p.header__desc !{data.desc} 
           
