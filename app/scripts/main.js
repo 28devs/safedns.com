@@ -828,3 +828,20 @@ if (fileUploader.length) {
     previewsContainer: '.image-loader__previews-wrap'
   });
 }
+
+//
+// tooltips
+//
+
+const awardTooltips = document.querySelectorAll('[data-tooltip]');
+console.log(awardTooltips)
+awardTooltips.forEach(function(node, i , a) {
+  const nodeTemplateName = node.getAttribute('data-tooltip');
+  tippy(node, {
+    theme: 'awards',
+    arrow: true,
+    html: '#' + nodeTemplateName,
+    distance: -30,
+    placement: 'bottom'
+  });
+});
