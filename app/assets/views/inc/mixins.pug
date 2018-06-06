@@ -1,48 +1,54 @@
 mixin header(data)
-  header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
-    .container
-      .row
-        if(!data.search)
-          .col-12.col-xl-7
-            if data.crumbs
-              a.header__breadcrumbs(href="#!") !{data.crumbs}
+  if data.bg
+    header.header(style="background-image: url('img/headers-bg/"+data.bg+"')")&attributes(attributes)
+  else
+    header.header()&attributes(attributes)
+      .container
+        .row
+          if(!data.search)
+            .col-12.col-xl-7
+              if data.crumbs
+                a.header__breadcrumbs(href="#!") !{data.crumbs}
 
-            h1.header__title !{data.title}
-
-            if data.desc 
-              p.header__desc !{data.desc} 
-          
-          if data.button
-            .col-12.col-xl-5
-              .header__control-elem
-                .btn.btn_outline(data-modal='modal-video') 
-                  | Watch video
-                  i.icon.icon_play
-
-          if data.button2
-            .col-12.col-xl-5
-              .header__control-elem
-                .btn.btn_outline(data-modal='modal-video') 
-                  | Video
-                  i.icon.icon_play
-
-                .btn.btn_primary
-                  | Start Protection
-
-        else
-          .col-12.col-md-6.col-lg-4
-            if data.title
               h1.header__title !{data.title}
-            else
-              .btn.btn_small.btn_back.btn_transparent
-                i.icon.icon_back
-                | Back to the intstructions
 
-          .col-12.col-md-6.col-lg-8
-            .header__control-elem
-              form.search(action="")
-                input.search__field(type='text' required placeholder='Write your problem...')
-                input.search__submit(type='submit' value='')
+              if data.date
+                p.header__date !{data.date}
+
+              if data.desc 
+                p.header__desc !{data.desc} 
+            
+            if data.button
+              .col-12.col-xl-5
+                .header__control-elem
+                  .btn.btn_outline(data-modal='modal-video') 
+                    | Watch video
+                    i.icon.icon_play
+
+            if data.button2
+              .col-12.col-xl-5
+                .header__control-elem
+                  .btn.btn_outline(data-modal='modal-video') 
+                    | Video
+                    i.icon.icon_play
+
+                  .btn.btn_primary
+                    | Start Protection
+
+          else
+            .col-12.col-md-6.col-lg-4
+              if data.title
+                h1.header__title !{data.title}
+              else
+                .btn.btn_small.btn_back.btn_transparent
+                  i.icon.icon_back
+                  | Back to the intstructions
+
+            .col-12.col-md-6.col-lg-8
+              .header__control-elem
+                form.search(action="")
+                  input.search__field(type='text' required placeholder='Write your problem...')
+                  input.search__submit(type='submit' value='')
 
 mixin guidebook(data)
   nav.guidebook(data-gumshoe-header)
