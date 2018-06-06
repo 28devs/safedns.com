@@ -1,0 +1,56 @@
+include inc/head.pug
++nav(class='sticky-nav_always-fixed-state')
+
+.page-container_gray
+  .container
+    .form-pages-header
+      h2.section-title Send <b>resume</b>
+
+    .row
+      .col-12
+        .form-container.form-container_without-padding-mobile
+          form.form(action="#")
+            .input-group_grid
+              .row
+                .col-12.col-sm-6
+                  .input-group
+                    input.input(type='text' placeholder='First name*')
+                    
+                .col-12.col-sm-6
+                  .input-group
+                    input.input(type='mail' placeholder='Last name*')
+
+            .input-group
+              input.input(type='text' placeholder='E-mail*')
+
+            .input-group
+              input.input(type='text' placeholder='Telephone*')
+
+            .input-group-spacer
+              .input-group
+                input.input(type='text' placeholder='Linked in profile ')
+
+              .input-group
+                input.input(type='text' placeholder='Personal website or blog')
+
+            .input-group
+              .image-loader 
+                span.image-loader__text drag resume files here or 
+                  .image-loader__text-underline browse
+
+            .image-loader__previews-wrap
+              .image-loader__previews
+                .image-loader__name(data-dz-name='')
+
+                .image-loader__progress(role='progressbar' aria-valuemin='0' aria-valuemax='100' aria-valuenow='0')
+                  .image-loader__progress-bar(style='width:0%;' data-dz-uploadprogress='')
+
+                button.image-loader__delete(data-dz-remove='')
+
+            
+            .form__footer
+              a.btn.btn_small.btn_primary.btn_min-width  Send
+
+include inc/footer-simple.pug
+script(type='text/javascript' src='scripts/dropzone.min.js')
+include inc/foot.pug
