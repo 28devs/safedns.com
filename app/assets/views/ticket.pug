@@ -42,12 +42,17 @@ include inc/head.pug
 
             .input-group
               .image-loader 
-                span.image-loader__text drag screenshots here
+                span.image-loader__text drag screenshots here or 
+                  .image-loader__text-underline browse
 
-            //- .form__footer.form-footer_grid
-              
-            //-   .input-group
-            //-     a.btn.btn_small.btn_primary Send
+            .image-loader__previews-wrap
+              .image-loader__previews
+                .image-loader__name(data-dz-name='')
+
+                .image-loader__progress(role='progressbar' aria-valuemin='0' aria-valuemax='100' aria-valuenow='0')
+                  .image-loader__progress-bar(style='width:0%;' data-dz-uploadprogress='')
+
+                button.image-loader__delete(data-dz-remove='')
             
             .form__footer.form__footer_grid
               .select.select_transparent
@@ -64,4 +69,5 @@ include inc/head.pug
               a.btn.btn_small.btn_primary.btn_min-width  Send
 
 include inc/footer-simple.pug
+script(type='text/javascript' src='scripts/dropzone.min.js')
 include inc/foot.pug

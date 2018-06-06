@@ -766,41 +766,65 @@ if (buyProcessBtns.length) {
 
 function toggleVideo(state) {
   // if state == 'hide', hide. Else: show video
-  var div = document.getElementById("popupVid");
-  var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+  var div = document.getElementById('popupVid');
+  var iframe = div.getElementsByTagName('iframe')[0].contentWindow;
   div.style.display = state == 'hide' ? 'none' : '';
   func = state == 'hide' ? 'pauseVideo' : 'playVideo';
-  iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+  iframe.postMessage(
+    '{"event":"command","func":"' + func + '","args":""}',
+    '*'
+  );
 }
 
 //
-//modal
+// Modal
 //
 
 const modalOpen = document.querySelectorAll('[data-modal]');
 
 function modal(e) {
-  let modalId = this.getAttribute('data-modal')
+  let modalId = this.getAttribute('data-modal');
   let modalElem = document.getElementById(modalId);
   let modalClose = modalElem.querySelector('.modal__close');
-  toggleVideo()
-  modalElem.classList.add("modal_open");
+  toggleVideo();
+  modalElem.classList.add('modal_open');
 
   modalClose.addEventListener('click', function(e) {
-    modalElem.classList.remove("modal_open");
-    toggleVideo('hide')
+    modalElem.classList.remove('modal_open');
+    toggleVideo('hide');
   });
 
   modalElem.addEventListener('click', function(e) {
-    if(e.target == modalElem) {
-      modalElem.classList.remove("modal_open");
-      toggleVideo('hide')
+    if (e.target == modalElem) {
+      modalElem.classList.remove('modal_open');
+      toggleVideo('hide');
     }
   });
 }
 
-if(modalOpen.length) {
+if (modalOpen.length) {
   modalOpen.forEach(node => {
     node.addEventListener('click', modal);
+  });
+}
+
+//
+// File upload http://www.dropzonejs.com
+//
+
+const fileUploader = document.querySelectorAll('.image-loader');
+
+if (fileUploader.length) {
+  const previewNode = document.querySelector('.image-loader__previews-wrap');
+  const previewTemplate = previewNode.innerHTML;
+  //previewNode.parentNode.removeChild(previewNode);
+  previewNode.innerHTML = '';
+  previewNode.style.display = 'block';
+
+  const myDropzone = new Dropzone('.image-loader', {
+    url: '#',
+    clickable: '.image-loader__text',
+    previewTemplate: previewTemplate,
+    previewsContainer: '.image-loader__previews-wrap'
   });
 }
