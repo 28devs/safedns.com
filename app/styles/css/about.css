@@ -30,6 +30,57 @@
 .awards__slider-control_load {
   visibility: visible;
 }
+.awards .glide__slide-img {
+  cursor: pointer;
+}
+
+.awards__slider-tip {
+  display: none;
+}
+
+.tippy-tooltip.awards-theme {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 240px;
+  padding: 22px 25px;
+}
+
+.tippy-tooltip.awards-theme .tippy-backdrop {
+  background-color: #fff;
+}
+
+.tippy-tooltip.awards-theme .tippy-content {
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+}
+
+.tippy-tooltip.awards-theme .tippy-content :first-child {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Right placement tooltip arrow (arrow will be on left side of tooltip) */
+.tippy-popper[x-placement^=right] .tippy-tooltip.awards-theme .tippy-arrow {
+  /* border-right: 7px solid #fff; your color here */
+}
+
+/* Left placement tooltip arrow (arrow will be on right side of tooltip) */
+.tippy-popper[x-placement^=left] .tippy-tooltip.awards-theme .tippy-arrow {
+  /* border-left: 7px solid #fff; your color here */
+}
+
+/* Top placement tooltip arrow (arrow will be on bottom side of tooltip) */
+.tippy-popper[x-placement^=top] .tippy-tooltip.awards-theme .tippy-arrow {
+  /* border-top: 7px solid #fff; your color here */
+}
+
+/* Bottom placement tooltip arrow (arrow will be on top side of tooltip) */
+.tippy-popper[x-placement^=bottom] .tippy-tooltip.awards-theme .tippy-arrow {
+  border-bottom: 7px solid #fff; /* your color here */
+}
 
 .awards__slider-control .awards__slider-next,
 .awards__slider-control .awards__slider-prev {
@@ -632,5 +683,11 @@
 
   .logos_more {
     flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1201px) {
+  .awards__slider-control .glide__arrow {
+    display: none;
   }
 }
