@@ -1,40 +1,28 @@
 .card-plan {
-  width: 33.3333%;
-  min-width: 190px;
+  width: 100%;
   text-align: center;
   border-radius: 8px;
   padding: 32px 0 29px;
-  margin: 10px 0 20px;
+  margin: 10px 0 25px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
   color: #828282;
   box-shadow: none;
-  border-radius: 4px;
-  padding-bottom: 55px;
+  border-radius: 5px;
+  padding-bottom: 30px;
   position: relative;
   transition: 0.3s ease;
 }
 
 .card-plan:hover {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
 }
 
 .card-plan_bordered {
-  box-shadow: 0 0 0 3px #ffffff, 0 0 0 7px #2f80ed,
-    0px 15px 20px rgba(0, 0, 0, 0.05) !important;
-  border-color: transparent;
   z-index: 9;
-}
-
-.card-plan_bordered:hover {
-  box-shadow: 0 0 0 3px #ffffff, 0 0 0 7px #2f80ed,
-    0px 15px 20px rgba(0, 0, 0, 0.25) !important;
-  border-color: transparent;
-  z-index: 9;
-}
-
-.card-plan_bordered .card-plan__text {
-  margin: 0 -3px;
+  border: 4px #2f80ed solid;
+  padding: 36px 0 36px;
+  margin: 3px 0 23px;
 }
 
 .card-plan__container {
@@ -42,6 +30,7 @@
   margin: 0 auto;
   display: flex;
   max-width: 1142px;
+  overflow: hidden;
 }
 
 .card-plan__container .glide__slides {
@@ -51,11 +40,21 @@
 .card-plan__container-glide {
   display: flex;
   width: 75%;
-  overflow: scroll;
+  overflow: hidden;
+}
+
+[dir='rtl'] .card-plan__container-glide {
+  margin-left: 3px;
+}
+
+[dir='ltr'] .card-plan__container-glide {
+  margin-right: 3px;
 }
 
 .card-plan__btn {
   margin: 31px 17px 10px;
+  padding: 9px 26px;
+  display: block;
 }
 
 .card-plan__most {
@@ -63,8 +62,8 @@
   width: 76px;
   height: 69px;
   position: absolute;
-  right: -5px;
-  top: -5px;
+  right: -2px;
+  top: -2px;
 }
 
 .card-plan__most-text {
@@ -83,6 +82,10 @@
   font-size: 14px;
   font-weight: bold;
   color: #2f80ed;
+}
+
+.card-plan_gray {
+  padding-bottom: 54px;
 }
 
 .card-plan_gray .card-plan__name {
@@ -119,7 +122,7 @@
 .card-plan__save {
   color: #219653;
   height: 53px;
-  transform: rotateX(-90deg) translateY(-10px);
+  transform: translateY(-3px);
   transform-origin: top;
   transition: 0.28s ease;
   opacity: 0;
@@ -127,7 +130,8 @@
 }
 
 .card-plan__save_show {
-  transform: rotateX(0) translateY(0);
+  transform: translateY(0);
+  transition-delay: 0.55s;
   opacity: 1;
 }
 
@@ -179,13 +183,11 @@
   margin-bottom: -24px;
   color: #2f80ed;
   font-size: 12px;
+  display: inline-block;
 }
 
 .card-plan__trial:hover {
-  border-bottom: 0;
-}
-
-[dir] .card-plan_gray {
+  text-decoration: underline;
 }
 
 .card-plan_gray .card-plan__text-ok:before {
@@ -671,7 +673,7 @@
 .card-plan__caption {
   padding: 157px 0 0 0;
   width: 25%;
-  min-width: 140px;
+  min-width: 133px;
 }
 
 .card-plan__caption-item {
@@ -727,6 +729,21 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
   }
 
+  .card-plan:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-plan_gray {
+    padding-bottom: 54px;
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+  }
+
+  .card-plan:not(.card-plan_gray):not(.card-plan_bordered) {
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+  }
+
   .card-plan__name {
     font-size: 24px;
   }
@@ -750,7 +767,7 @@
   }
 
   .card-plan__trial {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .accordion {
@@ -815,11 +832,36 @@
   .card-plan__container-glide {
     overflow: visible;
   }
+
+  [dir='rtl'] .card-plan__container-glide {
+    margin-left: 20px;
+  }
+
+  [dir='ltr'] .card-plan__container-glide {
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 768px) {
+  .card-plan__container {
+    overflow: visible;
+  }
+
   .card-plan__container .glide__slides {
-    justify-content: center;
+    justify-content: start;
+    overflow: visible;
+  }
+
+  .card-plan__container .glide__slide {
+    width: 33%;
+  }
+
+  .card-plan__container .glide__slide:nth-child(2) {
+    width: 34%;
+  }
+
+  .card-plan__container .glide__track {
+    overflow: visible;
   }
 
   .range-plan__msg-block {
@@ -841,17 +883,13 @@
   }
 
   .card-plan__caption-text {
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 992px) {
   .card-plan {
     min-width: 260px;
-  }
-
-  .card-plan__container .glide__slide {
-    width: 290px;
   }
 
   .range-plan__msg-text {

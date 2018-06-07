@@ -369,20 +369,23 @@ if (simpleSlider) {
 
   simpleSliderG.mount();
 
-
-  const sliderButton = document.querySelectorAll('.simple-slider__bullets .simple-slider__bullet');
-  const sliderNativeButton = document.querySelector('.simple-controls [data-glide-dir]');
-  if(sliderButton.length) {
+  const sliderButton = document.querySelectorAll(
+    '.simple-slider__bullets .simple-slider__bullet'
+  );
+  const sliderNativeButton = document.querySelector(
+    '.simple-controls [data-glide-dir]'
+  );
+  if (sliderButton.length) {
     sliderButton.forEach(function(node, i) {
       node.addEventListener('click', function() {
-        let nativeElem = document.querySelector('.simple-controls [data-glide-dir="=' + i + '"]');
-        nativeElem.click()
-
+        let nativeElem = document.querySelector(
+          '.simple-controls [data-glide-dir="=' + i + '"]'
+        );
+        nativeElem.click();
       });
     });
   }
 }
-
 
 //
 // Awards slider
@@ -932,4 +935,37 @@ if (homePlansToggle) {
       homePlansAmountsSave.classList.toggle('card-plan__save_show');
     });
   });
+}
+
+//
+// Plans slider
+//
+
+const plansSlider = document.querySelector('.card-plan__container .glide');
+
+if (plansSlider) {
+  var plansSliderInit = false;
+
+  const plansSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!plansSliderInit) {
+        plansSliderInit = new Glide(plansSlider, {
+          perView: 2,
+          gap: 0,
+          breakpoints: {
+            576: { perView: 1 }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof plansSliderInit === 'object') {
+        plansSliderInit.destroy();
+        plansSliderInit = false;
+      }
+    }
+  };
+
+  plansSliderFn();
+  window.addEventListener('resize', plansSliderFn);
 }

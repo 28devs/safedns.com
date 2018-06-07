@@ -34,7 +34,10 @@ include inc/head.pug
             .card-plan__caption-text(title='Lorem ipsum dolor sit amet consectetur adipisicing elit.') Parent Control System
 
         .card-plan__container-glide
-
+          .glide
+            .glide__track(data-glide-el='track')
+              ul.glide__slides
+                li.glide__slide
                   .card-plan.card-plan_gray
                     .card-plan__name Free version
                     .card-plan__price Free
@@ -50,7 +53,7 @@ include inc/head.pug
                         .card-plan__text-no
                     .card-plan__btn.btn.btn_secondary Get free
 
-
+                li.glide__slide
                   .card-plan.card-plan_bordered
                     .card-plan__most 
                       .card-plan__most-text most<br> popular
@@ -70,9 +73,9 @@ include inc/head.pug
                       .card-plan__text
                         .card-plan__text-no
                     .card-plan__btn.btn.btn_primary Buy now 
-                    .card-plan__trial Or get 30-days free trial
+                    a.card-plan__trial(href='#!') Or get 30-days free trial
 
-
+                li.glide__slide
                   .card-plan
                     .card-plan__name Safe@HOME+ 
                     .card-plan__price $ 
@@ -90,7 +93,7 @@ include inc/head.pug
                       .card-plan__text
                         .card-plan__text-ok
                     .card-plan__btn.btn.btn_primary Buy now
-                    .card-plan__trial Or get 30-days free trial
+                    a.card-plan__trial(href='#!') Or get 30-days free trial
 
 .page-container
   .container
