@@ -345,6 +345,46 @@ if (reviewsSlider) {
 }
 
 //
+// Simple slider
+//
+
+const simpleSlider = document.querySelector('.simple-slider .glide');
+
+if (simpleSlider) {
+  const simpleControls = document.querySelector('.simple-slider__bullets');
+  const simpleSliderG = new Glide(simpleSlider, {
+    perView: 1
+  });
+
+  simpleSliderG.on('move', function() {
+    let bullets = document.querySelectorAll('.simple-slider__bullet');
+    bullets.forEach(function(elem) {
+      elem.classList.remove('simple-slider__bullet_active');
+    });
+    let activeBullet = document.querySelector(
+      '.simple-slider__bullet[data-glide-dir="=' + simpleSliderG.index + '"]'
+    );
+    activeBullet.classList.add('simple-slider__bullet_active');
+  });
+
+  simpleSliderG.mount();
+
+
+  const sliderButton = document.querySelectorAll('.simple-slider__bullets .simple-slider__bullet');
+  const sliderNativeButton = document.querySelector('.simple-controls [data-glide-dir]');
+  if(sliderButton.length) {
+    sliderButton.forEach(function(node, i) {
+      node.addEventListener('click', function() {
+        let nativeElem = document.querySelector('.simple-controls [data-glide-dir="=' + i + '"]');
+        nativeElem.click()
+
+      });
+    });
+  }
+}
+
+
+//
 // Awards slider
 //
 

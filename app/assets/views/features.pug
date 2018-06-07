@@ -143,6 +143,36 @@ section.stats.block-outer.page-container.mb-0
             p.stats__text-title= val.title
             p.stats__desc= val.desc
 
+section.block-outer
+  h2.section-title Fetures sliders example
+ 
+  .simple-slider
+      
+    .simple-slider__bullets
+      .simple-slider__bullet.simple-slider__bullet_active(data-glide-dir="=0")
+        .simple-slider__item-dot 
+        .simple-slider__item-desc Cloud Technology
+      .simple-slider__bullet(data-glide-dir="=1") 
+        .simple-slider__item-dot 
+        .simple-slider__item-desc Content Filtering<br> example 2-lines
+      .simple-slider__bullet(data-glide-dir="=2")
+        .simple-slider__item-dot 
+        .simple-slider__item-desc  Malware Protection
+
+    .simple-slider__wrap
+      .glide
+        .simple-slider__track.glide__track(data-glide-el='track')
+          
+          ul.glide__slides
+            each i in [0,1,2]
+              li.glide__slide
+                .simple-slider__content
+                  img.simple-slider__content-img(src='../img/features-slide.png')
+        .simple-controls(data-glide-el="controls")
+          div(data-glide-dir="=0")
+          div(data-glide-dir="=1")
+          div(data-glide-dir="=2")
+
 section.download-presentation
   .container
     .row
