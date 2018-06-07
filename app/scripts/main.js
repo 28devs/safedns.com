@@ -436,39 +436,6 @@ if (largeSlider) {
 }
 
 //
-// Plans slider
-//
-
-const plansSlider = document.querySelector('.card-plan__container .glide');
-
-if (plansSlider) {
-  var plansSliderInit = false;
-
-  const plansSliderFn = function() {
-    if (window.innerWidth < 768) {
-      if (!plansSliderInit) {
-        plansSliderInit = new Glide(plansSlider, {
-          perView: 1,
-          peek: 50,
-          breakpoints: {
-            576: { peek: 30, perView: 1 }
-          }
-        }).mount();
-      }
-    } else {
-      // destroy slider if init
-      if (typeof plansSliderInit === 'object') {
-        plansSliderInit.destroy();
-        plansSliderInit = false;
-      }
-    }
-  };
-
-  plansSliderFn();
-  window.addEventListener('resize', plansSliderFn);
-}
-
-//
 // Circle progress set value
 //
 
@@ -870,18 +837,99 @@ if (fileUploader.length) {
 }
 
 //
-// tooltips
+// About page slider tooltips
 //
 
 const awardTooltips = document.querySelectorAll('[data-tooltip]');
-console.log(awardTooltips)
-awardTooltips.forEach(function(node, i , a) {
-  const nodeTemplateName = node.getAttribute('data-tooltip');
-  tippy(node, {
-    theme: 'awards',
-    arrow: true,
-    html: '#' + nodeTemplateName,
-    distance: -30,
-    placement: 'bottom'
+
+if (awardTooltips.length) {
+  awardTooltips.forEach(function(node, i, a) {
+    const nodeTemplateName = node.getAttribute('data-tooltip');
+
+    tippy(node, {
+      theme: 'awards',
+      arrow: true,
+      html: '#' + nodeTemplateName,
+      distance: -30,
+      placement: 'bottom'
+    });
   });
-});
+}
+
+//
+// Protection-home page plan tooltips
+//
+
+const planTooltips = document.querySelectorAll('.card-plan__caption-text');
+
+if (planTooltips.length) {
+  planTooltips.forEach(function(planTooltip) {
+    const nodeTemplateName = planTooltip.querySelector(
+      '.card-plan__caption-tooltip'
+    );
+
+    tippy(planTooltip, {
+      theme: 'card-plan__caption-tooltip',
+      arrow: true,
+      html: nodeTemplateName,
+      distance: 15,
+      placement: 'right-start'
+    });
+  });
+}
+
+//
+// Toggle
+//
+
+const toggles = document.querySelectorAll('.toggle');
+
+if (toggles.length) {
+  toggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      let input = this.querySelector('input');
+      input.value = +input.value ? 0 : 1;
+
+      this.classList.toggle('toggle_on');
+    });
+  });
+}
+
+//
+// jsHomePlansToggle
+//
+
+const homePlansToggle = document.querySelector('#jsHomePlansToggle');
+
+if (homePlansToggle) {
+  homePlansToggle.addEventListener('click', function() {
+    const homePlansAmounts = document.querySelectorAll(
+      '.card-plan__price-value'
+    );
+    const homePlansAmountSmalls = document.querySelectorAll(
+      '.card-plan__price-small-value'
+    );
+    const homePlansAmountsSaves = document.querySelectorAll('.card-plan__save');
+
+    let toggle = +homePlansToggle.querySelector('input').value
+      ? 'data-month'
+      : 'data-year';
+
+    homePlansAmounts.forEach(function(homePlansAmount) {
+      let from = +homePlansAmount.innerHTML;
+      let to = +homePlansAmount.getAttribute(toggle);
+
+      new CountUp(homePlansAmount, from, to, 0, 1.28).start();
+    });
+
+    homePlansAmountSmalls.forEach(function(homePlansAmountSmall) {
+      let text = homePlansAmountSmall.getAttribute(toggle);
+
+      homePlansAmountSmall.innerHTML = text;
+    });
+
+    homePlansAmountsSaves.forEach(function(homePlansAmountsSave) {
+      homePlansAmountsSave.classList.toggle('card-plan__save_show');
+    });
+  });
+}

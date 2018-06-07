@@ -8,51 +8,89 @@ include inc/head.pug
         h1.section-title 
           b Start Protection
           .title-line Home
-          .slide-tip Slide
+
+          #jsHomePlansToggle.toggle.toggle_on
+            input(type='hidden' value='0')
+            .toggle__text Monthly
+            .toggle__elem
+            .toggle__text Annual
+
+          .slide-tip 
+            | S
+            .slide-tip__icon
+            | ide
 
       .card-plan__container
-        .glide
-          .glide__track(data-glide-el='track')
-            ul.glide__slides
-              li.glide__slide
-                .card-plan.card-plan_gray
-                  .card-plan__name No limit filter
-                  .card-plan__price Free
-                  .card-plan__desc
-                    p.card-plan__text 1 profile
-                    p.card-plan__text 100 list size
-                  .card-plan__pros
-                    .card-plan__text-ok Filtering
-                  .card-plan__btn.btn.btn_small Get free
+        .card-plan__caption
+          .card-plan__caption-item
+            .card-plan__caption-text(title='Lorem ipsum dolor sit amet consectetur adipisicing elit.') Profile
+          .card-plan__caption-item
+            .card-plan__caption-text(title='Lorem ipsum dolor') Domain list size
+          .card-plan__caption-item
+            .card-plan__caption-text(title='Lorem ipsum dolor Lorem ipsum dolor') Filtering
+          .card-plan__caption-item
+            .card-plan__caption-text(title='Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.') Anti-banner
+          .card-plan__caption-item
+            .card-plan__caption-text(title='Lorem ipsum dolor sit amet consectetur adipisicing elit.') Parent Control System
 
-              li.glide__slide
-                .card-plan
-                  .card-plan__name Safe@HOME
-                  .card-plan__price $ 19 
-                    .card-plan__price-small / year
-                  .card-plan__desc
-                    p.card-plan__text 3 profile
-                    p.card-plan__text 1 000 list size
-                  .card-plan__pros
-                    .card-plan__text-ok Filtering
-                    .card-plan__text-ok Anti-banner
-                  .card-plan__btn.btn.btn_small Buy 
-                  .card-plan__trial Try free 15 days trial
+        .card-plan__container-glide
 
-              li.glide__slide
-                .card-plan
-                  .card-plan__name Safe@HOME+ 
-                  .card-plan__price $ 39 
-                    .card-plan__price-small / year
-                  .card-plan__desc
-                    p.card-plan__text 5 profile
-                    p.card-plan__text 5 000 list size
-                  .card-plan__pros
-                    .card-plan__text-ok Filtering
-                    .card-plan__text-ok Anti-banner
-                    .card-plan__text-ok Parent-control
-                  .card-plan__btn.btn.btn_small Buy
-                  .card-plan__trial Try free 15 days trial
+                  .card-plan.card-plan_gray
+                    .card-plan__name Free version
+                    .card-plan__price Free
+                    .card-plan__save
+                    .card-plan__pros
+                      .card-plan__text 1
+                      .card-plan__text 100
+                      .card-plan__text
+                        .card-plan__text-ok
+                      .card-plan__text
+                        .card-plan__text-no
+                      .card-plan__text
+                        .card-plan__text-no
+                    .card-plan__btn.btn.btn_secondary Get free
+
+
+                  .card-plan.card-plan_bordered
+                    .card-plan__most 
+                      .card-plan__most-text most<br> popular
+                    .card-plan__name Safe@HOME
+                    .card-plan__price $ 
+                      .card-plan__price-value(data-month='3' data-year='19') 19
+                      .card-plan__price-small /
+                        .card-plan__price-small-value(data-month='month' data-year='year') year
+                    .card-plan__save.card-plan__save_show Save 20%
+                    .card-plan__pros
+                      .card-plan__text 3
+                      .card-plan__text 1 000
+                      .card-plan__text
+                        .card-plan__text-ok
+                      .card-plan__text
+                        .card-plan__text-ok
+                      .card-plan__text
+                        .card-plan__text-no
+                    .card-plan__btn.btn.btn_primary Buy now 
+                    .card-plan__trial Or get 30-days free trial
+
+
+                  .card-plan
+                    .card-plan__name Safe@HOME+ 
+                    .card-plan__price $ 
+                      .card-plan__price-value(data-month='7' data-year='39') 39 
+                      .card-plan__price-small / 
+                        .card-plan__price-small-value(data-month='month' data-year='year') year
+                    .card-plan__save.card-plan__save_show Save 30%
+                    .card-plan__pros
+                      .card-plan__text 5
+                      .card-plan__text 5 000
+                      .card-plan__text
+                        .card-plan__text-ok
+                      .card-plan__text
+                        .card-plan__text-ok
+                      .card-plan__text
+                        .card-plan__text-ok
+                    .card-plan__btn.btn.btn_primary Buy now
+                    .card-plan__trial Or get 30-days free trial
 
 .page-container
   .container
