@@ -1,6 +1,6 @@
 .footer-simple {
-  border-top: 1px solid #e0e0e0;
-  background: #fff;
+  border-top: 0;
+  background: #f7f7f7;
 }
 
 .footer-simple__list {
@@ -48,10 +48,6 @@
   left: 0;
 }
 
-.footer-simple__item:last-child {
-  padding: 0;
-}
-
 .footer-simple__sub-list {
   max-width: 100%;
   margin: 0;
@@ -87,6 +83,7 @@
 @media (min-width: 768px) {
   .footer-simple {
     background: #f7f7f7;
+    border-top: 1px solid #e0e0e0;
   }
 
   .footer-simple__list {

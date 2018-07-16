@@ -3,32 +3,37 @@ include inc/head.pug
 
 .page-container.page-container_gray.buy-process
   .container
-    h2.section-title.title-gray
+    h2.section-title.title-gray.buy-process__title
       b Purchase 
-      .title-line.title-line_horisontal Safe@Home
     
     .steps-nav__wrap
-      ul.steps-nav
-        li.steps-nav__item.steps-nav__item_active
-          .steps-nav__item-text Login
-        li.steps-nav__item.steps-nav__item_active
-          .steps-nav__item-text Payment options
-        li.steps-nav__item.steps-nav__item_active
-          .steps-nav__item-text Pay
-        li.steps-nav__item.steps-nav__item_active
-          .steps-nav__item-text Finish!
+      .steps-nav__text Done!
 
-      .steps-nav__mobile Finish!
+      .steps-nav__progress.steps-nav__progress_completed
+        .steps-nav__progress-bar
 
   section.container
-    .form-container.form-container_single.payment-options
+    .form-container.form-container_single.payment-option
       section.payment-successful
-        h3.payment-successful__title Сongratulations! Successful purchase!
+        .payment-successful__content
+          h3.payment-successful__title Сongratulations! Successful purchase!
+          p.payment-successful__text You bought <b>protect Safe@Business</b> for <b>40 users</b> on <b>2 years</b>.
+          p.payment-successful__text Please, enter to your dashboard using the link:  
+            a.simple-link.payment-successful__link(href='#!') safedns.com\dushboard
 
-        p.payment-successful__text Enter to your dushboard using the link - 
-          a.simple-link.payment-successful__link(href='#!') safedns.com\dushboard
+        .payment-successful__footer
+          ul.contact-list.payment-successful__footer-list
+            li.contact-list__item.payment-successful__footer-item
+              p.text-secondary.text-icon.text-icon_phone.payment-successful__footer-title Support phone:
 
-        p.payment-successful__text Thank you for trusting our service!
+              a.link-tel.always-ltr.payment-successful__footer-link(href='tel:+18008202530') +1 800.820.2530
+
+              a.link-tel.always-ltr.payment-successful__footer-link(href='tel:+15714212990') +1 571.421.2990
+
+            li.contact-list__item.payment-successful__footer-item
+              p.text-secondary.text-icon.text-icon_mail.payment-successful__footer-title E-mail
+
+              a.link-mailto.payment-successful__footer-link(href='mailto:support@safedns.com') support@safedns.com
 
 
 include inc/footer-simple.pug

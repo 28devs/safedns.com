@@ -224,6 +224,10 @@ textarea {
   right: 60px;
 }
 
+.input-group__spacer {
+  margin: 36px 0;
+}
+
 .input-group_grid {
   margin-bottom: 0 !important;
 }
@@ -626,9 +630,97 @@ textarea {
   margin: 48px 0 55px;
 }
 
+.msg {
+  background: rgba(242, 153, 74, 0.1);
+  border-radius: 4px;
+  max-width: 444px;
+  margin: 30px auto 0;
+  padding: 14px 20px;
+  color: #f2994a;
+  text-align: left;
+}
+
+[dir='ltr'] .msg {
+  text-align: left;
+}
+
+[dir='rtl'] .msg {
+  text-align: right;
+}
+
+.msg__title {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.msg__text {
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.msg_warning {
+  color: #f2994a;
+  background: rgba(242, 153, 74, 0.1);
+}
+
+.msg_warning .msg__title {
+  display: flex;
+  align-items: center;
+}
+
+.msg_warning .msg__title:before {
+  content: '';
+  display: block;
+  background: url('../img/icons/msg-warning.svg');
+  width: 14px;
+  height: 14px;
+}
+
+[dir='ltr'] .msg_warning .msg__title:before {
+  margin-right: 10px;
+}
+
+[dir='rtl'] .msg_warning .msg__title:before {
+  margin-left: 10px;
+}
+
+.msg_error {
+  border: 1px solid #eb5757;
+  color: #eb5757;
+  background: rgba(235, 87, 87, 0.1);
+  max-width: 534px;
+  margin: 40px 20px -34px;
+  padding: 11px 20px 20px;
+}
+
+.msg_error:before {
+  content: '';
+  display: block;
+  margin: 5px auto 15px;
+  width: 32px;
+  height: 28px;
+  background: url('../img/icons/error.svg');
+}
+
+.msg_error .msg__text {
+  font-size: 14px;
+}
+
 @media (min-width: 576px) {
   .form-container_single {
     margin: 10vh auto;
+  }
+
+  .msg {
+    padding: 14px 26px 19px 29px;
+  }
+
+  .msg__title {
+    font-size: 13px;
+  }
+
+  .msg__text {
+    font-size: 10px;
   }
 
   .form .input-group {
@@ -676,6 +768,15 @@ textarea {
 }
 
 @media (min-width: 768px) {
+  .msg_error {
+    margin: 73px auto -25px;
+    padding: 15px 32px 27px;
+  }
+
+  .msg_error .msg__text {
+    font-size: 16px;
+  }
+
   .form-container {
     padding: 47px 35px;
     border: 1px solid #e0e0e0;

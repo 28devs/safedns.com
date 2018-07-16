@@ -2,11 +2,17 @@
   background-color: #f7f7f7;
 }
 
+.buy-process__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 .buy-process .form-container_single {
   width: auto;
   margin-top: 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border: 1px solid #e0e0e0;
+  border-top: 0;
   margin: 0 -20px;
   border-radius: 0;
 }
@@ -25,219 +31,78 @@
   display: none;
 }
 
-.steps-nav {
-  list-style: none;
+.buy-info {
   max-width: 650px;
   width: 100%;
-  align-items: center;
-  display: none;
-  margin: 50px auto 31px;
-  padding: 0;
-}
-
-.steps-nav__mobile {
-  display: block;
-  text-align: center;
-  margin: -20px 0 35px;
-}
-
-.steps-nav__item {
-  width: 100%;
-  position: relative;
-  height: 42px;
-  margin: 0;
-}
-
-.steps-nav__item:first-child:before {
-  display: none;
-}
-
-[dir='ltr'] .steps-nav__item:first-child .steps-nav__item-text {
-  padding-left: 10px;
-}
-
-[dir='rtl'] .steps-nav__item:first-child .steps-nav__item-text {
-  padding-right: 10px;
-}
-
-.steps-nav__item:nth-child(1) {
-  z-index: 4;
-}
-
-.steps-nav__item:nth-child(2) {
-  z-index: 3;
-}
-
-.steps-nav__item:nth-child(3) {
-  z-index: 2;
-}
-
-.steps-nav__item:nth-child(4) {
-  z-index: 1;
-}
-
-.steps-nav__item:last-child .steps-nav__item-text {
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  flex-direction: column;
 }
 
-[dir='ltr'] .steps-nav__item:last-child .steps-nav__item-text {
-  padding-left: 10px;
+.buy-info__cell {
+  padding: 2px 12px;
+  display: flex;
 }
 
-[dir='rtl'] .steps-nav__item:last-child .steps-nav__item-text {
-  padding-right: 10px;
-}
-
-.steps-nav__item:after {
-  content: '';
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -5px;
-  bottom: 0;
-  z-index: 1;
-  border-style: solid;
-}
-
-[dir='ltr'] .steps-nav__item:after {
-  right: -20px;
-  left: auto;
-  border-color: transparent transparent transparent #f7f7f7;
-  border-width: 26px 0 26px 20px;
-}
-
-[dir='rtl'] .steps-nav__item:after {
-  left: -20px;
-  right: auto;
-  border-color: transparent #f7f7f7 transparent transparent;
-  border-width: 26px 20px 26px 0;
-}
-
-.steps-nav__item:before {
-  content: '';
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -5px;
-  bottom: 0;
-  z-index: 3;
-  -webkit-filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.15));
-  filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.15));
-  clip: rect(4px, 24px, 48px, 0);
-  display: none;
-  border-style: solid;
-}
-
-[dir='ltr'] .steps-nav__item:before {
-  right: auto;
-  left: 2px;
-  border-color: transparent transparent transparent #f7f7f7;
-  border-width: 26px 0 26px 20px;
-}
-
-[dir='rtl'] .steps-nav__item:before {
-  left: auto;
-  right: 2px;
-  border-color: transparent #f7f7f7 transparent transparent;
-  border-width: 26px 20px 26px 0;
-}
-
-.steps-nav__item-text {
-  font-size: 0.875rem;
+.buy-info__key {
   color: #828282;
-  box-sizing: border-box;
-  height: 100%;
-  z-index: 2;
-  position: relative;
+  width: 35%;
+}
+
+.buy-info__value {
+  color: #4f4f4f;
+  font-weight: 700;
+}
+
+.buy-info__value_blue {
+  color: #2f80ed;
+}
+
+.steps-nav__text {
+  font-size: 20px;
+  color: #bdbdbd;
   text-align: center;
-  background: #f2f2f2;
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
-[dir='ltr'] .steps-nav__item-text {
-  border-radius: 4px 0 0 4px;
-  padding: 11px 0 11px 22px;
+.steps-nav__text-current {
+  display: inline-block;
 }
 
-[dir='rtl'] .steps-nav__item-text {
-  border-radius: 0 4px 4px 0;
-  padding: 11px 22px 11px 0;
+.steps-nav__progress {
+  height: 4px;
+  background: #e0e0e0;
+  max-width: 650px;
+  margin: 0 -20px;
 }
 
-.steps-nav__item-text:after {
-  content: '';
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-style: solid;
+.steps-nav__progress-bar {
+  height: 4px;
+  background: #2f80ed;
+  transition: 0.3s ease;
 }
 
-[dir='ltr'] .steps-nav__item-text:after {
-  right: -16px;
-  left: auto;
-  border-width: 21px 0 21px 16px;
-  border-color: transparent transparent transparent #f2f2f2;
-}
-
-[dir='rtl'] .steps-nav__item-text:after {
-  left: -16px;
-  right: auto;
-  border-width: 21px 16px 21px 0;
-  border-color: transparent #f2f2f2 transparent transparent;
-}
-
-[dir='ltr'] .steps-nav__item_active:after {
-  right: -22px;
-}
-
-[dir='rtl'] .steps-nav__item_active:after {
-  left: -22px;
-}
-
-.steps-nav__item_active:before {
-  display: block;
-}
-
-.steps-nav__item_active .steps-nav__item-text {
-  color: #333;
-  -webkit-filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.15));
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.15));
-  background: #ffffff;
-}
-
-[dir='ltr'] .steps-nav__item_active .steps-nav__item-text {
-  padding-left: 25px;
-}
-
-[dir='rtl'] .steps-nav__item_active .steps-nav__item-text {
-  padding-right: 25px;
-}
-
-[dir='ltr'] .steps-nav__item_active .steps-nav__item-text:after {
-  border-color: transparent transparent transparent #fff;
-}
-
-[dir='rtl'] .steps-nav__item_active .steps-nav__item-text:after {
-  border-color: transparent #fff transparent transparent;
-}
-
-.steps-nav__item:last-child .steps-nav__item-text:after,
-.steps-nav__item:last-child:after {
-  display: none;
+.steps-nav__progress_completed .steps-nav__progress-bar {
+  background: #27ae60;
 }
 
 .payment-options {
-  padding: 26px 0 45px 0 !important;
+  padding: 18px 0 50px 0;
+}
+
+.payment-option {
+  padding: 26px 0 30px 0;
 }
 
 .payment-options__text {
   color: #4f4f4f;
   margin: 0;
+  font-size: 20px;
 }
 
 .payment-options .title-promo {
@@ -265,7 +130,7 @@
 
 .payment-options__select-plan {
   border-bottom: 1px solid #e8e8e8;
-  padding-bottom: 39px;
+  padding-bottom: 84px;
   margin-bottom: 36px;
 }
 
@@ -301,7 +166,7 @@
 
 .payment-radio {
   width: 100%;
-  max-width: 444px;
+  max-width: 484px;
   margin: 25px auto 0;
   padding: 0 20px;
 }
@@ -505,15 +370,25 @@
 .credit-card {
   position: relative;
   max-width: 540px;
-  margin: 32px auto 60px;
+  margin: 0 auto 60px;
+}
+
+.credit-card .select {
+  background: #f8f8f8;
 }
 
 .credit-card__title {
-  font-size: 1rem;
-  color: #828282;
-  display: block;
-  text-align: center;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.credit-card__back-tip {
+  font-size: 13px;
+  color: #bdbdbd;
+  margin: 0 15px;
 }
 
 .credit-card__title:before {
@@ -526,11 +401,11 @@
 }
 
 [dir='ltr'] .credit-card__title:before {
-  margin: 0 12px -3px 0;
+  margin: 0 25px 0 0;
 }
 
 [dir='rtl'] .credit-card__title:before {
-  margin: 0 0 -3px 12px;
+  margin: 0 0 0 25px;
 }
 
 .credit-card__front {
@@ -547,10 +422,11 @@
 
 .credit-card__front .input-group {
   margin-bottom: 14px !important;
+  position: relative;
 }
 
 .credit-card__front .input-group:nth-child(2) {
-  width: 40%;
+  width: 35%;
 }
 
 [dir='ltr'] .credit-card__front .input-group:nth-child(2) {
@@ -562,7 +438,7 @@
 }
 
 .credit-card__front .input-group:nth-child(3) {
-  width: calc(60% - 14px);
+  width: 35%;
 }
 
 [dir='ltr'] .credit-card__front .input-group:nth-child(3) {
@@ -575,14 +451,18 @@
   margin-right: 14px;
 }
 
-.credit-card__front .input-group .input {
-  background: #fff !important;
+.credit-card__front .input-group:nth-child(4) .input {
+  text-transform: uppercase;
+}
+
+.credit-card__front .input-group .input,
+.credit-card__back .input-group .input {
+  background: #f8f8f8;
   padding: 11px 17px !important;
 }
 
 .credit-card__back {
   box-sizing: border-box;
-  width: 42%;
   height: auto;
   position: static;
   z-index: 1;
@@ -591,6 +471,8 @@
 .credit-card__back {
   background: transparent;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
 }
 
 [dir='ltr'] .credit-card__back {
@@ -615,21 +497,13 @@
 
 .credit-card__back:before {
   background: #c4c4c4;
-}
-
-[dir='ltr'] .credit-card__back:before {
-  right: 0;
-  left: 0;
-}
-
-[dir='rtl'] .credit-card__back:before {
   left: 0;
   right: 0;
 }
 
-.credit-card__back .input {
-  background: #fff !important;
-  padding: 11px 17px !important;
+.credit-card__back .input-group {
+  width: 35%;
+  margin-bottom: 0;
 }
 
 .credit-card__payments {
@@ -664,7 +538,13 @@
 .credit-card__payments-logo {
   background: url('../img/payments.jpg') center no-repeat;
   background-size: 100%;
-  padding-top: 42px;
+  max-width: 320px;
+  width: 100%;
+  padding-top: 31px;
+}
+
+.credit-card__payments-comodo {
+  display: none;
 }
 
 .payment-successful__title {
@@ -672,15 +552,225 @@
 }
 
 .payment-successful__text {
-  margin: 40px 0 35px;
+  margin: 30px 0;
 }
 
 .payment-successful__link {
-  font-size: 1.25rem;
+  font-size: 20px;
   display: block;
+  color: #2d9cdb;
+}
+
+.range-plan__slider_small {
+  max-width: 400px;
+  margin: 32px auto 7px;
+}
+
+.range-plan__slider_small .noUi-horizontal {
+  height: 10px;
+}
+
+.range-plan__slider_small .range-slider__label:before {
+  width: 16px;
+  height: 16px;
+  top: -13px;
+}
+
+[dir='ltr'] .range-plan__slider_small .range-slider__label:before {
+  right: auto;
+  left: -8px;
+}
+
+[dir='rtl'] .range-plan__slider_small .range-slider__label:before {
+  left: auto;
+  right: -8px;
+}
+
+.range-plan__slider_small .noUi-handle {
+  width: 24px;
+  height: 24px;
+  top: -7px;
+}
+
+html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
+  right: -12px;
+  left: auto;
+}
+
+.range-plan__slider_small .noUi-handle:after {
+  width: 8px;
+  height: 8px;
+}
+
+.payment-successful__content {
+  padding: 0 20px;
+}
+
+.payment-successful__content > * {
+  font-weight: 700;
+}
+
+.payment-successful__footer {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+  padding: 20px 20px 0;
+}
+
+.payment-successful__footer-item {
+  text-align: center;
+}
+
+.payment-successful__footer-title {
+  font-size: 16px;
+}
+
+.payment-successful__footer-title.text-icon {
+  margin-bottom: 8px;
+}
+
+.payment-successful__footer-item:first-child {
+  margin-bottom: 35px;
+}
+
+.payment-successful__footer-item:last-child {
+  margin-bottom: 0;
+}
+
+[dir='ltr'] .payment-successful__footer-title.text-icon:before {
+  margin: 0 12px -2px 0;
+}
+
+[dir='rtl'] .payment-successful__footer-title.text-icon:before {
+  margin: 0 0 -2px 12px;
+}
+
+.payment-successful__footer-list {
+  padding: 0 !important;
+}
+
+.payment-successful__footer-link {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.comodo {
+  background: url('../img/icons/comodo.png') no-repeat 20px 29px;
+  padding: 25px 20px 0 114px;
+  text-align: left;
+}
+
+.comodo__title {
+  font-size: 12px;
+  color: #be0105;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.comodo__text {
+  font-size: 12px;
+  color: #4f4f4f;
+}
+
+#credit-card__cvv-tip {
+  display: none;
+}
+
+.card-icon {
+  position: absolute;
+  top: 7px;
+  background: url('../img/payments.jpg');
+  background-size: 340px;
+}
+
+[dir='ltr'] .card-icon {
+  right: 11px;
+}
+
+[dir='rtl'] .card-icon {
+  left: 11px;
+}
+
+.card-icon_visa {
+  background-position: 0 0;
+  width: 43px;
+  height: 25px;
+}
+
+.card-icon_mc {
+  background-position: -45px 0;
+  width: 43px;
+  height: 25px;
+}
+
+.card-icon_ae {
+  background-position: -100px 0;
+  width: 61px;
+  height: 25px;
+}
+
+.card-icon_jcb {
+  background-position: -165px 0;
+  width: 39px;
+  height: 25px;
+}
+
+.card-icon_dc {
+  background-position: -218px 0;
+  width: 67px;
+  height: 25px;
+}
+
+.card-icon_dis {
+  background-position: -218px 0;
+  width: 67px;
+  height: 25px;
+}
+
+.card-icon_dc {
+  background-position: -293px 0;
+  width: 47px;
+  height: 28px;
 }
 
 @media (min-width: 576px) {
+  .payment-options {
+    padding: 26px 0 60px 0;
+  }
+
+  .buy-info {
+    padding: 0 30px 0 10px;
+  }
+
+  .buy-process__title {
+    margin-bottom: 30px;
+  }
+
+  .range-plan__slider_small {
+    margin: 45px auto 25px;
+  }
+
+  .buy-info__cell {
+    padding: 12px 22px;
+    display: block;
+  }
+
+  .steps-nav__progress {
+    margin: 0 auto;
+  }
+
+  .buy-info {
+    flex-direction: row;
+  }
+
+  [dir='ltr'] .buy-info__cell + .buy-info__cell {
+    border-left: 1px solid #e0e0e0;
+  }
+
+  [dir='rtl'] .buy-info__cell + .buy-info__cell {
+    border-right: 1px solid #e0e0e0;
+  }
+
   [dir='ltr'] .buy-process .form-container_single {
     border-right-width: 1px;
   }
@@ -702,15 +792,15 @@
   }
 
   .buy-process .form-container_single {
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
   }
 
   .buy-process .form-container_single {
     width: 100%;
   }
 
-  .steps-nav__mobile {
-    margin: 10px 0 35px;
+  .payment-options__text {
+    font-size: 24px;
   }
 
   .payment-options__total .btn {
@@ -722,43 +812,109 @@
     box-shadow: none;
   }
 
+  .payment-successful {
+    position: relative;
+  }
+
+  .payment-successful > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .payment-successful__content:after {
+    content: '';
+    display: block;
+    width: 304px;
+    height: 218px;
+    background: url('../img/icons/ok.svg') no-repeat center / contain;
+    opacity: 0.024;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
   .payment-successful__title {
     font-size: 1.5rem;
   }
 
   .payment-successful__text {
-    margin: 40px 0 90px;
+    margin: 40px 0;
   }
 
   .payment-successful__link {
-    font-size: 1rem;
+    font-size: 36px;
   }
 
-  .payment-successful__link {
-    display: inline;
+  .payment-successful__footer {
+    margin-top: 100px;
   }
 }
 
 @media (min-width: 768px) {
-  .steps-nav {
-    display: flex;
+  .credit-card__back .input-group {
+    width: auto;
+    margin-bottom: 20px;
   }
 
-  .steps-nav__mobile {
-    display: none;
+  .credit-card__front .input-group .input,
+  .credit-card__back .input-group .input,
+  .credit-card__front .select__elem {
+    background: #fff;
+    border: 1px solid #bdbdbd;
+    padding: 11px 17px !important;
+  }
+
+  .credit-card__front .select {
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .payment-successful__footer-list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  [dir='ltr'] .payment-successful__footer-item {
+    text-align: left;
+  }
+
+  [dir='rtl'] .payment-successful__footer-item {
+    text-align: right;
+  }
+
+  [dir='ltr'] .payment-successful__footer-title {
+    margin-left: -28px;
+  }
+
+  [dir='rtl'] .payment-successful__footer-title {
+    margin-right: -28px;
+  }
+
+  .payment-successful__footer-link {
+    font-size: 24px;
+  }
+
+  .steps-nav__text {
+    font-size: 24px;
+  }
+
+  .buy-info__cell {
+    padding: 14px 40px;
   }
 
   .credit-card {
-    margin: 46px auto 10px;
-  }
-
-  .credit-card__title {
-    display: none;
+    margin: 15px auto 10px;
   }
 
   .credit-card__front {
     background: #f2f2f2;
     border: 1px solid #e0e0e0;
+  }
+
+  .credit-card__title:before {
+    display: none;
   }
 
   .credit-card__front {
@@ -775,11 +931,24 @@
   }
 
   .credit-card__front .input-group:nth-child(2) {
-    width: 77px;
+    width: 110px;
   }
 
   .credit-card__front .input-group:nth-child(3) {
-    width: 145px;
+    width: 110px;
+  }
+
+  .comodo {
+    display: none;
+  }
+
+  .credit-card__back-tip {
+    font-size: 0;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    background: url('../img/icons/info.svg');
+    margin: 0 10px 21px;
   }
 
   .credit-card__back {
@@ -787,17 +956,17 @@
     width: 405px;
     height: 247px;
     position: absolute;
-    top: 47px;
+    top: 108px;
     bottom: auto;
     float: none;
   }
 
   [dir='ltr'] .credit-card__back {
-    padding: 111px 28px 47px 297px;
+    padding: 97px 4px 46px 292px;
   }
 
   [dir='rtl'] .credit-card__back {
-    padding: 111px 297px 47px 28px;
+    padding: 97px 292px 46px 4px;
   }
 
   [dir='ltr'] .credit-card__back {
@@ -826,13 +995,23 @@
 
   .credit-card__payments-logo {
     padding-top: 10%;
+    margin-left: 15px;
+  }
+
+  .credit-card__payments-comodo {
+    font-weight: bold;
+    font-size: 11px;
+    color: #bdbdbd;
+    text-align: left;
+    display: block;
+    padding-top: 46px;
+    background: url(../img/icons/comodo.png) no-repeat 0 0 / 58px;
+    margin-right: -21px;
+    margin-bottom: -34px;
   }
 }
 
 @media (min-width: 992px) {
-  .steps-nav {
-    margin: 57px auto 38px;
-  }
 }
 
 .process-content {

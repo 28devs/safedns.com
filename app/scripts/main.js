@@ -54,6 +54,23 @@ if (element) {
 }
 
 //
+// Toggle
+//
+
+const toggles = document.querySelectorAll('.toggle');
+
+if (toggles.length) {
+  toggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      let input = this.querySelector('input');
+      input.value = +input.value ? 0 : 1;
+
+      this.classList.toggle('toggle_on');
+    });
+  });
+}
+
+//
 // Do indentation as the container
 // Container simulation for About page
 //
@@ -596,32 +613,69 @@ if (rangeSliders) {
 }
 
 //
+// jsBusinessPlansToggle
+//
+
+const businessPlansToggle = document.querySelector('#businessPlansToggle');
+
+if (businessPlansToggle) {
+  businessPlansToggle.addEventListener('click', function() {
+    rangeBusinessSlider.noUiSlider.updateOptions({});
+  });
+}
+
+//
 // Range business plan slider
 //
 
-const rangeBusinessSlider = document.querySelector('.range-slider_plan');
+const rangeBusinessSlider = document.querySelector('.range-slider_plan-js');
 
 if (rangeBusinessSlider) {
-  const rangeBusinessSliderColorLabes = function(value) {
+  var rangeBusinessSliderColorLabes = function(value, oldValue) {
+    let toggle = +document.querySelector('#businessPlansToggle input').value
+      ? 'year'
+      : 'month';
+
     let current = document.querySelector(
       '.range-slider__label:nth-child(' + value + ')'
     );
 
+    let prev = document.querySelector(
+      '.range-slider__label:nth-child(' + oldValue + ')'
+    );
+
     let blockPrice = document.querySelector('.range-plan__msg-block_price');
-    blockPrice.classList.remove('range-plan__msg-block_price-show');
+
+    if (current.getAttribute('data-target') === 'hight') {
+      blockPrice.classList.remove('range-plan__msg-block_price-show');
+    }
 
     // price block - set price from data attr
     if (current.getAttribute('data-target') === 'price') {
-      blockPrice.querySelector(
-        '.range-plan__price span'
-      ).textContent = current.getAttribute('data-price');
+      // blockPrice.querySelector(
+      //   '.range-plan__price span'
+      // ).textContent = current.getAttribute('data-' + toggle);
+
+      new CountUp(
+        blockPrice.querySelector('.range-plan__price span'),
+        prev.getAttribute('data-' + toggle),
+        current.getAttribute('data-' + toggle),
+        0,
+        1.28
+      ).start();
 
       // if old price exist, set it
-      let oldPrice = current.getAttribute('data-old-price');
+      let oldPrice = current.getAttribute('data-old-' + toggle);
 
       if (oldPrice !== null) {
-        blockPrice.classList.add('range-plan__msg-block_price-show');
+        setTimeout(function() {
+          blockPrice.classList.add('range-plan__msg-block_price-show');
+        }, 100);
+      } else {
+        blockPrice.classList.remove('range-plan__msg-block_price-show');
+      }
 
+      if (oldPrice !== null) {
         blockPrice.querySelector(
           '.range-plan__price-old'
         ).textContent = oldPrice;
@@ -635,6 +689,21 @@ if (rangeBusinessSlider) {
           '.range-plan__price-sale span'
         ).textContent = salePercent;
       }
+
+      // if trial, set class
+      let trial = current.getAttribute('data-trial');
+
+      if (trial !== null) {
+        blockPrice.querySelector('.action-block__btn-trial').style.display =
+          'block';
+      } else {
+        blockPrice.querySelector('.action-block__btn-trial').style.display =
+          'none';
+      }
+
+      // set text for price
+      let priceText = blockPrice.querySelector('.range-plan__price-small');
+      priceText.textContent = priceText.getAttribute('data-text-' + toggle);
     }
 
     // label dots - make all gray
@@ -673,7 +742,8 @@ if (rangeBusinessSlider) {
       'flex';
   };
 
-  let startPosition = +rangeBusinessSlider.getAttribute('data-value') || 0;
+  let startPosition =
+    +rangeBusinessSlider.getAttribute('data-start-position') || 0;
 
   let settings = {
     start: startPosition,
@@ -697,11 +767,14 @@ if (rangeBusinessSlider) {
 
   noUiSlider.create(rangeBusinessSlider, settings);
 
+  var oldValue = 1;
+
   rangeBusinessSlider.noUiSlider.on('update', function(value) {
-    rangeBusinessSliderColorLabes(value[0]);
+    rangeBusinessSliderColorLabes(value[0], oldValue);
+    oldValue = value[0];
   });
 
-  rangeBusinessSliderColorLabes(startPosition);
+  //rangeBusinessSliderColorLabes(startPosition);
 }
 
 //
@@ -743,12 +816,28 @@ const buyProcessBtns = document.querySelectorAll('[data-process-step]');
 
 if (buyProcessBtns.length) {
   const buyProcessSteps = document.querySelectorAll('.steps-nav__item');
+  const progressBar = document.querySelector('.steps-nav__progress-bar');
+  const currentStep = document.querySelector('.steps-nav__text-current');
 
   buyProcessBtns.forEach(function(buyProcessBtn) {
     buyProcessBtn.addEventListener('click', function(e) {
       e.preventDefault();
 
-      let nextStep = this.getAttribute('data-process-step');
+      let nextStep = +this.getAttribute('data-process-step');
+
+      currentStep.textContent = nextStep;
+
+      switch (nextStep) {
+        case 1:
+          progressBar.style.width = '33.333%';
+          break;
+        case 2:
+          progressBar.style.width = '66.6666%';
+          break;
+        case 3:
+          progressBar.style.width = '100%';
+          break;
+      }
 
       document.querySelectorAll('.process-content').forEach(function(elem) {
         elem.classList.remove('active');
@@ -860,6 +949,26 @@ if (awardTooltips.length) {
 }
 
 //
+// Buy process page tooltips
+//
+
+const buyProcessTooltips = document.querySelectorAll('[data-buy-tooltip]');
+
+if (buyProcessTooltips.length) {
+  buyProcessTooltips.forEach(function(node, i, a) {
+    const nodeTemplateName = node.getAttribute('data-buy-tooltip');
+
+    tippy(node, {
+      theme: 'awards',
+      arrow: true,
+      html: '#' + nodeTemplateName,
+      distance: 3,
+      placement: 'bottom'
+    });
+  });
+}
+
+//
 // Protection-home page plan tooltips
 //
 
@@ -877,23 +986,6 @@ if (planTooltips.length) {
       html: nodeTemplateName,
       distance: 15,
       placement: 'right-start'
-    });
-  });
-}
-
-//
-// Toggle
-//
-
-const toggles = document.querySelectorAll('.toggle');
-
-if (toggles.length) {
-  toggles.forEach(function(toggle) {
-    toggle.addEventListener('click', function() {
-      let input = this.querySelector('input');
-      input.value = +input.value ? 0 : 1;
-
-      this.classList.toggle('toggle_on');
     });
   });
 }
@@ -968,4 +1060,118 @@ if (plansSlider) {
 
   plansSliderFn();
   window.addEventListener('resize', plansSliderFn);
+}
+
+//
+// Range slider buy process
+//
+
+const rangeBuySlider = document.querySelector('.range-slider_buy');
+
+if (rangeBuySlider) {
+  var rangeBuySliderColorLabes = function(value) {
+    let current = document.querySelector(
+      '.range-slider__label:nth-child(' + value + ')'
+    );
+
+    // label dots - make all gray
+    document.querySelectorAll('.range-slider__label').forEach(function(elem) {
+      elem.classList.remove('range-slider__label_select');
+    });
+
+    // label dots - make only right colored
+    for (let i = 0; i < value; i++) {
+      document
+        .querySelector('.range-slider__label:nth-child(' + (i + 1) + ')')
+        .classList.add('range-slider__label_select');
+    }
+
+    // label text - make all hidden (by css class, than viewport < 768px)
+    document
+      .querySelectorAll('.range-slider__label-text')
+      .forEach(function(elem) {
+        elem.classList.add('range-slider__label-text_hidden');
+      });
+
+    // label text - make current visible
+    current
+      .querySelector('.range-slider__label-text')
+      .classList.remove('range-slider__label-text_hidden');
+  };
+
+  let startPosition = +rangeBuySlider.getAttribute('data-start-position') || 0;
+
+  let settings = {
+    start: startPosition,
+    step: 1,
+    tooltips: true,
+    connect: [true, false],
+    direction: rootDirection,
+    range: {
+      min: 1,
+      max: 6
+    },
+    format: {
+      to: function(value) {
+        return Math.round(value);
+      },
+      from: function(value) {
+        return Math.round(value);
+      }
+    }
+  };
+
+  noUiSlider.create(rangeBuySlider, settings);
+
+  rangeBuySlider.noUiSlider.on('update', function(value) {
+    rangeBuySliderColorLabes(value[0], oldValue);
+  });
+
+  //rangeBusinessSliderColorLabes(startPosition);
+}
+
+//
+// Mask for creditcard
+//
+
+const maskCard = document.querySelector('[mask-card]');
+
+if (maskCard) {
+  var regExpMask = new IMask(maskCard, {
+    mask: /^[0-9]\d{0,16}$/
+  });
+
+  // Bank icons for creditcard
+
+  const maskCardBlock = maskCard.parentNode.querySelector('.card-icon');
+
+  maskCard.addEventListener('input', function() {
+    let n = this.value;
+
+    maskCardBlock.classList.value = 'card-icon';
+
+    switch (+n.slice(0, 2)) {
+      case 35:
+        maskCardBlock.classList.add('card-icon_jcb');
+        break;
+      case 36:
+        maskCardBlock.classList.add('card-icon_dc');
+        break;
+      case 37:
+        maskCardBlock.classList.add('card-icon_ae');
+        break;
+      default:
+        switch (+n.slice(0, 1)) {
+          case 4:
+            maskCardBlock.classList.add('card-icon_visa');
+            break;
+          case 5:
+            maskCardBlock.classList.add('card-icon_mc');
+            break;
+          case 6:
+            maskCardBlock.classList.add('card-icon_dis');
+            break;
+        }
+    }
+  });
 }

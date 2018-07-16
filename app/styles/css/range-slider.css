@@ -13,7 +13,7 @@
 }
 
 .noUi-target {
-  background: #E0E0E0;
+  background: #e0e0e0;
   box-shadow: none;
   border: 0;
   border-radius: 10px;
@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: #2F80ED;
+  background: #2f80ed;
   box-shadow: none;
   border: 0;
   border-radius: 24px;
@@ -53,7 +53,7 @@
 .noUi-horizontal .noUi-tooltip {
   bottom: -120%;
   font-size: 1rem;
-  color: #4F4F4F;
+  color: #4f4f4f;
   font-weight: 700;
   border: 0;
   background: transparent;
@@ -65,10 +65,11 @@
 }
 
 .noUi-connect {
-  background: #2F80ED;
+  background: #2f80ed;
 }
 
-.range-slider_plan:after,.range-slider_plan:before {
+.range-slider_plan:after,
+.range-slider_plan:before {
   content: '';
   width: 20px;
   height: 14px;
@@ -76,10 +77,11 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #2F80ED;
+  background: #2f80ed;
 }
 
-[dir=ltr] .range-slider_plan:after,[dir=ltr] .range-slider_plan:before {
+[dir='ltr'] .range-slider_plan:after,
+[dir='ltr'] .range-slider_plan:before {
   right: auto;
   left: 0;
   -webkit-transform: translateX(-100%);
@@ -87,7 +89,8 @@
   border-radius: 10px 0 0 10px;
 }
 
-[dir=rtl] .range-slider_plan:after,[dir=rtl] .range-slider_plan:before {
+[dir='rtl'] .range-slider_plan:after,
+[dir='rtl'] .range-slider_plan:before {
   left: auto;
   right: 0;
   -webkit-transform: translateX(100%);
@@ -99,10 +102,10 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #65637a;
+  background: #e6e6e6;
 }
 
-[dir=ltr] .range-slider_plan:after {
+[dir='ltr'] .range-slider_plan:after {
   right: 0;
   left: auto;
   -webkit-transform: translateX(100%);
@@ -110,7 +113,7 @@
   border-radius: 0 10px 10px 0;
 }
 
-[dir=rtl] .range-slider_plan:after {
+[dir='rtl'] .range-slider_plan:after {
   left: 0;
   right: auto;
   -webkit-transform: translateX(-100%);
@@ -119,7 +122,7 @@
 }
 
 .range-slider_plan.noUi-target {
-  background: #65637a;
+  background: #e6e6e6;
 }
 
 .range-slider_plan.noUi-horizontal {
@@ -149,21 +152,25 @@
 
 .range-slider__label {
   font-size: 1rem;
-  color: #fff;
+  color: #4f4f4f;
   font-weight: 700;
   width: 0;
   position: relative;
 }
 
 .range-slider__label_select:before {
-  background: #2F80ED !important;
+  background: #2f80ed !important;
 }
 
-.range-slider__label:nth-child(1) .range-slider__label-text,.range-slider__label:nth-child(2) .range-slider__label-text {
+.range-slider__label:nth-child(1) .range-slider__label-text,
+.range-slider__label:nth-child(2) .range-slider__label-text {
   width: 9px;
 }
 
-.range-slider__label:nth-child(3) .range-slider__label-text,.range-slider__label:nth-child(4) .range-slider__label-text,.range-slider__label:nth-child(5) .range-slider__label-text,.range-slider__label:nth-child(6) .range-slider__label-text {
+.range-slider__label:nth-child(3) .range-slider__label-text,
+.range-slider__label:nth-child(4) .range-slider__label-text,
+.range-slider__label:nth-child(5) .range-slider__label-text,
+.range-slider__label:nth-child(6) .range-slider__label-text {
   width: 18px;
 }
 
@@ -185,26 +192,26 @@
 }
 
 .range-slider__label:before {
-  background: #65637a;
+  background: #e6e6e6;
   border-radius: 20px;
 }
 
-[dir=ltr] .range-slider__label:before {
+[dir='ltr'] .range-slider__label:before {
   right: auto;
   left: -10px;
 }
 
-[dir=rtl] .range-slider__label:before {
+[dir='rtl'] .range-slider__label:before {
   left: auto;
   right: -10px;
 }
 
-[dir=ltr] .range-slider__label-text {
+[dir='ltr'] .range-slider__label-text {
   -webkit-transform: translate(-50%, 15px);
   transform: translate(-50%, 15px);
 }
 
-[dir=rtl] .range-slider__label-text {
+[dir='rtl'] .range-slider__label-text {
   -webkit-transform: translate(50%, 15px);
   transform: translate(50%, 15px);
 }
@@ -215,14 +222,18 @@
 
 .range-slider__label-sale {
   font-size: 0.75rem;
-  color: #EB5757;
+  color: #eb5757;
   font-weight: 700;
   position: absolute;
   top: -5px;
   bottom: auto;
 }
 
-[dir=ltr] .range-slider__label-sale {
+.range-slider__label-sale_blue {
+  color: #2f80ed;
+}
+
+[dir='ltr'] .range-slider__label-sale {
   float: right;
   right: -6px;
   left: auto;
@@ -230,7 +241,7 @@
   transform: translateX(100%);
 }
 
-[dir=rtl] .range-slider__label-sale {
+[dir='rtl'] .range-slider__label-sale {
   float: left;
   left: -6px;
   right: auto;
@@ -239,7 +250,8 @@
 }
 
 @media (min-width: 576px) {
-  .range-slider_plan:after,.range-slider_plan:before {
+  .range-slider_plan:after,
+  .range-slider_plan:before {
     width: 33px;
     height: 14px;
   }

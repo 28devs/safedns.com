@@ -31,15 +31,15 @@
 .auth__header-item {
   position: relative;
   display: inline-block;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .auth__header-item:after {
   display: none;
   content: '';
   position: absolute;
-  top: 18px;
-  bottom: 10px;
+  top: 8px;
+  bottom: 5px;
   width: 1px;
   background-color: #e0e0e0;
 }
@@ -56,11 +56,19 @@
   display: none;
 }
 
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  min-height: 78px;
+  transform: scale(0.8);
+}
+
 .auth__header-title {
   color: #bdbdbd;
   margin: 0;
   cursor: pointer;
   transition: 0.15s ease;
+  font-size: 20px;
 }
 
 .auth__header-title:hover {
@@ -76,6 +84,7 @@
 .auth__footer-link {
   display: block;
   color: #828282;
+  font-size: 14px;
 }
 
 .auth__footer-link {
@@ -86,13 +95,23 @@
   color: #585858;
 }
 
+@media (min-width: 364px) {
+  .g-recaptcha {
+    transform: scale(1);
+  }
+}
+
 @media (min-width: 768px) {
   .auth__header-logo {
     display: none;
   }
 
   .auth__header-item {
-    padding: 0 40px;
+    padding: 0 36px;
+  }
+
+  .auth__header-title {
+    font-size: 24px;
   }
 
   .auth__header-item:after {
@@ -100,7 +119,7 @@
   }
 
   .auth__footer-link {
-    margin-top: -12px;
+    margin-top: -5px;
   }
 }
 
@@ -136,7 +155,7 @@
   }
 
   .auth__header-list {
-    display: none;
+    justify-content: space-around;
   }
 
   .page-container_auth .auth__header-link .auth__header-title {

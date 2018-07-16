@@ -2,31 +2,32 @@ include inc/head.pug
 +nav(class='sticky-nav_always-fixed-state')
 
 .page-container
-  .container
+  .container#plan-container
     h1.section-title 
       b Start Protection
       .title-line Business
 
   section.range-plan.page-container
-    h3.title-promo Users need protect
+    h3.range-plan__title.title-promo Users need protect
 
     .range-plan__slider
-      .range-slider_plan(data-value='3')
+      .range-slider_plan.range-slider_plan-js(data-start-position='2')
       .range-slider__labels
-        .range-slider__label(data-target='low')
+        .range-slider__label(data-target='low' data-month='0' data-year='0')
           .range-slider__label-text 3
-        .range-slider__label(data-target='price' data-price='$ 40')
+        .range-slider__label(data-target='price' data-trial='true' data-month='40' data-year='100')
           .range-slider__label-text 5
-        .range-slider__label(data-target='price' data-price='$ 39')
+            .range-slider__label-sale.range-slider__label-sale_blue trial
+        .range-slider__label(data-target='price' data-month='39' data-year='110')
           .range-slider__label-text 10
-        .range-slider__label(data-target='price' data-price='$ 35') 
+        .range-slider__label(data-target='price' data-month='35' data-year='120') 
           .range-slider__label-text 25
-        .range-slider__label(data-target='price' data-price='$ 32')
+        .range-slider__label(data-target='price' data-month='32' data-year='130')
           .range-slider__label-text 50
-        .range-slider__label(data-target='price' data-price='$ 28' data-old-price='$ 32' data-percent='10')
+        .range-slider__label(data-target='price' data-month='28' data-year='140'  data-old-month='32$' data-old-year='170$' data-percent='10')
           .range-slider__label-text 75
             .range-slider__label-sale sale
-        .range-slider__label(data-target='price' data-price='$ 25' data-old-price='$ 45' data-percent='20') 
+        .range-slider__label(data-target='price' data-month='25' data-year='150' data-old-month='45$' data-old-year='180$' data-percent='20') 
           .range-slider__label-text 100
             .range-slider__label-sale sale
         .range-slider__label(data-target='hight') 
@@ -37,25 +38,36 @@ include inc/head.pug
       a.btn.btn_primary(href='#!') See Tarif Safe@Home
 
     .range-plan__msg-block.range-plan__msg-block_price
-      .range-plan__price-block
-        .range-plan__price-old $ 36
-        .range-plan__price 
-          span
-          .range-plan__price-small / month
-        .range-plan__price-sale 
-          span
-          | % off
+      .range-plan__price-block-wrap
+        .range-plan__price-block
+          .range-plan__price-old $ 36
+          .range-plan__price 
+            span
+            .range-plan__price-text
+              .range-plan__price-symbol $
+              .range-plan__price-small(data-text-month='/ per month' data-text-year='/ per year')
+          .range-plan__price-sale 
+            .range-plan__price-sale-word Save  
+            span
+            | %
+
+      #businessPlansToggle.range-plan__toggle-block.toggle
+        input(type='hidden' value='0')
+        .toggle__text Monthly
+        .toggle__elem
+        .toggle__text Annual
+
       .action-block.action-block_two-btns
         .action-block__btns
-          .action-block__btn
-            a.btn.btn_primary(href='#!') 30 days Free Trial
+          .action-block__btn.action-block__btn-trial
+            a.btn.btn_secondary(href='#!') 30 days Free Trial
             p.text-tips no credit card or phone call!
           .action-block__btn
-            a.btn.btn_secondary(href='#!') Buy Now
+            a.btn.btn_primary(href='#!') Buy Now
 
     .range-plan__msg-block.range-plan__msg-block_hight
-      .range-plan__msg-text We recommend that you look at the tariff for home users
-      a.btn.btn_primary(href='#!') See Tarif Safe@Home
+      .range-plan__msg-text For large clients we have a personal approach. Please contact us for detailed quotes
+      a.btn.btn_primary(href='#!') Contact Us
 
 
 .page-container.pt-0
@@ -161,16 +173,10 @@ section.page-container.faq-block
           .accordion__content-wrap 
             .accordion__content content
 
-section.action-block.action-block_two-btns.text-center
-  h2.title-promo Protect Your Company Right Now!
-
-  .action-block__btns
-    .action-block__btn
-      a.btn.btn_secondary(href='#!') 30 days Free Trial
-      p.text-tips no credit card or phone call!
-
-    .action-block__btn
-      a.btn.btn_primary(href='#!') Buy Now
+section.action-block.text-center
+  a.btn.btn_primary.scroll-to(href="#plan-container")
+    i.icon.icon_up
+    | Scroll Up and Choise the Tarif
 
 include inc/footer.pug
 include inc/foot.pug

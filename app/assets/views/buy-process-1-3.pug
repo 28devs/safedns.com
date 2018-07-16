@@ -3,56 +3,78 @@ include inc/head.pug
 
 .page-container.page-container_gray.buy-process
   .container
-    h2.section-title.title-gray
+    h2.section-title.title-gray.buy-process__title
       b Purchase 
-      .title-line.title-line_horisontal Safe@Home
     
+    .buy-info
+      .buy-info__cell
+        .buy-info__key Tarif
+        .buy-info__value Safe@OFFICE
+      .buy-info__cell
+        .buy-info__key Users
+        .buy-info__value 25
+      .buy-info__cell
+        .buy-info__key Time
+        .buy-info__value Annul
+      .buy-info__cell
+        .buy-info__key Total
+        .buy-info__value.buy-info__value_blue 80$
+
     .steps-nav__wrap
-      ul.steps-nav
-        li.steps-nav__item.steps-nav__item_active
-          .steps-nav__item-text Login
-        li.steps-nav__item
-          .steps-nav__item-text Payment options
-        li.steps-nav__item 
-          .steps-nav__item-text Pay
-        li.steps-nav__item 
-          .steps-nav__item-text Finish!
-
-      .steps-nav__mobile 
+      .steps-nav__text
         | Step 
-        .steps-nav__mobile-current 1 
-        | of 3
+        .steps-nav__text-current 1 
+        |  of 3
 
-  #buy-process-1.container.process-content.active
+      .steps-nav__progress
+        .steps-nav__progress-bar(style='width: 33.333%')
+
+  #buy-process-1.container.process-content
     .form-container.form-container_single
       section.auth(data-tabs)
         .auth__header
           .auth__header-logo
           ul.auth__header-list
             li.auth__header-item
-              a.auth__header-link.active(href="#login" data-tabs-link)
-                .auth__header-title.h2 Login
+              a.auth__header-link.active(href="#registration" data-tabs-link)
+                .auth__header-title.h2 Not registered
             li.auth__header-item
-              a.auth__header-link(href="#registration" data-tabs-link)
-                .auth__header-title.h2 Registration
+              a.auth__header-link(href="#login" data-tabs-link)
+                .auth__header-title.h2 Registered
         .auth__body
           .auth__forms
-            #login.auth-login.tabs-content.active
+            #registration.auth-login.tabs-content.active
               form.form(action="#")
                 .input-group
-                  input.input(type='text' placeholder='Name *')
+                  input.input(type='text' placeholder='E-mail *')
                 .input-group
                   input.input(type='password' placeholder='Password *')
                 
+                .input-group__spacer
+                  .input-group
+                    input.input(type='text' placeholder='Company name *')
+                  .input-group
+                    input.input(type='text' placeholder='Contact person*')
+                  .input-group
+                    input.input(type='text' placeholder='Working telephone')
+                  .input-group
+                    .select
+                      <select class='select__elem'>
+                        <option value="" disabled selected>Country *</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      .select__arrow
+
+                .g-recaptcha(data-sitekey='6Ld0bGQUAAAAAImSg6NKS19U3RhQpIGlz_V33Xvu')
+
                 .form__footer
                   .input-group
-                    a.btn.btn_small.btn_primary(href='#' data-process-step='2') Login
-                  a.auth__footer-link(href="#") Forgot password
+                    a.btn.btn_small.btn_primary(href='#!' data-process-step='2') Registration
 
-            #registration.auth-registration.tabs-content
+            #login.auth-registration.tabs-content
               form.form(action="#")
-                .input-group
-                  input.input(type='text' placeholder='Name *')
                 .input-group
                   input.input(type='text' placeholder='E-mail *')
                 .input-group
@@ -60,15 +82,30 @@ include inc/head.pug
                   
                 .form__footer
                   .input-group
-                    a.btn.btn_small.btn_primary Registration
+                    a.btn.btn_small.btn_primary(href='#!' data-process-step='2')  Login
+                  a.auth__footer-link(href="#") Forgot password
 
 
   #buy-process-2.container.process-content
     .form-container.form-container_single.payment-options
       .payment-options__desc
-        p.payment-options__text You going to buy
-        h3.title-promo.title-gray Safe@Business
-        p.payment-options__text Protect 45 devices
+        p.payment-options__text Connected users
+        
+        .range-plan__slider.range-plan__slider_small
+          .range-slider_buy.range-slider_plan(data-start-position='3')
+          .range-slider__labels
+            .range-slider__label(data-value='5')
+              .range-slider__label-text 5
+            .range-slider__label(data-value='10')
+              .range-slider__label-text 10
+            .range-slider__label(data-value='25') 
+              .range-slider__label-text 25
+            .range-slider__label(data-value='50')
+              .range-slider__label-text 50
+            .range-slider__label(data-value='75')
+              .range-slider__label-text 75
+            .range-slider__label(data-value='100') 
+              .range-slider__label-text 100
 
       .payment-options__select-plan
         p.payment-options__text Billing plan
@@ -88,7 +125,7 @@ include inc/head.pug
               label.payment-radio__label
                 input.payment-radio__input(type='radio' name='payment' value='2')
                 .payment-radio__text 
-                  .payment-radio__text-name 1 year
+                  .payment-radio__text-name Annual subscribe
                 .payment-radio__price
                   .payment-radio__price-value 20$
 
@@ -112,56 +149,96 @@ include inc/head.pug
                   .payment-radio__price-old 60$
                   .payment-radio__price-value 55$
 
+        .msg.msg_warning
+          .msg__title Automatic Renewal
+          .msg__text Your subscription will automatically renew at the end of each subscription term for another term. You agree that we may automatically renew your subscription and charge your account on the end date of your last subscription (the Renewal Date), unless you cancel your subscription before the Renewal Date.
+
 
       .payment-options__total
-        p.payment-options__text Total Price: 
+        p.payment-options__text To pay: 
           span.payment-options__total-price 20$
 
         a.btn.btn_back.btn_small(href='#!' data-process-step='1') Back
         a.btn.btn_primary.btn_small(href='#!' data-process-step='3') Next
 
-  #buy-process-3.container.process-content
+  #buy-process-3.container.process-content.active
     .form-container.form-container_single.payment-options
-      .payment-options__desc
-        p.payment-options__text You going to buy
-        h3.title-promo.title-gray Safe@Business
-        p.payment-options__text Protect 45 devices
-        p.payment-options__text For 1 year
 
       .payment-options__select-plan
-
         form.form.credit-card(action='buy-process-4.html')
 
-          .credit-card__title Visa \ Mastercard
+          .credit-card__title
+            .credit-card__payments-logo
+            .credit-card__payments-comodo Payment is protected by<br> 256-bit ssl encryption
 
           .credit-card__front
             .input-group
-              input.input(type='text' placeholder='Card number*')
+              .card-icon
+              input.input(type='text' placeholder='Card number' mask-card)
 
             .input-group
-              input.input(type='text' placeholder='MM*')
+              .select
+                <select class='select__elem'>
+                  <option value="" disabled selected>MM</option>
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="8">08</option>
+                  <option value="9">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                .select__arrow
 
             .input-group
-              input.input(type='text' placeholder='Year*')
+              .select
+                <select class='select__elem'>
+                  <option value="" disabled selected>YY</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+
+                </select>
+                .select__arrow
 
             .input-group
-              input.input(type='text' placeholder='Cardholder name*')
+              input.input(type='text' placeholder='Cardholder name')
 
           .credit-card__back
             .input-group
-              input.input(type='text' placeholder='CVC*')
+              input.input(type='text' placeholder='CVV2')
 
-          .credit-card__payments
-            .credit-card__payments-text We accept cards:
-            .credit-card__payments-logo
+            .credit-card__back-tip(data-buy-tooltip='credit-card__cvv-tip') CVC2, CVV2, CID and etc
 
+        .comodo
+          .comodo__title Secure credit card payment
+          .comodo__text This is a secure 256 bit SSL<br> encrypted payment
+
+
+        #credit-card__cvv-tip
+          | <b>Secure Code</b> <br>(can be CVC2, CVV2, CID, CSC and etc.)<br><br>American Express - 4 number on a front<br><br>Another card - 3 number on a backside
+
+        .msg.msg_error.credit-card__error
+          .msg__text error message on the server side, there are about 100 kinds. Usually there will be 2-3 lines with an explanation of what's wrong
 
       .payment-options__total
         p.payment-options__text Total Price: 
           span.payment-options__total-price 20$
 
         a.btn.btn_back.btn_small(href='#!' data-process-step='2') Back
-        a.btn.btn_primary.btn_small Next
+        a.btn.btn_primary.btn_small 
+          i.icon.icon_lock
+          | Pay
 
 include inc/footer-simple.pug
 include inc/foot.pug
+script(src="https://www.google.com/recaptcha/api.js" async defer)
