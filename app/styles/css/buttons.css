@@ -17,7 +17,6 @@ input[type='submit'] {
   padding: 9px 42px;
   text-align: center;
   cursor: pointer;
-  direction: ltr;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
