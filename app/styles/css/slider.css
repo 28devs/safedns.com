@@ -6,7 +6,7 @@
 }
 
 .img-shadow:after {
-  background: url('../img/about/shadow.png') center no-repeat / contain;
+  background: url('../img/about/shadow.png') no-repeat center / contain;
   margin-top: 8px;
 }
 
@@ -223,7 +223,7 @@
 
 .simple-slider__track {
   position: relative;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .simple-slider__track .glide__slides {
@@ -271,16 +271,16 @@
   height: 16px;
   border-radius: 50%;
   background-color: #f7f7f7;
-  transition: .3s ease background;
+  transition: 0.3s ease background;
 }
 
 .simple-slider__bullet:hover .simple-slider__item-dot {
-  background: linear-gradient(137.79deg, #2F80ED -4.92%, #EB5757 123.51%);
-  opacity: .3;
+  background: linear-gradient(137.79deg, #2f80ed -4.92%, #eb5757 123.51%);
+  opacity: 0.3;
 }
 
 .simple-slider__bullet_active .simple-slider__item-dot {
-  background: linear-gradient(137.79deg, #2F80ED -4.92%, #EB5757 123.51%);
+  background: linear-gradient(137.79deg, #2f80ed -4.92%, #eb5757 123.51%);
 }
 
 [dir='ltr'] .simple-slider__bullet .simple-slider__item-dot {
@@ -292,7 +292,7 @@
 }
 
 .simple-slider__bullet.simple-slider__bullet_active {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 @media (min-width: 576px) {
@@ -346,6 +346,7 @@
   .reviews-slider {
     margin: -20px 0 80px;
   }
+}
 
 @media (min-width: 992px) {
   .glide__space-for-arrows {
@@ -389,7 +390,6 @@
     width: 130px;
   }
 
-  
   .simple-slider {
     display: flex;
     flex-flow: row nowrap;

@@ -12,6 +12,7 @@ include inc/head.pug
 
     .range-plan__slider
       .range-slider_plan.range-slider_plan-js(data-start-position='2')
+
       .range-slider__labels
         .range-slider__label(data-target='low' data-month='0' data-year='0')
           .range-slider__label-text 3
@@ -24,7 +25,7 @@ include inc/head.pug
           .range-slider__label-text 25
         .range-slider__label(data-target='price' data-month='32' data-year='130')
           .range-slider__label-text 50
-        .range-slider__label(data-target='price' data-month='28' data-year='140'  data-old-month='32$' data-old-year='170$' data-percent='10')
+        .range-slider__label(data-target='price' data-month='28' data-year='140' data-old-month='32$' data-old-year='170$' data-percent='10')
           .range-slider__label-text 75
             .range-slider__label-sale sale
         .range-slider__label(data-target='price' data-month='25' data-year='150' data-old-month='45$' data-old-year='180$' data-percent='20') 
@@ -32,6 +33,16 @@ include inc/head.pug
             .range-slider__label-sale sale
         .range-slider__label(data-target='hight') 
           .range-slider__label-text More+
+
+      .range-slider__click-zones
+        .range-slider__click-zone(data-zone='1')
+        .range-slider__click-zone(data-zone='2')
+        .range-slider__click-zone(data-zone='3')
+        .range-slider__click-zone(data-zone='4')
+        .range-slider__click-zone(data-zone='5')
+        .range-slider__click-zone(data-zone='6')
+        .range-slider__click-zone(data-zone='7')
+        .range-slider__click-zone(data-zone='8')
 
     .range-plan__msg-block.range-plan__msg-block_low
       .range-plan__msg-text We recommend that you look at the tariff for home users

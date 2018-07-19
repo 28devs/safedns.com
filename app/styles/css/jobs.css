@@ -90,7 +90,7 @@
   height: 14px;
   content: '';
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23fff'%3E %3Cpath d='M 6 6L 6 0L 0 0' transform='matrix(-0.714497 0.699638 -0.699638 -0.714498 9.48486 4.28711)' fill='transparent'/%3E %3C/svg%3E")
-    center bottom no-repeat / cover;
+    no-repeat center bottom / cover;
   margin-top: -7px;
 }
 

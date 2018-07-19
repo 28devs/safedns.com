@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../img/about/cube.png') center no-repeat / contain;
+  background: url('../img/about/cube.png') no-repeat center / contain;
   text-align: center;
   margin: 0 auto;
 }
@@ -536,7 +536,7 @@
     height: 153px;
     height: 213px;
     margin-bottom: 0;
-    background: url('../img/about/cube.png') center no-repeat / 40%;
+    background: url('../img/about/cube.png') no-repeat center / 40%;
   }
 
   .awards__slider-control {

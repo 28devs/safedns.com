@@ -122,7 +122,10 @@
 }
 
 .range-slider_plan.noUi-target {
-  background: #e6e6e6;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
 }
 
 .range-slider_plan.noUi-horizontal {
@@ -150,16 +153,41 @@
   align-items: center;
 }
 
+.range-slider__labels:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  background: #e6e6e6;
+  z-index: 1;
+}
+
+.range-slider__labels_small:after {
+  height: 10px;
+}
+
 .range-slider__label {
   font-size: 1rem;
   color: #4f4f4f;
   font-weight: 700;
   width: 0;
   position: relative;
+  z-index: 2;
 }
 
 .range-slider__label_select:before {
   background: #2f80ed !important;
+}
+
+.range-plan__slider_load .range-slider__label_select:before {
+  transition: background 0.1s ease;
+  transition-delay: 0.1s;
+}
+
+.range-slider__label_hover:before {
+  transition: background 0.15s ease;
 }
 
 .range-slider__label:nth-child(1) .range-slider__label-text,
@@ -189,9 +217,6 @@
   position: absolute;
   top: -17px;
   bottom: auto;
-}
-
-.range-slider__label:before {
   background: #e6e6e6;
   border-radius: 20px;
 }
@@ -221,7 +246,7 @@
 }
 
 .range-slider__label-sale {
-  font-size: 0.75rem;
+  font-size: 12px;
   color: #eb5757;
   font-weight: 700;
   position: absolute;
@@ -247,6 +272,58 @@
   right: auto;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
+}
+
+[dir='ltr'] .range-slider__label-sale_1 {
+  right: -4px;
+}
+
+[dir='rtl'] .range-slider__label-sale_1 {
+  left: -4px;
+}
+
+[dir='ltr'] .range-slider__label-sale_2 {
+  right: -13px;
+}
+
+[dir='rtl'] .range-slider__label-sale_2 {
+  left: -13px;
+}
+
+.range-plan__slider {
+  position: relative;
+}
+
+.range-slider__click-zones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: -22px;
+  right: -22px;
+  bottom: 0;
+  top: 4px;
+  z-index: 2;
+}
+
+.range-slider__click-zone {
+  height: 78px;
+  width: 13.7%;
+  cursor: pointer;
+}
+
+.range-slider__click-zone:first-child,
+.range-slider__click-zone:last-child {
+  width: 9%;
+}
+
+.range-slider__click-zones_small .range-slider__click-zone {
+  width: 18%;
+}
+
+.range-slider__click-zones_small .range-slider__click-zone:first-child,
+.range-slider__click-zones_small .range-slider__click-zone:last-child {
+  width: 15%;
 }
 
 @media (min-width: 576px) {

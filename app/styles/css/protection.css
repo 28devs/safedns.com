@@ -240,11 +240,6 @@
   background-color: #2f80ed;
 }
 
-.accordion__header:before {
-  /* background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='18' viewBox='0 0 24 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%232F80ED'%3E %3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M 22.75 0L 8 15.3913L 1.25 8.34783L 0 9.65217L 8 18L 24 1.30435L 22.75 0Z'/%3E %3C/svg%3E")
-    center no-repeat / contain; */
-}
-
 [dir='ltr'] .accordion__header:before {
   margin-right: 20px;
 }
@@ -263,7 +258,7 @@
 
 .accordion__header:after {
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23BDBDBD'%3E %3Cpath d='M 6 6L 6 0L 0 0' transform='matrix(-0.714497 0.699638 -0.699638 -0.714498 9.48486 4.28711)' fill='transparent'/%3E %3C/svg%3E")
-    center no-repeat / contain;
+    no-repeat center / contain;
   margin-top: -2px;
 }
 
@@ -378,7 +373,7 @@
 
 .accordion_simple .accordion__header:after {
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' stroke='%23fff'%3E %3Cpath d='M 6 6L 6 0L 0 0' transform='matrix(-0.714497 0.699638 -0.699638 -0.714498 9.48486 4.28711)' fill='transparent'/%3E %3C/svg%3E")
-    center no-repeat / contain;
+    no-repeat center / contain;
 }
 
 [dir='ltr'] .accordion_simple .accordion__header:after {
@@ -464,6 +459,11 @@
   max-width: 850px;
   width: 80%;
   margin: 30px auto 37px;
+  opacity: 0;
+}
+
+.range-plan__slider_load {
+  opacity: 1;
 }
 
 .range-plan .action-block {
@@ -637,6 +637,7 @@
   user-select: none;
   max-width: 184px;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .toggle__elem {
@@ -668,8 +669,20 @@
   transform: translateX(0);
 }
 
-.toggle_on .toggle__elem:before {
+[dir='ltr'] .toggle__elem:before {
+  transform: translateX(0);
+}
+
+[dir='rtl'] .toggle__elem:before {
   transform: translateX(21px);
+}
+
+[dir='ltr'] .toggle_on .toggle__elem:before {
+  transform: translateX(21px);
+}
+
+[dir='rtl'] .toggle_on .toggle__elem:before {
+  transform: translateX(0);
 }
 
 .toggle__text {

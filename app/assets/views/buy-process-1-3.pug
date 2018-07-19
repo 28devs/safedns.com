@@ -12,13 +12,17 @@ include inc/head.pug
         .buy-info__value Safe@OFFICE
       .buy-info__cell
         .buy-info__key Users
-        .buy-info__value 25
+        .buy-info__value 
+          span(data-users) 
       .buy-info__cell
         .buy-info__key Time
-        .buy-info__value Annul
+        .buy-info__value
+          span(data-time)
       .buy-info__cell
         .buy-info__key Total
-        .buy-info__value.buy-info__value_blue 80$
+        .buy-info__value.buy-info__value_blue 
+          span(data-total) 
+          | $
 
     .steps-nav__wrap
       .steps-nav__text
@@ -29,7 +33,7 @@ include inc/head.pug
       .steps-nav__progress
         .steps-nav__progress-bar(style='width: 33.333%')
 
-  #buy-process-1.container.process-content
+  #buy-process-1.container.process-content.active
     .form-container.form-container_single
       section.auth(data-tabs)
         .auth__header
@@ -93,61 +97,84 @@ include inc/head.pug
         
         .range-plan__slider.range-plan__slider_small
           .range-slider_buy.range-slider_plan(data-start-position='3')
-          .range-slider__labels
-            .range-slider__label(data-value='5')
+
+          .range-slider__labels.range-slider__labels_small
+            .range-slider__label(data-value='5' data-amount='{"mountly": 1, "year": 2, "year2": 3, "year2old": 4, "year3": 5, "year3old": 6}')
               .range-slider__label-text 5
-            .range-slider__label(data-value='10')
+            .range-slider__label(data-value='10' data-amount='{"mountly": 7, "year": 8, "year2": 9, "year2old": 10, "year3": 11, "year3old": 12}')
               .range-slider__label-text 10
-            .range-slider__label(data-value='25') 
+            .range-slider__label(data-value='25' data-amount='{"mountly": 13, "year": 14, "year2": 15, "year2old": 16, "year3": 17, "year3old": 18}') 
               .range-slider__label-text 25
-            .range-slider__label(data-value='50')
+            .range-slider__label(data-value='50' data-amount='{"mountly": 19, "year": 20, "year2": 21, "year2old": 22, "year3": 23, "year3old": 24}')
               .range-slider__label-text 50
-            .range-slider__label(data-value='75')
+            .range-slider__label(data-value='75' data-amount='{"mountly": 25, "year": 26, "year2": 27, "year2old": 28, "year3": 29, "year3old": 30}')
               .range-slider__label-text 75
-            .range-slider__label(data-value='100') 
+                .range-slider__label-sale.range-slider__label-sale_1 sale
+            .range-slider__label(data-value='100' data-amount='{"mountly": 31, "year": 32, "year2": 33, "year2old": 34, "year3": 35, "year3old": 36}') 
               .range-slider__label-text 100
+                .range-slider__label-sale.range-slider__label-sale_2 sale
+
+          .range-slider__click-zones.range-slider__click-zones_small
+            .range-slider__click-zone(data-zone='1')
+            .range-slider__click-zone(data-zone='2')
+            .range-slider__click-zone(data-zone='3')
+            .range-slider__click-zone(data-zone='4')
+            .range-slider__click-zone(data-zone='5')
+            .range-slider__click-zone(data-zone='6')
 
       .payment-options__select-plan
         p.payment-options__text Billing plan
 
         .input-group
           .payment-radio
-            .payment-radio__item(data-input-radio)
+            .payment-radio__item(data-input-radio data-time-value='Mountly')
               label.payment-radio__label
                 input.payment-radio__input(type='radio' name='payment' value='1')
                 .payment-radio__text 
                   .payment-radio__text-name Mountly subscribe
                 .payment-radio__price
-                  .payment-radio__price-value 35$
+                  .payment-radio__price-value 
+                    span(data-amount-m) 
+                    | $
                     .payment-radio__price-small / mo
 
-            .payment-radio__item.checked(data-input-radio)
+            .payment-radio__item.checked(data-input-radio data-time-value='Annual')
               label.payment-radio__label
                 input.payment-radio__input(type='radio' name='payment' value='2')
                 .payment-radio__text 
                   .payment-radio__text-name Annual subscribe
                 .payment-radio__price
-                  .payment-radio__price-value 20$
+                  .payment-radio__price-value 
+                    span(data-amount-y) 
+                    | $
 
-            .payment-radio__item(data-input-radio)
+            .payment-radio__item(data-input-radio data-time-value='Annual')
               label.payment-radio__label
                 input.payment-radio__input(type='radio' name='payment' value='3')
                 .payment-radio__text 
                   .payment-radio__text-name 2 year
                     .payment-radio__text-sale 10% off
                 .payment-radio__price
-                  .payment-radio__price-old 40$
-                  .payment-radio__price-value 35$
+                  .payment-radio__price-old
+                    span(data-amount-y2o) 
+                    | $
+                  .payment-radio__price-value
+                    span(data-amount-y2) 
+                    | $
 
-            .payment-radio__item(data-input-radio)
+            .payment-radio__item(data-input-radio data-time-value='Annual')
               label.payment-radio__label
                 input.payment-radio__input(type='radio' name='payment' value='4')
                 .payment-radio__text 
                   .payment-radio__text-name 3 year
                     .payment-radio__text-sale 20% off
                 .payment-radio__price
-                  .payment-radio__price-old 60$
-                  .payment-radio__price-value 55$
+                  .payment-radio__price-old
+                    span(data-amount-y3o) 
+                    | $
+                  .payment-radio__price-value
+                    span(data-amount-y3) 
+                    | $
 
         .msg.msg_warning
           .msg__title Automatic Renewal
@@ -156,12 +183,14 @@ include inc/head.pug
 
       .payment-options__total
         p.payment-options__text To pay: 
-          span.payment-options__total-price 20$
+          span.payment-options__total-price
+            span(data-total2)
+            | $
 
         a.btn.btn_back.btn_small(href='#!' data-process-step='1') Back
         a.btn.btn_primary.btn_small(href='#!' data-process-step='3') Next
 
-  #buy-process-3.container.process-content.active
+  #buy-process-3.container.process-content
     .form-container.form-container_single.payment-options
 
       .payment-options__select-plan
@@ -211,11 +240,11 @@ include inc/head.pug
                 .select__arrow
 
             .input-group
-              input.input(type='text' placeholder='Cardholder name')
+              input.input(type='text' placeholder='Cardholder name' mask-card-name)
 
           .credit-card__back
             .input-group
-              input.input(type='text' placeholder='CVV2')
+              input.input(type='text' placeholder='CVV2' mask-card-cvv)
 
             .credit-card__back-tip(data-buy-tooltip='credit-card__cvv-tip') CVC2, CVV2, CID and etc
 

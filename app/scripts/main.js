@@ -256,13 +256,15 @@ const stickyNavMobileAccordionMenu = document.querySelectorAll(
 if (stickyNavMobileAccordionMenu) {
   stickyNavMobileAccordionMenu.forEach(function(elem) {
     elem.addEventListener('click', function() {
-      this.classList.toggle('sticky-nav__nav-link_active');
+      if (window.innerWidth < 992) {
+        this.classList.toggle('sticky-nav__nav-link_active');
 
-      let panel = this.nextElementSibling;
+        let panel = this.nextElementSibling;
 
-      panel.style.maxHeight
-        ? (panel.style.maxHeight = null)
-        : (panel.style.maxHeight = panel.scrollHeight + 'px');
+        panel.style.maxHeight
+          ? (panel.style.maxHeight = null)
+          : (panel.style.maxHeight = panel.scrollHeight + 'px');
+      }
     });
   });
 }
@@ -625,6 +627,55 @@ if (businessPlansToggle) {
 }
 
 //
+// Zones hack for Range slider
+//
+
+const clickZones = document.querySelectorAll('.range-slider__click-zone');
+
+if (clickZones.length) {
+  clickZones.forEach(function(zone) {
+    zone.addEventListener('click', function() {
+      let index = +this.getAttribute('data-zone');
+      if (rangeBusinessSlider) {
+        rangeBusinessSlider.noUiSlider.set(index);
+      }
+      if (rangeBuySlider) {
+        rangeBuySlider.noUiSlider.set(index);
+      }
+    });
+
+    zone.addEventListener('mouseover', function() {
+      let index = +this.getAttribute('data-zone');
+
+      let allLabel = document.querySelectorAll(
+        '.range-slider__label'
+      );
+
+      allLabel.forEach(function(label) {
+        label.classList.remove('range-slider__label_hover');
+      })
+      
+      let label = document.querySelector(
+        '.range-slider__label:nth-child(' + index + ')'
+      );
+      label.classList.add('range-slider__label_hover');
+    });
+
+    zone.addEventListener('mouseleave', function(e) {
+      if (e.relatedTarget.classList.value === 'noUi-connects') {
+        return false;
+      }
+
+      let index = +this.getAttribute('data-zone');
+      let label = document.querySelector(
+        '.range-slider__label:nth-child(' + index + ')'
+      );
+      label.classList.remove('range-slider__label_hover');
+    });
+  });
+}
+
+//
 // Range business plan slider
 //
 
@@ -632,6 +683,9 @@ const rangeBusinessSlider = document.querySelector('.range-slider_plan-js');
 
 if (rangeBusinessSlider) {
   var rangeBusinessSliderColorLabes = function(value, oldValue) {
+    const load = document.querySelector('.range-plan__slider');
+    load.classList.add('range-plan__slider_load');
+
     let toggle = +document.querySelector('#businessPlansToggle input').value
       ? 'year'
       : 'month';
@@ -1063,16 +1117,66 @@ if (plansSlider) {
 }
 
 //
+// All logic for buy process
+//
+
+//
 // Range slider buy process
 //
 
 const rangeBuySlider = document.querySelector('.range-slider_buy');
 
 if (rangeBuySlider) {
+  const load = document.querySelector('.range-plan__slider');
+  load.classList.add('range-plan__slider_load');
+
+  const users = document.querySelector('[data-users]');
+  const time = document.querySelector('[data-time]');
+  const total = document.querySelector('[data-total]');
+  const total2 = document.querySelector('[data-total2]');
+
+  const setTotal = function() {
+    let checked = document.querySelector(
+      '.payment-radio__item.checked .payment-radio__price-value span'
+    );
+    total.textContent = checked.textContent;
+    total2.textContent = checked.textContent;
+
+    let timeV = document.querySelector('.payment-radio__item.checked');
+
+    time.textContent = timeV.getAttribute('data-time-value');
+  };
+
+  const options = document.querySelectorAll('.payment-radio__item');
+
+  options.forEach(function(option) {
+    option.addEventListener('click', setTotal);
+  });
+
+  const amountM = document.querySelector('[data-amount-m]');
+  const amountY = document.querySelector('[data-amount-y]');
+  const amountY2 = document.querySelector('[data-amount-y2]');
+  const amountY2Old = document.querySelector('[data-amount-y2o]');
+  const amountY3 = document.querySelector('[data-amount-y3]');
+  const amountY3Old = document.querySelector('[data-amount-y3o]');
+
   var rangeBuySliderColorLabes = function(value) {
     let current = document.querySelector(
       '.range-slider__label:nth-child(' + value + ')'
     );
+
+    users.textContent = current.getAttribute('data-value');
+
+    let data = JSON.parse(current.getAttribute('data-amount'));
+
+    amountM.textContent = data.mountly;
+    amountY.textContent = data.year;
+    amountY2.textContent = data.year2;
+    amountY2Old.textContent = data.year2old;
+    amountY3.textContent = data.year3;
+    amountY3Old.textContent = data.year3old;
+
+    setTotal();
 
     // label dots - make all gray
     document.querySelectorAll('.range-slider__label').forEach(function(elem) {
@@ -1137,8 +1241,20 @@ if (rangeBuySlider) {
 const maskCard = document.querySelector('[mask-card]');
 
 if (maskCard) {
-  var regExpMask = new IMask(maskCard, {
+  new IMask(maskCard, {
     mask: /^[0-9]\d{0,16}$/
+  });
+
+  const maskCardName = document.querySelector('[mask-card-name]');
+
+  new IMask(maskCardName, {
+    mask: /^[a-zA-Z ]{0,50}$/
+  });
+
+  const maskCardCvv = document.querySelector('[mask-card-cvv]');
+
+  new IMask(maskCardCvv, {
+    mask: /^[0-9]\d{0,3}$/
   });
 
   // Bank icons for creditcard

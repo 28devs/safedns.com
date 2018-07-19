@@ -199,7 +199,7 @@
 .payment-radio__item:not(.checked):hover .payment-radio__label:before {
   background: #fff
     url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Ellipse'%3E %3Ccircle cx='5' cy='5' r='5' opacity='0.3' fill='%232F80ED'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
-    center no-repeat / 10px;
+    no-repeat center / 10px;
 }
 
 .payment-radio__item.checked {
@@ -231,7 +231,7 @@
   border-color: #2f80ed;
   background: #fff
     url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='10' viewBox='0 0 10 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Ellipse'%3E %3Ccircle cx='5' cy='5' r='5' fill='%232F80ED'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
-    center no-repeat / 10px;
+    no-repeat center / 10px;
 }
 
 .payment-radio__label {
@@ -397,7 +397,7 @@
   width: 36px;
   height: 20px;
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='36' height='20' viewBox='0 0 36 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg id='Canvas' fill='none'%3E %3Cg id='Group'%3E %3Cg id='Rectangle'%3E %3Crect width='27' height='16.8026' rx='2' transform='translate(9 3.19727)' fill='%23E0E0E0'/%3E %3C/g%3E %3Cg id='Rectangle 2'%3E %3Crect width='10.8667' height='3.06121' transform='translate(25.0664 6.59863)' fill='%23C4C4C4'/%3E %3C/g%3E %3Cg id='Rectangle_2'%3E %3Crect width='27' height='16.8026' rx='2' fill='%23F2F2F2'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E")
-    center no-repeat / 36px;
+    no-repeat center / 36px;
 }
 
 [dir='ltr'] .credit-card__title:before {
@@ -536,7 +536,7 @@
 }
 
 .credit-card__payments-logo {
-  background: url('../img/payments.jpg') center no-repeat;
+  background: url('../img/payments.jpg') no-repeat center;
   background-size: 100%;
   max-width: 320px;
   width: 100%;
@@ -604,10 +604,6 @@ html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
 
 .payment-successful__content {
   padding: 0 20px;
-}
-
-.payment-successful__content > * {
-  font-weight: 700;
 }
 
 .payment-successful__footer {
@@ -816,7 +812,7 @@ html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
     position: relative;
   }
 
-  .payment-successful > * {
+  .payment-successful__content > * {
     position: relative;
     z-index: 2;
   }
@@ -830,7 +826,7 @@ html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
     opacity: 0.024;
     position: absolute;
     left: 50%;
-    top: 65%;
+    top: 33%;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
@@ -948,7 +944,7 @@ html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
     min-width: 16px;
     height: 16px;
     background: url('../img/icons/info.svg');
-    margin: 0 10px 21px;
+    margin: 0 8px 21px;
   }
 
   .credit-card__back {
@@ -994,7 +990,6 @@ html:not([dir='rtl']) .range-plan__slider_small .noUi-horizontal .noUi-handle {
   }
 
   .credit-card__payments-logo {
-    padding-top: 10%;
     margin-left: 15px;
   }
 
